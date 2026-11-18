@@ -1,0 +1,27 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_spawn2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "spawn2": "query.has_target"
+                  }
+               ]
+            },
+            "spawn2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

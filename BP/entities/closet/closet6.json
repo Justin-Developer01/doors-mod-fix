@@ -1,0 +1,133 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:closet6",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:closet_d"
+            }
+         },
+         "minecraft:transform_to_closet_normal": {
+            "minecraft:transformation": {
+               "into": "doors:closet"
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 9
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:collision_box": {
+            "width": 1.2,
+            "height": 2.5
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "self",
+                     "value": "despawn_"
+                  }
+               ]
+            }
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collision": true
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "hurt_item": 0,
+                  "interact_text": "§lOpen",
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "is_family",
+                              "subject": "other",
+                              "value": "player"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:is_exposed",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 4,
+            "time_down_event": {
+               "event": "minecraft:event_spawn_closet_normal"
+            }
+         }
+      },
+      "events": {
+         "minecraft:is_exposed": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "summon r:jack"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:event_spawn_closet_normal": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_closet_normal"
+               ]
+            }
+         }
+      }
+   }
+}

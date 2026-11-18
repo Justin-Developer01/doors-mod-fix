@@ -1,0 +1,27 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:glitch_plush",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/glitch"
+         },
+         "geometry": {
+            "default": "geometry.glitch_plush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:error2"
+         },
+         "spawn_egg": {
+            "texture": "glitch_plush",
+            "texture_index": 0
+         }
+      }
+   }
+}

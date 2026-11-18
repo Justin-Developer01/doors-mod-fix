@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:a60_light2",
+         "materials": {
+            "default": "charged_creeper"
+         },
+         "textures": {
+            "default": "textures/entity/crucifix_red"
+         },
+         "animations": {
+            "a60_light_general": "animation.a60_light.general",
+            "general": "controller.animation.a60_light.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.a60_light"
+         },
+         "render_controllers": [
+            "controller.render.red_fog"
+         ]
+      }
+   }
+}

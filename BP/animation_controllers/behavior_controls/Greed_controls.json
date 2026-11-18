@@ -1,0 +1,147 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.greed_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:greed_jumpscare] ~~~ effect @e[type=!doors:greed,r=2] slowness 1 6 true",
+                  "/particle r:greedy",
+                  "/execute @e[type=r:greed_jumpscare]~~~ effect @e[type=!doors:greed,r=2] blindness 5",
+                  "/execute @s ~ ~ ~ tp @e[type=!r:grabbed,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:quiet_jumpscare,type=!doors:silence,type=!r:depth_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:title,type=!doors:seek_s,type=!doors:depth,type=!doors:greed,type=!r:greed_jumpscare,type=!doors:seek,type=!doors:wall_light,type=!doors:wall_light2,type=!doors:wall_light3,type=!doors:wall_light_alert,type=!r:figurekill,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!closet,tag=!closet2,tag=!cam,tag=!caught,tag=!greed,family=!inanimate,type=!item,type=!arrow,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:greed_jumpscare ^ ^0.5 ^1",
+                  "/tp @e[type=!doors:shadow,family=!inanimate,r=2] ~~~ facing @e[type=doors:greed]",
+                  "/tp @e[type=doors:greed,r=2] ~~~ facing @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.greed_particle": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "particle": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "particle": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true",
+                  "/effect @s instant_health 10000 255 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.greed_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:rush,type=!doors:seek_s,type=!doors:jack,type=!doors:screech,type=!doors:eyes,r=3] animation.ambush.attack",
+                  "/effect @e[type=doors:greed,r=2] clear",
+                  "/playsound mob.greed.damage @a",
+                  "/summon r:stealer"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.greed_caught": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.greed.damage @a"
+               ],
+               "transitions": [
+                  {
+                     "caught": "query.has_target"
+                  }
+               ]
+            },
+            "caught": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.greed_gone": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @s invisibility 1000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "gone": "query.has_target"
+                  }
+               ]
+            },
+            "gone": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.greed_hide": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @e[type=doors:greed] invisibility 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "hide": "query.has_target"
+                  }
+               ]
+            },
+            "hide": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

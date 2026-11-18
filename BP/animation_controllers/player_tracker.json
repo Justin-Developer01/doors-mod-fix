@@ -1,0 +1,213 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.change_gamemode": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/gamemode spectator @p",
+                  "/effect @e[type=r:track] instant_health 10000 255 true",
+                  "/effect @e[type=r:tracking] instant_health 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "gamemode": "query.has_target"
+                  }
+               ]
+            },
+            "gamemode": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.change_gamemode2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @p regeneration 30",
+                  "/summon r:figure_step",
+                  "/event entity @e[type=doors:figure_none,r=2] minecraft:removed",
+                  "/effect @p[r=2] clear",
+                  "/effect @p[r=2] invisibility 1 1 true",
+                  "/replaceitem entity @p[r=2] slot.armor.head 0 air"
+               ],
+               "transitions": [
+                  {
+                     "gamemode2": "query.has_target"
+                  }
+               ]
+            },
+            "gamemode2": {
+               "on_entry": [
+                  "/effect @p regeneration 30"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.change_gamemode3": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/gamemode survival @p[r=3]",
+                  "/effect @p[r=3] clear",
+                  "/effect @p[r=3] invisibility 1 1 true",
+                  "/tp @e[tag=track,r=3] @e[type=r:tracker,c=1]",
+                  "/tag @p[r=3] remove track",
+                  "/tag @p[r=3] add morph"
+               ],
+               "transitions": [
+                  {
+                     "gamemode3": "query.has_target"
+                  }
+               ]
+            },
+            "gamemode3": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.player_stay": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "stay": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~1 tp @e[type=r:tracking,type=!item,type=!arrow,c=1,r=5] @e[tag=track]"
+               ]
+            },
+            "stay": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~1 tp @e[type=r:tracking,type=!item,type=!arrow,c=1,r=5] @e[tag=track]"
+               ]
+            }
+         }
+      },
+      "controller.animation.change_mode": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/gamemode spectator @p",
+                  "/effect @e[type=r:trackk] instant_health 10000 255 true",
+                  "/effect @e[type=r:tracking3] instant_health 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "mode": "query.has_target"
+                  }
+               ]
+            },
+            "mode": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.change_mode2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @p regeneration 30",
+                  "/summon r:figure_step",
+                  "/event entity @e[type=doors:figure_none2,r=2] minecraft:removed",
+                  "/effect @p[r=2] clear",
+                  "/effect @p[r=2] invisibility 1 1 true",
+                  "/replaceitem entity @p[r=2] slot.armor.head 0 air"
+               ],
+               "transitions": [
+                  {
+                     "mode2": "query.has_target"
+                  }
+               ]
+            },
+            "mode2": {
+               "on_entry": [
+                  "/effect @p regeneration 30"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.change_mode3": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/gamemode survival @p[r=3]",
+                  "/effect @p[r=3] clear",
+                  "/effect @p[r=3] invisibility 1 1 true",
+                  "/tp @e[tag=track,r=3] @e[type=r:tracker3,c=1]",
+                  "/tag @p[r=3] remove track",
+                  "/tag @p[r=3] add morph11"
+               ],
+               "transitions": [
+                  {
+                     "mode3": "query.has_target"
+                  }
+               ]
+            },
+            "mode3": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.player_stay2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "stay2": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~1 tp @e[type=r:tracking3,type=!item,type=!arrow,c=1,r=5] @e[tag=track]"
+               ]
+            },
+            "stay2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~1 tp @e[type=r:tracking3,type=!item,type=!arrow,c=1,r=5] @e[tag=track]"
+               ]
+            }
+         }
+      }
+   }
+}

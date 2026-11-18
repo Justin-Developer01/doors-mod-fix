@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.strike.dead": {
+         "states": {
+            "default": {
+               "animations": [
+                  "strike_dead"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "striked"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

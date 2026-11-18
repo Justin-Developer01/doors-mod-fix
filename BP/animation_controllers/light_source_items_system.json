@@ -1,0 +1,459 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.light_system": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "system": "query.is_item_name_any('slot.armor.head','r:empty')"
+                  }
+               ],
+               "on_entry": [
+                  "/replaceitem entity @s slot.armor.head 0 air"
+               ]
+            },
+            "system": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.armor.head','r:empty')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:remove",
+                  "/replaceitem entity @s slot.armor.head 0 r:empty"
+               ]
+            }
+         }
+      },
+      "controller.animation.fire_system": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "system": "query.is_item_name_any('slot.armor.head','r:empty')"
+                  }
+               ],
+               "on_entry": [
+                  "/replaceitem entity @s slot.armor.head 0 air"
+               ]
+            },
+            "system": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.armor.head','r:empty')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:remove",
+                  "/replaceitem entity @s slot.armor.head 0 r:empty"
+               ]
+            }
+         }
+      },
+      "controller.animation.fire_system2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "system2": "query.is_item_name_any('slot.weapon.mainhand','r:lighter')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:fire,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power3,r=1] minecraft:remove",
+                  "/replaceitem entity @e[type=r:fire,r=1] slot.armor.head 0 r:empty",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/summon r:light_removal",
+                  "/event entity @e[type=doors:frostbite_stun3] minecraft:event_dead",
+                  "/playsound mob.closet.nolight @s",
+                  "/event entity @s r:fire_off"
+               ]
+            },
+            "system2": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.weapon.mainhand','r:lighter')"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.light_detector": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "detector": "query.is_item_name_any('slot.weapon.mainhand','r:candle')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:flame,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power5,r=1] minecraft:remove",
+                  "/replaceitem entity @e[type=r:flame,r=1] slot.armor.head 0 r:empty",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/playsound mob.closet.equip3 @s",
+                  "/summon r:light_removal"
+               ]
+            },
+            "detector": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.weapon.mainhand','r:candle')"
+                  }
+               ],
+               "on_entry": [
+                  "/summon r:flame",
+                  "/summon r:power5",
+                  "/playsound mob.closet.equip3 @s",
+                  "/event entity @s r:fire_off"
+               ]
+            }
+         }
+      },
+      "controller.animation.light_system2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "system2": "query.is_item_name_any('slot.weapon.mainhand','r:flashlight')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:light,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power,r=1] minecraft:remove",
+                  "/replaceitem entity @e[type=r:light,r=1] slot.armor.head 0 r:empty",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/playsound mob.closet.equip @s",
+                  "/summon r:light_removal"
+               ]
+            },
+            "system2": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.weapon.mainhand','r:flashlight')"
+                  }
+               ],
+               "on_entry": [
+                  "/replaceitem entity @e[type=r:light,r=1] slot.armor.head 0 air"
+               ]
+            }
+         }
+      },
+      "controller.animation.light_system3": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "system3": "query.is_item_name_any('slot.armor.head','r:empty')"
+                  }
+               ],
+               "on_entry": [
+                  "/replaceitem entity @s slot.armor.head 0 air"
+               ]
+            },
+            "system3": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.armor.head','r:empty')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:remove",
+                  "/replaceitem entity @s slot.armor.head 0 r:empty"
+               ]
+            }
+         }
+      },
+      "controller.animation.light_system4": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "system4": "query.is_item_name_any('slot.weapon.mainhand','r:shakelight')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:light3,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power8,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power7,r=1] minecraft:remove",
+                  "/replaceitem entity @e[type=r:light3,r=1] slot.armor.head 0 r:empty",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/playsound mob.closet.shake @s",
+                  "/summon r:light_removal"
+               ]
+            },
+            "system4": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.weapon.mainhand','r:shakelight')"
+                  }
+               ],
+               "on_entry": [
+                  "/replaceitem entity @e[type=r:light3,r=1] slot.armor.head 0 air"
+               ]
+            }
+         }
+      },
+      "controller.animation.become_immortal": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "immortal": "query.is_item_name_any('slot.weapon.mainhand','r:crucifix')"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=doors:ambush2] ~~~ effect @p clear",
+                  "/execute @e[type=doors:red_ambush2] ~~~ effect @p clear",
+                  "/execute @e[type=doors:rush2] ~~~ effect @p clear",
+                  "/execute @e[type=doors:depth2] ~~~ effect @p clear",
+                  "/execute @e[type=doors:barrage2] ~~~ effect @p clear",
+                  "/execute @e[type=doors:trollface2] ~~~ effect @p clear",
+                  "/execute @e[type=secret:a_602] ~~~ effect @p clear",
+                  "/execute @e[type=doors:ambush_bad2] ~~~ effect @p clear",
+                  "/execute @e[type=doors:rush_bad2] ~~~ effect @p clear"
+               ]
+            },
+            "immortal": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.weapon.mainhand','r:crucifix')"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=doors:ambush2] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:red_ambush2] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:rush2] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:depth2] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:barrage2] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:trollface2] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=secret:a_602] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:ambush_bad2] ~~~ effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:rush_bad2] ~~~ effect @p resistance 10000 255 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.light_movement": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "movement": "query.has_target"
+                  }
+               ]
+            },
+            "movement": {
+               "on_entry": [
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/event entity @s minecraft:reset"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.tp_self": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @p"
+               ]
+            },
+            "self": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.tp_self2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self2": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[type=doors:eyes,r=1]",
+                  "/tp @s @e[type=doors:eyes2,r=1]",
+                  "/tp @s @e[type=doors:eyes_s,r=1]",
+                  "/tp @s @e[type=doors:eyes_s2,r=1]"
+               ]
+            },
+            "self2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[type=doors:eyes,r=1]",
+                  "/tp @s @e[type=doors:eyes2,r=1]",
+                  "/tp @s @e[type=doors:eyes_s,r=1]",
+                  "/tp @s @e[type=doors:eyes_s2,r=1]"
+               ]
+            }
+         }
+      },
+      "controller.animation.power_usage": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "usage": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:light,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power,r=1] minecraft:remove",
+                  "/execute @e[type=r:light,r=1] ~~~ title @p actionbar §lYour Flashlight is out of Battery",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6"
+               ]
+            },
+            "usage": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.lights_out": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "out": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:fire,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power3,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power4,r=1] minecraft:remove",
+                  "/execute @e[type=r:power4,r=1] ~~~ title @p actionbar §lYour Lighter ran out of Fuel...",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/clear @p r:lighter"
+               ]
+            },
+            "out": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.lights_out2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "out2": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:flame,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power5,r=1] minecraft:remove",
+                  "/title @p actionbar §lYour Candle ran out of wax",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/clear @p r:candle",
+                  "/event entity @p r:fire_off"
+               ]
+            },
+            "out2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.lights_out3": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "out3": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:light3,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power7,r=1] minecraft:remove",
+                  "/event entity @e[type=r:power8,r=1] minecraft:remove",
+                  "/title @p actionbar §lShake to recharge",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6"
+               ]
+            },
+            "out3": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.light_detector2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/summon r:light_removal"
+               ],
+               "transitions": [
+                  {
+                     "detector": "query.has_target"
+                  }
+               ]
+            },
+            "detector": {
+               "on_entry": [
+                  "/event entity @p r:fire_off",
+                  "/title @p actionbar §lYour candle was blown out...",
+                  "/particle r:blue_light",
+                  "/event entity @e[type=r:power5,r=1] minecraft:remove",
+                  "/event entity @e[type=r:flame,r=1] minecraft:remove",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+                  "/event entity @p r:fire_off2"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

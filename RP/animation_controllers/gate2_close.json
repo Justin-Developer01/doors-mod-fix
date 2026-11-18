@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.gate2.close": {
+         "states": {
+            "default": {
+               "animations": [
+                  "gate2_close"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,24 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:lockpick",
+         "menu_category": {
+            "category": "equipment"
+         }
+      },
+      "components": {
+         "minecraft:icon": "r_lockpick",
+         "minecraft:display_name": {
+            "value": "Lockpick"
+         },
+         "minecraft:max_stack_size": 3,
+         "minecraft:hand_equipped": true,
+         "minecraft:allow_off_hand": false,
+         "minecraft:use_modifiers": {
+            "use_duration": 999999
+         },
+         "r:on_use": {}
+      }
+   }
+}

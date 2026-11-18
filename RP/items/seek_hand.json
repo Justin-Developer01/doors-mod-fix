@@ -1,0 +1,13 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:seek_hand",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "goo_hand",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

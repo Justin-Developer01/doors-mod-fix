@@ -1,0 +1,116 @@
+{
+   "animation_controllers": {
+      "controller.animation.curious_light_trap": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ effect @e[type=!player,r=3] slowness 1 2 true",
+                  "/particle r:curious_light",
+                  "/particle r:curious_light2"
+               ],
+               "transitions": [
+                  {
+                     "trap": "(1.0)"
+                  }
+               ]
+            },
+            "trap": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.curious_light_trap2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @e[type=!player,r=3] clear"
+               ],
+               "transitions": [
+                  {
+                     "trap2": "(1.0)"
+                  }
+               ]
+            },
+            "trap2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.curious_light_trap3": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=!player,type=!doors:crucifix,type=!doors:crucifix_red,type=!doors:crucifix_yellow,type=!doors:curious_light_circle,type=!doors:crucifix_blue,type=!doors:light_circle,type=!r:blue_chain,type=!doors:drawer,type=!doors:drawer2,type=!doors:drawer3,type=!doors:drawer4,type=!doors:drawer5,type=!doors:closet,type=!doors:closet3,type=!doors:gate,type=!doors:elevator,type=!doors:el_goblino,type=!doors:bob,type=!doors:jeff,type=!doors:closet4,type=!doors:closet5,type=!doors:modern_chair,type=!doors:modern_chair2,type=!doors:closet6,type=!doors:metal_wardrobe,type=!doors:metal_wardrobe2,type=!doors:metal_wardrobe3,type=!doors:metal_wardrobe4,type=!doors:metal_wardrobe5,type=!doors:metal_wardrobe6,type=!doors:grandfather_clock,type=!doors:hotel_plant,type=!doors:figure_plush,type=!doors:seek_plush,type=!doors:rush_plush,type=!doors:ambush_plush,type=!r:protection,type=!doors:rift,type=!doors:rift2,type=!doors:halt_plush,type=!doors:screech_plush,type=!doors:closet2,type=!doors:small_lock,type=!doors:radio,type=!doors:radio2,type=!doors:radio3,type=!doors:radio4,type=!doors:door50_complete,type=!doors:radio5,type=!doors:radio6,type=!doors:radio7,type=!doors:radio8,type=!doors:radio9,type=!doors:radio10,type=!doors:radio11,type=!doors:radio12,type=!doors:jeff_table,type=!doors:shop_sign,type=!doors:hotel_door2,type=!doors:hotel_door,type=!doors:bars_door,type=!doors:snare,type=!doors:wardrobe,type=!doors:closet_bad,type=!doors:skeleton_door,type=!doors:hotel_door,type=!doors:door50,type=!doors:door50_1,type=!doors:jeff,type=!doors:bob,type=!doors:el_goblino,type=!r:blue_light,family=!inanimate,family=!roblox,r=5] @e[type=doors:curious_light_circle]",
+                  "/particle r:curious_light2",
+                  "/particle r:curious_light",
+                  "/kill @e[type=r:a90_jumpscare,r=3]",
+                  "/kill @e[type=r:a60_jumpscare,r=3]",
+                  "/kill @e[type=r:a120_jumpscare,r=3]",
+                  "/event entity @e[type=r:a60_light,r=2] minecraft:remove",
+                  "/event entity @e[type=r:a60_light2,r=2] minecraft:remove",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block",
+                  "/event entity @e[type=doors:a_120,r=2] minecraft:event_spawn_done",
+                  "/event entity @e[type=doors:a_90,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=r:a_90,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=r:a_90_stop,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=r:a_90_angry,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=doors:a_90_stop,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=doors:a_90_angry,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=secret:a_60,r=2] minecraft:event_spawn_done3",
+                  "/event entity @e[type=secret:a_602,r=2] minecraft:event_spawn_done3"
+               ],
+               "transitions": [
+                  {
+                     "trap3": "(1.0)"
+                  }
+               ]
+            },
+            "trap3": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.curious_light_trap4": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=doors:curious_crucifix,r=2] @p",
+                  "/playsound mob.closet.trap @a",
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "trap4": "query.has_target"
+                  }
+               ]
+            },
+            "trap4": {
+               "on_entry": [
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

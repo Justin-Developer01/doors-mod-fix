@@ -1,0 +1,40 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:power_switch",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 1
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/power.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:physics": {},
+         "minecraft:scale": {
+            "value": 0.6
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.8
+         }
+      }
+   }
+}

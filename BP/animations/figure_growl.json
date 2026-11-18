@@ -1,0 +1,15 @@
+{
+   "format_version": "1.10.0",
+   "animations": {
+      "animation.figure_growl": {
+         "timeline": {
+            "41.0": [
+               "/stopsound @a mob.figure.ambient",
+               "/playsound mob.figure.ambient @a[r=40]"
+            ]
+         },
+         "animation_length": 42,
+         "loop": true
+      }
+   }
+}

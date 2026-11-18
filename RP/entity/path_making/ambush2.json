@@ -1,0 +1,51 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:ambush2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/ambush"
+         },
+         "animations": {
+            "moving": "animation.ambush.general",
+            "ambush_general": "animation.ambush.general",
+            "scare": "animation.ambush.scare",
+            "running": "animation.ambush.running",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.ambush.move",
+            "general": "controller.animation.ambush.general",
+            "attack": "controller.animation.ambush.attack"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.ambush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:ambush_light",
+            "spell2": "r:ambush_light2",
+            "spell3": "r:ambush_light3",
+            "spell4": "r:ambush_light4",
+            "spell5": "r:ambush_floor"
+         },
+         "spawn_egg": {
+            "texture": "ambush_path",
+            "texture_index": 0
+         }
+      }
+   }
+}

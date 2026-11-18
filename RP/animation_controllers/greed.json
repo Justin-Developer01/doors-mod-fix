@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.greed.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "greed_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "greedy"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

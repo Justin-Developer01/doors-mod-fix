@@ -1,0 +1,51 @@
+{
+   "animation_controllers": {
+      "controller.animation.start_ride2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @s @e[type=secret:a_602,r=2]"
+               ],
+               "transitions": [
+                  {
+                     "ride2": "(1.0)"
+                  }
+               ]
+            },
+            "ride2": {
+               "on_entry": [
+                  "/tp @s @e[type=secret:a_602,r=2]"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.lighting_spawn2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @s invisibility 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "spawn2": "query.has_target"
+                  }
+               ]
+            },
+            "spawn2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

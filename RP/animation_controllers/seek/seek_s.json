@@ -1,0 +1,79 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_s.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "seek_s_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "jumpscare": "query.is_casting"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "goo"
+                  }
+               ]
+            },
+            "jumpscare": {
+               "animations": [
+                  "jumpscare"
+               ],
+               "transitions": [
+                  {
+                     "jumpscare": "query.is_casting"
+                  }
+               ],
+               "blend_transition": 0.5
+            },
+            "running": {
+               "animations": [
+                  "running"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_wall_climbing"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      },
+      "controller.animation.seek_s.looking_at": {
+         "states": {
+            "default": {
+               "animations": [
+                  "look_at"
+               ]
+            }
+         }
+      }
+   }
+}

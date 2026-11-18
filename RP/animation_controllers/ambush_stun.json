@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.ambush.stun": {
+         "states": {
+            "default": {
+               "animations": [
+                  "ambush_stun"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "fog_light"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "fog_light"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "fog_light"
+                  },
+                  {
+                     "effect": "spell4",
+                     "locator": "fog_light"
+                  },
+                  {
+                     "effect": "spell5",
+                     "locator": "p_floor"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

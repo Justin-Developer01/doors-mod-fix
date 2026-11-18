@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_car",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/seek_car"
+         },
+         "animations": {
+            "moving": "animation.seek_car.moving",
+            "seek_car_general": "animation.seek_car.general",
+            "general": "controller.animation.seek_car.general",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "general",
+               "look_at_target"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.seek_car"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "seek_car",
+            "texture_index": 0
+         }
+      }
+   }
+}

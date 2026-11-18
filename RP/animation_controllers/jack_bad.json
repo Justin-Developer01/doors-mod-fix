@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.jack_bad.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "jack_bad_general"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,31 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.frostbite_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:frostbite_jumpscare] ~~~ effect @e[type=!doors:frostbite,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:frostbite_jumpscare]~~~ effect @e[type=!doors:frostbite,r=2] blindness 5",
+                  "/execute @s ~ ~ ~ tp @e[type=!r:grabbed,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:closet2,type=!secret:a_60,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!doors:chair,type=!doors:chair2,type=!doors:hotel_plant,type=!r:ambush_particle,type=!doors:grandfather_clock,type=!doors:title,type=!doors:seek_s,type=!doors:seek,type=!doors:red_ambush,type=!r:ambush_hitbox,type=!doors:frostbite,type=!r:frostbite_jumpscare,type=!r:figurekill,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!greed,tag=!closet2,tag=!closet,tag=!cam,family=!inanimate,type=!item,type=!arrow,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=doors:frostbite,r=3] ~~~ facing @p",
+                  "/tp @p[r=4] ~~~ facing @e[type=doors:frostbite]"
+               ]
+            }
+         }
+      }
+   }
+}

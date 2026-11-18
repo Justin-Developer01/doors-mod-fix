@@ -1,0 +1,115 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:wardrobe",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "closet_hide",
+               "remove"
+            ]
+         },
+         "animations": {
+            "closet_hide": "controller.animation.hide_closet",
+            "remove": "controller.animation.closet_remove"
+         }
+      },
+      "component_groups": {},
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 9
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.7
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "self",
+                     "value": "despawn_"
+                  }
+               ]
+            }
+         },
+         "minecraft:rideable": {
+            "seat_count": 1,
+            "family_types": [
+               "player"
+            ],
+            "seats": {
+               "position": [
+                  0,
+                  0.4,
+                  0.2
+               ],
+               "rotate_rider_by": 0,
+               "lock_rider_rotation": 360
+            }
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collision": true
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "has_equipment",
+                              "subject": "other",
+                              "domain": "hand",
+                              "value": "r:rotate_lock"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:rotate",
+                     "target": "self"
+                  },
+                  "interact_text": "§lRotate"
+               }
+            ]
+         }
+      },
+      "events": {
+         "minecraft:rotate": {
+            "run_command": {
+               "command": [
+                  "tp @s ~~~ facing @p"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

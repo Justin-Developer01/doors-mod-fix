@@ -1,0 +1,28 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:depth_jumpscare",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "depth_scare",
+         "minecraft:display_name": {
+            "value": "§l§bDepth Jumpscare"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "depth_jumpscare",
+            "duration": 35
+         },
+         "minecraft:fuel": {
+            "duration": 32
+         },
+         "r:on_use": {}
+      }
+   }
+}

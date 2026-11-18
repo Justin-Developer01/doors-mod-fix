@@ -1,0 +1,42 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:jeff_close",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/jeff"
+         },
+         "animations": {
+            "jeff_close": "animation.jeff.close",
+            "look_at_target": "animation.common.look_at_target",
+            "close": "controller.animation.jeff.close"
+         },
+         "scripts": {
+            "animate": [
+               "close"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.jeff"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:black_form",
+            "spell2": "r:black_form",
+            "spell3": "r:black_form"
+         },
+         "spawn_egg": {
+            "texture": "jeff",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:cutscene_on",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/empty"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.cube"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "figure_fire",
+            "texture_index": 0
+         }
+      }
+   }
+}

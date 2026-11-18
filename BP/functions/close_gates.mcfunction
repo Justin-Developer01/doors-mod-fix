@@ -1,0 +1,1 @@
+event entity @e[type=doors:long_gate] minecraft:closing

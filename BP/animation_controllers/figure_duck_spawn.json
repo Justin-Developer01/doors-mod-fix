@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_spawn": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/summon r:figure_time"
+               ],
+               "transitions": [
+                  {
+                     "spawn": "query.has_target"
+                  }
+               ]
+            },
+            "spawn": {
+               "on_entry": [
+                  "/summon r:figure_duck"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

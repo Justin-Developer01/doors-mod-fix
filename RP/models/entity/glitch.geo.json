@@ -1,0 +1,117 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.glitch",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "All",
+					"pivot": [0, 18, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "All",
+					"pivot": [0, 18, 0],
+					"cubes": [
+						{"origin": [-3.5, 18, -2], "size": [7, 7, 4], "uv": [20, 21]},
+						{"origin": [-4, 25, -2], "size": [8, 5, 4], "uv": [0, 16]},
+						{"origin": [0, 22, -3], "size": [4, 4, 4], "uv": [16, 54]},
+						{"origin": [-4, 19, -1], "size": [4, 4, 4], "uv": [52, 32]}
+					],
+					"locators": {
+						"error": [0, 23, 3]
+					}
+				},
+				{
+					"name": "Arm1",
+					"parent": "Body",
+					"pivot": [-4, 28, 0],
+					"cubes": [
+						{"origin": [-7, 20, -2], "size": [3, 10, 4], "uv": [28, 32]},
+						{"origin": [-8, 25, -1], "size": [4, 4, 4], "uv": [46, 49]}
+					]
+				},
+				{
+					"name": "Forearm1",
+					"parent": "Arm1",
+					"pivot": [-5.5, 20, 0],
+					"cubes": [
+						{"origin": [-7, 10, -2], "size": [3, 10, 4], "uv": [14, 32]},
+						{"origin": [-8, 15, -3], "size": [4, 4, 4], "uv": [30, 46]}
+					]
+				},
+				{
+					"name": "Arm2",
+					"parent": "Body",
+					"pivot": [4, 28, 0],
+					"cubes": [
+						{"origin": [4, 20, -2], "size": [3, 10, 4], "uv": [32, 0]},
+						{"origin": [5, 20, -1], "size": [4, 4, 4], "uv": [0, 52]}
+					]
+				},
+				{
+					"name": "Forearm2",
+					"parent": "Arm2",
+					"pivot": [5.5, 20, 0],
+					"cubes": [
+						{"origin": [4, 10, -2], "size": [3, 10, 4], "uv": [0, 25]},
+						{"origin": [5, 11, -3], "size": [4, 4, 4], "uv": [52, 19]}
+					]
+				},
+				{
+					"name": "Head",
+					"parent": "Body",
+					"pivot": [0, 30, 0],
+					"cubes": [
+						{"origin": [-4, 30, -4], "size": [8, 8, 8], "uv": [0, 0]},
+						{"origin": [1, 35, -5], "size": [4, 4, 4], "uv": [56, 8]},
+						{"origin": [-5, 31, 1], "size": [4, 4, 4], "uv": [32, 54]}
+					]
+				},
+				{
+					"name": "Leg1",
+					"parent": "All",
+					"pivot": [-2, 18, 0],
+					"cubes": [
+						{"origin": [-3.5, 9, -2], "size": [3, 9, 4], "uv": [42, 36]}
+					]
+				},
+				{
+					"name": "Shin1",
+					"parent": "Leg1",
+					"pivot": [-2, 9, 0],
+					"cubes": [
+						{"origin": [-3.5, 0, -2], "size": [3, 9, 4], "uv": [42, 23]},
+						{"origin": [-3.5, 0, -3], "size": [3, 1, 1], "uv": [0, 2]},
+						{"origin": [-5, 6, -3], "size": [4, 4, 4], "uv": [14, 46]}
+					]
+				},
+				{
+					"name": "Leg2",
+					"parent": "All",
+					"pivot": [2, 18, 0],
+					"cubes": [
+						{"origin": [0.5, 9, -2], "size": [3, 9, 4], "uv": [42, 10]},
+						{"origin": [1, 13, -3], "size": [4, 4, 4], "uv": [46, 0]}
+					]
+				},
+				{
+					"name": "Shin2",
+					"parent": "Leg2",
+					"pivot": [2, 9, 0],
+					"cubes": [
+						{"origin": [0.5, 0, -2], "size": [3, 9, 4], "uv": [0, 39]},
+						{"origin": [0.5, 0, -3], "size": [3, 1, 1], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

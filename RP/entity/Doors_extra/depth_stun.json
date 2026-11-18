@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:depth_stunned",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/extra/depthtexture"
+         },
+         "geometry": {
+            "default": "geometry.depth"
+         },
+         "animations": {
+            "depth_stunned_general": "animation.depth.stunned",
+            "general": "controller.animation.depth_stunned.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "depth",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:ambush_light",
+            "spell2": "r:depth_light2",
+            "spell3": "r:depth_light3",
+            "spell4": "r:depth_light"
+         }
+      }
+   }
+}

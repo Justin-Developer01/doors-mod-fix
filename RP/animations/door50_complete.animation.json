@@ -1,0 +1,50 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.door50_complete.general": {
+			"loop": true,
+			"bones": {
+				"all_main": {
+					"position": [7, 0, 0],
+					"scale": [1.1, 1, 1]
+				}
+			}
+		},
+		"animation.door50_complete.open": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.25,
+			"bones": {
+				"right": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 142.5, 0]
+					}
+				},
+				"right2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -132.5, 0]
+					}
+				}
+			}
+		},
+		"animation.door50_complete.close": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.29167,
+			"bones": {
+				"right": {
+					"rotation": {
+						"0.0": [0, 142.5, 0],
+						"0.2917": [0, 0, 0]
+					}
+				},
+				"right2": {
+					"rotation": {
+						"0.0": [0, -132.5, 0],
+						"0.2917": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

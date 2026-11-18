@@ -1,0 +1,57 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.alex_resistance.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "alex_resistance_general",
+                  "look_at_target"
+               ]
+            }
+         }
+      },
+      "controller.animation.alex_resistance.move": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "animations": [
+                  {
+                     "moving": "query.ground_speed * 0.5"
+                  },
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "running": "variable.attack_time > 0 && variable.random == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      },
+      "controller.animation.alex_resistance.attack": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0 && variable.random == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      }
+   }
+}

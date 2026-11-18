@@ -1,0 +1,61 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.tablet.first_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [106.5733, -55.36309, 128.16021],
+					"position": [-1, 2, -2],
+					"scale": [1.4, 1.3, 1]
+				}
+			}
+		},
+		"animation.tablet.third_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [90.23602, 0.0091, 180.19822],
+					"position": [0, -3, 2],
+					"scale": [0.7, 0.6, 1]
+				}
+			}
+		},
+		"animation.tablet.inactive": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.25,
+			"bones": {
+				"rightitem": {
+					"rotation": {
+						"0.0": [175.03061, -1.05191, 179.45873],
+						"0.25": [450.04799, -3.51364, 179.02261]
+					},
+					"position": {
+						"0.0": [10, 13, -8],
+						"0.25": [2, -3, -3]
+					},
+					"scale": {
+						"0.0": [1.2, 1.1, 1],
+						"0.25": [0.8, 0.7, 1]
+					}
+				}
+			}
+		},
+		"animation.tablet.active": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.25,
+			"bones": {
+				"rightitem": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -177.5, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [11, 15, -14]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_sneak": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "very_sneaky": "query.has_target ? (query.target -> query.is_moving) : 0"
+                  }
+               ]
+            },
+            "very_sneaky": {
+               "on_entry": [
+                  "/execute @s ~~~ camerashake add @a[r=30] 0.3 0.05 positional",
+                  "/playsound mob.figure.step @a[r=30]"
+               ],
+               "on_exit": [],
+               "transitions": [
+                  {
+                     "default": "return query.has_target ? !(query.target -> query.is_moving) : query.is_alive;"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

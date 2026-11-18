@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.crucifix_turret.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "crucifix_turret_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "glow"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:red_fog",
+         "materials": {
+            "default": "charged_creeper"
+         },
+         "textures": {
+            "default": "textures/entity/red_fog"
+         },
+         "animations": {
+            "red_fog_general": "animation.red_fog.general",
+            "general": "controller.animation.red_fog.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.red_fog"
+         },
+         "render_controllers": [
+            "controller.render.red_fog"
+         ]
+      }
+   }
+}

@@ -1,0 +1,25 @@
+{
+   "animations": {
+      "animation.lighting_on": {
+         "animation_length": 0.1,
+         "loop": true,
+         "timeline": {
+            "0.0": [
+               "/execute @s ~ ~1 ~ setblock ~ ~ ~  light_block 12"
+            ]
+         }
+      },
+      "animation.lighting_off": {
+         "animation_length": 0.6,
+         "loop": true,
+         "timeline": {
+            "0.5": [
+               "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block",
+               "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block",
+               "/fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block"
+            ]
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

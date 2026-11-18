@@ -1,0 +1,70 @@
+{
+   "format_version": "1.8.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:vitamin",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 1,
+            "max": 1
+         },
+         "minecraft:attack": {
+            "damage": 0
+         },
+         "minecraft:collision_box": {
+            "height": 0.4,
+            "width": 0.3
+         },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:nameable": {},
+         "minecraft:navigation.float": {
+            "can_path_over_water": true
+         },
+         "minecraft:knockback_resistance": {
+            "value": 10
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:fire_immune": true,
+         "minecraft:behavior.float": {
+            "priority": 2
+         },
+         "minecraft:fall_damage": {
+            "value": 0
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collision": true
+         },
+         "minecraft:experience_reward": {
+            "on_death": "query.last_hit_by_player ? 10 : 0"
+         },
+         "minecraft:underwater_movement": {
+            "value": 0.02
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:knockback_resistance": {
+            "value": 10
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/vitamin.json"
+         }
+      }
+   }
+}

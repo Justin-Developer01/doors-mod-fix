@@ -1,0 +1,101 @@
+{
+   "animation_controllers": {
+      "controller.animation.light_tp": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=r:light,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "tp": "(1.0)"
+                  }
+               ]
+            },
+            "tp": {
+               "on_entry": [
+                  "/tp @e[type=r:light,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.fire_tp": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=r:fire,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "tp": "(1.0)"
+                  }
+               ]
+            },
+            "tp": {
+               "on_entry": [
+                  "/tp @e[type=r:fire,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.light_tp2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=r:light2,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "tp2": "(1.0)"
+                  }
+               ]
+            },
+            "tp2": {
+               "on_entry": [
+                  "/tp @e[type=r:light2,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.light_tp3": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=r:light3,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "tp3": "(1.0)"
+                  }
+               ]
+            },
+            "tp3": {
+               "on_entry": [
+                  "/tp @e[type=r:light3,r=2] @p"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

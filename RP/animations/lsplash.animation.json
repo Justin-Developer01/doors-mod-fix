@@ -1,0 +1,113 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.lsplash.general": {
+			"loop": true,
+			"animation_length": 1.25,
+			"bones": {
+				"bhead": {
+					"rotation": [0, 0, 0]
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, 0, -15],
+						"1.25": [0, 0, 0]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, 0, 10],
+						"1.25": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.lsplash.moving": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"leg1": {
+					"rotation": {
+						"0.0": [27.5, 0, 0],
+						"0.25": [-30, 0, 0],
+						"0.5": [15, 0, 0]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [-35, 0, 0],
+						"0.25": [25, 0, 0],
+						"0.5": [-27.5, 0, 0]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [-35, 0, 0],
+						"0.25": [27.5, 0, 0],
+						"0.5": [-27.5, 0, 0]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [30, 0, 0],
+						"0.25": [-25, 0, 0],
+						"0.5": [37.5, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.lsplash.attack1": {
+			"animation_length": 0.16667,
+			"bones": {
+				"arm2": {
+					"rotation": {
+						"0.0": [62.61878, 49.1684, -21.39959],
+						"0.1667": [65.96792, -42.406, 16.73634]
+					}
+				}
+			}
+		},
+		"animation.lsplash.attack2": {
+			"animation_length": 0.16667,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [0, 25, 0],
+						"0.1667": [0, -12.5, 0]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [49.98544, 34.93738, -12.18706],
+						"0.1667": [48.6779, -37.03302, 41.39272]
+					}
+				}
+			}
+		},
+		"animation.lsplash.jumping": {
+			"loop": true,
+			"bones": {
+				"leg1": {
+					"rotation": [0, 0, 10]
+				},
+				"leg2": {
+					"rotation": [0, 0, -15]
+				},
+				"body": {
+					"rotation": [-5, 0, 0]
+				},
+				"bhead": {
+					"rotation": [-22.5, 0, 0]
+				},
+				"arm2": {
+					"rotation": [0, 0, -35]
+				},
+				"arm1": {
+					"rotation": [0, 0, 52.5]
+				}
+			}
+		}
+	}
+}

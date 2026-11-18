@@ -1,0 +1,42 @@
+{
+   "animation_controllers": {
+      "controller.animation.heartbeat_miss": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @e[type=r:heartbeat_load,c=1] ~~~ title @p actionbar §l§6(Control your heartbeat!)",
+                  "/execute @e[type=r:heartbeat_load2,c=1] ~~~ title @p actionbar §l§6(Control your heartbeat!)",
+                  "/execute @e[type=r:heartbeat_load3,c=1] ~~~ title @p actionbar §l§6(Control your heartbeat!)",
+                  "/execute @e[type=r:heartbeat_load4,c=1] ~~~ title @p actionbar §l§6(Control your heartbeat!)",
+                  "/execute @e[type=r:heartbeat_attack2,c=1] ~~~ title @p actionbar §l§cStrike 1",
+                  "/execute @e[type=r:heartbeat_attack3,c=1] ~~~ title @p actionbar §l§cStrike 2",
+                  "/execute @e[type=r:heartbeat_attack5,c=1] ~~~ title @p actionbar §l§cStrike 3 You failed",
+                  "/execute @e[type=r:heartbeat_attack5,c=1] ~~~ kill @e[type=r:save]",
+                  "/execute @e[type=r:heartbeat_attack5,c=1] ~~~ kill @e[type=r:figure_wait3]",
+                  "/execute @e[type=r:save] ~~~ tp @p ~~~",
+                  "/execute @e[type=r:heartbeat_attack5,c=1] ~~~ tp @p ~~~"
+               ],
+               "transitions": [
+                  {
+                     "miss": "(1.0)"
+                  }
+               ]
+            },
+            "miss": {
+               "on_entry": [
+                  "/execute @e[type=r:heartbeat_load] ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:heartbeat ^ ^0.5 ^1",
+                  "/execute @e[type=r:heartbeat_load2] ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:heartbeat ^ ^0.5 ^1",
+                  "/execute @e[type=r:heartbeat_load3] ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:heartbeat ^ ^0.5 ^1",
+                  "/execute @e[type=r:heartbeat_load4] ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:heartbeat ^ ^0.5 ^1"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

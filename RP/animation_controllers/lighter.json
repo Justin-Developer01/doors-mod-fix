@@ -1,0 +1,53 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.lighter.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "lighter_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "use": "query.is_sheared"
+                  }
+               ]
+            },
+            "use": {
+               "animations": [
+                  "use"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_sheared"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      }
+   }
+}

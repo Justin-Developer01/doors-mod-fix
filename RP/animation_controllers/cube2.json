@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.cube2.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "cube_general2"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "fog_light"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

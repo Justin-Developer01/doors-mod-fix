@@ -1,0 +1,28 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:locker",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/locker"
+         },
+         "geometry": {
+            "default": "geometry.locker"
+         },
+         "sound_effects": {
+            "close": "mob.closet.hidden",
+            "open": "mob.closet.locked"
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "spawn_egg": {
+            "texture": "locker",
+            "texture_index": 0
+         }
+      }
+   }
+}

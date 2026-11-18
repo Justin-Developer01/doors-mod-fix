@@ -1,0 +1,14 @@
+{
+   "animations": {
+      "animation.halt.item": {
+         "animation_length": 0.1,
+         "loop": true,
+         "timeline": {
+            "0.0": [
+               "/function halt_skills"
+            ]
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

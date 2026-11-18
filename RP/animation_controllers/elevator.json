@@ -1,0 +1,54 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.elevator.closed": {
+         "states": {
+            "default": {
+               "animations": [
+                  "close"
+               ],
+               "transitions": [
+                  {
+                     "close": "query.has_rider"
+                  },
+                  {
+                     "open": "!query.has_rider"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "close": {
+               "animations": [
+                  "close"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_rider"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "open": {
+               "animations": [
+                  "open"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.has_rider"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      },
+      "controller.animation.elevator.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "elevator_general"
+               ]
+            }
+         }
+      }
+   }
+}

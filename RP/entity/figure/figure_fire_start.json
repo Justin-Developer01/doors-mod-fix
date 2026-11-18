@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_fire_start",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/none"
+         },
+         "geometry": {
+            "default": "geometry.none"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "figure_fire",
+            "texture_index": 0
+         }
+      }
+   }
+}

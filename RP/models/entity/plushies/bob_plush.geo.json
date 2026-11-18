@@ -1,0 +1,88 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.bob_plush",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, -2, 0],
+					"rotation": [0, 17.5, 0]
+				},
+				{
+					"name": "bob",
+					"parent": "bone",
+					"pivot": [-1, -12, 0],
+					"rotation": [-10.62758, -19.6835, 3.61644]
+				},
+				{
+					"name": "head",
+					"parent": "bob",
+					"pivot": [-1, 12, -2],
+					"rotation": [14.96435, 2.50701, -0.32653],
+					"cubes": [
+						{"origin": [-5, 14, -6], "size": [8, 5, 8], "uv": [0, 1]},
+						{"origin": [-4, 15, -6.1], "size": [2, 2, 0], "uv": [0, 1]},
+						{"origin": [0, 15, -6.1], "size": [2, 2, 0], "uv": [0, 1]},
+						{"origin": [-5, 12, -6], "size": [8, 2, 8], "pivot": [-1, 13, 2], "rotation": [6.28928, 1.59019, -2.35978], "uv": [0, 6]},
+						{"origin": [-5, 19, -6], "size": [8, 2, 8], "uv": [32, 0]},
+						{"origin": [-5, 19, -9], "size": [8, 0, 3], "uv": [21, 0]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "bob",
+					"pivot": [-1, 12, 0],
+					"cubes": [
+						{"origin": [-5, 1, -2], "size": [8, 12, 4], "pivot": [-1, -12, 0], "rotation": [5.04292, 7.4713, 0.6574], "uv": [16, 16]}
+					]
+				},
+				{
+					"name": "right_leg",
+					"parent": "bob",
+					"pivot": [-4, 0, -0.9],
+					"rotation": [-5, 0, 0],
+					"cubes": [
+						{"origin": [-5, -16, -15], "size": [2, 7, 2], "pivot": [-2, -12, -1], "rotation": [-70, 0, 0], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "left_leg",
+					"parent": "bob",
+					"pivot": [1, 0, -0.9],
+					"rotation": [-5, -7.5, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [0, -16, -15], "size": [2, 7, 2], "pivot": [-1, -12, -1], "rotation": [-70, 0, 0], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "right_arm",
+					"parent": "bob",
+					"pivot": [-6, 9, -1],
+					"rotation": [-8.0467, 7.52018, -3.40608],
+					"cubes": [
+						{"origin": [-9, 2, -2], "size": [2, 9, 2], "pivot": [-1, -13, -1], "rotation": [2.49762, -0.10901, 4.99762], "uv": [40, 10]}
+					]
+				},
+				{
+					"name": "left_arm",
+					"parent": "bob",
+					"pivot": [4, 10, 0],
+					"rotation": [-17.35932, 2.24944, 7.15656],
+					"mirror": true,
+					"cubes": [
+						{"origin": [2.95694, 2.2879, -3.07454], "size": [2, 10, 2], "pivot": [3, 12, 0], "rotation": [4.99527, 0.21782, -4.9905], "uv": [40, 10]}
+					]
+				}
+			]
+		}
+	]
+}

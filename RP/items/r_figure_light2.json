@@ -1,0 +1,13 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:figure_light2",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "r:figure_light2",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

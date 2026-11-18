@@ -1,0 +1,225 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:jeff_table",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "start"
+            ]
+         },
+         "animations": {
+            "start": "controller.animation.shop_start"
+         }
+      },
+      "component_groups": {
+         "solid": {
+            "minecraft:variant": {
+               "value": 0
+            }
+         },
+         "shop_opened": {
+            "minecraft:economy_trade_table": {
+               "display_name": "§lJeff's Shop",
+               "table": "trading/jeff.json",
+               "new_screen": true
+            },
+            "minecraft:damage_sensor": {
+               "triggers": [
+                  {
+                     "cause": "entity_attack",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "suffocation",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "projectile",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "explosion",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fire",
+                     "deals_damage": false
+                  }
+               ]
+            }
+         },
+         "shop_closed": {
+            "minecraft:damage_sensor": {
+               "triggers": [
+                  {
+                     "cause": "entity_attack",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "suffocation",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "projectile",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "explosion",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fire",
+                     "deals_damage": false
+                  }
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.4,
+            "height": 0.3
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate",
+               "object"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:block_sensor": {
+            "sensor_radius": 0.5,
+            "on_break": [
+               {
+                  "block_list": [
+                     "minecraft:barrier"
+                  ],
+                  "on_block_broken": "minecraft:breaked"
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": true
+         },
+         "minecraft:trade_resupply": {},
+         "minecraft:behavior.look_at_trading_player": {
+            "priority": 4
+         },
+         "minecraft:behavior.trade_with_player": {
+            "priority": 1
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "hurt_item": 0,
+                  "interact_text": "§lTip",
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "has_equipment",
+                              "subject": "other",
+                              "domain": "hand",
+                              "value": "r:coin"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:is_tipping",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "solid",
+                  "shop_opened"
+               ]
+            }
+         },
+         "shop_opened": {
+            "add": {
+               "component_groups": [
+                  "shop_opened"
+               ]
+            }
+         },
+         "shop_closed": {
+            "remove": {
+               "component_groups": [
+                  "shop_opened"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "shop_closed"
+               ]
+            }
+         },
+         "minecraft:is_tipping": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "clear @p r:coin 0 10",
+                        "playsound mob.closet.mynameisjeff @a[r=5]",
+                        "playanimation @e[type=doors:jeff] animation.jeff.wave2 jsjsjs 900",
+                        "title @p actionbar *you Tipped 10 Coins*",
+                        "playanimation @p animation.react_arm_2"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

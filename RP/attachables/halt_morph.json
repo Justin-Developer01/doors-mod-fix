@@ -1,0 +1,35 @@
+{
+   "format_version": "1.16.100",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:halt_morph",
+         "materials": {
+            "default": "spider",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/halt"
+         },
+         "geometry": {
+            "default": "geometry.halt_p"
+         },
+         "animations": {
+            "halt_general": "animation.halt.general2",
+            "look_at_target": "animation.common.look_at_target",
+            "general": "controller.animation.halt.general"
+         },
+         "scripts": {
+            "parent_setup": "variable.helmet_layer_visible = 0.0;",
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ]
+      }
+   }
+}

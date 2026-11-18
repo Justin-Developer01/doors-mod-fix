@@ -1,0 +1,71 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_hard",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_hard"
+         },
+         "animations": {
+            "moving": "animation.figure.moving",
+            "running": "animation.figure.running",
+            "figure_general": "animation.figure.general",
+            "attack": "animation.figure.attack",
+            "duck": "animation.figure.duck",
+            "duck2": "animation.figure.duck2",
+            "looking": "animation.figure.looking",
+            "side1": "animation.figure.side1",
+            "side2": "animation.figure.side2",
+            "dead": "animation.figure.dead",
+            "sniff": "animation.figure.sniff",
+            "roar": "animation.figure.roar",
+            "jumping": "animation.figure.jumping",
+            "jumpscare": "animation.figure.jumpscare",
+            "jumpscare2": "animation.figure.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "melee_attack": "animation.figure.attack",
+            "move": "controller.animation.figure.move",
+            "general": "controller.animation.figure.general",
+            "sniff_controller": "controller.animation.warden.sniff",
+            "roar_controller": "controller.animation.warden.roar",
+            "melee_attack_controller": "controller.animation.warden.melee_attacking"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "look_at_target",
+               "sniff_controller",
+               "roar_controller",
+               "melee_attack_controller"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.figure_hard"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "sound_effects": {
+            "sniff": "mob.figure.ambient",
+            "roar": "mob.figure.roar",
+            "clicking": "mob.figure.ambient"
+         },
+         "spawn_egg": {
+            "texture": "figure_hard",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:light"
+         }
+      }
+   }
+}

@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_eye.dead": {
+         "states": {
+            "default": {
+               "animations": [
+                  "seek_eye_dead"
+               ]
+            }
+         }
+      }
+   }
+}

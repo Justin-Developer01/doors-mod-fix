@@ -1,0 +1,133 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.el_goblino.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "el_goblino_general",
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "fall": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  },
+                  {
+                     "sit": "query.is_riding"
+                  }
+               ]
+            },
+            "fall": {
+               "animations": [
+                  "fall"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            },
+            "sit": {
+               "animations": [
+                  "sit"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.is_riding"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      },
+      "controller.animation.el_goblino.move": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "animations": [
+                  {
+                     "moving": "query.ground_speed * 0.5"
+                  },
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "running": "variable.attack_time > 0 && variable.random == 0"
+                  },
+                  {
+                     "falling": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "falling": {
+               "animations": [
+                  "falling"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      },
+      "controller.animation.el_goblino.attack": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attacking": "variable.attack_time > 0 && variable.random == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      },
+      "controller.animation.el_goblino.sitting": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "sit": "query.is_riding ? (query.get_ride -> query.owner_identifier) == 'doors:modern_chair'"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "sit": {
+               "animations": [
+                  "sit"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.is_riding"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      },
+      "controller.animation.el_goblino.dead": {
+         "states": {
+            "default": {
+               "animations": [
+                  "el_goblino_dead"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:ambush_plush",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/ambush_plush"
+         },
+         "geometry": {
+            "default": "geometry.ambush_plush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "ambush_plush",
+            "texture_index": 0
+         }
+      }
+   }
+}

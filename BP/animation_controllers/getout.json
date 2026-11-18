@@ -1,0 +1,31 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.hide_out": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @p ~ ~ ~",
+                  "/damage @p 6 entity_attack"
+               ],
+               "transitions": [
+                  {
+                     "out": "query.has_target"
+                  }
+               ]
+            },
+            "out": {
+               "on_entry": [
+                  "/playsound mob.seek.chase @a",
+                  "/playsound mob.seek.scream_far @a"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

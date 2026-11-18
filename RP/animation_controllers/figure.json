@@ -1,0 +1,126 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "figure_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "running": "query.ground_speed >= 4.5"
+                  },
+                  {
+                     "jumpscare": "query.has_rider && !query.is_stunned"
+                  },
+                  {
+                     "jumping": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            },
+            "running": {
+               "animations": [
+                  "running"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.ground_speed <= 3.5"
+                  }
+               ],
+               "blend_transition": 0.5,
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            },
+            "jumpscare": {
+               "animations": [
+                  "jumpscare"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.has_rider"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "jumping": {
+               "animations": [
+                  "jumping"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      },
+      "controller.animation.figure.looking_at": {
+         "states": {
+            "default": {
+               "animations": [
+                  "look_at",
+                  "look_at_target"
+               ]
+            }
+         }
+      },
+      "controller.animation.figure.attack": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0 && variable.random == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      }
+   }
+}

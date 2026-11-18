@@ -1,0 +1,67 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.snare_stun": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attacking": "variable.attack_time > 0 && !query.is_stunned"
+                  },
+                  {
+                     "adding": "query.has_rider && !query.is_stunned"
+                  }
+               ]
+            },
+            "attacking": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/function snared",
+                  "/tag @s add snare"
+               ]
+            },
+            "adding": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/scoreboard objectives add snare dummy",
+                  "/scoreboard players add @e[r=3,type=!doors:snare] snare 1",
+                  "/execute @e[scores={snare=45..1000}] ~ ~ ~ function jumpscare_stop",
+                  "/execute @e[scores={snare=45..1000}] ~ ~ ~ tag @e[type=doors:snare,r=2] remove snare",
+                  "/scoreboard players set @a[scores={snare=45..1000}] snare 0"
+               ]
+            }
+         }
+      },
+      "controller.animation.snare_attack": {
+         "states": {
+            "attack": {
+               "on_entry": [
+                  "/damage @e[type=!doors:snare,type=!doors:snare2,r=2] 6 entity_attack"
+               ],
+               "transitions": [
+                  {
+                     "default": "variable.attack_time > 0"
+                  }
+               ]
+            },
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

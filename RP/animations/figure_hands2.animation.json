@@ -1,0 +1,59 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.figure_hands2.third_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"scale": [0.1, 0, 0]
+				},
+				"Midarm1": {
+					"scale": [0.1, 0, 0]
+				},
+				"Midarm2": {
+					"scale": [0.2, 0, 0]
+				}
+			}
+		},
+		"animation.figure_hands2.first_person": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"Midarm1": {
+					"rotation": [-180, -10, -365],
+					"position": [-2, -6, 1]
+				},
+				"Forearm1": {
+					"rotation": [22.5, 0, 0]
+				},
+				"Midarm2": {
+					"rotation": [-179.80861, -2.55774, 1.57519],
+					"position": [1, 0, 1]
+				},
+				"Forearm2": {
+					"rotation": [27.46424, -12.32307, -2.10006]
+				},
+				"armitem2": {
+					"position": [0, -3, -5]
+				},
+				"armitem": {
+					"position": [3, -3, -9]
+				},
+				"Finger1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.75": [0, 0, -15],
+						"1.0": [0, 0, 2.5]
+					}
+				},
+				"Finger2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.75": [0, 0, 12.5],
+						"1.0": [0, 0, -2.5]
+					}
+				}
+			}
+		}
+	}
+}

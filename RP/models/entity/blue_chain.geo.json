@@ -1,0 +1,49 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.blue_chain",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "main",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Chains",
+					"parent": "main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [30, 0, 0], "uv": [24, 5]},
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [120, -87.5, -90], "uv": [24, 5]},
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [-150.00238, 2.49762, 179.89088], "uv": [24, 5]},
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [0, 89.99762, -30.10907], "uv": [24, 5]}
+					]
+				},
+				{
+					"name": "Chains2",
+					"parent": "Chains",
+					"pivot": [0, 0, 0],
+					"rotation": [0, -47.5, 0],
+					"cubes": [
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [30, 0, 0], "uv": [24, 5]},
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [120, -87.5, -90], "uv": [24, 5]},
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [-150.00238, 2.49762, 179.89088], "uv": [24, 5]},
+						{"origin": [-1, -8, 13], "size": [2, 25, 0], "pivot": [0, 0, 0], "rotation": [0, 89.99762, -30.10907], "uv": [24, 5]}
+					]
+				},
+				{
+					"name": "crucifix",
+					"parent": "main",
+					"pivot": [0, 17, -18]
+				}
+			]
+		}
+	]
+}

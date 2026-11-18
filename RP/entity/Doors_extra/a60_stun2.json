@@ -1,0 +1,42 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:a60_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/extra/A_60"
+         },
+         "animations": {
+            "A_60_ascend": "animation.A_60.ascend",
+            "stunned": "controller.animation.A_60.stunned"
+         },
+         "scripts": {
+            "animate": [
+               "stunned"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.A_60"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:red_incoming",
+            "spell2": "r:a60_face",
+            "spell3": "r:a60_face",
+            "spell4": "r:ambush_light5"
+         },
+         "spawn_egg": {
+            "texture": "A60",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,156 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:small_lock",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "lock"
+            ]
+         },
+         "animations": {
+            "lock": "controller.animation.is_lock"
+         }
+      },
+      "component_groups": {
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:small_lock"
+            }
+         },
+         "minecraft:entity": {
+            "minecraft:variant": {
+               "value": 1
+            },
+            "minecraft:variant": {
+               "value": 2
+            },
+            "minecraft:variant": {
+               "value": 3
+            },
+            "minecraft:variant": {
+               "value": 4
+            }
+         },
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:unlock": {
+            "minecraft:is_stunned": {},
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 3,
+               "time_down_event": {
+                  "event": "minecraft:remove"
+               }
+            },
+            "minecraft:variant": {
+               "value": 1
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 200
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:collision_box": {
+            "width": 0,
+            "height": 0
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         }
+      },
+      "events": {
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "minecraft:entity"
+               ]
+            }
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:unlock": {
+            "add": {
+               "component_groups": [
+                  "minecraft:unlock"
+               ]
+            }
+         },
+         "minecraft:rotate": {
+            "run_command": {
+               "command": [
+                  "tp @s ~~~ facing @p"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

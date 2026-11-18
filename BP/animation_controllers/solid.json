@@ -1,0 +1,29 @@
+{
+   "animation_controllers": {
+      "controller.animation.solid": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ fill ~~~ ~~1~ barrier",
+                  "/playsound mob.elevator.clock @a[r=40]",
+                  "/stopsound @a mob.elevator.chime"
+               ],
+               "transitions": [
+                  {
+                     "solid": "query.has_target"
+                  }
+               ]
+            },
+            "solid": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

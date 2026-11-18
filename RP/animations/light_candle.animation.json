@@ -1,0 +1,66 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.light_candle.third_person": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"rightitem": {
+					"rotation": [0, -95, 0],
+					"position": [0, -4, -6],
+					"scale": 0.6
+				},
+				"bone5": {
+					"position": [0, 0, 0],
+					"scale": 1
+				},
+				"bone6": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.25": [0.9, 0.9, 1],
+						"0.75": [1, 0.8667, 1],
+						"1.0": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.light_candle.off": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.125,
+			"bones": {
+				"bone6": {
+					"position": [0, 0, 0],
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.125": [1, -0.1, 1]
+					}
+				}
+			}
+		},
+		"animation.light_candle.on": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.125,
+			"bones": {
+				"bone6": {
+					"scale": {
+						"0.0": [1, 0, 1],
+						"0.125": [1, 0.9, 1]
+					}
+				}
+			}
+		},
+		"animation.light_candle.first_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [34.47279, -23.75278, -139.42298],
+					"position": [0, -3, -3],
+					"scale": [0.9, 0.9, 0.8]
+				},
+				"base": {
+					"scale": [0.9, 1, 1]
+				}
+			}
+		}
+	}
+}

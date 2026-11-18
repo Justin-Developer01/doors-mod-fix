@@ -1,0 +1,128 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_grabs": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "grabs": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "grabs": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:grab_new] ~~~ effect @e[type=!doors:figure3,type=!doors:figure4,r=2] slowness 1 6 true",
+                  "/execute @s ~ ~2 ~ tp @e[type=!r:grabbed,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:title,type=!doors:seek_s,type=!doors:seek,type=!r:figurekill,type=!item,type=!arrow,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=doors:figure3] ~~~ facing @p",
+                  "/tp @e[type=doors:figure4] ~~~ facing @p",
+                  "/execute @e[type=r:grab_new] ~~~ effect @e[type=doors:figure3,type=!doors:figure4,c=1] slowness 1 25 true",
+                  "/execute @e[type=r:grab_new] ~~~ effect @e[type=!doors:figure3,type=!doors:figure4,r=2] blindness 5",
+                  "/tp @e[type=!doors:seek,r=2] ~~~ facing @e[type=doors:figure3]",
+                  "/tp @e[type=!doors:seek,r=2] ~~~ facing @e[type=doors:figure4]"
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_teleport": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "teleport ": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true",
+                  "/effect @e[type=doors:figure3] resistance 10000 255 true",
+                  "/gamerule commandblockoutput false",
+                  "/gamerule sendcommandfeedback false"
+               ]
+            },
+            "teleport ": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @e[type=doors:figure3] resistance 10000 255 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_teleport2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "teleport2": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true"
+               ]
+            },
+            "teleport2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.figure_seen": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:figure,type=!doors:figure2,type=!doors:seek_s,type=!doors:jack,type=!doors:rush,type=!doors:eyes,r=3] animation.figure.jumpscare"
+               ],
+               "transitions": [
+                  {
+                     "seen": "query.has_target"
+                  }
+               ]
+            },
+            "seen": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_seen2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/camerashake add @a 0.2 1 positional",
+                  "/playsound mob.figure.roar @a"
+               ],
+               "transitions": [
+                  {
+                     "seen2": "query.has_target"
+                  }
+               ]
+            },
+            "seen2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

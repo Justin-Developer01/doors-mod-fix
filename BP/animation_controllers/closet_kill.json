@@ -1,0 +1,32 @@
+{
+   "animation_controllers": {
+      "controller.animation.closet_kill": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "kill": "(1.0)"
+                  }
+               ]
+            },
+            "kill": {
+               "on_entry": [
+                  "/kill @e[type=r:heartbeat_load]",
+                  "/kill @e[type=r:heartbeat_load2]",
+                  "/kill @e[type=r:heartbeat_load3]",
+                  "/kill @e[type=r:heartbeat_load4]",
+                  "/kill @e[type=r:heartbeat_attack2]",
+                  "/kill @e[type=r:heartbeat_attack3]",
+                  "/kill @e[type=r:heartbeat_attack5]"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.purple_painting",
+				"texture_width": 255,
+				"texture_height": 328,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 0.5, 0]
+			},
+			"bones": [
+				{
+					"name": "painting",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0],
+					"cubes": [
+						{
+							"origin": [-12, -0.1, 6.9],
+							"size": [25, 17.1, 1.1],
+							"uv": {
+								"north": {"uv": [0, 40.83984], "uv_size": [31.9375, 20.00391]},
+								"east": {"uv": [96.00781, 0], "uv_size": [0, 20.00391]},
+								"south": {"uv": [239, 0], "uv_size": [16, 21]},
+								"west": {"uv": [111.01172, 0], "uv_size": [0, 20.00391]},
+								"up": {"uv": [98, 0], "uv_size": [10.02344, 0]},
+								"down": {"uv": [97.06641, 0], "uv_size": [14.00781, 0.99609]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

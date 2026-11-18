@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.trollface_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/stopsound @a mob.trollface.troll"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/playsound mob.trollface.troll @a[r=40]",
+                  "/title @a actionbar §lINCOMING!!!"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,459 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.hand_grab": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "grab": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "grab": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:hand_grab] ~~~ effect @e[type=!doors:seek_hand,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:hand_grab] ~~~ effect @e[type=!doors:seek_hand,r=2] blindness 1 10 true",
+                  "/execute @s ~ ~ ~ tp @e[type=!r:grabbed,type=!r:hand_grab2,type=!r:grabbed2,type=!r:grab_new,type=!doors:seek_hand,type=!doors:seek_eye,type=!r:hand_grab,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:closet,type=!doors:figure,type=!doors:closet2,type=!secret:a_60,type=!doors:rush,type=!doors:eyes,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:chair,type=!doors:chair2,type=!doors:jack,type=!doors:seek_s,type=!doors:bed,type=!doors:closet2,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:nightmare_seek,type=!doors:xmas_seek,type=!doors:red_ambush,type=!r:seek_step,type=!r:seek_light,type=!doors:seek_light,type=!doors:seek,type=!doors:seek_car,type=!r:infect,type=!r:goo_body,type=!r:figurekill,type=!r:seek_eye,tag=!cam,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!cam,tag=!greed,family=!inanimate,type=!item,type=!arrow,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @s ~~~ facing @p",
+                  "/execute @e[type=r:hand_grab] ~~~ effect @e[type=doors:seek_hand,c=1] slowness 1 25 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/stopsound @a mob.seek.chase"
+               ]
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1"
+               ]
+            }
+         }
+      },
+      "controller.animation.hand_tp": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "tp": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @e[type=r:seek_hand_wait,r=3] @e[type=!doors:seek_hand]"
+               ]
+            },
+            "tp": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.seek_hand_stayed": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "stayed": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true",
+                  "/effect @s instant_health 10000 255 true",
+                  "/effect @s slowness 10000 255 true",
+                  "/effect @s slowness 1 8 true"
+               ]
+            },
+            "stayed": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.hand_kill": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "kill": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "kill": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/kill @e[type=!doors:xmas_figure,type=!doors:seek_gentlemen,type=!doors:seek_gentlemen_stun,type=!doors:seek_gentlemen_s,type=!doors:seek_gentlemen_d,type=!doors:xmas_figure_stun,type=!doors:xmas_figure_d,type=!doors:figure_hard_d,type=!doors:figure_hard_stun,type=!doors:figure_noob,type=!doors:figure_noob_stun,type=!doors:figure_noob_d,type=!r:figure_step,type=!r:figure_grab,type=!r:barrage_jumpscare,type=!doors:barrage,type=!r:figure_grab_wait,type=!doors:xmas_screech,type=!doors:figure_d,type=!doors:figure_d2,type=!doors:xmas_seek_stun,type=!doors:xmas_seek_d,type=!doors:nightmare_seek_stun,type=!doors:nightmare_seek_d,type=!doors:xmas_eyes,type=!doors:drawer,type=!doors:drawer2,type=!doors:skeleton_door,type=!r:lock,type=!doors:hotel_door,type=!doors:door50,type=!doors:xmas_seek_s,type=!doors:figure,type=!doors:figure2,type=!doors:seek,type=!doors:seek_s,type=!doors:eyes,type=!doors:rush,type=!doors:ambush,type=!doors:screech,type=!doors:shadow,type=!doors:timothy,type=!doors:depth,type=!doors:greed,type=!doors:silence,type=!doors:seek_eye,type=!doors:closet2,type=!secret:a_60,type=!doors:hotel_plant,type=!r:seek_eye,type=!doors:grandfather_clock,type=!doors:seek_hand,type=!doors:guiding_light,type=!r:light,type=!doors:shadow,type=!doors:red_ambush,type=!doors:windows,type=!doors:timothy,type=!doors:glitch,type=!doors:figure_hard,type=!r:grab_new,type=!doors:figure3,type=!doors:closet,type=!r:seek_light,type=!doors:nightmare_seek,type=!doors:xmas_seek,type=!doors:title,type=!r:seek_step,type=!doors:figure4,type=!r:shake,type=!doors:jack,type=!doors:jack_bad,type=!doors:wardrobe,type=!doors:seek_car,type=!doors:closet_bad,type=!doors:figure_plush,type=!doors:seek_plush,type=!doors:screech_plush,type=!doors:halt_plush,type=!doors:ambush_plush,type=!doors:rush_plush,type=!doors:trollface,type=!doors:trollface2,type=!r:infect,type=!r:goo_body,type=!doors:red_ambush,type=!doors:dupe,type=!doors:dupe2,type=!doors:red_ambush,tag=!morph,tag=!cam,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!cam,tag=!greed,family=!inanimate,r=5]"
+               ]
+            }
+         }
+      },
+      "controller.animation.hand_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.seek.scream_far @a",
+                  "/playsound mob.seek.bang @a"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.goo_corpse": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @p[r=2] ~~~ summon r:goo_body"
+               ],
+               "transitions": [
+                  {
+                     "corpse": "query.has_target"
+                  }
+               ]
+            },
+            "corpse": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_done": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/particle r:seek_done",
+                  "/playsound mob.seek.emerge @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "done": "query.has_target"
+                  }
+               ]
+            },
+            "done": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_splash": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.seek.splash @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "splash": "query.has_target"
+                  }
+               ]
+            },
+            "splash": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_hand_appear": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.seek.arise @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "appear": "query.has_target"
+                  }
+               ]
+            },
+            "appear": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_grabbed": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek_d,type=!doors:seek_s,type=!doors:jack,type=!doors:seek_car,type=!doors:eyes,r=3] animation.seek.jumpscare",
+                  "/playsound mob.seek.attack @a",
+                  "/event entity @e[type=bd:bd096,r=3] minecraft:remove",
+                  "/event entity @e[type=ho:cartoon_cat,r=3] minecraft:thanh_meo",
+                  "/tp @e[type=!doors:shadow,type=!doors:seek_car,family=!inanimate,r=2] ~~~ facing @e[type=doors:seek]",
+                  "/tp @e[type=doors:seek,r=2] ~~~ facing @p",
+                  "/camerashake add @a 0.2 3 positional",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/summon r:jumpscare",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1"
+               ],
+               "transitions": [
+                  {
+                     "grabbed": "query.has_target"
+                  }
+               ]
+            },
+            "grabbed": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/tp @e[type=r:hand_grab2,c=1] @e[type=doors:seek,r=2]",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/execute @e[type=r:hand_grab2] ~~~ effect @e[type=!doors:seek_hand,r=2] blindness 5"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_grabbed2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek_d,type=!doors:seek_s,type=!doors:jack,type=!doors:seek_car,type=!doors:eyes,r=3] animation.seek.jumpscare",
+                  "/playsound mob.seek.attack @a",
+                  "/event entity @e[type=bd:bd096,r=3] minecraft:remove",
+                  "/event entity @e[type=ho:cartoon_cat,r=3] minecraft:thanh_meo",
+                  "/tp @e[type=!doors:shadow,type=!doors:seek_car,family=!inanimate,r=2] ~~~ facing @e[type=doors:seek]",
+                  "/tp @e[type=doors:seek,r=2] ~~~ facing @p",
+                  "/camerashake add @a 0.2 3 positional",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/summon r:jumpscare2",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1"
+               ],
+               "transitions": [
+                  {
+                     "grabbed2": "query.has_target"
+                  }
+               ]
+            },
+            "grabbed2": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/tp @e[type=r:hand_grab2,c=1] @e[type=doors:seek,r=2]",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:seek_jumpscare ^ ^0.5 ^1",
+                  "/execute @e[type=r:hand_grab2] ~~~ effect @e[type=!doors:seek_hand,r=2] blindness 5"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seekhand_kill": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "kill": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "kill": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/kill @e[type=!doors:xmas_figure,type=!doors:seek_gentlemen,type=!doors:seek_gentlemen_stun,type=!doors:seek_gentlemen_s,type=!doors:seek_gentlemen_d,type=!doors:xmas_figure_stun,type=!doors:xmas_figure_d,type=!doors:figure_hard_d,type=!doors:figure_hard_stun,type=!doors:figure_noob,type=!doors:figure_noob_stun,type=!doors:figure_noob_d,type=!r:figure_step,type=!r:figure_grab,type=!r:barrage_jumpscare,type=!doors:barrage,type=!r:figure_grab_wait,type=!doors:xmas_screech,type=!doors:figure_d,type=!doors:figure_d2,type=!doors:xmas_seek_stun,type=!doors:xmas_seek_d,type=!doors:nightmare_seek_stun,type=!doors:nightmare_seek_d,type=!doors:xmas_eyes,type=!doors:drawer,type=!doors:drawer2,type=!doors:skeleton_door,type=!r:lock,type=!doors:hotel_door,type=!doors:door50,type=!doors:xmas_seek_s,type=!doors:figure,type=!doors:figure2,type=!doors:seek,type=!doors:seek_s,type=!doors:eyes,type=!doors:rush,type=!doors:ambush,type=!doors:screech,type=!doors:shadow,type=!doors:timothy,type=!doors:depth,type=!doors:greed,type=!doors:silence,type=!doors:seek_eye,type=!doors:closet2,type=!secret:a_60,type=!doors:hotel_plant,type=!r:seek_eye,type=!doors:grandfather_clock,type=!doors:seek_hand,type=!doors:guiding_light,type=!r:light,type=!doors:shadow,type=!doors:red_ambush,type=!doors:windows,type=!doors:timothy,type=!doors:glitch,type=!doors:figure_hard,type=!r:grab_new,type=!doors:figure3,type=!doors:closet,type=!r:seek_light,type=!doors:nightmare_seek,type=!doors:xmas_seek,type=!doors:title,type=!r:seek_step,type=!doors:figure4,type=!r:shake,type=!doors:jack,type=!doors:jack_bad,type=!doors:wardrobe,type=!doors:seek_car,type=!doors:closet_bad,type=!doors:figure_plush,type=!doors:seek_plush,type=!doors:screech_plush,type=!doors:halt_plush,type=!doors:ambush_plush,type=!doors:rush_plush,type=!doors:trollface,type=!doors:trollface2,type=!r:infect,type=!r:goo_body,type=!doors:red_ambush,type=!doors:dupe,type=!doors:dupe2,type=!doors:red_ambush,tag=!morph,tag=!cam,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!cam,tag=!greed,family=!inanimate,r=5]"
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_near": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "on_timer": "query.is_moving"
+                  },
+                  {
+                     "off_timer": "!query.is_moving"
+                  }
+               ]
+            },
+            "on_timer": {
+               "animations": [
+                  "seek_step"
+               ],
+               "transitions": [
+                  {
+                     "on": "!query.is_moving"
+                  }
+               ],
+               "on_entry": []
+            },
+            "on": {
+               "transitions": [
+                  {
+                     "off_timer": "!query.is_moving"
+                  }
+               ]
+            },
+            "off_timer": {
+               "animations": [
+                  "seek_step"
+               ],
+               "transitions": [
+                  {
+                     "off": "!query.is_moving"
+                  }
+               ],
+               "on_entry": []
+            },
+            "off": {
+               "transitions": [
+                  {
+                     "on_timer": "query.is_moving"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_attack": {
+         "states": {
+            "attack": {
+               "on_entry": [
+                  "/playsound mob.seek.emerge @a[r=40]",
+                  "/summon r:goo",
+                  "/effect @e[type=!doors:seek,type=!doors:seek_hand2,r=3] slowness 1 3 true"
+               ],
+               "transitions": [
+                  {
+                     "default": "variable.attack_time > 0"
+                  }
+               ]
+            },
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true",
+                  "/stopsound @a mob.seek.scream_far"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.seek.scream_far @a"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_eye_spot": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @a blindness 1 2 true",
+                  "/effect @e[type=doors:seek_eye] instant_health 10000 255 true",
+                  "/playsound mob.seek.spawn @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "spot": "query.has_target"
+                  }
+               ]
+            },
+            "spot": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

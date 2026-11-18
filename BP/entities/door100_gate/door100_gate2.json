@@ -1,0 +1,117 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:door100_gate2",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:door100_gate2"
+            }
+         },
+         "r:gate_function": {
+            "minecraft:transformation": {
+               "into": "doors:door100_gate"
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:scale": {
+            "value": 2
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 5,
+            "time_down_event": {
+               "event": "r:gate_function"
+            }
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "r:gate_function": {
+            "add": {
+               "component_groups": [
+                  "r:gate_function"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         }
+      }
+   }
+}

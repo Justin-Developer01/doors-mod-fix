@@ -1,0 +1,44 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_bad",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/seek_bad"
+         },
+         "animations": {
+            "moving": "animation.seek_bad.moving",
+            "seek_bad_general": "animation.seek_bad.general",
+            "rise": "animation.seek_bad.rise",
+            "run": "animation.seek_bad.run",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.seek_bad.move",
+            "general": "controller.animation.seek_bad.general",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "look_at_target"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.seek_bad"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "seek_bad",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_plush",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/seek"
+         },
+         "geometry": {
+            "default": "geometry.seek_plush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "seek_plush",
+            "texture_index": 0
+         }
+      }
+   }
+}

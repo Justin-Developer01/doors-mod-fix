@@ -1,0 +1,44 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:glitch",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/glitch"
+         },
+         "animations": {
+            "moving": "animation.glitch.moving",
+            "glitch_general": "animation.glitch.general",
+            "jumpscare": "animation.glitch.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.glitch.move",
+            "general": "controller.animation.glitch.general"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.glitch"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:error"
+         },
+         "spawn_egg": {
+            "texture": "glitch",
+            "texture_index": 0
+         }
+      }
+   }
+}

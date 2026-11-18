@@ -1,0 +1,167 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure.angry": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "figure_angry": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "jumping": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            },
+            "jumping": {
+               "animations": [
+                  "jumping"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      },
+      "controller.animation.figure.elevator": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "figure_elevator": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "jumping": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            },
+            "jumping": {
+               "animations": [
+                  "jumping"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      },
+      "controller.animation.figure.fire": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "figure_fire": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "jumping": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            },
+            "jumping": {
+               "animations": [
+                  "jumping"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      }
+   }
+}

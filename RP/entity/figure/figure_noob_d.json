@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_noob_d",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_noob"
+         },
+         "geometry": {
+            "default": "geometry.figure_noob"
+         },
+         "animations": {
+            "figure_noob_dead": "animation.figure_noob.dead",
+            "general": "controller.animation.figure_noob.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ]
+      }
+   }
+}

@@ -1,0 +1,55 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_walk2": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "very_loud": "query.has_target ? (query.target -> query.is_moving) : 0"
+                  }
+               ]
+            },
+            "very_loud": {
+               "on_entry": [
+                  "/execute @s ~~~ camerashake add @a[r=30] 0.3 0.05 rotational",
+                  "/execute @s ~~~ playsound mob.figure.step @a[r=30]"
+               ],
+               "on_exit": [
+                  "/camerashake stop @a",
+                  "/stopsound @a mob.figure.step"
+               ],
+               "transitions": [
+                  {
+                     "default": "return query.has_target ? !(query.target -> query.is_moving) : query.is_alive;"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.step_tp2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~1 tp @e[type=r:figure_step2,type=!item,type=!arrow,c=1,r=5] @e[tag=morph2]",
+                  "/execute @s ~ ~ ~1 tp @e[type=r:figure_step2,type=!item,type=!arrow,c=1,r=5] @e[tag=morph12]"
+               ],
+               "transitions": [
+                  {
+                     "tp2": "(1.0)"
+                  }
+               ]
+            },
+            "tp2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

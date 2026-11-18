@@ -1,0 +1,32 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.A_60.stunned": {
+         "states": {
+            "default": {
+               "animations": [
+                  "A_60_ascend"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "red"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "red"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "red"
+                  },
+                  {
+                     "effect": "spell4",
+                     "locator": "red"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

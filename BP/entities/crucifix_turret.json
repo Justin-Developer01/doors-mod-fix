@@ -1,0 +1,154 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:crucifix_turret",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "components": {
+         "minecraft:nameable": {},
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": true,
+            "is_pushable_by_piston": true
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.8
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:navigation.walk": {
+            "is_amphibious": true,
+            "can_pass_doors": true,
+            "can_break_doors": true,
+            "can_walk": true
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:annotation.break_door": {},
+         "minecraft:follow_range": {
+            "value": 64
+         },
+         "minecraft:jump.static": {},
+         "minecraft:can_climb": {},
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:health": {
+            "value": 30,
+            "max": 30
+         },
+         "minecraft:shooter": {
+            "def": "r:crucifix"
+         },
+         "minecraft:behavior.ranged_attack": {
+            "priority": 2,
+            "charge_charged_trigger": 1,
+            "charge_shoot_trigger": 1,
+            "attack_radius": 43,
+            "burst_shots": 20,
+            "burst_interval": 1
+         },
+         "minecraft:breathable": {
+            "totalSupply": 15,
+            "suffocateTime": 0,
+            "breathesAir": true,
+            "breathesWater": true
+         },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 1
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 0,
+            "within_radius": 64,
+            "reselect_targets": true,
+            "entity_types": [
+               {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "player"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "inanimate"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "villager"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "irongolem"
+                        }
+                     ]
+                  },
+                  "max_dist": 64,
+                  "must_see": false,
+                  "must_see_forget_duration": 10
+               }
+            ],
+            "must_see": false
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:spell_effects": {
+            "add_effects": [
+               {
+                  "effect": "resistance",
+                  "duration": 100000,
+                  "visible": false,
+                  "amplifier": 255,
+                  "display_on_screen_animation": false
+               }
+            ]
+         },
+         "minecraft:fire_immune": true
+      }
+   }
+}

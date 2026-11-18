@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:hotel_plant",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/hotel_plant"
+         },
+         "geometry": {
+            "default": "geometry.hotel_plant"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "plant",
+            "texture_index": 0
+         }
+      }
+   }
+}

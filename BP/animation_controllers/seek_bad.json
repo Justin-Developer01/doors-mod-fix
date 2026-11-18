@@ -1,0 +1,53 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_target": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/stopsound @a mob.seek.bad_chase",
+                  "/stopsound @a mob.seek.scream_far"
+               ],
+               "transitions": [
+                  {
+                     "target": "query.has_target"
+                  }
+               ]
+            },
+            "target": {
+               "on_entry": [
+                  "/playsound mob.seek.scream_far @a",
+                  "/playsound mob.seek.bad_chase @a[r=30]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek_attack": {
+         "states": {
+            "attack": {
+               "on_entry": [
+                  "/stopsound @a mob.seek.bad_chase"
+               ],
+               "transitions": [
+                  {
+                     "default": "variable.attack_time > 0"
+                  }
+               ]
+            },
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

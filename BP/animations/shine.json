@@ -1,0 +1,45 @@
+{
+   "animations": {
+      "animation.shine_off2": {
+         "animation_length": 0.8,
+         "loop": true,
+         "timeline": {
+            "0.5": [
+               "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+               "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+               "/fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6"
+            ]
+         }
+      },
+      "animation.shine_on2": {
+         "animation_length": 0.2,
+         "loop": true,
+         "timeline": {
+            "0.0": [
+               "/execute @s ~ ~1 ~ setblock ~ ~ ~  light_block 6"
+            ]
+         }
+      },
+      "animation.shine_on": {
+         "animation_length": 0.2,
+         "loop": true,
+         "timeline": {
+            "0.0": [
+               "/execute @s ~ ~1 ~ setblock ~ ~ ~  light_block 6"
+            ]
+         }
+      },
+      "animation.shine_off": {
+         "animation_length": 0.8,
+         "loop": true,
+         "timeline": {
+            "0.5": [
+               "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+               "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6",
+               "/fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block 6"
+            ]
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

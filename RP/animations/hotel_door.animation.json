@@ -1,0 +1,130 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.hotel_door.open": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.96,
+			"bones": {
+				"spin": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.84": [0, 76.59, 0],
+						"0.96": [0, 92.5, 0]
+					}
+				},
+				"bone": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.24": [0, 0, 17.5],
+						"0.96": [0, 0, 0]
+					}
+				},
+				"lock": {
+					"position": [1, 0, 2]
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "open"
+				}
+			}
+		},
+		"animation.hotel_door.close": {
+			"loop": true,
+			"animation_length": 1000,
+			"bones": {
+				"spin": {
+					"rotation": {
+						"0.0": [0, 92.5, 0],
+						"1.12": [0, 0, 0]
+					}
+				},
+				"bone": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.24": [0, 0, 20],
+						"0.72": [0, 0, 0]
+					}
+				},
+				"lock": {
+					"scale": [0, 0, 1]
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "close"
+				}
+			}
+		},
+		"animation.hotel_door.general": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"lock": {
+					"scale": [0, 0, 1]
+				}
+			}
+		},
+		"animation.hotel_door.gone": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"lock": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 20],
+						"0.5": [-1.22038, 0.27053, 22.49712],
+						"0.75": [92.5, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.5": [-1, 0, 0.33],
+						"0.75": [0, -15, -7]
+					},
+					"scale": {
+						"0.0": [0.8, 0.8, 1],
+						"0.5": [0.7667, 0.7667, 1],
+						"0.75": [0, 0, 1]
+					}
+				},
+				"bone3": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, -27.5]
+					}
+				}
+			}
+		},
+		"animation.hotel_door.north": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [0, "-query.body_y_rotation - this", 0]
+				}
+			}
+		},
+		"animation.hotel_door.east": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [0, "-query.body_y_rotation - this + 90", 0]
+				}
+			}
+		},
+		"animation.hotel_door.south": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [0, "-query.body_y_rotation - this + 180", 0]
+				}
+			}
+		},
+		"animation.hotel_door.west": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [0, "-query.body_y_rotation - this - 90", 0]
+				}
+			}
+		}
+	}
+}

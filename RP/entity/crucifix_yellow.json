@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:crucifix_yellow",
+         "materials": {
+            "default": "charged_creeper"
+         },
+         "textures": {
+            "default": "textures/entity/crucifix_yellow"
+         },
+         "geometry": {
+            "default": "geometry.crucifix_blue"
+         },
+         "animations": {
+            "crucifix_general": "animation.crucifix_blue.general",
+            "general": "controller.animation.crucifix.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.red_fog"
+         ],
+         "spawn_egg": {
+            "texture": "none",
+            "texture_index": 0
+         }
+      }
+   }
+}

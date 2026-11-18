@@ -1,0 +1,413 @@
+{
+   "format_version": "1.16.100",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:eyes",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "eyes_reset": {
+            "minecraft:transformation": {
+               "into": "doors:eyes"
+            }
+         },
+         "eyes_stand": {
+            "minecraft:on_target_acquired": {
+               "event": "r:eyes_angry",
+               "target": "self"
+            }
+         },
+         "eyes_angry": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:eyes_reset"
+               }
+            },
+            "minecraft:behavior.melee_attack": {
+               "priority": 1,
+               "speed_multiplier": 0,
+               "track_target": false,
+               "cooldown_time": 0.5,
+               "melee_fov": 360,
+               "reach_multiplier": 80
+            }
+         },
+         "minecraft:transform_to_stare": {
+            "minecraft:transformation": {
+               "into": "doors:eyes_stun"
+            }
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:eyes"
+            }
+         },
+         "minecraft:removed": {
+            "minecraft:despawn": {}
+         },
+         "despawning": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawer",
+                  "despawer_despawning"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "doors_creature"
+            ]
+         },
+         "minecraft:nameable": {
+            "alwaysShow": false,
+            "allowNameTagRenaming": false
+         },
+         "minecraft:collision_box": {
+            "height": 1.7,
+            "width": 1
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:health": {
+            "value": 365,
+            "max": 365
+         },
+         "minecraft:damage_sensor": {
+            "triggers": {
+               "cause": "fall",
+               "deals_damage": false
+            }
+         },
+         "minecraft:navigation.walk": {
+            "avoid_damage_blocks": false
+         },
+         "minecraft:fire_immune": {},
+         "minecraft:jump.static": {},
+         "minecraft:can_climb": {},
+         "minecraft:fall_damage": {
+            "value": 0
+         },
+         "minecraft:knockback_resistance": {
+            "value": 125,
+            "max": 125
+         },
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:leashable": {
+            "soft_distance": 4,
+            "hard_distance": 6,
+            "max_distance": 10
+         },
+         "minecraft:attack": {
+            "damage": 7
+         },
+         "minecraft:balloonable": {},
+         "minecraft:lookat": {
+            "search_radius": 32,
+            "set_target": true,
+            "look_cooldown": 0,
+            "filters": {
+               "all_of": [
+                  {
+                     "subject": "other",
+                     "test": "is_family",
+                     "value": "player"
+                  },
+                  {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "subject": "other",
+                     "operator": "not",
+                     "value": "carved_pumpkin"
+                  }
+               ]
+            }
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 7,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:behavior.random_look_around": {
+            "priority": 9
+         },
+         "minecraft:experience_reward": {
+            "on_death": "query.last_hit_by_player ? 10 : 0"
+         },
+         "minecraft:underwater_movement": {
+            "value": 0.02
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:behavior.owner_hurt_by_target": {
+            "priority": 1
+         },
+         "minecraft:behavior.owner_hurt_target": {
+            "priority": 2
+         },
+         "minecraft:annotation.break_door": {
+            "break_time": 10,
+            "min_difficulty": "easy"
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "despawer_despawning"
+                        }
+                     ]
+                  }
+               ]
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 1,
+            "entity_types": {
+               "filters": {
+                  "all_of": [
+                     {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "doors_creature"
+                     },
+                     {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "mark"
+                     },
+                     {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "inanimate"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph2"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph3"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph4"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph5"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph6"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph7"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph8"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph9"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph10"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph11"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph12"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "greed"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "closet"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "closet2"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "cam"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "hand"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "caught"
+                     }
+                  ]
+               },
+               "max_dist": 200
+            }
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "eyes_stand"
+               ]
+            }
+         },
+         "minecraft:entity_transformed": {
+            "add": {
+               "component_groups": [
+                  "eyes_stand"
+               ]
+            }
+         },
+         "r:eyes_reset": {
+            "remove": {
+               "component_groups": [
+                  "eyes_angry"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "eyes_reset"
+               ]
+            }
+         },
+         "r:eyes_angry": {
+            "remove": {
+               "component_groups": [
+                  "eyes_stand"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "eyes_angry"
+               ]
+            }
+         },
+         "r:eyes_calm": {
+            "remove": {
+               "component_groups": [
+                  "eyes_angry"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "eyes_stand"
+               ]
+            }
+         },
+         "minecraft:event_spawn_stare": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_stare"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "event entity @e[type=r:eyes_light,r=2] minecraft:remove"
+               ]
+            },
+            "weight": 1
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:start_despawn": {
+            "add": {
+               "component_groups": [
+                  "despawning"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "event entity @e[type=r:eyes_light,r=2] minecraft:remove"
+               ]
+            },
+            "weight": 1
+         }
+      }
+   }
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.skeleton_key.first_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [-90, -17.5, 0],
+					"position": [0, 0, -11]
+				}
+			}
+		},
+		"animation.skeleton_key.third_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [-90, 0, 0],
+					"position": [0, -3, -3]
+				}
+			}
+		}
+	}
+}

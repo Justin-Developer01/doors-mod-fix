@@ -1,0 +1,37 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:strike_stun2",
+         "materials": {
+            "default": "enderman"
+         },
+         "textures": {
+            "default": "textures/entity/strike"
+         },
+         "animations": {
+            "strike_dead": "animation.strike.dead",
+            "look_at_target": "animation.common.look_at_target",
+            "dead": "controller.animation.strike.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.strike"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:strike_floor"
+         },
+         "spawn_egg": {
+            "texture": "strike",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,48 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:trollface2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/trollface"
+         },
+         "animations": {
+            "moving": "animation.ambush.moving",
+            "trollface_general": "animation.trollface.general",
+            "attack": "animation.ambush.attack",
+            "running": "animation.ambush.running",
+            "jumpscare": "animation.ambush.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.ambush.move",
+            "general": "controller.animation.trollface.general",
+            "attack": "controller.animation.ambush.attack"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.trollface"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:troll"
+         },
+         "spawn_egg": {
+            "texture": "trollface",
+            "texture_index": 0
+         }
+      }
+   }
+}

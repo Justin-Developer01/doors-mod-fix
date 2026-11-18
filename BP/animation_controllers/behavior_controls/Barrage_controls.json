@@ -1,0 +1,99 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.barrage_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:barrage_jumpscare] ~~~ effect @e[type=!doors:ambush,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:barrage_jumpscare]~~~ effect @e[type=!doors:ambush,r=2] blindness 5",
+                  "/execute @s ~ ~1 ~ tp @e[type=!r:barrage_jumpscare,type=!doors:barrage,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:quiet_jumpscare,type=!doors:silence,type=!r:depth_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!secret:a_60,type=!doors:title,type=!doors:seek_s,type=!doors:depth,type=!doors:greed,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:chair,type=!doors:chair2,type=!r:greed_jumpscare,type=!doors:seek,type=!r:figurekill,type=!item,type=!arrow,family=!inanimate,tag=!closet,tag=!closet2,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!cam,tag=!greed,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:barrage]",
+                  "/tp @e[type=doors:barrage,r=2] ~~~ facing @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.barrage_saw": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.barrage.rawr @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "saw": "query.has_target"
+                  }
+               ]
+            },
+            "saw": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.barrage_help": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.barrage.rawr @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "help": "query.has_target"
+                  }
+               ]
+            },
+            "help": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.barrage_scream": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/stopsound @a mob.barrage.arrival"
+               ],
+               "transitions": [
+                  {
+                     "scream": "query.has_target"
+                  }
+               ]
+            },
+            "scream": {
+               "on_entry": [
+                  "/playsound mob.barrage.arrival @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

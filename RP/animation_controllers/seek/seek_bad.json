@@ -1,0 +1,55 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_bad.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "seek_bad_general": "variable.is_idling"
+                  },
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "running": "query.ground_speed >= 4.5"
+                  }
+               ]
+            },
+            "running": {
+               "animations": [
+                  "run",
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.ground_speed <= 3.5"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      }
+   }
+}

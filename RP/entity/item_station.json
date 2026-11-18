@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:item_station",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/item_station"
+         },
+         "geometry": {
+            "default": "geometry.item_station"
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "item_station",
+            "texture_index": 0
+         }
+      }
+   }
+}

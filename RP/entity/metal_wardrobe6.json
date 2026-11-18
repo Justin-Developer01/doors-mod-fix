@@ -1,0 +1,42 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:metal_wardrobe6",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/metal_wardrobe"
+         },
+         "geometry": {
+            "default": "geometry.metal_wardrobe"
+         },
+         "animations": {
+            "close": "animation.closet.close",
+            "open": "animation.closet.open",
+            "out": "animation.closet.get_out",
+            "closed": "controller.animation.closet.closed",
+            "closet_general": "animation.closet.general",
+            "general": "controller.animation.closet.general"
+         },
+         "scripts": {
+            "animate": [
+               "closed",
+               "general"
+            ]
+         },
+         "sound_effects": {
+            "close": "mob.closet.metal",
+            "open": "mob.closet.metal"
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "spawn_egg": {
+            "texture": "metal_wardrobe",
+            "texture_index": 0
+         }
+      }
+   }
+}

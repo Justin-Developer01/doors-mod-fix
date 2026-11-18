@@ -1,0 +1,27 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "spawn_egg": {
+            "texture": "figure_plush",
+            "texture_index": 0
+         },
+         "identifier": "doors:figure_plush",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure"
+         },
+         "geometry": {
+            "default": "geometry.figure_plush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "animations": {
+            "touch": "animation.figure_plush.touch"
+         }
+      }
+   }
+}

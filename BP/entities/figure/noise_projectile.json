@@ -1,0 +1,97 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:noise_pro",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "runtime_identifier": "minecraft:snowball"
+      },
+      "component_groups": {
+         "minecraft:despawndead": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawn_"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:explode": {
+            "fuse_length": 1.55,
+            "power": 0,
+            "fuse_lit": true,
+            "causes_fire": false,
+            "destroy_affected_by_griefing": true
+         },
+         "minecraft:collision_box": {
+            "width": 0,
+            "height": 0
+         },
+         "minecraft:scale": {
+            "value": 0.2
+         },
+         "minecraft:type_family": {
+            "family": [
+               "projectile"
+            ]
+         },
+         "minecraft:fire_immune": {},
+         "minecraft:health": {
+            "value": 100,
+            "max": 100,
+            "min": 100
+         },
+         "minecraft:projectile": {
+            "on_hit": {
+               "impact_damage": {
+                  "damage": 48,
+                  "knockback": true,
+                  "semi_random_diff_damage": false,
+                  "destroy_on_hit": false
+               },
+               "stick_in_ground": {
+                  "shake_time": 0.35
+               }
+            },
+            "power": 9,
+            "gravity": 0,
+            "angleoffset": 0
+         },
+         "minecraft:physics": {},
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 3,
+            "time_down_event": {
+               "event": "minecraft:event_dead"
+            }
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "self",
+                     "value": "despawn_"
+                  }
+               ]
+            }
+         }
+      },
+      "events": {
+         "minecraft:event_dead": {
+            "add": {
+               "component_groups": [
+                  "minecraft:despawndead"
+               ]
+            }
+         }
+      }
+   }
+}

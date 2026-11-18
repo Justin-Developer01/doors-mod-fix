@@ -1,0 +1,34 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_angry_scene",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_enraged"
+         },
+         "geometry": {
+            "default": "geometry.figure3"
+         },
+         "animations": {
+            "figure_angry": "animation.figure.angry_scene",
+            "angry": "controller.animation.figure.angry",
+            "jumping": "animation.figure.jumping"
+         },
+         "scripts": {
+            "animate": [
+               "angry"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "figure_angry_scene",
+            "texture_index": 0
+         }
+      }
+   }
+}

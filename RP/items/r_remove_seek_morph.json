@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "r:remove_seek_morph",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "r:remove_seek_morph",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

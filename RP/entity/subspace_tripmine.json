@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:subspace_tripmine",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/subspace_tripmine"
+         },
+         "geometry": {
+            "default": "geometry.subspace_tripmine"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "subspace_tripmine",
+            "texture_index": 0
+         }
+      }
+   }
+}

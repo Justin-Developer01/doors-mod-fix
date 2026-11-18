@@ -1,0 +1,77 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:a60_light",
+         "is_experimental": false,
+         "is_spawnable": false,
+         "is_summonable": true,
+         "scripts": {
+            "animate": [
+               "spawn",
+               "ride"
+            ]
+         },
+         "animations": {
+            "spawn": "controller.animation.lighting_spawn",
+            "ride": "controller.animation.start_ride"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         }
+      },
+      "components": {
+         "minecraft:damage_sensor": [
+            {
+               "deals_damage": false
+            }
+         ],
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_max": 10,
+               "range_min": 10
+            }
+         },
+         "minecraft:physics": {},
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "in_night": {
+            "run_command": {
+               "command": [
+                  "/effect @s invisibility 10000 255 true"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "not_in_night": {
+            "run_command": {
+               "command": [
+                  "/effect @s clear"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

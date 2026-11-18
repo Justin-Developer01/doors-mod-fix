@@ -1,0 +1,93 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:unhinged_music",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "music3"
+            ]
+         },
+         "animations": {
+            "music3": "controller.animation.door50_music3"
+         }
+      },
+      "component_groups": {
+         "minecraft:music_loop": {
+            "minecraft:transformation": {
+               "into": "doors:unhinged_music"
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:is_sheared": {},
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collusion": false
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 43,
+            "time_down_event": {
+               "event": "minecraft:music_loop",
+               "target": "self"
+            }
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         }
+      },
+      "events": {
+         "minecraft:music_loop": {
+            "add": {
+               "component_groups": [
+                  "minecraft:music_loop"
+               ]
+            }
+         },
+         "on:death": {
+            "randomize": [
+               {
+                  "run_command": {
+                     "command": [
+                        "stopsound @a mob.elevator.unhinged_loop"
+                     ]
+                  },
+                  "weight": 1
+               }
+            ]
+         }
+      }
+   }
+}

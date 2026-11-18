@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.door_close": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "door_close": "query.mark_variant == 1"
+                  },
+                  {
+                     "door_open": "query.mark_variant == 2"
+                  }
+               ]
+            },
+            "door_close": {
+               "transitions": [
+                  {
+                     "default": "query.mark_variant != 1"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~~~ fill ~~~ ~~1~ barrier"
+               ]
+            },
+            "door_open": {
+               "transitions": [
+                  {
+                     "default": "query.mark_variant != 2"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~~~ fill ~~~ ~~1~ air"
+               ]
+            }
+         }
+      }
+   }
+}

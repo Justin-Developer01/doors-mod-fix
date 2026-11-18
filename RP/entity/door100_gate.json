@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:door100_gate",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/door100_gate"
+         },
+         "geometry": {
+            "default": "geometry.door100_gate"
+         },
+         "animations": {
+            "door100_gate_general": "animation.door100_gate.general",
+            "open": "animation.door100_gate.open",
+            "close": "animation.door100_gate.close",
+            "general": "controller.animation.door100_gate.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "door100_gate",
+            "texture_index": 0
+         }
+      }
+   }
+}

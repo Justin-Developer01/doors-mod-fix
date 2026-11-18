@@ -1,0 +1,30 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.dupe_damage": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/damage @e[type=!doors:dupe,r=3] 10 entity_attack",
+                  "/function jumpscare_stop",
+                  "/event entity @e[type=r:dupe,r=3] minecraft:remove",
+                  "/event entity @e[type=r:dupe2,r=3] minecraft:remove"
+               ],
+               "transitions": [
+                  {
+                     "damage": "query.has_target"
+                  }
+               ]
+            },
+            "damage": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

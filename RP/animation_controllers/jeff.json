@@ -1,0 +1,83 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.jeff.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 0,
+                        "0.25": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 1,
+                        "0.1": 0
+                     }
+                  }
+               },
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "jeff_general": "variable.is_idling"
+                  },
+                  "look_at_target",
+                  "spawn"
+               ],
+               "transitions": [
+                  {
+                     "wave": "query.is_laying_down && variable.random1 == 0"
+                  },
+                  {
+                     "wave2": "query.is_laying_down && variable.random1 == 1"
+                  }
+               ],
+               "blend_transition": 0.2,
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "black_s"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "black_s2"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "black_s3"
+                  }
+               ]
+            },
+            "wave": {
+               "animations": [
+                  "wave"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_laying_down"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "wave2": {
+               "animations": [
+                  "wave2"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_laying_down"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      }
+   }
+}

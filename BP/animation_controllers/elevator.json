@@ -1,0 +1,128 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.elevator_spawn": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @s minecraft:is_spawn"
+               ],
+               "transitions": [
+                  {
+                     "spawn": "query.has_target"
+                  }
+               ]
+            },
+            "spawn": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.elevator_spawn2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @e[type=doors:elevator,r=2] minecraft:reset",
+                  "/event entity @e[type=r:wait3] r:timer"
+               ],
+               "transitions": [
+                  {
+                     "spawn2": "query.has_target"
+                  }
+               ]
+            },
+            "spawn2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.elevator_start2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @s minecraft:is_spawn"
+               ],
+               "transitions": [
+                  {
+                     "start2": "query.has_target"
+                  }
+               ]
+            },
+            "start2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.elevator_tp": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @a[r=6] @e[type=r:wait3]"
+               ],
+               "transitions": [
+                  {
+                     "tp": "query.has_target"
+                  }
+               ]
+            },
+            "tp": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.elevator_system": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "ride": "query.has_rider"
+                  },
+                  {
+                     "not_ride": "!query.has_rider"
+                  }
+               ]
+            },
+            "ride": {
+               "transitions": [
+                  {
+                     "default": "!query.has_rider"
+                  }
+               ],
+               "on_entry": []
+            },
+            "not_ride": {
+               "transitions": [
+                  {
+                     "default": "query.has_rider"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:reset",
+                  "/event entity @e[type=r:wait,r=2] minecraft:remove",
+                  "/stopsound @a[r=5] mob.elevator.jam"
+               ]
+            }
+         }
+      }
+   }
+}

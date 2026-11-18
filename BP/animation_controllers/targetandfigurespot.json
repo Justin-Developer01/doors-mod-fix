@@ -1,0 +1,56 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_spot": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "spot": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "spot": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=doors:figure,r=2] ~~~ event entity @e[type=doors:figure_spot,r=1] minecraft:remove",
+                  "/execute @e[type=doors:figure2,r=2] ~~~ event entity @e[type=doors:figure_spot,r=1] minecraft:remove",
+                  "/execute @e[type=doors:figure3,r=2] ~~~ event entity @e[type=doors:figure_spot,r=1] minecraft:remove",
+                  "/execute @e[type=doors:figure4,r=2] ~~~ event entity @e[type=doors:figure_spot,r=1] minecraft:remove",
+                  "/execute @p[r=6] ~~~ event entity @e[type=doors:figure,r=11] minecraft:on_calm",
+                  "/execute @p[r=6] ~~~ event entity @e[type=doors:figure2,r=11] minecraft:on_calm",
+                  "/execute @p[r=6] ~~~ event entity @e[type=doors:figure3,r=11] minecraft:on_calm",
+                  "/execute @p[r=6] ~~~ event entity @e[type=doors:figure4,r=11] minecraft:on_calm"
+               ]
+            }
+         }
+      },
+      "controller.animation.target_resist": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "resist": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "resist": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true"
+               ]
+            }
+         }
+      }
+   }
+}

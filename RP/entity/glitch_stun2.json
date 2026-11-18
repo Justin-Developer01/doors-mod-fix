@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:glitch_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/glitch"
+         },
+         "geometry": {
+            "default": "geometry.glitch"
+         },
+         "animations": {
+            "glitch_stun": "animation.glitch.stun",
+            "general": "controller.animation.glitch_stun.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "glitch",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:error"
+         }
+      }
+   }
+}

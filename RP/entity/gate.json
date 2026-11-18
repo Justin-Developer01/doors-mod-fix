@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:gate",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/gate"
+         },
+         "geometry": {
+            "default": "geometry.gate"
+         },
+         "animations": {
+            "gate_general": "animation.gate.general",
+            "open": "animation.gate.open",
+            "close": "animation.gate.close",
+            "general": "controller.animation.gate.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "gate",
+            "texture_index": 0
+         }
+      }
+   }
+}

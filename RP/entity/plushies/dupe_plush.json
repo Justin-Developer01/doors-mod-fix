@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:dupe_plush",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/dupe"
+         },
+         "geometry": {
+            "default": "geometry.dupe_plush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "dupe_plush",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:closet_d",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/closet"
+         },
+         "geometry": {
+            "default": "geometry.closet"
+         },
+         "animations": {
+            "closet_dead": "animation.closet.dead",
+            "dead": "controller.animation.closet.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ]
+      }
+   }
+}

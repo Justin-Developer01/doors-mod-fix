@@ -1,0 +1,30 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_follow": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "follow": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "follow": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph,r=3]",
+                  "/tp @s @e[tag=morph2,r=3]",
+                  "/tp @s @e[tag=morph11,r=3]",
+                  "/tp @s @e[tag=morph12,r=3]"
+               ]
+            }
+         }
+      }
+   }
+}

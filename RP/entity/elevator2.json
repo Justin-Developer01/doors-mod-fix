@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:elevator2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/elevator2"
+         },
+         "geometry": {
+            "default": "geometry.elevator2"
+         },
+         "animations": {
+            "close": "animation.elevator2.close",
+            "open": "animation.elevator2.open",
+            "out": "animation.elevator2.get_out",
+            "closed": "controller.animation.elevator2.closed",
+            "elevator2_general": "animation.elevator2.general"
+         },
+         "scripts": {
+            "animate": [
+               "closed"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "spawn_egg": {
+            "texture": "elevator2",
+            "texture_index": 0
+         }
+      }
+   }
+}

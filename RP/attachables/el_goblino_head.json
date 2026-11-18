@@ -1,0 +1,24 @@
+{
+   "format_version": "1.16.100",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:el_goblino_head",
+         "materials": {
+            "default": "spider",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/el_goblino"
+         },
+         "geometry": {
+            "default": "geometry.el_goblino_head"
+         },
+         "scripts": {
+            "parent_setup": "variable.helmet_layer_visible = 0.0;"
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ]
+      }
+   }
+}

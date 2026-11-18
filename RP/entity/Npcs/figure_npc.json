@@ -1,0 +1,97 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "spawn_egg": {
+            "texture": "npc_item",
+            "texture_index": 0
+         },
+         "identifier": "r:figure_npc",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "skin1": "textures/entity/figure",
+            "skin2": "textures/entity/figure2",
+            "skin3": "textures/entity/figure_new",
+            "skin4": "textures/entity/figure_new2",
+            "skin5": "textures/entity/figure_hard",
+            "skin6": "textures/entity/xmas_figure",
+            "skin7": "textures/entity/figure_noob"
+         },
+         "geometry": {
+            "default": "geometry.figure1",
+            "skin2": "geometry.figure",
+            "skin3": "geometry.figurenew1",
+            "skin4": "geometry.figure3",
+            "skin5": "geometry.figure_hard",
+            "skin6": "geometry.figure",
+            "skin7": "geometry.figure_noob"
+         },
+         "animations": {
+            "moving": "animation.figure.moving",
+            "running": "animation.figure.running",
+            "figure_general": "animation.figure.general",
+            "attack": "animation.figure.attack",
+            "duck": "animation.figure.duck",
+            "duck2": "animation.figure.duck2",
+            "looking": "animation.figure.looking",
+            "side1": "animation.figure.side1",
+            "side2": "animation.figure.side2",
+            "dead": "animation.figure.dead",
+            "sniff": "animation.figure.sniff",
+            "roar": "animation.figure.roar",
+            "jumping": "animation.figure.jumping",
+            "jumpscare": "animation.figure.jumpscare",
+            "jumpscare2": "animation.figure.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "melee_attack": "animation.figure.attack",
+            "move": "controller.animation.figure.move",
+            "general": "controller.animation.figure.general",
+            "sniff_controller": "controller.animation.warden.sniff",
+            "roar_controller": "controller.animation.warden.roar",
+            "melee_attack_controller": "controller.animation.warden.melee_attacking"
+         },
+         "scripts": {
+            "scale": "0.9375",
+            "initialize": [
+               "variable.is_holding_right = 0.0;",
+               "variable.is_blinking = 0.0;",
+               "variable.last_blink_time = 0.0;",
+               "variable.hand_bob = 0.0;"
+            ],
+            "pre_animation": [
+               "variable.helmet_layer_visible = 1.0;",
+               "variable.leg_layer_visible = 1.0;",
+               "variable.boot_layer_visible = 1.0;",
+               "variable.chest_layer_visible = 1.0;",
+               "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+               "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+               "variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);",
+               "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
+               "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;"
+            ],
+            "animate": [
+               "move",
+               "general",
+               "look_at_target",
+               "sniff_controller",
+               "roar_controller",
+               "melee_attack_controller",
+               {
+                  "look_at_target": 1
+               }
+            ]
+         },
+         "render_controllers": [
+            "controller.render.figure_npc"
+         ],
+         "sound_effects": {
+            "sniff": "mob.figure.ambient",
+            "roar": "mob.figure.roar",
+            "clicking": "mob.figure.ambient",
+            "step": "mob.figure.step"
+         }
+      }
+   }
+}

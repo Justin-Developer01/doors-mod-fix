@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.void.general": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"position": [0, 0, 0]
+				}
+			}
+		}
+	}
+}

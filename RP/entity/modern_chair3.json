@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:modern_chair3",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/modern_chair3"
+         },
+         "geometry": {
+            "default": "geometry.modern_chair3"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "office_chair",
+            "texture_index": 0
+         }
+      }
+   }
+}

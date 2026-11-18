@@ -1,0 +1,47 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:xmas_seek",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/xmas_seek"
+         },
+         "animations": {
+            "moving": "animation.seek.moving",
+            "running": "animation.seek.running",
+            "seek_general": "animation.seek.general",
+            "attack1": "animation.seek.attack1",
+            "jumpscare": "animation.seek.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.seek.move",
+            "general": "controller.animation.seek.general",
+            "attack": "controller.animation.seek.attack",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack",
+               "look_at_target"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.seek4"
+         },
+         "render_controllers": [
+            "controller.render.zombie"
+         ],
+         "spawn_egg": {
+            "base_color": "#151414",
+            "overlay_color": "#151414"
+         }
+      }
+   }
+}

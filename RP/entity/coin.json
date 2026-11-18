@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "coin",
+            "texture_index": 0
+         },
+         "identifier": "doors:coin",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/coin"
+         },
+         "geometry": {
+            "default": "geometry.coin"
+         },
+         "animations": {
+            "coin_general": "animation.coin.general",
+            "general": "controller.animation.coin.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         }
+      }
+   }
+}

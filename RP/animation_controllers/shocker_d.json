@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.shocker.dead": {
+         "states": {
+            "default": {
+               "animations": [
+                  "shocker_dead"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,39 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.r_shears",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "bone",
+					"parent": "rightitem",
+					"pivot": [-1, 0, 0],
+					"rotation": [1.93546, -0.25698, 22.41187],
+					"cubes": [
+						{"origin": [-2, 0, -1], "size": [1, 9, 1], "uv": [4, 0]}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "rightitem",
+					"pivot": [3, 1, 0],
+					"rotation": [1.49731, 1.25317, -25.06741],
+					"cubes": [
+						{"origin": [2, 0, -1], "size": [1, 9, 1], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

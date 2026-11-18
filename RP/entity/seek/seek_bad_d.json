@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_bad_d",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/seek_bad"
+         },
+         "animations": {
+            "seek_bad_dead": "animation.seek_bad.dead",
+            "dead": "controller.animation.seek_bad.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.seek_bad"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "seek_bad",
+            "texture_index": 0
+         }
+      }
+   }
+}

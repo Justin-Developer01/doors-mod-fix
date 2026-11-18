@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.bomb_detects": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "detects": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[family=villager,r=2] ~~~ event entity @e[type=doors:subspace_tripmine,r=1] r:active",
+                  "/execute @e[family=monster,r=2] ~~~ event entity @e[type=doors:subspace_tripmine,r=1] r:active",
+                  "/execute @e[family=player,r=2] ~~~ event entity @e[type=doors:subspace_tripmine,r=1] r:active"
+               ]
+            },
+            "detects": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:chair2",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/chair"
+         },
+         "geometry": {
+            "default": "geometry.chair2"
+         },
+         "animations": {
+            "chair2_general": "animation.chair2.general",
+            "general": "controller.animation.chair2.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "chair2",
+            "texture_index": 0
+         }
+      }
+   }
+}

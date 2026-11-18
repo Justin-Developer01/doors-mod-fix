@@ -1,0 +1,28 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:silence_area_remove",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "silence_remove",
+         "minecraft:display_name": {
+            "value": "§l§cSilence Hitbox Removal"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "silence_area_remove",
+            "duration": 1
+         },
+         "minecraft:fuel": {
+            "duration": 32
+         },
+         "r:on_use": {}
+      }
+   }
+}

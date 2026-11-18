@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.jack_bad.general": {
+			"loop": true,
+			"bones": {
+				"bb_main": {
+					"scale": [0.8, 0.7, 2.8]
+				}
+			}
+		}
+	}
+}

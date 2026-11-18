@@ -1,0 +1,738 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:el_goblino",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "talk"
+            ]
+         },
+         "animations": {
+            "talk": "controller.animation.goblino_talk"
+         }
+      },
+      "component_groups": {
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:el_goblino_d"
+            }
+         },
+         "minecraft:is_speaking": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking2": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking2",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking3": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking3",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking4": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking4",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking5": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking5",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking6": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking6",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking7": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking7",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking8": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking8",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking9": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking9",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking10": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking10",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_speaking11": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lTalk?",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_speaking11",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "doors_creature",
+               "goblino"
+            ]
+         },
+         "minecraft:health": {
+            "value": 600,
+            "max": 600
+         },
+         "minecraft:attack": {
+            "damage": 15
+         },
+         "minecraft:collision_box": {
+            "height": 2,
+            "width": 0.4
+         },
+         "minecraft:movement": {
+            "value": 0.25
+         },
+         "minecraft:nameable": {},
+         "minecraft:navigation.float": {
+            "can_path_over_water": true
+         },
+         "minecraft:jump.static": {},
+         "minecraft:knockback_resistance": {
+            "value": 10
+         },
+         "minecraft:navigation.walk": {
+            "can_path_over_water": true
+         },
+         "minecraft:annotation.break_door": {
+            "break_time": 0,
+            "min_difficulty": "normal"
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:jump.static": {},
+         "minecraft:can_climb": {},
+         "minecraft:fire_immune": true,
+         "minecraft:behavior.float": {
+            "priority": 2
+         },
+         "minecraft:navigation.walk": {
+            "can_float": true,
+            "is_amphibious": true,
+            "can_path_over_water": true,
+            "avoid_sun": false,
+            "avoid_water": false,
+            "avoid_damage_blocks": true
+         },
+         "minecraft:fall_damage": {
+            "value": 0
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "on_damage": {
+                     "filters": {
+                        "test": "has_damage",
+                        "subject": "self",
+                        "value": "suffocation"
+                     }
+                  },
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 9,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:behavior.look_at_entity": {
+            "priority": 9,
+            "look_distance": 6,
+            "probability": 0.02,
+            "filters": {
+               "test": "is_family",
+               "subject": "other",
+               "value": "mob"
+            }
+         },
+         "minecraft:can_climb": {},
+         "minecraft:follow_range": {
+            "value": 10000
+         },
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 3
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collision": true
+         },
+         "minecraft:experience_reward": {
+            "on_death": "query.last_hit_by_player ? 10 : 0"
+         },
+         "minecraft:underwater_movement": {
+            "value": 0.02
+         },
+         "minecraft:scale": {
+            "value": 0.7
+         },
+         "minecraft:behavior.melee_attack": {
+            "priority": 2,
+            "speed_multiplier": 1.4,
+            "target_dist": 30,
+            "max_dist": 3,
+            "random_stop_interval": 100,
+            "track_target": true,
+            "reach_multiplier": 0
+         },
+         "minecraft:behavior.owner_hurt_by_target": {
+            "priority": 1
+         },
+         "minecraft:behavior.owner_hurt_target": {
+            "priority": 2
+         },
+         "minecraft:follow_range": {
+            "value": 1000
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 2,
+            "reselect_targets": true,
+            "must_see": true,
+            "within_radius": 1000,
+            "must_see_forget_duration": 1000,
+            "persist_time": 0.5,
+            "entity_types": [
+               {
+                  "filters": {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "zombie"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "spider"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "creeper"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "illager"
+                        }
+                     ]
+                  },
+                  "max_dist": 20,
+                  "must_see": false
+               },
+               {
+                  "filters": {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "skeleton"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "wither_skeketon"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "warden"
+                        }
+                     ]
+                  },
+                  "max_dist": 35,
+                  "must_see": false
+               },
+               {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "coin"
+                        },
+                        {
+                           "test": "in_water",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": true
+                        }
+                     ]
+                  },
+                  "max_dist": 35
+               }
+            ]
+         }
+      },
+      "events": {
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:start_talk": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking11"
+               ]
+            }
+         },
+         "minecraft:is_speaking": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking2"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking",
+                  "minecraft:is_speaking11"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lHola! they call me El Goblino."
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking3"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking2"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lHola amigo!"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking3": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking4"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking3"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lDon't try to steal from Jeff, man... he will make you pay. Should call him Jeff the killer, or something."
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking4": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking5"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking4"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lEheeheehee, I'm terrifying man. Showed those Eye thingies what for. it was me and Bob, we dropped down... they weren't ready."
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking5": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking6"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking5"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lBob wants to make friends with that Timothy guy... It's a- it's- it's a bug, man!"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking6": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking7"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking6"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lOye, stay far away from room 60, düd. Freaky stuff!"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking7": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking8"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking7"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lJeff charges so much for his stuff, düd. Eheehee... I- I mean, who's got day kinda Plata, y'know?"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking8": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking9"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking8"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lFind any goods out there? Eheehee... I plan to take a look myself."
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking9": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking10"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking9"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lOye, that macho-meat-düd came in here a while ago, alm- uh- almost destroyed the place! Uff, man! Calm down!"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking10": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking11"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking10"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lI think we talked enough, eh? See you later."
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_speaking11": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_speaking"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_speaking11"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "say §lAdios! See you later, düd.",
+                  "event entity @s minecraft:start_talk"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.red_ambush.stuck": {
+         "states": {
+            "default": {
+               "animations": [
+                  "red_ambush_stuck"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell5",
+                     "locator": "reds"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

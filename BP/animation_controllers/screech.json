@@ -1,0 +1,281 @@
+{
+   "animation_controllers": {
+      "controller.animation.screech_attack": {
+         "states": {
+            "attack": {
+               "on_entry": [
+                  "/playsound mob.screech.attack @a"
+               ],
+               "transitions": [
+                  {
+                     "default": "variable.attack_time > 0"
+                  }
+               ]
+            },
+            "default": {
+               "on_entry": [
+                  "/playanimation @s animation.screech.attack",
+                  "/playsound mob.screech.attack @a",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:screech]",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:bald_screech]",
+                  "/tp @e[type=doors:screech,r=2] ~~~ facing @p",
+                  "/effect @e[type=!doors:screech,tag=!morph10,r=2] blindness 5",
+                  "/effect @e[type=!doors:screech,tag=!morph10,r=2] nausea 5"
+               ],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_bite": {
+         "states": {
+            "bite": {
+               "on_entry": [
+                  "/playsound mob.screech.attack @a",
+                  "/playanimation @s animation.screech.attack",
+                  "/effect @e[type=!doors:screech,tag=!morph10,r=2] blindness 5",
+                  "/effect @e[type=!doors:screech,tag=!morph10,r=2] nausea 5",
+                  "/effect @s resistance 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "default": "variable.attack_time > 0"
+                  }
+               ]
+            },
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "bite": "variable.attack_time > 0"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_gone": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @e[type=doors:screech,r=2] minecraft:remove",
+                  "/event entity @e[type=doors:bald_screech,r=2] minecraft:remove"
+               ],
+               "transitions": [
+                  {
+                     "gone": "(1.0)"
+                  }
+               ]
+            },
+            "gone": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_hide": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @e[type=r:invisible] ~~~ effect @e[type=doors:screech_fight,r=2] clear"
+               ],
+               "transitions": [
+                  {
+                     "hide": "(1.0)"
+                  }
+               ]
+            },
+            "hide": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_look": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.screech.psst @a[r=3]",
+                  "/summon r:screech_ride",
+                  "/tag @p[r=2] add psst"
+               ],
+               "transitions": [
+                  {
+                     "look": "query.has_target"
+                  }
+               ]
+            },
+            "look": {
+               "on_entry": [
+                  "/function scream"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_see": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/summon r:attack",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:screech]",
+                  "/tp @e[type=doors:screech,r=2] ~~~ facing @p"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_time": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/function screech_gone"
+               ],
+               "transitions": [
+                  {
+                     "time": "query.has_target"
+                  }
+               ]
+            },
+            "time": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_loud": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.screech.loud_screech @a"
+               ],
+               "transitions": [
+                  {
+                     "loud": "query.has_target"
+                  }
+               ]
+            },
+            "loud": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_wala": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @s invisibility 255",
+                  "/summon r:invisble"
+               ],
+               "transitions": [
+                  {
+                     "wala": "query.has_target"
+                  }
+               ]
+            },
+            "wala": {
+               "on_entry": [
+                  "/summon r:attack",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:screech]",
+                  "/tp @e[type=doors:screech,r=2] ~~~ facing @p"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screech_tp": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @e[type=r:attack,c=1] ~~~ tp @e[type=doors:screech,r=3] @p",
+                  "/execute @e[type=r:attack,c=1] ~~~ tp @e[type=doors:bald_screech,r=3] @p",
+                  "/execute @e[type=r:attack,c=1] ~~~ tp @e[type=doors:screech] @p",
+                  "/execute @e[type=r:attack,c=1] ~~~ tp @e[type=doors:bald_screech] @p"
+               ],
+               "transitions": [
+                  {
+                     "tp": "(1.0)"
+                  }
+               ]
+            },
+            "tp": {
+               "on_entry": [
+                  "/tp @e[type=r:attack,r=2] @p",
+                  "/tp @e[type=r:psst,r=2] @e[type=doors:screech]"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.tp_player": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @s @e[tag=psst,r=2]",
+                  "/ride @e[type=doors:screech,r=2] start_riding @e[type=r:screech_ride] teleport_ride",
+                  "/tp @e[type=doors:screech,r=3] ~~~ facing @e[r:screech_ride]"
+               ],
+               "transitions": [
+                  {
+                     "player": "(1.0)"
+                  }
+               ]
+            },
+            "player": {
+               "on_entry": [
+                  "/tp @s @e[tag=psst,r=2]"
+               ],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

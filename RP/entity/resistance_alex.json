@@ -1,0 +1,47 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:resistance_alex",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/alex_resistance"
+         },
+         "geometry": {
+            "default": "geometry.alex_resistance"
+         },
+         "animations": {
+            "moving": "animation.alex_resistance.moving",
+            "alex_resistance_general": "animation.alex_resistance.general",
+            "attack": "animation.alex_resistance.attack",
+            "move": "controller.animation.alex_resistance.move",
+            "general": "controller.animation.alex_resistance.general",
+            "attack": "controller.animation.alex_resistance.attack",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack",
+               "look_at_target"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "enable_attachables": true,
+         "spawn_egg": {
+            "texture": "alex_resist",
+            "texture_index": 0
+         }
+      }
+   }
+}

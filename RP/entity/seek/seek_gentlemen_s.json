@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_gentlemen_s",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/seek_gentlemen"
+         },
+         "geometry": {
+            "default": "geometry.seek3"
+         },
+         "animations": {
+            "seek_s_general": "animation.seek_s.general",
+            "general": "controller.animation.seek_s.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "particle_effects": {
+            "spell": "r:seek_emerge"
+         },
+         "spawn_egg": {
+            "texture": "seek",
+            "texture_index": 0
+         }
+      }
+   }
+}

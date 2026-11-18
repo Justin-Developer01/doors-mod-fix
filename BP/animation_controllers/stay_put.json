@@ -1,0 +1,72 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.stay_put": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "put": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "put": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @e[type=r:timer2,r=2] @e[tag=time]"
+               ]
+            }
+         }
+      },
+      "controller.animation.stay_put2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "put2": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "put2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @e[tag=time,r=2] invisibility 1 1 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.stay_put3": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "put3": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "put3": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @e[tag=time,r=2] @e[type=r:timer3]",
+                  "/tag @s remove time"
+               ]
+            }
+         }
+      }
+   }
+}

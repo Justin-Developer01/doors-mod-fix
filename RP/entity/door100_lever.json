@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:door100_lever",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/door100_lever"
+         },
+         "geometry": {
+            "default": "geometry.door100_lever"
+         },
+         "animations": {
+            "door100_lever_general": "animation.door100_lever.general",
+            "on": "animation.door100_lever.on",
+            "off": "animation.door100_lever.off",
+            "general": "controller.animation.door100_lever.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "door100_lever",
+            "texture_index": 0
+         }
+      }
+   }
+}

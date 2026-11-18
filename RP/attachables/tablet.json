@@ -1,0 +1,43 @@
+{
+   "format_version": "1.10",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:tablet",
+         "materials": {
+            "default": "entity_alphatest",
+            "enchanted": "entity_alphatest_glint"
+         },
+         "textures": {
+            "default": "textures/entity/tablet",
+            "enchanted": "textures/misc/enchanted_item_glint"
+         },
+         "geometry": {
+            "default": "geometry.tablet"
+         },
+         "animations": {
+            "wield_first_person": "animation.tablet.first_person",
+            "wield_third_person": "animation.tablet.third_person",
+            "active": "animation.tablet.active",
+            "inactive": "animation.tablet.inactive",
+            "general": "controller.animation.tablet.general"
+         },
+         "scripts": {
+            "pre_animation": [
+               "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+            ],
+            "animate": [
+               {
+                  "wield_first_person": "c.is_first_person"
+               },
+               {
+                  "wield_third_person": "!c.is_first_person"
+               },
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.item_default"
+         ]
+      }
+   }
+}

@@ -1,0 +1,47 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:resistance_steve",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/steve_resistance"
+         },
+         "geometry": {
+            "default": "geometry.steve_resistance"
+         },
+         "animations": {
+            "moving": "animation.steve_resistance.moving",
+            "steve_resistance_general": "animation.steve_resistance.general",
+            "attacking": "animation.steve_resistance.attacking",
+            "move": "controller.animation.steve_resistance.move",
+            "general": "controller.animation.steve_resistance.general",
+            "attack": "controller.animation.steve_resistance.attack",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack",
+               "look_at_target"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "enable_attachables": true,
+         "spawn_egg": {
+            "texture": "steve_resist",
+            "texture_index": 0
+         }
+      }
+   }
+}

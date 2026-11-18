@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_hard_stun",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_hard"
+         },
+         "geometry": {
+            "default": "geometry.figure_hard"
+         },
+         "animations": {
+            "figure_stuck": "animation.figure.stuck",
+            "stunned": "controller.animation.figure.stunned"
+         },
+         "scripts": {
+            "animate": [
+               "stunned"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "particle_effects": {
+            "spell": "r:light"
+         },
+         "spawn_egg": {
+            "texture": "figure",
+            "texture_index": 0
+         }
+      }
+   }
+}

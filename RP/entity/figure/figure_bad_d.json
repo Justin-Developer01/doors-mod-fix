@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_bad_d",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_bad"
+         },
+         "animations": {
+            "figure_bad_dead": "animation.figure_bad.dead",
+            "dead": "controller.animation.figure_bad.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.figure_bad"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "figure_bad",
+            "texture_index": 0
+         }
+      }
+   }
+}

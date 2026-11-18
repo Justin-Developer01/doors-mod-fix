@@ -1,0 +1,46 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:dupe",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/dupe"
+         },
+         "animations": {
+            "moving": "animation.dupe.moving",
+            "running": "animation.dupe.running",
+            "dupe_general": "animation.dupe.general",
+            "attack": "animation.dupe.attack",
+            "jumpscare": "animation.dupe.jumpscare",
+            "jump": "animation.dupe.jump",
+            "move": "controller.animation.dupe.move",
+            "general": "controller.animation.dupe.general",
+            "attack": "controller.animation.dupe.attack",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "look_at_target"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.dupe"
+         },
+         "render_controllers": [
+            "controller.render.zombie"
+         ],
+         "spawn_egg": {
+            "texture": "dupe",
+            "texture_index": 0
+         }
+      }
+   }
+}

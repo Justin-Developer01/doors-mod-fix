@@ -1,0 +1,40 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:ambush_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/ambush"
+         },
+         "geometry": {
+            "default": "geometry.ambush"
+         },
+         "animations": {
+            "ambush_rise2": "animation.ambush.rise2",
+            "rise2": "controller.animation.ambush.rise2"
+         },
+         "scripts": {
+            "animate": [
+               "rise2"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "ambush",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:ambush_light",
+            "spell2": "r:ambush_light2",
+            "spell3": "r:ambush_light3",
+            "spell4": "r:ambush_light4",
+            "spell5": "r:ambush_floor"
+         }
+      }
+   }
+}

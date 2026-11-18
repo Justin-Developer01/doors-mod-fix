@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_noob.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "figure_noob_dead"
+               ]
+            }
+         }
+      }
+   }
+}

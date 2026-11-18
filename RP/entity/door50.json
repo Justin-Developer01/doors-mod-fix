@@ -1,0 +1,64 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:door50",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/door50"
+         },
+         "geometry": {
+            "default": "geometry.door50"
+         },
+         "animations": {
+            "close": "animation.door50.close",
+            "open": "animation.door50.open",
+            "east": "animation.door50.east",
+            "north": "animation.door50.north",
+            "south": "animation.door50.south",
+            "west": "animation.door50.west",
+            "use": "controller.animation.door50.use",
+            "spin": "controller.animation.door50.spin"
+         },
+         "scripts": {
+            "animate": [
+               "use",
+               "spin",
+               {
+                  "east": "variable.is_facing_east"
+               },
+               {
+                  "north": "variable.is_facing_north"
+               },
+               {
+                  "south": "variable.is_facing_south"
+               },
+               {
+                  "west": "variable.is_facing_west"
+               }
+            ],
+            "pre_animation": [
+               "variable.random = math.round(math.random(0,2));",
+               "variable.entity_cardinal_direction = math.round(query.body_y_rotation / 90.0) * 90.0;",
+               "variable.is_facing_south = variable.entity_cardinal_direction == 0.0 || variable.entity_cardinal_direction == 360.0;",
+               "variable.is_facing_west = variable.entity_cardinal_direction == 90.0;",
+               "variable.is_facing_north = variable.entity_cardinal_direction == 180.0;",
+               "variable.is_facing_east = variable.entity_cardinal_direction == 270.0;"
+            ]
+         },
+         "sound_effects": {
+            "close": "hotel_door.close",
+            "open": "hotel_door.open"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "door50",
+            "texture_index": 0
+         }
+      }
+   }
+}

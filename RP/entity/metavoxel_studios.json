@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:metavoxel_studios",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/meta"
+         },
+         "geometry": {
+            "default": "geometry.metavoxel_studios"
+         },
+         "animations": {
+            "metavoxel_studios_general": "animation.metavoxel_studios.general",
+            "general": "controller.animation.metavoxel_studios.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "meta",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,49 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.rush.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "rush_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "smoke"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.rush.move": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "animations": [
+                  {
+                     "moving": "query.ground_speed * 0.5"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0 && variable.random == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      }
+   }
+}

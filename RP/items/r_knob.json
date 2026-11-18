@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "r:knob",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "r:knob",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

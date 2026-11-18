@@ -1,0 +1,116 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:jeff",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "jeff"
+            ]
+         },
+         "animations": {
+            "jeff": "controller.animation.is_jeff"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:shop_close": {
+            "minecraft:transformation": {
+               "into": "doors:jeff_close"
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 1,
+            "height": 0.7
+         },
+         "minecraft:type_family": {
+            "family": [
+               "doors_creature"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:scale": {
+            "value": 0.8
+         },
+         "minecraft:physics": {},
+         "minecraft:timer": {
+            "looping": true,
+            "randomInterval": true,
+            "time": 65,
+            "time_down_event": {
+               "event": "minecraft:shop_close"
+            }
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:shop_close": {
+            "add": {
+               "component_groups": [
+                  "minecraft:shop_close"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "event entity @e[type=doors:jeff_table,r=3] shop_closed",
+                  "event entity @e[type=doors:gate,r=3] r:close",
+                  "title @a[r=10] actionbar §lJeff's Shop is close",
+                  "stopsound @a mob.elevator.shop"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

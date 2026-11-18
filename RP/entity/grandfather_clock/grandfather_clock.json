@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:grandfather_clock",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/grandfather_clock"
+         },
+         "geometry": {
+            "default": "geometry.grandfather_clock"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "grandfather",
+            "texture_index": 0
+         }
+      }
+   }
+}

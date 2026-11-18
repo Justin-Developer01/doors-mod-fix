@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ambush_bad",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-10, 0, -4], "size": [21, 30, 0], "uv": [0, 0]}
+					],
+					"locators": {
+						"fog_light": [0, 13, 3]
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,269 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:door100_gate",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "gate2"
+            ]
+         },
+         "animations": {
+            "gate2": "controller.animation.is_gate2"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "r:open": {
+            "minecraft:is_stunned": {},
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:open_remove"
+               }
+            }
+         },
+         "r:rotate_stop": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 0.1,
+               "time_down_event": {
+                  "event": "on:death"
+               }
+            }
+         },
+         "r:close": {
+            "minecraft:is_sheared": {},
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:close_remove"
+               }
+            }
+         },
+         "r:close_trans": {
+            "minecraft:transformation": {
+               "into": "doors:door100_gate2"
+            }
+         },
+         "minecraft:gate_reset": {
+            "minecraft:transformation": {
+               "into": "doors:door100_gate"
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:scale": {
+            "value": 2
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "is_family",
+                              "subject": "other",
+                              "value": "player"
+                           },
+                           {
+                              "test": "has_ability",
+                              "subject": "other",
+                              "operator": "equals",
+                              "value": "invulnerable"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:rotate",
+                     "target": "self"
+                  },
+                  "interact_text": "§lRotate"
+               }
+            ]
+         }
+      },
+      "events": {
+         "minecraft:closed": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_closing"
+               ]
+            }
+         },
+         "minecraft:closing2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_closing2"
+               ]
+            }
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "r:open": {
+            "add": {
+               "component_groups": [
+                  "r:open"
+               ]
+            }
+         },
+         "r:close_trans": {
+            "add": {
+               "component_groups": [
+                  "r:close_trans"
+               ]
+            }
+         },
+         "r:open_remove": {
+            "remove": {
+               "component_groups": [
+                  "r:close"
+               ]
+            }
+         },
+         "r:close_remove": {
+            "remove": {
+               "component_groups": [
+                  "r:open"
+               ]
+            }
+         },
+         "r:close": {
+            "add": {
+               "component_groups": [
+                  "r:close"
+               ]
+            }
+         },
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_opening"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead",
+                  "minecraft:entity_spawned"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "function gate2_open"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:opening": {
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.grand_open @a[r=9]",
+                  "event entity @s minecraft:closed",
+                  "event entity @s r:open",
+                  "function gate2_open"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:closing": {
+            "weight": 1,
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.grand_open @a[r=9]",
+                  "event entity @s r:close_trans",
+                  "function gate2_close"
+               ],
+               "target": "self"
+            }
+         },
+         "minecraft:rotate": {
+            "add": {
+               "component_groups": [
+                  "r:rotate_stop"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "tp @s ~~~ facing @p"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

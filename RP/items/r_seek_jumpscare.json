@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "r:seek_jumpscare",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "r:seek_jumpscare",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

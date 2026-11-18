@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.wall_light2",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [-1, 0, 7],
+					"cubes": [
+						{"origin": [-4, 0, 6], "size": [7, 4, 2], "uv": [8, 16]},
+						{"origin": [-4, 16.93696, 19.08796], "size": [2, 3, 1], "pivot": [-1, -2.06304, 26.08796], "rotation": [60, 0, 0], "uv": [12, 25]},
+						{"origin": [1, 16.93696, 19.08796], "size": [2, 3, 1], "pivot": [-1, -2.06304, 26.08796], "rotation": [60, 0, 0], "uv": [12, 25]},
+						{"origin": [-4, 40.30094, 29.13595], "size": [2, 2, 2], "pivot": [-3, 10.30094, 33.13595], "rotation": [97.5, 0, 0], "uv": [10, 9]},
+						{"origin": [1, 40.3009, 29.13595], "size": [2, 2, 1], "pivot": [1, 10.30094, 33.13595], "rotation": [97.5, 0, 0], "uv": [3, 8]}
+					]
+				}
+			]
+		}
+	]
+}

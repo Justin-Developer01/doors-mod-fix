@@ -1,0 +1,136 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:grandfather_clock4",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "solid"
+            ]
+         },
+         "animations": {
+            "solid": "controller.animation.solid"
+         }
+      },
+      "component_groups": {
+         "solid": {
+            "minecraft:variant": {
+               "value": 0
+            }
+         },
+         "minecraft:transform_to_clock": {
+            "minecraft:transformation": {
+               "into": "doors:grandfather_clock5"
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.4,
+            "height": 0.3
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate",
+               "object"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:block_sensor": {
+            "sensor_radius": 0.5,
+            "on_break": [
+               {
+                  "block_list": [
+                     "minecraft:barrier"
+                  ],
+                  "on_block_broken": "minecraft:breaked"
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 30,
+            "time_down_event": {
+               "event": "minecraft:event_spawn_clock"
+            }
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "solid"
+               ]
+            }
+         },
+         "on:death": {
+            "randomize": [
+               {
+                  "run_command": {
+                     "command": [
+                        "function not_solid"
+                     ]
+                  },
+                  "weight": 1
+               }
+            ]
+         },
+         "minecraft:event_spawn_clock": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_clock"
+               ]
+            }
+         }
+      }
+   }
+}

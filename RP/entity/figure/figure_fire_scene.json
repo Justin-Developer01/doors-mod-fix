@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_fire_scene",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_new"
+         },
+         "geometry": {
+            "default": "geometry.figure3"
+         },
+         "animations": {
+            "figure_fire": "animation.figure.fire",
+            "fire": "controller.animation.figure.fire"
+         },
+         "scripts": {
+            "animate": [
+               "fire"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "figure_fire",
+            "texture_index": 0
+         }
+      }
+   }
+}

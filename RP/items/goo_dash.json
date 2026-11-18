@@ -1,0 +1,13 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:goo_dash",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "goo_dash",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

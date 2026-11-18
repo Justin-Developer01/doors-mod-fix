@@ -1,0 +1,64 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.hotel_door4",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "spin",
+					"pivot": [-8, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "spin",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -1.5],
+							"size": [16, 32, 3],
+							"uv": {
+								"north": {"uv": [3, 3], "uv_size": [16, 32]},
+								"east": {"uv": [0, 3], "uv_size": [3, 32]},
+								"south": {"uv": [3, 3], "uv_size": [16, 32]},
+								"west": {"uv": [19, 3], "uv_size": [3, 32]},
+								"up": {"uv": [3, 0], "uv_size": [16, 3]},
+								"down": {"uv": [19, 3], "uv_size": [16, -3]}
+							}
+						},
+						{
+							"origin": [-7, 13, -2.5],
+							"size": [1, 4, 1],
+							"uv": {
+								"north": {"uv": [13, 36], "uv_size": [1, 4]},
+								"east": {"uv": [12, 36], "uv_size": [1, 4]},
+								"south": {"uv": [15, 36], "uv_size": [1, 4]},
+								"west": {"uv": [14, 36], "uv_size": [1, 4]},
+								"up": {"uv": [13, 35], "uv_size": [1, 1]},
+								"down": {"uv": [14, 36], "uv_size": [1, -1]}
+							}
+						},
+						{
+							"origin": [-7, 13, 1.5],
+							"size": [1, 4, 1],
+							"uv": {
+								"north": {"uv": [9, 36], "uv_size": [1, 4]},
+								"east": {"uv": [8, 36], "uv_size": [1, 4]},
+								"south": {"uv": [11, 36], "uv_size": [1, 4]},
+								"west": {"uv": [10, 36], "uv_size": [1, 4]},
+								"up": {"uv": [9, 35], "uv_size": [1, 1]},
+								"down": {"uv": [10, 36], "uv_size": [1, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

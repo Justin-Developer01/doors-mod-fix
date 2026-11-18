@@ -1,0 +1,43 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:red_ambush_stun",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/red_ambush"
+         },
+         "animations": {
+            "red_ambush_stuck": "animation.red_ambush.stuck",
+            "stuck": "controller.animation.red_ambush.stuck"
+         },
+         "scripts": {
+            "animate": [
+               "stuck"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.red_ambush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell5": "r:ambush_light5",
+            "spell": "r:ambush_light",
+            "spell2": "r:ambush_light2",
+            "spell3": "r:ambush_light3",
+            "spell4": "r:ambush_light4"
+         },
+         "spawn_egg": {
+            "texture": "red_ambush",
+            "texture_index": 0
+         }
+      }
+   }
+}

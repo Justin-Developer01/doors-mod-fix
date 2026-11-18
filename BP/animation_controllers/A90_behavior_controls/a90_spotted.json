@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.a90_spotted": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.a_90.screamed @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "spotted": "query.has_target"
+                  }
+               ]
+            },
+            "spotted": {
+               "on_entry": [
+                  "/playsound mob.a_90.screamed @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

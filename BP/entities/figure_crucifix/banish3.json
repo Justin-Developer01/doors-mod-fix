@@ -1,0 +1,80 @@
+{
+   "format_version": "1.8.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:banish3",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "trap2"
+            ]
+         },
+         "animations": {
+            "trap2": "controller.animation.figure_trap2"
+         }
+      },
+      "component_groups": {
+         "minecraft:despawndead": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawn_"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": true,
+            "is_pushable_by_piston": true
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:damage_sensor": [
+            {
+               "deals_damage": false
+            }
+         ],
+         "minecraft:physics": {},
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "self",
+                     "value": "despawn_"
+                  }
+               ]
+            }
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 1,
+            "time_down_event": {
+               "event": "minecraft:event_dead"
+            }
+         }
+      },
+      "events": {
+         "minecraft:event_dead": {
+            "add": {
+               "component_groups": [
+                  "minecraft:despawndead"
+               ]
+            }
+         }
+      }
+   }
+}

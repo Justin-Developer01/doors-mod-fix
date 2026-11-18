@@ -1,0 +1,15 @@
+{
+   "animations": {
+      "animation.figure_step": {
+         "timeline": {
+            "0.0": [
+               "/playsound mob.figure.step @a[r=30]",
+               "/execute @s ~~~ camerashake add @a[r=30] 0.3 0.05 positional"
+            ]
+         },
+         "animation_length": 1,
+         "loop": true
+      }
+   },
+   "format_version": "1.10.0"
+}

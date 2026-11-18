@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.bob.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "bob_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "dirty"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

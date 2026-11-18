@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_noob_stun",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_noob"
+         },
+         "geometry": {
+            "default": "geometry.figure_noob"
+         },
+         "animations": {
+            "figure_stuck": "animation.figure.stuck",
+            "stunned": "controller.animation.figure.stunned"
+         },
+         "scripts": {
+            "animate": [
+               "stunned"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "figure",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,64 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.capybara.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 0,
+                        "0.25": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 1,
+                        "0.1": 0
+                     }
+                  }
+               },
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "capybara_general": "variable.is_idling"
+                  },
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "eating": "query.is_laying_down && variable.random1 == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "eating": {
+               "animations": [
+                  "eating"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_laying_down"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      },
+      "controller.animation.capybara.general2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "capybara_general2",
+                  "look_at_target"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,28 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.eyes.spawn": {
+         "states": {
+            "default": {
+               "animations": [
+                  "eyes_spawn"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "eye2"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "eye2"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "eye"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

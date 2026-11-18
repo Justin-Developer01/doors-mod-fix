@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "particle_effects": {
+            "spell": "r:blue_light"
+         },
+         "identifier": "doors:guiding_light",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/empty"
+         },
+         "geometry": {
+            "default": "geometry.rift"
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "animations": {
+            "rift_general": "animation.rift.general",
+            "general": "controller.animation.rift.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "spawn_egg": {
+            "texture": "guiding_light",
+            "texture_index": 0
+         }
+      }
+   }
+}

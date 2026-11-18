@@ -1,0 +1,54 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_eye": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "eye": "query.has_target"
+                  }
+               ]
+            },
+            "eye": {
+               "on_entry": [
+                  "/playsound mob.figure.roar @a[r=30]",
+                  "/camerashake add @a 0.2 2 rotational"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_eye2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @s @e[type=doors:figure_hard,c=1]"
+               ],
+               "transitions": [
+                  {
+                     "eye2": "query.has_target"
+                  }
+               ]
+            },
+            "eye2": {
+               "on_entry": [
+                  "/summon r:stand_knockback",
+                  "/summon r:stand_knockback",
+                  "/tp @s @e[type=doors:figure_hard,c=1]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,284 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:wall_light_alert",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "light",
+               "off"
+            ]
+         },
+         "animations": {
+            "light": "animation.blink_light",
+            "off": "animation.blink_off"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:wall_light2"
+            }
+         },
+         "minecraft:transform_to_alert2": {
+            "minecraft:transformation": {
+               "into": "doors:wall_light3"
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "hurt_item": 0,
+                  "interact_text": "§lRemove Furniture?",
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "is_family",
+                              "subject": "other",
+                              "value": "player"
+                           },
+                           {
+                              "test": "has_ability",
+                              "subject": "other",
+                              "operator": "equals",
+                              "value": "invulnerable"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:remove_light",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 5,
+            "time_down_event": {
+               "event": "minecraft:event_spawn_alert2"
+            }
+         },
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 3
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 1,
+            "within_radius": 300,
+            "reselect_targets": true,
+            "target_invisible_multiplier": 0.4,
+            "entity_types": [
+               {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "inanimate"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "ambush"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "mark"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "villager"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "monster"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "dragon"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "wither"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "irongolem"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph2"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph3"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph4"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph5"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph6"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph7"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph8"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph9"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph10"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "closet"
+                        }
+                     ]
+                  },
+                  "max_dist": 100,
+                  "sprint_speed_multiplier": 1.1
+               }
+            ],
+            "must_see": true,
+            "must_see_forget_duration": 30
+         },
+         "minecraft:follow_range": {
+            "value": 200
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:event_spawn_alert2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_alert2"
+               ]
+            }
+         },
+         "minecraft:remove_light": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "event entity @e[type=doors:wall_light_alert,r=2] minecraft:remove",
+                        "execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

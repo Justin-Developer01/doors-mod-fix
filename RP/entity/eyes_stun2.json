@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:eyes_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/eyes"
+         },
+         "animations": {
+            "eyes_dead": "animation.eyes.dead",
+            "look_at_target": "animation.common.look_at_target",
+            "dead": "controller.animation.eyes.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.eyes"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:eyes",
+            "spell2": "r:eyes2",
+            "spell3": "r:eyes3"
+         },
+         "spawn_egg": {
+            "texture": "eyes",
+            "texture_index": 0
+         }
+      }
+   }
+}

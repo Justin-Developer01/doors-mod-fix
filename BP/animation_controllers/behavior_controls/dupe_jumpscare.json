@@ -1,0 +1,45 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.jumpscare_dupe": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attacking": "variable.attack_time > 0 && !query.is_stunned"
+                  },
+                  {
+                     "adding": "query.has_rider && !query.is_stunned"
+                  }
+               ]
+            },
+            "attacking": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/function get_duped",
+                  "/tag @s add duped"
+               ]
+            },
+            "adding": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/scoreboard objectives add duped dummy",
+                  "/scoreboard players add @e[r=3,type=!doors:dupe] duped 1",
+                  "/execute @e[scores={duped=45..1000}] ~ ~ ~ function jumpscare_stop",
+                  "/execute @e[scores={duped=45..1000}] ~ ~ ~ tag @e[type=doors:dupe,r=2] remove duped",
+                  "/scoreboard players set @a[scores={duped=45..1000}] duped 0"
+               ]
+            }
+         }
+      }
+   }
+}

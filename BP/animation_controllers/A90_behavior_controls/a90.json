@@ -1,0 +1,31 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.a90_sneak": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "sneaky": "query.has_target ? (query.target -> query.is_moving) : 0"
+                  }
+               ]
+            },
+            "sneaky": {
+               "on_entry": [
+                  "@s minecraft:fast_mode",
+                  "@s minecraft:event_spawn_stop"
+               ],
+               "on_exit": [
+                  "@s minecraft:sneak_mode"
+               ],
+               "transitions": [
+                  {
+                     "default": "return query.has_target ? !(query.target -> query.is_moving) : query.is_alive;"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

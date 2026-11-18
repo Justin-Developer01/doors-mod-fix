@@ -1,0 +1,32 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.frostbite.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "frostbite_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "frost"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "frost"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "frost"
+                  },
+                  {
+                     "effect": "spell4",
+                     "locator": "frost"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

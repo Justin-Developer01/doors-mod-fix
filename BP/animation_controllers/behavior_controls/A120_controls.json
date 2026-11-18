@@ -1,0 +1,194 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.a120_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~1 ~ tp @e[type=!r:grabbed,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:quiet_jumpscare,type=!doors:silence,type=!r:depth_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!secret:a_60,type=!doors:title,type=!doors:seek_s,type=!doors:depth,type=!doors:greed,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:chair,type=!doors:chair2,type=!r:greed_jumpscare,type=!doors:seek,type=!r:figurekill,type=!doors:a_90_angry,type=!doors:a_120,type=!r:a120kill,type=!r:a120_jumpscare,type=!r:a90_jumpscare,type=!item,type=!arrow,family=!inanimate,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!greed,tag=!closet,tag=!closet2,tag=!cam,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @p[r=2] ~~~ facing @e[type=doors:a_120]"
+               ]
+            }
+         }
+      },
+      "controller.animation.a120_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playanimation @e[type=doors:a_120,r=2] attack",
+                  "/playanimation @e[type=doors:a_120,r=1] attack",
+                  "/playanimation @e[type=doors:a_120,r=3] attack",
+                  "/playsound mob.a_120.attacked @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.a120_targetted": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/stopsound @a mob.a_120.danger"
+               ],
+               "transitions": [
+                  {
+                     "targetted": "query.has_target"
+                  }
+               ]
+            },
+            "targetted": {
+               "on_entry": [
+                  "/playsound mob.a_120.danger @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.a120_panic": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.a_120.attacked @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "panic": "query.has_target"
+                  }
+               ]
+            },
+            "panic": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.a120_ability": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "on_timer": "query.is_moving"
+                  },
+                  {
+                     "off_timer": "!query.is_moving"
+                  }
+               ]
+            },
+            "on_timer": {
+               "animations": [
+                  "invisible_on"
+               ],
+               "transitions": [
+                  {
+                     "on": "!query.is_moving"
+                  }
+               ],
+               "on_entry": []
+            },
+            "on": {
+               "transitions": [
+                  {
+                     "off_timer": "!query.is_moving"
+                  }
+               ]
+            },
+            "off_timer": {
+               "animations": [
+                  "invisible_off"
+               ],
+               "transitions": [
+                  {
+                     "off": "!query.is_moving"
+                  }
+               ],
+               "on_entry": []
+            },
+            "off": {
+               "transitions": [
+                  {
+                     "on_timer": "query.is_moving"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.a120_kill": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "kill": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "kill": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/kill @e[family=!inanimate,type=!doors:xmas_figure,type=!doors:seek_gentlemen,type=!doors:seek_gentlemen_stun,type=!doors:seek_gentlemen_s,type=!doors:seek_gentlemen_d,type=!doors:xmas_figure_stun,type=!doors:xmas_figure_d,type=!doors:figure_hard_d,type=!doors:figure_hard_stun,type=!doors:figure_noob,type=!doors:figure_noob_stun,type=!doors:figure_noob_d,type=!r:figure_step,type=!r:figure_grab,type=!r:barrage_jumpscare,type=!doors:barrage,type=!r:figure_grab_wait,type=!doors:xmas_screech,type=!doors:figure_d,type=!doors:figure_d2,type=!doors:xmas_seek_stun,type=!doors:xmas_seek_d,type=!doors:nightmare_seek_stun,type=!doors:nightmare_seek_d,type=!doors:xmas_eyes,type=!doors:drawer,type=!doors:drawer2,type=!doors:skeleton_door,type=!r:lock,type=!doors:hotel_door,type=!doors:door50,type=!doors:door50_1,type=!doors:xmas_seek_s,type=!doors:figure,type=!doors:figure2,type=!doors:seek,type=!doors:seek_s,type=!doors:eyes,type=!doors:rush,type=!doors:ambush,type=!doors:screech,type=!doors:shadow,type=!doors:timothy,type=!doors:depth,type=!doors:greed,type=!doors:silence,type=!doors:seek_eye,type=!doors:closet2,type=!secret:a_60,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:seek_hand,type=!doors:guiding_light,type=!r:light,type=!doors:shadow,type=!doors:red_ambush,type=!doors:windows,type=!doors:timothy,type=!doors:glitch,type=!doors:figure_hard,type=!r:grab_new,type=!doors:figure3,type=!doors:closet,type=!doors:nightmare_seek,type=!doors:xmas_seek,type=!doors:title,type=!doors:figure4,type=!r:shake,type=!doors:jack,type=!r:figure_light,type=!r:figure_step2,type=!r:figure_step,type=!doors:jack_bad,type=!doors:wardrobe,type=!doors:closet_bad,type=!doors:figure_plush,type=!doors:seek_plush,type=!doors:screech_plush,type=!doors:halt_plush,type=!doors:ambush_plush,type=!r:a60_light,type=!doors:rush_plush,type=!doors:trollface,type=!doors:trollface2,type=!doors:figure_enraged,type=!doors:red_ambush,type=!doors:nightmare_rush,type=!secret:a_602,type=!r:a60_light2,type=!doors:door50_complete,type=!doors:rift,type=!doors:rift2,type=!doors:modern_chair2,type=!r:figure_particle,type=!doors:dupe,type=!r:ambush_particle,type=!r:a_90,type=!r:a_90_angry,type=!r:a_90_stop,type=!doors:strike,type=!r:ambush_hitbox,type=!doors:strike_stun,type=!r:seek_step,type=!r:figure_step,type=!doors:strike_stun2,type=!doors:figure_not_blind,type=!doors:dupe2,type=!doors:dread,type=!r:dread_jumpscare,type=!doors:silence_sleep,type=!doors:silence_awake,type=!doors:wall_light,type=!r:rush_sound,type=!r:rush_hitbox,type=!r:depth_sound,type=!r:depth_hitbox,type=!doors:wall_light2,type=!doors:wall_light3,type=!doors:a_90,type=!doors:a_90_angry,type=!doors:a_90_stop,type=!doors:a_120,type=!doors:frostbite,type=!r:frostbite_jumpscare,type=!r:silence_hitbox,type=!r:silence_sound,type=!doors:wall_light_alert,type=!doors:figure_boss,type=!doors:seek_light,type=!doors:red_ambush,tag=!cam,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!handd,tag=!handd2,tag=!hand,tag=!hand2,tag=!closet,tag=!closet2,tag=!greed,tag=!caught,r=3]"
+               ]
+            }
+         }
+      },
+      "controller.animation.very_angry2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.a_120.very_angry @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "angry2": "query.has_target"
+                  }
+               ]
+            },
+            "angry2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

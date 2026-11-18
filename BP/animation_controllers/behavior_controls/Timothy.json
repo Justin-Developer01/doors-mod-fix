@@ -1,0 +1,58 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.spider_grab": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "grab": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "grab": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:spider_grab] ~~~ effect @e[type=!doors:timothy,r=2] slowness 1 6 true",
+                  "/execute @s ~ ~ ~ tp @e[type=!r:grabbed,type=!doors:timothy,type=!r:spider_grab,type=!r:hand_grab2,type=!r:grabbed2,type=!r:grab_new,type=!doors:seek_hand,type=!doors:seek_eye,type=!r:hand_grab,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:closet,type=!doors:figure,type=!doors:halt,type=!doors:screech,type=!doors:closet2,type=!secret:a_60,type=!doors:timothy2,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:seek_s,type=!doors:windows,type=!doors:shadow,type=!doors:guiding_light,type=!doors:ambush,type=!r:light,type=!doors:depth,type=!doors:silence,type=!doors:greed,type=!doors:glitch,type=!doors:seek,type=!r:figurekill,type=!item,type=!arrow,family=!inanimate,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!cam,tag=!greed,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:timothy]",
+                  "/tp @e[type=doors:timothy,r=2] ~~~ facing @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.spider_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:seek_s,type=!doors:jack,type=!doors:figure,type=!doors:figure2,type=!doors:figure3,type=!doors:figure4,type=!doors:rush,type=!doors:eyes,r=3] animation.timothy.attack",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:timothy]",
+                  "/tp @e[type=doors:timothy] ~~~ facing @p",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:spider_jumpscare ^ ^0.5 ^1",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:spider_jumpscare ^ ^0.5 ^1",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:spider_jumpscare ^ ^0.5 ^1",
+                  "/playsound mob.timothy.jump @p"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

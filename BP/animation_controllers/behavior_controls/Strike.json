@@ -1,0 +1,105 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.strike_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:strike_jumpscare] ~~~ effect @e[type=!doors:strike,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:strike_jumpscare]~~~ effect @e[type=!doors:strike,r=2] blindness 5",
+                  "/execute @s ~ ~ ~ tp @e[type=!doors:strike_stun,type=!r:strike_jumpscare,type=!doors:strike_stun2,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:rush_jumpscare,type=!doors:strike,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:closet2,type=!secret:a_60,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!doors:chair,type=!doors:chair2,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:title,type=!doors:seek_s,type=!doors:seek,type=!doors:red_ambush,type=!r:figurekill,type=!item,type=!arrow,family=!inanimate,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!cam,tag=!closet,tag=!closet2,tag=!greed,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:strike]",
+                  "/tp @e[type=doors:strike,r=2] ~~~ facing @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.strike_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:rush,type=!doors:seek_s,type=!doors:jack,type=!doors:screech,type=!doors:eyes,r=3] animation.strike.attack",
+                  "/playsound mob.strike.scare @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/playsound mob.strike.striking @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.entity_strike": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "strike": "query.has_target"
+                  }
+               ]
+            },
+            "strike": {
+               "on_entry": [
+                  "/playsound mob.strike.striking @a[r=40]",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.strike_panic": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.strike.loud_screaming @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "panic": "query.has_target"
+                  }
+               ]
+            },
+            "panic": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,352 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:elevator_power2",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "open",
+               "start"
+            ]
+         },
+         "animations": {
+            "open": "controller.animation.switch_open",
+            "start": "controller.animation.switch_start"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_fixing": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lFix?",
+                     "on_interact": {
+                        "event": "minecraft:power",
+                        "target": "self",
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        }
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_fixing2": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lFix?",
+                     "on_interact": {
+                        "event": "minecraft:power2",
+                        "target": "self",
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        }
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_fixing3": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lFix?",
+                     "on_interact": {
+                        "event": "minecraft:power3",
+                        "target": "self",
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        }
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:wait": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 10,
+               "time_down_event": {
+                  "event": "minecraft:fix2"
+               }
+            }
+         },
+         "minecraft:wait2": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 10,
+               "time_down_event": {
+                  "event": "minecraft:fix3"
+               }
+            }
+         },
+         "minecraft:wait3": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 10,
+               "time_down_event": {
+                  "event": "minecraft:fix4"
+               }
+            }
+         },
+         "r:open": {
+            "minecraft:is_stunned": {}
+         },
+         "minecraft:is_done": {
+            "minecraft:transformation": {
+               "into": "doors:elevator_power"
+            }
+         },
+         "r:close": {
+            "minecraft:is_sheared": {}
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:scale": {
+            "value": 0.7
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": true
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:fix2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_fixing2"
+               ]
+            }
+         },
+         "minecraft:fix3": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_fixing3"
+               ]
+            }
+         },
+         "minecraft:fix4": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_done"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_fixing4",
+                  "minecraft:wait3"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "title @p actionbar §l§aElevator Breaker Power ONLINE",
+                  "particle minecraft:knockback_roar",
+                  "event entity @e[type=doors:elevator2] minecraft:is_spawn",
+                  "event entity @s r:close",
+                  "playsound mob.closet.achieve @a[r=4]"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "r:open": {
+            "add": {
+               "component_groups": [
+                  "r:open"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:close"
+               ]
+            }
+         },
+         "r:close": {
+            "add": {
+               "component_groups": [
+                  "r:close"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:open"
+               ]
+            }
+         },
+         "minecraft:power": {
+            "add": {
+               "component_groups": [
+                  "minecraft:wait"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_fixing"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "event entity @s r:open",
+                  "playsound mob.closet.breaker @a[r=5]",
+                  "playanimation @p animation.react_arm_2",
+                  "title @p actionbar §lFixing...",
+                  "particle minecraft:campfire_smoke_particle"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:power2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:wait2"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_fixing2"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.breaker @a[r=5]",
+                  "playanimation @p animation.react_arm_2",
+                  "title @p actionbar §lFixing...",
+                  "particle minecraft:campfire_smoke_particle"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:power3": {
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.breaker @a[r=5]",
+                  "playanimation @p animation.react_arm_2",
+                  "title @p actionbar §lFixing...",
+                  "particle minecraft:campfire_smoke_particle"
+               ],
+               "target": "self"
+            },
+            "weight": 1,
+            "add": {
+               "component_groups": [
+                  "minecraft:wait3"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_fixing3"
+               ]
+            }
+         },
+         "minecraft:rotate": {
+            "run_command": {
+               "command": [
+                  "tp @s ~~~ facing @p"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:start": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_fixing"
+               ]
+            }
+         }
+      }
+   }
+}

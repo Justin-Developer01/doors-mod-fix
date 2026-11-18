@@ -1,0 +1,43 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:timothy2",
+         "materials": {
+            "default": "spider"
+         },
+         "geometry": {
+            "default": "geometry.timothy"
+         },
+         "textures": {
+            "default": "textures/entity/timothy"
+         },
+         "animations": {
+            "timothy_general": "animation.timothy.general",
+            "timothy_general2": "animation.timothy.general2",
+            "moving": "animation.timothy.moving",
+            "attack": "animation.timothy.attack",
+            "general": "controller.animation.timothy.general",
+            "general2": "controller.animation.timothy.general2"
+         },
+         "scripts": {
+            "animate": [
+               "general",
+               "general2"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "timothy",
+            "texture_index": 0
+         }
+      }
+   }
+}

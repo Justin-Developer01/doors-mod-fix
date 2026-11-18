@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.A_90_1.spawn": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.33333,
+			"bones": {
+				"bone": {
+					"position": {
+						"0.0": [0, 14, 0],
+						"0.3333": [0, -1, 0]
+					},
+					"scale": {
+						"0.0": [0, 1, 1],
+						"0.1667": [0.5, 1, 1],
+						"0.3333": [0.9, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

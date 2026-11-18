@@ -1,0 +1,94 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.seek_hands",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "Hands",
+					"pivot": [0, 32, 4],
+					"rotation": [0, 5, 0]
+				},
+				{
+					"name": "armitem2",
+					"parent": "Hands",
+					"pivot": [-6.5, 22, 13],
+					"rotation": [-90, 0, 0]
+				},
+				{
+					"name": "Midarm1",
+					"parent": "armitem2",
+					"pivot": [-6, 20, 13],
+					"cubes": [
+						{"origin": [-8, 9, 11], "size": [3, 11, 4], "uv": [45, 66]}
+					]
+				},
+				{
+					"name": "Forearm1",
+					"parent": "Midarm1",
+					"pivot": [-6.5, 9, 13],
+					"rotation": [-12.45392, -1.08089, -22.38206],
+					"cubes": [
+						{"origin": [-8, -2, 11], "size": [3, 11, 4], "uv": [30, 66]},
+						{"origin": [-8, -3, 11], "size": [1, 1, 4], "uv": [30, 66]},
+						{"origin": [-8, -4, 11], "size": [3, 1, 4], "uv": [30, 66]}
+					]
+				},
+				{
+					"name": "Hand1",
+					"parent": "Forearm1",
+					"pivot": [-6.5, -2, 13]
+				},
+				{
+					"name": "armitem",
+					"parent": "Hands",
+					"pivot": [9, 22, 15]
+				},
+				{
+					"name": "Midarm2",
+					"parent": "armitem",
+					"pivot": [8.5, 21, 12],
+					"rotation": [-92.52154, -7.49282, 0.32902],
+					"cubes": [
+						{"origin": [7, 10, 10], "size": [3, 11, 4], "uv": [30, 66]}
+					]
+				},
+				{
+					"name": "Forearm2",
+					"parent": "Midarm2",
+					"pivot": [8.5, 10, 12],
+					"rotation": [-12.39638, 1.61888, 24.82417],
+					"cubes": [
+						{"origin": [7, -1, 10], "size": [3, 11, 4], "uv": [45, 66]},
+						{"origin": [9, -2, 10], "size": [1, 1, 4], "uv": [45, 66]},
+						{"origin": [7, -3, 10], "size": [3, 1, 4], "uv": [45, 66]}
+					]
+				},
+				{
+					"name": "Hand2",
+					"parent": "Forearm2",
+					"pivot": [8.5, -1, 12]
+				},
+				{
+					"name": "leftArm",
+					"parent": "Hands",
+					"pivot": [-5, 22, 0],
+					"rotation": [-90, 0, 0]
+				},
+				{
+					"name": "rightArm",
+					"parent": "Hands",
+					"pivot": [8, 22, 0],
+					"rotation": [-90, 0, 0]
+				}
+			]
+		}
+	]
+}

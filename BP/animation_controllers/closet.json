@@ -1,0 +1,94 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.hide_closet": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "hide": "query.has_rider"
+                  },
+                  {
+                     "not_hide": "!query.has_rider"
+                  }
+               ]
+            },
+            "hide": {
+               "transitions": [
+                  {
+                     "default": "!query.has_rider"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~~~ effect @e[type=!doors:closet,type=!doors:jack,type=!doors:screech,type=!doors:halt,type=!doors:seek,type=!doors:seek_s,type=!doors:figure,type=!doors:figure2,type=!doors:figure3,type=!doors:figure4,type=!doors:closet_bad,type=!doors:wardrobe,type=!doors:bed,type=!doors:bed2,type=!doors:closet_bad,type=!doors:rush,type=!doors:closet3,type=!doors:closet4,type=!doors:closet5,type=!doors:ambush,r=3,c=1] invisibility 100000 1 true",
+                  "/effect @p invisibility 10000 255 true",
+                  "/effect @p resistance 10000 255 true",
+                  "/execute @e[type=doors:seek] ~~~ summon r:get_out",
+                  "/summon r:hide1",
+                  "/execute @e[type=doors:seek] ~~~ summon r:get_out",
+                  "/playsound mob.closet.hide @a[r=10]",
+                  "/tag @p[r=2] add closet",
+                  "/tag @e[type=!player,r=2] add closet2",
+                  "/effect @p resistance 10000 255 true",
+                  "/effect @e[type=!player,r=5] slowness 10000 255 true",
+                  "/effect @e[type=doors:figure] slowness 10000 255 true",
+                  "/effect @e[type=doors:figure2] slowness 10000 255 true",
+                  "/effect @e[type=doors:figure3] slowness 10000 255 true",
+                  "/effect @e[type=doors:figure4] slowness 10000 255 true",
+                  "/execute @e[type=doors:seek] ~~~ summon r:get_out",
+                  "/effect @e[type=doors:rush] slowness 1 7 true"
+               ]
+            },
+            "not_hide": {
+               "transitions": [
+                  {
+                     "default": "query.has_rider"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~~~ effect @e[type=!doors:closet,type=!doors:jack,type=!doors:seek,type=!doors:seek_s,r=3] invisibility 0 0 true",
+                  "/event entity @e[tag=closet2,r=2] minecraft:event_spawn_closet",
+                  "/tag @p[r=2] remove closet",
+                  "/effect @e[type=doors:figure] clear",
+                  "/effect @e[type=doors:figure2] clear",
+                  "/effect @e[type=doors:figure3] clear",
+                  "/effect @e[type=doors:figure4] clear",
+                  "/event entity @e[type=doors:hide,r=2] minecraft:event_dead",
+                  "/event entity @e[type=r:hide1,r=2] minecraft:event_dead",
+                  "/event entity @e[type=r:hide2,r=2] minecraft:event_dead",
+                  "/effect @e clear",
+                  "/effect @p clear",
+                  "/playsound mob.closet.expose @a[r=10]"
+               ]
+            }
+         }
+      },
+      "controller.animation.closet_remove": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/gamerule commandblockoutput false",
+                  "/gamerule sendcommandfeedback false",
+                  "/event entity @s minecraft:event_spawn_closet_normal",
+                  "/event entity @e[type=r:hide1,r=2] minecraft:event_dead",
+                  "/stopsound @a mob.closet.expose",
+                  "/stopsound @a mob.closet.hide"
+               ],
+               "transitions": [
+                  {
+                     "remove": "query.has_target"
+                  }
+               ]
+            },
+            "remove": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

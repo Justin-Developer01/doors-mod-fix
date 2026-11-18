@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.trollface.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "trollface_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "funny"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,86 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.halt_tp": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "tp": "(0.1)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:turn2] ~~~ detect ~~~ air 0 tp @e[type=doors:halt,c=1] @e[type=r:turn3]",
+                  "/execute @e[type=r:turn2] ~~~ detect ~~~ air 0 tp @e[type=doors:halt_bad,c=1] @e[type=r:turn3]",
+                  "/execute @e[type=r:boi] ~~~ detect ~~~ air 0 tp @e[type=doors:halt,c=1] @e[type=r:turn4]",
+                  "/execute @e[type=r:boi] ~~~ detect ~~~ air 0 tp @e[type=doors:halt_bad,c=1] @e[type=r:turn4]",
+                  "/execute @e[type=r:turn2] ~~~ title @a title §l§bTurn around",
+                  "/execute @e[type=r:boi] ~~~ title @a title §l§bTurn around",
+                  "/execute @e[type=r:turn2] ~~~ kill @e[type=r:turn2]",
+                  "/execute @e[type=r:turn2] ~~~ effect @e[type=doors:halt] slowness 1 3 true",
+                  "/execute @e[type=r:turn2] ~~~ effect @e[type=doors:halt_bad] slowness 1 3 true",
+                  "/effect @e[type=doors:halt] resistance 10000 255 true",
+                  "/effect @e[type=doors:halt_bad] resistance 10000 255 true",
+                  "/effect @e[type=doors:halt] slowness 1 2 true",
+                  "/effect @e[type=doors:halt_bad] slowness 1 2 true",
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:halt_jumpscare ^ ^0.5 ^1",
+                  "/execute @e[type=r:boi] ~ ~ ~ execute @a[r=7] ~ ~ ~ particle r:halt_jumpscare2 ^ ^0.5 ^1",
+                  "/execute @e[type=r:turn2] ~ ~ ~ execute @a[r=7] ~ ~ ~ particle r:halt_jumpscare2 ^ ^0.5 ^1"
+               ]
+            },
+            "tp": {
+               "transitions": [
+                  {
+                     "default": "(0.1)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.halt_see": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.halt.coming @a[r=20]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.halt_see2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @e[type=doors:halt] minecraft:begin_ability"
+               ],
+               "transitions": [
+                  {
+                     "see2": "query.has_target"
+                  }
+               ]
+            },
+            "see2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

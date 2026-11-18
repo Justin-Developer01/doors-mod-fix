@@ -1,0 +1,40 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.doors_close": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "doors_close": "query.mark_variant == 1"
+                  },
+                  {
+                     "doors_open": "query.mark_variant == 2"
+                  }
+               ]
+            },
+            "doors_close": {
+               "transitions": [
+                  {
+                     "default": "query.mark_variant != 1"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~~~ fill ~~~ ~~1~ barrier"
+               ]
+            },
+            "doors_open": {
+               "transitions": [
+                  {
+                     "default": "query.mark_variant != 2"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~~~ fill ~~~ ~~1~ air",
+                  "/event entity @e[type=doors:hotel_door,r=2] minecraft:entity_spawned"
+               ]
+            }
+         }
+      }
+   }
+}

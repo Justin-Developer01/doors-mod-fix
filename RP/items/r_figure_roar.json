@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "r:figure_roar",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "r:figure_roar",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

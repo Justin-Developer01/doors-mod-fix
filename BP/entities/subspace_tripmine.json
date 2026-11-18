@@ -1,0 +1,215 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:subspace_tripmine",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "detects"
+            ]
+         },
+         "animations": {
+            "detects": "controller.animation.bomb_detects"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "r:active": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:active2"
+               }
+            }
+         },
+         "r:hidden": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:planted"
+               }
+            }
+         },
+         "r:active2": {
+            "minecraft:area_attack": {
+               "cause": "contact",
+               "damage_per_tick": 612,
+               "damage_range": 6,
+               "entity_filter": {
+                  "all_of": [
+                     {
+                        "operator": "!=",
+                        "subject": "other",
+                        "test": "is_family",
+                        "value": "inanimate"
+                     },
+                     {
+                        "operator": "!=",
+                        "subject": "other",
+                        "test": "is_family",
+                        "value": "doors_creature"
+                     }
+                  ]
+               }
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 2,
+               "time_down_event": {
+                  "event": "minecraft:remove"
+               }
+            }
+         }
+      },
+      "components": {
+         "minecraft:nameable": {},
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fall_damage": {
+            "value": 0
+         },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:underwater_movement": {
+            "value": 0.3
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.85
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:navigation.climb": {
+            "can_path_over_water": true,
+            "can_pass_doors": true,
+            "can_open_doors": true,
+            "can_path_from_air": true
+         },
+         "minecraft:jump.static": {},
+         "minecraft:annotation.open_door": {},
+         "minecraft:knockback_resistance": {
+            "value": 10
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:can_climb": {},
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:health": {
+            "value": 100,
+            "max": 100
+         },
+         "minecraft:attack": {
+            "damage": 0
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:behavior.move_towards_restriction": {
+            "priority": 5,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.random_stroll": {
+            "priority": 6,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 7,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:floats_in_liquid": {},
+         "minecraft:behavior.random_look_around": {
+            "priority": 7
+         },
+         "minecraft:behavior.lay_down": {
+            "priority": 7,
+            "random_interval": 230,
+            "random_stop_interval": 2300
+         },
+         "minecraft:follow_range": {
+            "value": 200
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:physics": {}
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "r:hidden"
+               ]
+            }
+         },
+         "r:planted": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 10000 255 true",
+                  "effect @s invisibility 10000 255 true",
+                  "effect @s invisibility 10000 255 true"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "r:active": {
+            "add": {
+               "component_groups": [
+                  "r:active"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "effect @s clear"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "r:active2": {
+            "add": {
+               "component_groups": [
+                  "r:active2"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:active"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.space @a[r=50]",
+                  "particle r:kaboom",
+                  "camerashake add @a 0.2 2 rotational"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

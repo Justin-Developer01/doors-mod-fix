@@ -1,0 +1,309 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:elevator2",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:is_spawn": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lEnter Lift",
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_ride",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            },
+            "minecraft:rideable": {
+               "rider_can_interact": false,
+               "seat_count": 3,
+               "seats": [
+                  {
+                     "position": [
+                        0,
+                        0,
+                        0
+                     ]
+                  },
+                  {
+                     "position": [
+                        1,
+                        0,
+                        0
+                     ]
+                  },
+                  {
+                     "position": [
+                        -1,
+                        0,
+                        0
+                     ]
+                  }
+               ]
+            },
+            "minecraft:physics": {
+               "has_gravity": true,
+               "has_collision": true
+            }
+         },
+         "r:solid": {
+            "minecraft:physics": {
+               "has_gravity": false,
+               "has_collision": true
+            }
+         },
+         "r:not_solid": {
+            "minecraft:physics": {
+               "has_gravity": true,
+               "has_collision": true
+            }
+         },
+         "minecraft:is_spawn_time": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 8,
+               "time_down_event": {
+                  "event": "r:clear"
+               }
+            }
+         },
+         "minecraft:is_spawn_time2": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 20,
+               "time_down_event": {
+                  "event": "r:clear2"
+               }
+            }
+         },
+         "minecraft:is_spawn2": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lGo up?",
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_ride2",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            },
+            "minecraft:rideable": {
+               "rider_can_interact": false,
+               "seat_count": 3,
+               "seats": [
+                  {
+                     "position": [
+                        0,
+                        0,
+                        0
+                     ]
+                  },
+                  {
+                     "position": [
+                        1,
+                        0,
+                        0
+                     ]
+                  },
+                  {
+                     "position": [
+                        -1,
+                        0,
+                        0
+                     ]
+                  }
+               ]
+            },
+            "minecraft:physics": {
+               "has_gravity": true,
+               "has_collision": true
+            }
+         },
+         "minecraft:is_reset": {
+            "minecraft:physics": {}
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 9
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 4
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_spawn",
+                  "r:solid"
+               ]
+            }
+         },
+         "minecraft:is_spawn": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_spawn",
+                  "r:solid"
+               ]
+            }
+         },
+         "r:solid": {
+            "add": {
+               "component_groups": [
+                  "r:solid"
+               ]
+            }
+         },
+         "r:not_solid": {
+            "add": {
+               "component_groups": [
+                  "r:not_solid"
+               ]
+            }
+         },
+         "minecraft:is_ride": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_spawn_time"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "ride @a[r=3] start_riding @e[type=doors:elevator2,r=2]",
+                  "event entity @e[type=doors:elevator2,r=2] r:not_solid",
+                  "effect @e[type=doors:elevator2] instant_health 10000 255 true",
+                  "effect @e[type=!player,r=5] slow_falling 10000 255 true",
+                  "title @a[r=4] title §lGoing Down"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_ride2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_spawn_time2"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "effect @e[type=!player,r=5] levitation 900",
+                  "effect @e[type=doors:elevator2] instant_health 10000 255 true",
+                  "ride @a[r=3] start_riding @e[type=doors:elevator2,r=2]",
+                  "event entity @e[type=doors:elevator2,r=2] r:solid",
+                  "title @a[r=4] title §lGoing up"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "r:clear": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_spawn2"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "effect @e[type=!doors:shadow,r=5] clear",
+                  "effect @e[type=doors:elevator2] instant_health 10000 255 true",
+                  "ride @a[r=3] start_riding @e[type=doors:elevator2,r=2]",
+                  "title @a[r=4] actionbar §lElevator has stopped"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "r:clear2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_spawn",
+                  "minecraft:is_reset"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "effect @e[type=!doors:shadow,r=5] clear",
+                  "effect @e[type=doors:elevator2] instant_health 10000 255 true",
+                  "ride @a[r=3] start_riding @e[type=doors:elevator2,r=2]",
+                  "event entity @e[type=doors:elevator2,r=2] r:solid",
+                  "event entity @e[type=doors:elevator2,r=2] minecraft:is_spawn",
+                  "title @a[r=4] actionbar §lElevator has stopped"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:rotate": {
+            "run_command": {
+               "command": [
+                  "tp @s ~~~ facing @p"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

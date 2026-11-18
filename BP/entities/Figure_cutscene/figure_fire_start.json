@@ -1,0 +1,94 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:figure_fire_start",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "fire"
+            ]
+         },
+         "animations": {
+            "fire": "controller.animation.figure_fire"
+         }
+      },
+      "component_groups": {
+         "minecraft:is_done": {
+            "minecraft:transformation": {
+               "into": "doors:figure_fire_scene"
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:push_through": {
+            "value": 1
+         },
+         "minecraft:is_sheared": {},
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collusion": false
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "despawer_despawning"
+                        }
+                     ]
+                  }
+               ]
+            }
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 1,
+            "time_down_event": {
+               "event": "minecraft:is_done",
+               "target": "self"
+            }
+         }
+      },
+      "events": {
+         "minecraft:is_done": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_done"
+               ]
+            }
+         }
+      }
+   }
+}

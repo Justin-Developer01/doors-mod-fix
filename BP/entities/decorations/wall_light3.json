@@ -1,0 +1,144 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:wall_light3",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "saw"
+            ]
+         },
+         "animations": {
+            "saw": "controller.animation.monster_saw"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:wall_light2"
+            }
+         },
+         "minecraft:transform_to_alert3": {
+            "minecraft:transformation": {
+               "into": "doors:wall_light"
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "hurt_item": 0,
+                  "interact_text": "§lRemove Furniture?",
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "is_family",
+                              "subject": "other",
+                              "value": "player"
+                           },
+                           {
+                              "test": "has_ability",
+                              "subject": "other",
+                              "operator": "equals",
+                              "value": "invulnerable"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:remove_light",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 10,
+            "time_down_event": {
+               "event": "minecraft:event_spawn_alert3"
+            }
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:event_spawn_alert3": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_alert3"
+               ]
+            }
+         },
+         "minecraft:remove_light": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "event entity @e[type=doors:wall_light3,r=2] minecraft:remove",
+                        "execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

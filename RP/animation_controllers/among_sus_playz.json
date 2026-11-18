@@ -1,0 +1,76 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.among_sus_playz.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 0,
+                        "0.25": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 1,
+                        "0.1": 0
+                     }
+                  }
+               },
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "among_sus_playz_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "attack": "query.is_delayed_attacking"
+                  },
+                  {
+                     "sit": "query.is_laying_down && variable.random1 == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_delayed_attacking"
+                  }
+               ],
+               "blend_transition": 0.1
+            },
+            "sit": {
+               "animations": [
+                  "sit"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_laying_down"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      },
+      "controller.animation.among_sus_playz.general2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "among_sus_playz_general2"
+               ]
+            }
+         }
+      }
+   }
+}

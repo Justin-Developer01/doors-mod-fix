@@ -1,0 +1,44 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.screech.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "screech_general",
+                  "spawn"
+               ]
+            }
+         }
+      },
+      "controller.animation.screech.move": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "animations": [
+                  {
+                     "moving": "query.ground_speed * 0.5"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0 && variable.random == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      }
+   }
+}

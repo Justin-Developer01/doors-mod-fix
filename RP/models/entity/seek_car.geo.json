@@ -1,0 +1,71 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.seek_car",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 8, 8],
+					"cubes": [
+						{"origin": [-10, 8, -8], "size": [23, 4, 31], "uv": [0, 0]},
+						{"origin": [-7, 12, 5], "size": [17, 7, 3], "uv": [50, 106]},
+						{"origin": [-7, 12, -5], "size": [17, 1, 12], "uv": [0, 84]},
+						{"origin": [-10, 12, 17], "size": [23, 8, 6], "uv": [77, 12]},
+						{"origin": [-10, 5, 21], "size": [23, 3, 2], "uv": [77, 26]},
+						{"origin": [-10, 12, 10], "size": [2, 7, 7], "uv": [33, 110]},
+						{"origin": [11, 12, 10], "size": [2, 7, 7], "uv": [0, 35]},
+						{"origin": [10, 12, -8], "size": [3, 19, 3], "uv": [12, 0]},
+						{"origin": [-7, 28, -8], "size": [17, 3, 3], "uv": [87, 115]},
+						{"origin": [-7, 25, 7], "size": [17, 3, 3], "uv": [87, 115]},
+						{"origin": [-10, 12, 7], "size": [3, 16, 3], "uv": [12, 0]},
+						{"origin": [10, 12, 7], "size": [3, 16, 3], "uv": [12, 0]},
+						{"origin": [-10, 12, -8], "size": [3, 19, 3], "uv": [12, 0]},
+						{"origin": [-10, 8, -20], "size": [23, 10, 12], "uv": [0, 62]},
+						{"origin": [-7, 12, -8], "size": [17, 6, 3], "uv": [90, 106]},
+						{"origin": [-10, 6, -20], "size": [23, 2, 2], "uv": [68, 87]},
+						{"origin": [-10, 1, -29], "size": [23, 5, 11], "uv": [59, 76]},
+						{"origin": [-10, 6, -29], "size": [23, 2, 9], "uv": [61, 80]},
+						{"origin": [-10, 8, -29], "size": [23, 4, 2], "uv": [68, 85]},
+						{"origin": [-10, 4, -10], "size": [23, 4, 23], "uv": [0, 35]}
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "body",
+					"pivot": [6, 18, -5],
+					"cubes": [
+						{"origin": [4, 16, -5], "size": [4, 4, 1], "uv": [0, 22]}
+					]
+				},
+				{
+					"name": "wheel2",
+					"parent": "body",
+					"pivot": [0, 6, 17],
+					"cubes": [
+						{"origin": [-12, 0, 14], "size": [29, 8, 6], "uv": [70, 35]},
+						{"origin": [-12, 1, 13], "size": [29, 6, 1], "uv": [71, 49]},
+						{"origin": [-12, 1, 20], "size": [29, 6, 1], "uv": [69, 49]}
+					]
+				},
+				{
+					"name": "wheel",
+					"parent": "body",
+					"pivot": [0, 6, -14],
+					"cubes": [
+						{"origin": [-12, 0, -17], "size": [29, 8, 6], "uv": [70, 35]},
+						{"origin": [-12, 1, -18], "size": [29, 6, 1], "uv": [71, 49]},
+						{"origin": [-12, 1, -11], "size": [29, 6, 1], "uv": [69, 49]}
+					]
+				}
+			]
+		}
+	]
+}

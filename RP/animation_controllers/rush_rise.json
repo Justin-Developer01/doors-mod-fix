@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.rush.rise": {
+         "states": {
+            "default": {
+               "animations": [
+                  "rush_rise"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "smoke"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

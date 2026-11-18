@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.small_el_goblino.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "small_el_goblino_general"
+               ]
+            }
+         }
+      }
+   }
+}

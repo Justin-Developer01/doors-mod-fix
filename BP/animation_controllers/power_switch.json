@@ -1,0 +1,50 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.switch_open": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @s minecraft:opening",
+                  "/title @a actionbar §lBreaker Power Switch has been access"
+               ],
+               "transitions": [
+                  {
+                     "open": "query.has_target"
+                  }
+               ]
+            },
+            "open": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.switch_start": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @s minecraft:start"
+               ],
+               "transitions": [
+                  {
+                     "start": "query.has_target"
+                  }
+               ]
+            },
+            "start": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

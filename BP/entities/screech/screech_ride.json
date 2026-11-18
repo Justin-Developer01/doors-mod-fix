@@ -1,0 +1,154 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:screech_ride",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "player"
+            ]
+         },
+         "animations": {
+            "player": "controller.animation.tp_player"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         }
+      },
+      "components": {
+         "minecraft:nameable": {},
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fall_damage": {
+            "value": 0
+         },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:underwater_movement": {
+            "value": 0.3
+         },
+         "minecraft:collision_box": {
+            "width": 0,
+            "height": 0
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:navigation.climb": {
+            "can_path_over_water": true,
+            "can_pass_doors": true,
+            "can_open_doors": true,
+            "can_path_from_air": true
+         },
+         "minecraft:jump.static": {},
+         "minecraft:annotation.open_door": {},
+         "minecraft:knockback_resistance": {
+            "value": 10
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:can_climb": {},
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:health": {
+            "value": 100,
+            "max": 100
+         },
+         "minecraft:attack": {
+            "damage": 0
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:behavior.move_towards_restriction": {
+            "priority": 5,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.random_stroll": {
+            "priority": 6,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 7,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:floats_in_liquid": {},
+         "minecraft:behavior.random_look_around": {
+            "priority": 7
+         },
+         "minecraft:behavior.lay_down": {
+            "priority": 7,
+            "random_interval": 230,
+            "random_stop_interval": 2300
+         },
+         "minecraft:follow_range": {
+            "value": 200
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:physics": {},
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 8,
+            "time_down_event": {
+               "event": "minecraft:times_up"
+            }
+         },
+         "minecraft:rideable": {
+            "rider_can_interact": false,
+            "seat_count": 1,
+            "seats": [
+               {
+                  "position": [
+                     0,
+                     1,
+                     2
+                  ],
+                  "rotate_rider_by": -90
+               }
+            ]
+         }
+      },
+      "events": {
+         "minecraft:event_dead": {
+            "add": {
+               "component_groups": [
+                  "minecraft:despawndead"
+               ]
+            }
+         },
+         "minecraft:times_up": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "function times_up",
+                        "event entity @s minecraft:remove"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,28 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:goo_area",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "goo_area",
+         "minecraft:display_name": {
+            "value": "§l§cGoo surroundings Ability"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "goo_area",
+            "duration": 17
+         },
+         "minecraft:fuel": {
+            "duration": 32
+         },
+         "r:on_use": {}
+      }
+   }
+}

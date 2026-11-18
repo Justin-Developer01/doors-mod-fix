@@ -1,0 +1,130 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:screen",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "screen"
+            ]
+         },
+         "animations": {
+            "screen": "controller.animation.tablet_screen"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "r:screen"
+            }
+         }
+      },
+      "components": {
+         "minecraft:attack": {
+            "damage": 0
+         },
+         "minecraft:health": {
+            "value": 50,
+            "max": 50
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 2,
+            "must_see": false,
+            "reselect_targets": true,
+            "within_radius": 10,
+            "entity_types": [
+               {
+                  "filters": {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "follow"
+                        }
+                     ]
+                  },
+                  "max_dist": 11
+               }
+            ]
+         },
+         "minecraft:behavior.melee_attack": {
+            "priority": 0,
+            "reach_multiplier": 5,
+            "attack_duration": 1,
+            "speed_multiplier": 1.5,
+            "track_target": true
+         },
+         "minecraft:navigation.generic": {
+            "can_path_over_water": true,
+            "is_amphibious": true,
+            "can_pass_doors": true,
+            "can_swim": true,
+            "can_break_doors": false,
+            "avoid_portals": true
+         },
+         "minecraft:jump.static": {},
+         "minecraft:movement.basic": {},
+         "minecraft:can_climb": {},
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:conditional_bandwidth_optimization": {},
+         "minecraft:damage_sensor": {
+            "triggers": {
+               "cause": "all",
+               "deals_damage": false
+            }
+         },
+         "minecraft:type_family": {
+            "family": [
+               "npc",
+               "inanimate"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/empty.json"
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.9
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 0,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:persistent": {},
+         "minecraft:physics": {},
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         }
+      }
+   }
+}

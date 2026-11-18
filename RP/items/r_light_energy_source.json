@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "r:light_energy_source",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "r:light_energy_source",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

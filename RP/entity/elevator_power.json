@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:elevator_power",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/elevator_power"
+         },
+         "geometry": {
+            "default": "geometry.elevator_power"
+         },
+         "animations": {
+            "elevator_power_general": "animation.elevator_power.general",
+            "open": "animation.elevator_power.open",
+            "close": "animation.elevator_power.close",
+            "general": "controller.animation.elevator_power.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "elevator_power",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,37 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:bendymc",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/bendymc"
+         },
+         "geometry": {
+            "default": "geometry.bendymc"
+         },
+         "animations": {
+            "moving": "animation.bendymc.moving",
+            "bendymc_general": "animation.bendymc.general",
+            "spin": "animation.bendymc.spin",
+            "move": "controller.animation.bendymc.move",
+            "general": "controller.animation.bendymc.general"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "toon",
+            "texture_index": 0
+         }
+      }
+   }
+}

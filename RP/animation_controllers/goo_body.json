@@ -1,0 +1,53 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.goo_body.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "goo_body_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "fall": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ]
+            },
+            "fall": {
+               "animations": [
+                  "fall"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      }
+   }
+}

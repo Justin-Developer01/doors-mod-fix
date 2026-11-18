@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.eyes_light.general": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"scale": [51.4, 43, 45.4]
+				}
+			}
+		}
+	}
+}

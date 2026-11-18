@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:door_lever",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/door_lever"
+         },
+         "geometry": {
+            "default": "geometry.door_lever"
+         },
+         "animations": {
+            "door_lever_general": "animation.door_lever.general",
+            "on": "animation.door_lever.on",
+            "off": "animation.door_lever.off",
+            "general": "controller.animation.door_lever.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "door_lever",
+            "texture_index": 0
+         }
+      }
+   }
+}

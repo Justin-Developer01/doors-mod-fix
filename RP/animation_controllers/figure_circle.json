@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_circle.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "figure_circle_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

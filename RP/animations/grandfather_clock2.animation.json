@@ -1,0 +1,290 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.grandfather_clock2.general": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [5.34164, -2.5809, 89.09357],
+					"position": [0, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0, 0, 90],
+					"position": [0, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general2": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [4.96033, -3.25522, 96.57295],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0, 0, 122.5],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general3": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [4.65846, -3.67469, 101.56447],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0, 0, 137.5],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general4": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [8.75363, -4.59514, 114.06333],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0, 0, 152.5],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general5": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [9.93502, -5.40954, 129.09893],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0, 0, 162.5],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general6": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [10.94785, -5.85487, 144.16552],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.25329, -0.33929, 169.98881],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general7": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [6.8948, -5.89999, 159.24518],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.32072, -0.27643, 182.48883],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general8": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [8.94628, -7.20445, 171.72042],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.37295, -0.20046, 194.98871],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general9": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [7.70551, -6.91154, 181.79266],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.41212, -0.0971, 209.98841],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general10": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [9.03638, -6.40796, 191.84803],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.4104, 0.10416, 237.48768],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general11": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [3.96965, -4.0872, 219.36946],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.3393, 0.25329, 259.98731],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general12": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [5.52411, -2.08978, 236.78147],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.27643, 0.32072, 272.48728],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general13": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [0.49082, 1.97468, 269.03314],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.29016, 0.30836, 269.98728],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general14": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [-4.61876, 5.63422, 303.92668],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.27643, 0.32072, 272.48728],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general15": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [-1.78543, 2.05882, 329.19999],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [-0.13266, 0.40209, 294.98759],
+					"position": [-1, -2, 0]
+				},
+				"bell": {
+					"rotation": [0, 0, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general16": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [-8.22831, 5.90134, 379.37437],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0.08617, 0.41455, 324.98837],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general18": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [-3.02411, 2.08978, 416.78147],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0.38134, 0.184, 377.48867],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general17": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [-3.96965, 4.0872, 399.36946],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0.23825, 0.35002, 347.48878],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general19": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [-0.23108, -0.41511, 436.62772],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0.42272, 0.02407, 399.98814],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general20": {
+			"loop": true,
+			"bones": {
+				"clock": {
+					"rotation": [2.08809, -1.66786, 446.55078],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0.4104, -0.10416, 417.48768],
+					"position": [-1, -2, 0]
+				}
+			}
+		},
+		"animation.grandfather_clock2.general21": {
+			"loop": true,
+			"animation_length": 0.75,
+			"bones": {
+				"clock": {
+					"rotation": [-0.58296, -2.27781, 451.5164],
+					"position": [-1, -2, 0]
+				},
+				"clock2": {
+					"rotation": [0.29016, -0.30836, 449.98728],
+					"position": [-1, -2, 0]
+				},
+				"bell": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0.25021, -0.18095, 7.49325],
+						"0.5": [0.28344, -0.1225, -5.00665],
+						"0.75": [0.0884, -0.05285, -0.00216]
+					}
+				}
+			}
+		}
+	}
+}

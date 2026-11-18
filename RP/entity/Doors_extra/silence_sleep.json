@@ -1,0 +1,37 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:silence_sleep",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/extra/silencetexture"
+         },
+         "geometry": {
+            "default": "geometry.silence"
+         },
+         "animations": {
+            "silence_sleep": "animation.silence.sleep",
+            "sleep": "controller.animation.silence.sleep"
+         },
+         "scripts": {
+            "animate": [
+               "sleep"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "silence",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:dark_smoke",
+            "spell2": "r:sleep"
+         }
+      }
+   }
+}

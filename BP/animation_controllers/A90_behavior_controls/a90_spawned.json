@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.a90_stop": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.a_90.spawned @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "stop": "query.has_target"
+                  }
+               ]
+            },
+            "stop": {
+               "on_entry": [
+                  "/playsound mob.a_90.spawned @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,77 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.monster_saw": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~ ~1 ~ setblock ~ ~ ~  light_block 8"
+               ],
+               "transitions": [
+                  {
+                     "saw": "query.has_target"
+                  }
+               ]
+            },
+            "saw": {
+               "on_entry": [
+                  "/event entity @s minecraft:event_spawn_alert",
+                  "/playsound mob.closet.blink @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.sound_break": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.closet.break @a[r=40]",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block"
+               ],
+               "transitions": [
+                  {
+                     "break": "query.has_target"
+                  }
+               ]
+            },
+            "break": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.light_kill": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "kill": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "kill": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/kill @e[type=doors:wall_light,r=7]",
+                  "/kill @e[type=doors:wall_light3,r=7]",
+                  "/kill @e[type=doors:wall_light_alert,r=7]"
+               ]
+            }
+         }
+      }
+   }
+}

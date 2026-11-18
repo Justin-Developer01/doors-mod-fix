@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:nightmare_seek_s",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/nightmare_seek"
+         },
+         "geometry": {
+            "default": "geometry.seek"
+         },
+         "animations": {
+            "seek_s_general": "animation.seek_s.general",
+            "general": "controller.animation.seek_s.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "seek",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:seek_emerge"
+         }
+      }
+   }
+}

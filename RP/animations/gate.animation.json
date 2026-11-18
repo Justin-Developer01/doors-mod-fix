@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.gate.general": {
+			"loop": true,
+			"bones": {
+				"main": {
+					"scale": [1.2, 1.1, 1]
+				}
+			}
+		},
+		"animation.gate.open": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"main": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.1667": [0, 7, 0],
+						"0.4583": [0, 16, 0],
+						"0.75": [0, 30, 0]
+					}
+				}
+			}
+		},
+		"animation.gate.close": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"main": {
+					"position": {
+						"0.0": [0, 31, 0],
+						"0.1667": [0, 16, 0],
+						"0.4583": [0, 3, 0],
+						"0.75": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

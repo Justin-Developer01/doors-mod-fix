@@ -1,0 +1,37 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:halt_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/halt"
+         },
+         "geometry": {
+            "default": "geometry.halt"
+         },
+         "animations": {
+            "halt_gone": "animation.halt.gone",
+            "general2": "controller.animation.halt_stunned.general2"
+         },
+         "scripts": {
+            "animate": [
+               "general2"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "halt",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:halt_floor",
+            "spell2": "r:halt_fog"
+         }
+      }
+   }
+}

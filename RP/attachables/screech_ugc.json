@@ -1,0 +1,31 @@
+{
+   "format_version": "1.16.100",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:screech_ugc",
+         "materials": {
+            "default": "armor",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/screech_ugc"
+         },
+         "geometry": {
+            "default": "geometry.screech_ugc"
+         },
+         "scripts": {
+            "parent_setup": "variable.helmet_layer_visible = 0.0;",
+            "animate": [
+               "move",
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ]
+      }
+   }
+}

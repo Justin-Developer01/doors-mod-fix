@@ -1,0 +1,72 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.frostbite",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "All",
+					"pivot": [0, 18, 0]
+				},
+				{
+					"name": "frostbite",
+					"parent": "All",
+					"pivot": [0, 18, 0],
+					"rotation": [0, 0, -5],
+					"cubes": [
+						{"origin": [-9, 18, -4], "size": [16, 18, 8], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [0, 0]},
+						{"origin": [-9, 36, -4], "size": [16, 1, 8], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [0, 0]},
+						{"origin": [-9, 37, -4], "size": [16, 1, 8], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [0, 0]},
+						{"origin": [-8, 38, -3], "size": [14, 1, 6], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [35, 26]}
+					],
+					"locators": {
+						"frost": [0, 25, 12]
+					}
+				},
+				{
+					"name": "Mouth",
+					"parent": "frostbite",
+					"pivot": [0, 19, 0],
+					"rotation": [0, 0, 7.5],
+					"cubes": [
+						{"origin": [-7, 9, -4], "size": [14, 10.2, 7], "uv": [0, 26]},
+						{"origin": [-6, 6, -4], "size": [12, 3.2, 6], "uv": [36, 37]},
+						{"origin": [-5, 4, -4], "size": [10, 2.2, 5], "uv": [0, 43]},
+						{"origin": [-3, 3, -4], "size": [6, 1.2, 4], "uv": [48, 0]}
+					]
+				},
+				{
+					"name": "frostbite2",
+					"parent": "All",
+					"pivot": [0, 18, 0],
+					"rotation": [0, 0, -5],
+					"cubes": [
+						{"origin": [-9, 18, -4], "size": [16, 18, 8], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [0, 0]},
+						{"origin": [-9, 36, -4], "size": [16, 1, 8], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [0, 0]},
+						{"origin": [-9, 37, -4], "size": [16, 1, 8], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [0, 0]},
+						{"origin": [-8, 38, -3], "size": [14, 1, 6], "pivot": [0, 0, 0], "rotation": [0, 0, 2.5], "uv": [35, 26]}
+					]
+				},
+				{
+					"name": "Mouth2",
+					"parent": "frostbite2",
+					"pivot": [0, 19, 0],
+					"rotation": [0, 0, 7.5],
+					"cubes": [
+						{"origin": [-7, 9, -4], "size": [14, 10.2, 7], "uv": [0, 26]},
+						{"origin": [-6, 6, -4], "size": [12, 3.2, 6], "uv": [36, 37]},
+						{"origin": [-5, 4, -4], "size": [10, 2.2, 5], "uv": [0, 43]},
+						{"origin": [-3, 3, -4], "size": [6, 1.2, 4], "uv": [48, 0]}
+					]
+				}
+			]
+		}
+	]
+}

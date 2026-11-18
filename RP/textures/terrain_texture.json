@@ -1,0 +1,413 @@
+{
+   "resource_pack_name": "vanilla",
+   "texture_name": "atlas.terrain",
+   "padding": 8,
+   "num_mip_levels": 4,
+   "texture_data": {
+      "r_carpet1": {
+         "textures": [
+            "textures/blocks/r_carpet1"
+         ]
+      },
+      "modern_wood_floor": {
+         "textures": [
+            "textures/blocks/modern_wood_floor"
+         ]
+      },
+      "webs2": {
+         "textures": [
+            "textures/blocks/webs2"
+         ]
+      },
+      "welcome_matt": {
+         "textures": [
+            "textures/blocks/welcome_matt"
+         ]
+      },
+      "jack_painting": {
+         "textures": [
+            "textures/blocks/jack_painting"
+         ]
+      },
+      "banana_peel": {
+         "textures": [
+            "textures/blocks/banana_peel"
+         ]
+      },
+      "webs": {
+         "textures": [
+            "textures/blocks/webs"
+         ]
+      },
+      "trophy": {
+         "textures": [
+            "textures/blocks/trophy"
+         ]
+      },
+      "green_herb": {
+         "textures": [
+            "textures/blocks/green_herb"
+         ]
+      },
+      "books": {
+         "textures": [
+            "textures/blocks/books"
+         ]
+      },
+      "r_carpet2": {
+         "textures": [
+            "textures/blocks/r_carpet2"
+         ]
+      },
+      "metal_block": {
+         "textures": [
+            "textures/blocks/metal_block"
+         ]
+      },
+      "r_carpet3": {
+         "textures": [
+            "textures/blocks/r_carpet3"
+         ]
+      },
+      "carpet6": {
+         "textures": [
+            "textures/blocks/carpet6"
+         ]
+      },
+      "among_wall_candle": {
+         "textures": [
+            "textures/blocks/among_wall_candle"
+         ]
+      },
+      "among_drawer": {
+         "textures": [
+            "textures/blocks/among_drawer"
+         ]
+      },
+      "wooden_block": {
+         "textures": [
+            "textures/blocks/wooden_block"
+         ]
+      },
+      "bars": {
+         "textures": [
+            "textures/blocks/bars"
+         ]
+      },
+      "bars_slab": {
+         "textures": [
+            "textures/blocks/bars_slab"
+         ]
+      },
+      "wooden_block2": {
+         "textures": [
+            "textures/blocks/wooden_block"
+         ]
+      },
+      "wooden_block3": {
+         "textures": [
+            "textures/blocks/wooden_block"
+         ]
+      },
+      "wooden_block4": {
+         "textures": [
+            "textures/blocks/wooden_block"
+         ]
+      },
+      "wooden_block5": {
+         "textures": [
+            "textures/blocks/wooden_block"
+         ]
+      },
+      "among_chandelier": {
+         "textures": [
+            "textures/blocks/chandelier"
+         ]
+      },
+      "metal_rack": {
+         "textures": [
+            "textures/blocks/metal_rack"
+         ]
+      },
+      "metal_rack2": {
+         "textures": [
+            "textures/blocks/metal_rack"
+         ]
+      },
+      "r_clock": {
+         "textures": [
+            "textures/blocks/r_clock"
+         ]
+      },
+      "r_lamp": {
+         "textures": [
+            "textures/blocks/r_lamp"
+         ]
+      },
+      "r_globe": {
+         "textures": [
+            "textures/blocks/r_globe"
+         ]
+      },
+      "r_hotel_plant": {
+         "textures": [
+            "textures/blocks/r_hotel_plant"
+         ]
+      },
+      "r_grandfather_clock": {
+         "textures": [
+            "textures/blocks/r_grandfather_clock"
+         ]
+      },
+      "r_suitcase": {
+         "textures": [
+            "textures/blocks/r_suitcase"
+         ]
+      },
+      "r_page": {
+         "textures": [
+            "textures/blocks/r_page"
+         ]
+      },
+      "r_page2": {
+         "textures": [
+            "textures/blocks/r_page2"
+         ]
+      },
+      "r_typewriter": {
+         "textures": [
+            "textures/blocks/r_typewriter"
+         ]
+      },
+      "r_mine_light": {
+         "textures": [
+            "textures/blocks/r_mine_light"
+         ]
+      },
+      "r_bacon_statue": {
+         "textures": [
+            "textures/blocks/r_bacon_statue"
+         ]
+      },
+      "r_hanger2": {
+         "textures": [
+            "textures/blocks/r_hanger2"
+         ]
+      },
+      "r_air_vent": {
+         "textures": [
+            "textures/blocks/r_air_vent"
+         ]
+      },
+      "r_wooden_wall": {
+         "textures": [
+            "textures/blocks/r_wooden_wall"
+         ]
+      },
+      "r_quil": {
+         "textures": [
+            "textures/blocks/r_quil"
+         ]
+      },
+      "r_hanger": {
+         "textures": [
+            "textures/blocks/r_hanger"
+         ]
+      },
+      "among_drawer2": {
+         "textures": [
+            "textures/blocks/among_drawer2"
+         ]
+      },
+      "r_crate": {
+         "textures": [
+            "textures/blocks/r_crate"
+         ]
+      },
+      "r_modern_wall": {
+         "textures": [
+            "textures/blocks/r_modern_wall"
+         ]
+      },
+      "r_pipe1": {
+         "textures": [
+            "textures/blocks/r_pipe1"
+         ]
+      },
+      "r_pipe2": {
+         "textures": [
+            "textures/blocks/r_pipe2"
+         ]
+      },
+      "r_pipe3": {
+         "textures": [
+            "textures/blocks/r_pipe3"
+         ]
+      },
+      "r_pipe4": {
+         "textures": [
+            "textures/blocks/r_pipe4"
+         ]
+      },
+      "r_seek_eye": {
+         "textures": [
+            "textures/blocks/r_seek_eye"
+         ]
+      },
+      "r_metal_barrel": {
+         "textures": [
+            "textures/blocks/r_metal_barrel"
+         ]
+      },
+      "r_metal_barrel2": {
+         "textures": [
+            "textures/blocks/r_metal_barrel"
+         ]
+      },
+      "metal_fence": {
+         "textures": [
+            "textures/blocks/metal_fence"
+         ]
+      },
+      "metal_pillar": {
+         "textures": [
+            "textures/blocks/metal_fence"
+         ]
+      },
+      "modern_fence": {
+         "textures": [
+            "textures/blocks/modern_fence"
+         ]
+      },
+      "trash_bin": {
+         "textures": [
+            "textures/blocks/metal_fence"
+         ]
+      },
+      "modern_fence_side": {
+         "textures": [
+            "textures/blocks/modern_fence"
+         ]
+      },
+      "modern_fence_corner": {
+         "textures": [
+            "textures/blocks/modern_fence"
+         ]
+      },
+      "barricade_woodenplank": {
+         "textures": [
+            "textures/blocks/barricade_woodenplank"
+         ]
+      },
+      "exit_sign": {
+         "textures": [
+            "textures/blocks/exit_sign"
+         ]
+      },
+      "table": {
+         "textures": [
+            "textures/blocks/table"
+         ]
+      },
+      "table2": {
+         "textures": [
+            "textures/blocks/table2"
+         ]
+      },
+      "table3": {
+         "textures": [
+            "textures/blocks/table3"
+         ]
+      },
+      "table4": {
+         "textures": [
+            "textures/blocks/table4"
+         ]
+      },
+      "sink": {
+         "textures": [
+            "textures/blocks/sink"
+         ]
+      },
+      "projecter": {
+         "textures": [
+            "textures/blocks/projecter"
+         ]
+      },
+      "blender": {
+         "textures": [
+            "textures/blocks/blender"
+         ]
+      },
+      "toaster": {
+         "textures": [
+            "textures/blocks/toaster"
+         ]
+      },
+      "microwave": {
+         "textures": [
+            "textures/blocks/microwave"
+         ]
+      },
+      "r_carpet4": {
+         "textures": [
+            "textures/blocks/r_carpet4"
+         ]
+      },
+      "r_carpet5": {
+         "textures": [
+            "textures/blocks/r_carpet5"
+         ]
+      },
+      "lamp2": {
+         "textures": [
+            "textures/blocks/r_lamp"
+         ]
+      },
+      "lamp3": {
+         "textures": [
+            "textures/blocks/lamp3"
+         ]
+      },
+      "computer": {
+         "textures": [
+            "textures/blocks/computer"
+         ]
+      },
+      "3d_painting": {
+         "textures": [
+            "textures/blocks/3d_painting"
+         ]
+      },
+      "seek_painting": {
+         "textures": [
+            "textures/blocks/seek_painting"
+         ]
+      },
+      "plank": {
+         "textures": [
+            "textures/blocks/plank"
+         ]
+      },
+      "blueprints": {
+         "textures": [
+            "textures/blocks/blueprints"
+         ]
+      },
+      "box": {
+         "textures": [
+            "textures/blocks/box"
+         ]
+      },
+      "bars2": {
+         "textures": [
+            "textures/blocks/bars2"
+         ]
+      },
+      "bell": {
+         "textures": [
+            "textures/blocks/bell"
+         ]
+      }
+   }
+}

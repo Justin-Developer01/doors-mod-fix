@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.door_lever.general": {
+			"loop": true,
+			"bones": {
+				"bone2": {
+					"position": [0, 0, 0]
+				}
+			}
+		},
+		"animation.door_lever.on": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"bone2": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -3, 0],
+						"0.5": [0, -6, 0]
+					}
+				}
+			}
+		},
+		"animation.door_lever.off": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"bone2": {
+					"position": {
+						"0.0": [0, -6, 0],
+						"0.25": [0, -3, 0],
+						"0.5": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

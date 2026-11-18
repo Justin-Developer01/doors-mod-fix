@@ -1,0 +1,24 @@
+{
+   "tiers": [
+      {
+         "trades": [
+            {
+               "wants": [
+                  {
+                     "item": "r:power_switch",
+                     "quantity": {
+                        "min": 10,
+                        "max": 10
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:hammer"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

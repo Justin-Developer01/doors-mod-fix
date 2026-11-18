@@ -1,0 +1,132 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.windows",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "downteeth",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "teeth",
+					"parent": "downteeth",
+					"pivot": [26, 4, 0],
+					"rotation": [0, 0, -15],
+					"cubes": [
+						{"origin": [21, 15, -1], "size": [10, 2, 4], "uv": [24, 42]},
+						{"origin": [22, 17, -1], "size": [8, 4, 4], "uv": [20, 58]}
+					]
+				},
+				{
+					"name": "teeth2",
+					"parent": "downteeth",
+					"pivot": [1, 0, 0],
+					"cubes": [
+						{"origin": [-4, 11, -1], "size": [10, 2, 4], "uv": [0, 40]},
+						{"origin": [-3, 13, -1], "size": [8, 4, 4], "uv": [44, 54]}
+					]
+				},
+				{
+					"name": "teeth3",
+					"parent": "downteeth",
+					"pivot": [-12, 1, 0],
+					"rotation": [0, 0, 7.5],
+					"cubes": [
+						{"origin": [-17, 12, -1], "size": [10, 2, 4], "uv": [24, 36]},
+						{"origin": [-16, 14, -1], "size": [8, 4, 4], "uv": [0, 54]}
+					]
+				},
+				{
+					"name": "teeth4",
+					"parent": "downteeth",
+					"pivot": [14, 1, 0],
+					"rotation": [0, 0, -7.5],
+					"cubes": [
+						{"origin": [9, 12, -1], "size": [10, 2, 4], "uv": [0, 34]},
+						{"origin": [10, 14, -1], "size": [8, 4, 4], "uv": [52, 18]}
+					]
+				},
+				{
+					"name": "teeth5",
+					"parent": "downteeth",
+					"pivot": [-25, 4, 0],
+					"rotation": [0, 0, 15],
+					"cubes": [
+						{"origin": [-30, 15, -1], "size": [10, 2, 4], "uv": [24, 30]},
+						{"origin": [-29, 17, -1], "size": [8, 4, 4], "uv": [50, 6]}
+					]
+				},
+				{
+					"name": "uppperteeth",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "teeth6",
+					"parent": "uppperteeth",
+					"pivot": [19, 43, 2],
+					"rotation": [180, 0, -15],
+					"cubes": [
+						{"origin": [14, 54, 1], "size": [10, 2, 4], "uv": [28, 16]},
+						{"origin": [15, 56, 1], "size": [8, 4, 4], "uv": [48, 46]}
+					]
+				},
+				{
+					"name": "teeth7",
+					"parent": "uppperteeth",
+					"pivot": [1, 40, 2],
+					"rotation": [180, 0, 0],
+					"cubes": [
+						{"origin": [-4, 51, 1], "size": [10, 2, 4], "uv": [28, 0]},
+						{"origin": [-3, 53, 1], "size": [8, 4, 4], "uv": [48, 38]}
+					]
+				},
+				{
+					"name": "teeth8",
+					"parent": "uppperteeth",
+					"pivot": [-8, 41, 2],
+					"rotation": [180, 0, 7.5],
+					"cubes": [
+						{"origin": [-13, 52, 1], "size": [10, 2, 4], "uv": [0, 28]},
+						{"origin": [-12, 54, 1], "size": [8, 4, 4], "uv": [48, 26]}
+					]
+				},
+				{
+					"name": "teeth9",
+					"parent": "uppperteeth",
+					"pivot": [10, 41, 0],
+					"rotation": [0, 0, 172.5],
+					"cubes": [
+						{"origin": [5, 52, -1], "size": [10, 2, 4], "uv": [26, 10]},
+						{"origin": [6, 54, -1], "size": [8, 4, 4], "uv": [24, 48]}
+					]
+				},
+				{
+					"name": "teeth10",
+					"parent": "uppperteeth",
+					"pivot": [-17, 43, 2],
+					"rotation": [180, 0, 15],
+					"cubes": [
+						{"origin": [-22, 54, 1], "size": [10, 2, 4], "uv": [24, 24]},
+						{"origin": [-21, 56, 1], "size": [8, 4, 4], "uv": [0, 46]}
+					]
+				},
+				{
+					"name": "eyes",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-14, 37, 0], "size": [12, 12, 2], "uv": [0, 14]},
+						{"origin": [4, 37, 0], "size": [12, 12, 2], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

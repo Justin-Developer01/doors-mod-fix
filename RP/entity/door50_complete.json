@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:door50_complete",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/door50"
+         },
+         "geometry": {
+            "default": "geometry.door50_complete"
+         },
+         "animations": {
+            "door50_complete_general": "animation.door50_complete.general",
+            "open": "animation.door50_complete.open",
+            "close": "animation.door50_complete.close",
+            "general": "controller.animation.door50_complete.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "door50_complete",
+            "texture_index": 0
+         }
+      }
+   }
+}

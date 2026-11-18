@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.figure_crucifix2.general": {
+			"loop": true,
+			"animation_length": 0.20833,
+			"bones": {
+				"main": {
+					"rotation": [0, 0, 0],
+					"scale": 1.2
+				},
+				"rightitem": {
+					"rotation": {
+						"0.0417": [0, 72.5, 0],
+						"0.0833": [0, 147.5, 0],
+						"0.125": [0, 217.5, 0],
+						"0.1667": [0, 290, 0],
+						"0.2083": [0, 370, 0]
+					}
+				}
+			}
+		}
+	}
+}

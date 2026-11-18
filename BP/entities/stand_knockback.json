@@ -1,0 +1,106 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:stand_knockback",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "roaring": {
+            "minecraft:behavior.knockback_roar": {
+               "priority": 1,
+               "duration": 1,
+               "attack_time": 0.3,
+               "knockback_damage": 15,
+               "knockback_strength": 5,
+               "knockback_range": 6,
+               "knockback_filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "doors_creature"
+               },
+               "damage_filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "doors_creature"
+               },
+               "on_roar_end": {
+                  "event": "minecraft:end_roar"
+               },
+               "cooldown_time": 0.1
+            }
+         },
+         "bye": {
+            "minecraft:explode": {
+               "fuseLength": 0,
+               "fuseLit": true,
+               "power": 0,
+               "causesFire": false,
+               "destroyAffectedByGriefing": true
+            }
+         }
+      },
+      "components": {
+         "minecraft:collision_box": {
+            "height": 0,
+            "width": 0
+         },
+         "minecraft:health": {
+            "max": 150,
+            "value": 150
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:timer": {
+            "time": [
+               1,
+               1
+            ],
+            "looping": true,
+            "time_down_event": {
+               "event": "bye",
+               "target": "self"
+            }
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "roaring",
+                  "gone"
+               ]
+            }
+         },
+         "minecraft:entity_born": {
+            "add": {
+               "component_groups": [
+                  "roaring",
+                  "gone"
+               ]
+            }
+         },
+         "minecraft:end_roar": {
+            "remove": {
+               "component_groups": [
+                  "roaring"
+               ]
+            }
+         },
+         "bye": {
+            "add": {
+               "component_groups": [
+                  "bye"
+               ]
+            }
+         }
+      }
+   }
+}

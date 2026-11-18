@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:shocker_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/shocker"
+         },
+         "animations": {
+            "shocker_dead": "animation.shocker.dead",
+            "dead": "controller.animation.shocker.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.shocker"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:electric"
+         },
+         "spawn_egg": {
+            "texture": "shocker",
+            "texture_index": 0
+         }
+      }
+   }
+}

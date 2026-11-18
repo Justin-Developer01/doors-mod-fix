@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:decoy_stun",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/decoy"
+         },
+         "animations": {
+            "decoy_general": "animation.decoy.general",
+            "general": "controller.animation.decoy.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.decoy"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:fake"
+         },
+         "spawn_egg": {
+            "texture": "decoy",
+            "texture_index": 0
+         }
+      }
+   }
+}

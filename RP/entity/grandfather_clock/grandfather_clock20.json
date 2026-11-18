@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:grandfather_clock20",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/grandfather_clock2"
+         },
+         "animations": {
+            "grandfather_clock_general20": "animation.grandfather_clock2.general20",
+            "general20": "controller.animation.grandfather_clock.general20"
+         },
+         "scripts": {
+            "animate": [
+               "general20"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.grandfather_clock2"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "grandfather_clock2",
+            "texture_index": 0
+         }
+      }
+   }
+}

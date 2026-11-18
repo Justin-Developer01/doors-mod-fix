@@ -1,0 +1,66 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:screech_npc",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "skin1": "textures/entity/screech",
+            "skin2": "textures/entity/bald_screech",
+            "skin3": "textures/entity/xmas_screech",
+            "skin4": "textures/entity/fancy_screech"
+         },
+         "geometry": {
+            "default": "geometry.screech",
+            "skin2": "geometry.screech",
+            "skin3": "geometry.xmas_screech",
+            "skin4": "geometry.fancy_screech"
+         },
+         "animations": {
+            "moving": "animation.screech.moving",
+            "seek_general": "animation.screech.general",
+            "move": "controller.animation.seek.move",
+            "general": "controller.animation.seek.general",
+            "attack": "controller.animation.seek.attack",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "scale": "0.9375",
+            "initialize": [
+               "variable.is_holding_right = 0.0;",
+               "variable.is_blinking = 0.0;",
+               "variable.last_blink_time = 0.0;",
+               "variable.hand_bob = 0.0;"
+            ],
+            "pre_animation": [
+               "variable.helmet_layer_visible = 1.0;",
+               "variable.leg_layer_visible = 1.0;",
+               "variable.boot_layer_visible = 1.0;",
+               "variable.chest_layer_visible = 1.0;",
+               "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+               "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+               "variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);",
+               "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
+               "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;"
+            ],
+            "animate": [
+               "move",
+               "general",
+               "attack",
+               {
+                  "look_at_target": 1
+               }
+            ]
+         },
+         "render_controllers": [
+            "controller.render.seek_npc"
+         ],
+         "spawn_egg": {
+            "texture": "npc_item",
+            "texture_index": 0
+         }
+      }
+   }
+}

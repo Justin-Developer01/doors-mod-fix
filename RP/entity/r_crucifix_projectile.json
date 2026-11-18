@@ -1,0 +1,32 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:crucifix_pro",
+         "materials": {
+            "default": "slime"
+         },
+         "textures": {
+            "default": "textures/entity/pamobile/r_crucifix2"
+         },
+         "geometry": {
+            "default": "geometry.pabullet"
+         },
+         "scripts": {
+            "animate": [
+               "particles"
+            ]
+         },
+         "animations": {
+            "particles": "controller.animation.r_crucifix"
+         },
+         "spawn_egg": {
+            "texture": "spawn_egg",
+            "texture_index": 0
+         },
+         "render_controllers": [
+            "controller.render.slime"
+         ]
+      }
+   }
+}

@@ -1,0 +1,101 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.look_see": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "see": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[type=doors:eyes,c=1]"
+               ]
+            },
+            "see": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.eyes_sound": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "sound": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/playsound mob.eyes.idle @a[r=10]"
+               ]
+            },
+            "sound": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/playsound mob.eyes.idle @a[r=5]",
+                  "/execute @e[type=r:eyes_target] ~~~ kill @e[type=r:stare]"
+               ]
+            }
+         }
+      },
+      "controller.animation.eyes_look": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "look": "query.has_target"
+                  }
+               ]
+            },
+            "look": {
+               "on_entry": [
+                  "/function hurt",
+                  "/summon r:look_pro",
+                  "/damage @p 6 lava",
+                  "/effect @s resistance 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.heal_look": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "look": "query.has_target"
+                  }
+               ]
+            },
+            "look": {
+               "on_entry": [
+                  "/effect @p regeneration 1 5 true",
+                  "/effect @p resistance 255",
+                  "/effect @p instant_health 25"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_eye_d",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/seek_eye"
+         },
+         "geometry": {
+            "default": "geometry.seek_eye"
+         },
+         "animations": {
+            "seek_eye_dead": "animation.seek_eye.dead",
+            "dead": "controller.animation.seek_eye.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "seek_eye",
+            "texture_index": 0
+         }
+      }
+   }
+}

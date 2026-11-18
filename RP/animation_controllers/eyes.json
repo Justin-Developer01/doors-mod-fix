@@ -1,0 +1,57 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.eyes.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "eyes_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "eye2"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "eye2"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "eye"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.eyes.move": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "animations": [
+                  {
+                     "moving": "query.ground_speed * 0.5"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0 && variable.random == 0"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      }
+   }
+}

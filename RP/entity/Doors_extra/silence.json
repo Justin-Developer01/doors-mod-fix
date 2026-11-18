@@ -1,0 +1,50 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:silence",
+         "materials": {
+            "default": "spider",
+            "charged": "charged_creeper"
+         },
+         "textures": {
+            "default": "textures/entity/extra/silencetexture",
+            "charged": "textures/entity/extra/silencepower"
+         },
+         "animations": {
+            "moving": "animation.ambush.moving",
+            "silence_general": "animation.silence.idle",
+            "attack": "animation.silence.attack",
+            "running": "animation.ambush.running",
+            "jumpscare": "animation.ambush.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "moving": "controller.animation.silence.moving",
+            "general": "controller.animation.silence.general"
+         },
+         "scripts": {
+            "animate": [
+               "moving",
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.silence",
+            "charged": "geometry.silence"
+         },
+         "render_controllers": [
+            "controller.render.silence"
+         ],
+         "spawn_egg": {
+            "texture": "silence",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:dark_smoke"
+         },
+         "enable_attachables": true
+      }
+   }
+}

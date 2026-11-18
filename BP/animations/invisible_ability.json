@@ -1,0 +1,23 @@
+{
+   "animations": {
+      "animation.invisible_on": {
+         "animation_length": 0.1,
+         "loop": true,
+         "timeline": {
+            "0.0": [
+               "/effect @s invisible 10 true"
+            ]
+         }
+      },
+      "animation.invisible_off": {
+         "animation_length": 0.6,
+         "loop": true,
+         "timeline": {
+            "0.5": [
+               "/effect @s clear"
+            ]
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

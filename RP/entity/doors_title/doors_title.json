@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "spawn_egg": {
+            "texture": "door_title",
+            "texture_index": 0
+         },
+         "identifier": "doors:title",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/door_title"
+         },
+         "geometry": {
+            "default": "geometry.title"
+         },
+         "animations": {
+            "title_general": "animation.title.general",
+            "general": "controller.animation.title.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ]
+      }
+   }
+}

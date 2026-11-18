@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_hard_d",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_hard"
+         },
+         "geometry": {
+            "default": "geometry.figure_hard"
+         },
+         "animations": {
+            "figure_d_general": "animation.figure.dead",
+            "general": "controller.animation.figure_d.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ]
+      }
+   }
+}

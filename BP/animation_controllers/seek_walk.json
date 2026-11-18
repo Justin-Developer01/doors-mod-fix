@@ -1,0 +1,52 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_walk": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "step": "query.has_target ? (query.target -> query.is_moving) : 0"
+                  }
+               ]
+            },
+            "step": {
+               "on_entry": [
+                  "/execute @s ~~~ playsound mob.seek.walk @a[r=30]"
+               ],
+               "on_exit": [
+                  "/stopsound @a mob.seek.step"
+               ],
+               "transitions": [
+                  {
+                     "default": "return query.has_target ? !(query.target -> query.is_moving) : query.is_alive;"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.step_follow": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~1 tp @e[type=r:seek_step,type=!item,type=!arrow,c=1,r=5] @e[tag=morph3]"
+               ],
+               "transitions": [
+                  {
+                     "follow": "(1.0)"
+                  }
+               ]
+            },
+            "follow": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

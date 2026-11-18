@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.welcome_matt",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0],
+					"cubes": [
+						{"origin": [-12.43653, 0, -9.32532], "size": [23.87307, 1, 18.65064], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

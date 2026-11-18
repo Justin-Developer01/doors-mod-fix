@@ -1,0 +1,1 @@
+title @p actionbar §lWait until figure is gone

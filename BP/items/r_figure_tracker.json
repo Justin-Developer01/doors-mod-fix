@@ -1,0 +1,25 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:figure_tracker",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "r:figure_tracker",
+         "minecraft:display_name": {
+            "value": "§6Figure tracker"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "figure_tracker",
+            "duration": 20
+         },
+         "r:on_use": {}
+      }
+   }
+}

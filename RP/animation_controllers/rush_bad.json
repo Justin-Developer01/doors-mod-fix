@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.rush_bad.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "rush_bad_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "smoke"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

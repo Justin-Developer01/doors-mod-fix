@@ -1,0 +1,46 @@
+{
+   "format_version": "1.17",
+   "minecraft:npc_dialogue": {
+      "scenes": [
+         {
+            "scene_tag": "prerun_shop",
+            "npc_name": "shop",
+            "text": "§l§6Pre-Run Shop",
+            "on_open_commands": [
+               "/clear @p"
+            ],
+            "on_close_commands": [
+               "/say §lThank you! Supporting Small Business",
+               "/kill @e[type=r:shop,c=1]",
+               "/stopsound @p mob.elevator.shop"
+            ],
+            "buttons": [
+               {
+                  "name": "§lFlashlight$50",
+                  "commands": [
+                     "/execute @p[hasitem={item=r:coin}] ~~~ function shop"
+                  ]
+               },
+               {
+                  "name": "§lVitamin$50",
+                  "commands": [
+                     "/execute @p[hasitem={item=r:coin}] ~~~ function shop2"
+                  ]
+               },
+               {
+                  "name": "§lLighter$50",
+                  "commands": [
+                     "/execute @p[hasitem={item=r:coin}] ~~~ function shop3"
+                  ]
+               },
+               {
+                  "name": "§lLockpicks$50",
+                  "commands": [
+                     "/execute @p[hasitem={item=r:coin}] ~~~ function shop4"
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

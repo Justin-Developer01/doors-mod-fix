@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.windows.general": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"downteeth": {
+					"position": {
+						"0.0": [0, -1, 0],
+						"0.5": [0, -2, 0],
+						"1.0": [0, -1, 0]
+					},
+					"scale": [0.3, 0.4, 1]
+				},
+				"uppperteeth": {
+					"position": [0, -10, 0],
+					"scale": [0.3, 0.4, 1]
+				},
+				"eyes": {
+					"position": {
+						"0.0": [0, -3, -1],
+						"0.5": [0, 0, -1],
+						"1.0": [0, -3, -1]
+					},
+					"scale": {
+						"0.0": [0.4, 0.4, 1],
+						"0.5": [0.4, 0.3, 1],
+						"1.0": [0.4, 0.4, 1]
+					}
+				}
+			}
+		}
+	}
+}

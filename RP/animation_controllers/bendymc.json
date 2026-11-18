@@ -1,0 +1,69 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.bendymc.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "bendymc_general"
+               ]
+            }
+         }
+      },
+      "controller.animation.bendymc.move": {
+         "states": {
+            "default": {
+               "animations": [
+                  {
+                     "moving": "query.modified_move_speed"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "attack1": "variable.attack_time > 0 && variable.random == 0"
+                  },
+                  {
+                     "attack2": "variable.attack_time > 0 && variable.random == 1"
+                  },
+                  {
+                     "attack3": "variable.attack_time > 0 && variable.random == 2"
+                  }
+               ],
+               "blend_transition": 0.1
+            },
+            "attack1": {
+               "animations": [
+                  "attack1"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.1
+            },
+            "attack2": {
+               "animations": [
+                  "attack2"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ],
+               "blend_transition": 0.5
+            },
+            "attack3": {
+               "animations": [
+                  "attack3"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:ambush_bad_d",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/ambush_bad"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "animations": {
+            "rush_bad_dead": "animation.ambush_bad.dead",
+            "dead": "controller.animation.rush_bad.dead"
+         },
+         "geometry": {
+            "default": "geometry.ambush_bad"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:ambush_light",
+            "spell2": "r:ambush_light2",
+            "spell3": "r:ambush_light3",
+            "spell4": "r:ambush_light4"
+         },
+         "spawn_egg": {
+            "texture": "ambush_bad",
+            "texture_index": 0
+         }
+      }
+   }
+}

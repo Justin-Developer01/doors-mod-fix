@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:rift",
+         "materials": {
+            "default": "charged_creeper"
+         },
+         "textures": {
+            "default": "textures/entity/rift"
+         },
+         "animations": {
+            "rift_general": "animation.rift.general",
+            "general": "controller.animation.rift.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.rift"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "rift",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:blue_light"
+         }
+      }
+   }
+}

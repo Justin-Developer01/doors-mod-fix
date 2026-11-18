@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:figure_hands",
+         "materials": {
+            "default": "armor",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/figure",
+            "enchanted": "textures/misc/enchanted_item_glint"
+         },
+         "geometry": {
+            "default": "geometry.figure_hands"
+         },
+         "animations": {
+            "wield_first_person": "animation.figure_hands.first_person",
+            "wield_third_person": "animation.figure_hands.third_person"
+         },
+         "scripts": {
+            "animate": [
+               {
+                  "wield_first_person": "c.is_first_person"
+               },
+               {
+                  "wield_third_person": "!c.is_first_person"
+               }
+            ],
+            "pre_animation": [
+               "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.armor"
+         ]
+      }
+   }
+}

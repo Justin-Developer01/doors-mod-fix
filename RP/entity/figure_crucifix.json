@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_crucifix",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/figure_crucifix"
+         },
+         "geometry": {
+            "default": "geometry.figure_crucifix2"
+         },
+         "animations": {
+            "crucifix_general": "animation.figure_crucifix2.general",
+            "general": "controller.animation.crucifix.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "none",
+            "texture_index": 0
+         }
+      }
+   }
+}

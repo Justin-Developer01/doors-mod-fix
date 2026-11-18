@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:long_gate2",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/gate2"
+         },
+         "geometry": {
+            "default": "geometry.gate2"
+         },
+         "animations": {
+            "gate2_close": "animation.gate2.close",
+            "general": "controller.animation.gate2.close"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "door100_gate",
+            "texture_index": 0
+         }
+      }
+   }
+}

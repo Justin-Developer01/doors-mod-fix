@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.decoy.dead": {
+         "states": {
+            "default": {
+               "animations": [
+                  "decoy_dead"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "smoke"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

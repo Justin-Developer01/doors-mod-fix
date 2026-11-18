@@ -1,0 +1,162 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.glitch_see": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.glitch.error @a"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.glitch_fall": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @s slow_falling 1 5 true"
+               ],
+               "transitions": [
+                  {
+                     "fall": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ]
+            },
+            "fall": {
+               "on_entry": [
+                  "/effect @s slow_falling 1 5 true"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.glitch_attack": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attack": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=doors:glitch] minecraft:remove",
+                  "/tp @e[type=!doors:glitch,r=3] @e[type=r:glitch_clip2]",
+                  "/event entity @e[type=r:glitch_clip2] minecraft:remove"
+               ]
+            },
+            "attack": {
+               "on_entry": [
+                  "/playsound mob.glitch.error @a"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.glitch_attacking": {
+         "states": {
+            "attacking": {
+               "on_entry": [
+                  "/execute @s ~~~ tp @e[type=!player,type=!doors:light_circle,type=!doors:glitch,type=!doors:glitch_fight,type=!doors:title,type=!doors:guiding_light,type=!doors:closet,type=!doors:closet2,type=!doors:hotel_plant,type=!doors:crucifix,type=!doors:grandfather_clock,type=!doors:chair,type=!doors:closet_bad,type=!doors:wardrobe,type=!r:resistance_steve,type=!r:resistance_alex,type=!doors:chair2,type=!doors:hotel_door,type=!doors:skeleton_door,type=!doors:door50,type=!item,family=!inanimate,r=3] -999999 99999 999999",
+                  "/playsound mob.glitch.error @a",
+                  "/playanimation @s animation.glitch.death"
+               ],
+               "transitions": [
+                  {
+                     "default": "variable.attack_time > 0"
+                  }
+               ]
+            },
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "attacking": "variable.attack_time > 0"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.glitched": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attacking": "variable.attack_time > 0 && !query.is_stunned"
+                  },
+                  {
+                     "adding": "query.has_rider && !query.is_stunned"
+                  }
+               ]
+            },
+            "attacking": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/function glitched"
+               ]
+            },
+            "adding": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true",
+                  "/effect @s instant_health 10000 255 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.glitch_ui": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "ui": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:glitched ^ ^0.5 ^1",
+                  "/tp @a[r=2] ~~~ facing @e[type=doors:glitch,c=1]"
+               ]
+            },
+            "ui": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~ ~ ~ execute @a[r=5] ~ ~ ~ particle r:glitched ^ ^0.5 ^1"
+               ]
+            }
+         }
+      }
+   }
+}

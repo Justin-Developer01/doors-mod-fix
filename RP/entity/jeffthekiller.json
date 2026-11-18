@@ -1,0 +1,47 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:jeffthekiller",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/jeffthekiller"
+         },
+         "geometry": {
+            "default": "geometry.jeffthekiller"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "scripts": {
+            "animate": [
+               "general",
+               "general2",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "spawn_egg": {
+            "texture": "jeffthekiller",
+            "texture_index": 0
+         },
+         "animations": {
+            "jeffthekiller_general": "animation.jeffthekiller.general",
+            "jeffthekiller_general2": "animation.jeffthekiller.general2",
+            "moving": "animation.jeffthekiller.moving",
+            "running": "animation.jeffthekiller.running",
+            "attack1": "animation.jeffthekiller.attack1",
+            "attack2": "animation.jeffthekiller.attack2",
+            "general": "controller.animation.jeffthekiller.general",
+            "attack": "controller.animation.jeffthekiller.attack",
+            "general2": "controller.animation.jeffthekiller.general2"
+         }
+      }
+   }
+}

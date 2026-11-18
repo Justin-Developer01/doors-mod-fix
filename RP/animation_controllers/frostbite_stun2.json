@@ -1,0 +1,32 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.frostbite_stunned.general2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "depth_stunned_general2"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "frost"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "frost"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "frost"
+                  },
+                  {
+                     "effect": "spell4",
+                     "locator": "frost"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

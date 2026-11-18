@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:a_90_stop",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/A90stop"
+         },
+         "geometry": {
+            "default": "geometry.A_90stop"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "A90",
+            "texture_index": 0
+         }
+      }
+   }
+}

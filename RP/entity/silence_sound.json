@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:silence_sound",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/empty"
+         },
+         "animations": {
+            "cube_general2": "animation.cube.general3",
+            "general": "controller.animation.cube2.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.cube"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:dark_smoke"
+         },
+         "spawn_egg": {
+            "texture": "silence",
+            "texture_index": 0
+         }
+      }
+   }
+}

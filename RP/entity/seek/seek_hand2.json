@@ -1,0 +1,43 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_hand2",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/seek"
+         },
+         "geometry": {
+            "default": "geometry.seek_hand2"
+         },
+         "animations": {
+            "seek_hand2_general": "animation.seek_hand2.general",
+            "seek_hand2_general2": "animation.seek_hand2.general2",
+            "moving": "animation.seek_hand2.moving",
+            "attack": "animation.seek_hand2.attack",
+            "general": "controller.animation.seek_hand2.general",
+            "general2": "controller.animation.seek_hand2.general2"
+         },
+         "scripts": {
+            "animate": [
+               "general",
+               "general2"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "spawn_egg": {
+            "base_color": "#0d0d0d",
+            "overlay_color": "#814444"
+         }
+      }
+   }
+}

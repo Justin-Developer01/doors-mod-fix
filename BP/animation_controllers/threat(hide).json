@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.closet_threat": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/gamerule commandblockoutput false",
+                  "/gamerule sendcommandfeedback false",
+                  "/playsound mob.hide.getout @p"
+               ],
+               "transitions": [
+                  {
+                     "threat": "query.has_target"
+                  }
+               ]
+            },
+            "threat": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

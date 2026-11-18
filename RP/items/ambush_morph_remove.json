@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:ambush_morph_remove",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "ambush_remove",
+         "minecraft:use_animation": "bow",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

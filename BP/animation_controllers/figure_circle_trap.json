@@ -1,0 +1,179 @@
+{
+   "animation_controllers": {
+      "controller.animation.figure_trap": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ effect @e[type=!player,r=3] slowness 1 2 true",
+                  "/particle r:figure_circle"
+               ],
+               "transitions": [
+                  {
+                     "trap": "(1.0)"
+                  }
+               ]
+            },
+            "trap": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_trap2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ kill @e[type=!doors:light_circle,type=!doors:red_ambush_stun,type=!doors:red_ambush_stun2,type=!doors:seek,type=!doors:seek_s,type=!doors:nightmare_seek,type=!doors:nightmare_seek_s,type=!doors:xmas_seek,type=!doors:xmas_seek_s,type=!doors:glitch,type=!doors:screech_stun,type=!doors:barrage,type=!doors:barrage_stun,type=!doors:barrage_stun2,type=!doors:greed_stun,type=!doors:greed_stun2,type=!doors:curious_light_circle,type=!doors:a_120,type=!doors:a_90,type=!doors:a_90_stop,type=!doors:halt_stun,type=!doors:halt_stun2,type=!doors:a_90_angry,type=!doors:crucifix_blue,type=!doors:depth_stunned,type=!doors:depth_stunned2,type=!doors:rush_stun,type=!doors:rush_stun2,type=!doors:ambush_stun,type=!doors:ambush_stun2,type=!doors:silence_stun,type=!doors:silence_stun2,type=!doors:title,type=!doors:closet,type=!r:blue_chain,type=!doors:closet2,type=!doors:chair,type=!doors:chair2,type=!doors:crucifix,type=!doors:rush,type=!doors:seek_d,type=!doors:figure_d,type=!doors:figure_d2,type=!doors:jack,type=!doors:halt,type=!doors:ambush,type=!doors:silence,type=!doors:screech,type=!doors:screech_d,type=!doors:depth,type=!doors:rush2,type=!doors:ambush2,type=!doors:depth2,type=!doors:closet_bad,type=!doors:wardrobe,type=!r:resistance_steve,type=!r:resistance_alex,type=!doors:door50,type=!doors:hotel_door,type=!doors:skeleton_door,type=!doors:title,type=!doors:red_ambush,type=!doors:timothy,type=!doors:timothy_d,type=!doors:trollface,type=!doors:jeff_table,type=!doors:shop_sign,type=!doors:snare,type=!doors:bars_door,type=!doors:hotel_door2,type=!doors:hotel_door,type=!doors:small_lock,type=!doors:hotel_cart,type=!doors:hotel_cart2,type=!doors:trollface,type=!doors:red_ambush,type=!doors:radio,type=!doors:radio2,type=!doors:radio3,type=!doors:radio4,type=!doors:radio5,type=!doors:radio6,type=!doors:radio7,type=!doors:radio8,type=!doors:radio9,type=!doors:radio10,type=!doors:radio11,type=!doors:radio12,type=!r:blue_light,type=!doors:red_ambush,type=!doors:jack,type=!doors:eyes,type=!secret:a_60,type=!doors:crucifix_blue,type=!doors:hotel_plant,type=!doors:elevator,type=!doors:grandfather_clock,type=!doors:drawer,type=!doors:drawer2,type=!doors:eyes_stun,type=!doors:rift,type=!doors:rift2,type=!r:a_90,type=!r:a_90_angry,type=!r:a_90_stop,type=!doors:decoy,type=!doors:decoy2,type=!doors:shocker,type=!doors:door50_complete,type=!doors:eyes_stun2,type=!r:protection,type=!secret:a_602,type=!doors:door100_gate,type=!doors:door100_gate2,type=!doors:door_lever,type=!doors:bars_gate,type=!doors:door100_lever,type=!doors:eyes_s,type=!doors:dupe,type=!doors:dupe2,type=!doors:drawer,type=!doors:drawer3,type=!doors:drawer4,type=!doors:drawer5,type=!doors:modern_chair,type=!doors:modern_chair2,type=!doors:dupe_stun,type=!doors:frostbite,type=!doors:frostbite_stun,type=!doors:frostbite_stun2,type=!doors:dupe2_stun,type=!doors:dupe2_stun2,type=!doors:seek_car,type=!doors:screech_big_stun,type=!doors:strike,type=!doors:strike_stun,type=!doors:jeff,type=!doors:bob,type=!doors:hotel_door3,type=!doors:hotel_door4,type=!doors:hotel_door5,type=!doors:hotel_door4_otherside,type=!doors:a90_stun,type=!doors:a90_stun2,type=!doors:a120_stun,type=!doors:a120_stun2,type=!doors:a60_stun,type=!doors:a60_stun2,type=!doors:hotel_door5_otherside,type=!doors:metal_door,type=!doors:metal_door2,type=!doors:old_door,type=!doors:door_lever,type=!doors:el_goblino,type=!doors:strike_stun2,type=!doors:dread_stun,type=!doors:dread_stun2,type=!doors:metal_wardrobe,type=!doors:nightmare_rush_stun,type=!doors:gate,type=!doors:jeff,type=!doors:nightmare_rush,type=!doors:nightmare_rush_stun2,type=!player,family=!inanimate,family=!roblox,r=4]",
+                  "/effect @e[type=!player,r=3] clear",
+                  "/execute @s ~~~ tp @e[type=!player,type=!doors:seek_stun,type=!doors:depth_stunned,type=!doors:eyes,type=!doors:eyes_stun,type=!doors:eyes_stun2,type=!doors:eyes_s,type=!doors:dupe,type=!doors:dupe2,type=!doors:halt,type=!doors:halt_stun,type=!doors:halt_stun2,type=!doors:depth_stunned2,type=!doors:rush_stun,type=!doors:rush_stun2,type=!doors:screech_stun,type=!doors:barrage,type=!doors:barrage_stun,type=!doors:barrage_stun2,type=!doors:greed_stun,type=!doors:greed_stun2,type=!doors:ambush_stun,type=!doors:ambush_stun2,type=!doors:silence_stun,type=!doors:silence_stun2,type=!doors:light_circle,type=!doors:glitch,type=!doors:title,type=!doors:guiding_light,type=!doors:closet,type=!doors:closet2,type=!doors:hotel_plant,type=!doors:crucifix,type=!doors:grandfather_clock,type=!doors:chair,type=!doors:closet_bad,type=!doors:crucifix_blue,type=!r:blue_light,type=!doors:wardrobe,type=!r:resistance_steve,type=!r:resistance_alex,type=!doors:chair2,type=!doors:hotel_door,type=!doors:skeleton_door,type=!doors:drawer,type=!doors:drawer3,type=!doors:drawer4,type=!doors:hotel_door2,type=!doors:hotel_door,type=!doors:small_lock,type=!doors:shop_sign,type=!doors:jeff_table,type=!doors:bars_door,type=!doors:hotel_cart,type=!doors:hotel_cart2,type=!doors:drawer5,type=!doors:a_90,type=!doors:a_90_stop,type=!doors:a_90_angry,type=!doors:a_120,type=!doors:snare,type=!doors:red_ambush_stun,type=!doors:red_ambush_stun2,type=!secret:a_60,type=!doors:drawer2,type=!doors:modern_chair,type=!doors:modern_chair2,type=!secret:a_602,type=!r:a_90,type=!r:a_90_stop,type=!r:a_90_angry,type=!doors:door50_complete,type=!doors:decoy,type=!doors:decoy2,type=!doors:shocker,type=!doors:bob,type=!doors:el_goblino,type=!doors:jeff,type=!doors:gate,type=!doors:door50,type=!doors:dupe_stun,type=!doors:rift,type=!doors:door100_gate,type=!doors:door100_gate2,type=!doors:door100_lever,type=!r:protection,type=!doors:rift2,type=!doors:strike,type=!doors:strike_stun,type=!doors:door_lever,type=!doors:bars_gate,type=!doors:dread_stun,type=!doors:dread_stun2,type=!doors:metal_wardrobe,type=!doors:hotel_door3,type=!doors:hotel_door4,type=!doors:hotel_door5,type=!doors:hotel_door4_otherside,type=!doors:hotel_door5_othetside,type=!doors:metal_door,type=!doors:screech_big_stun,type=!doors:metal_door2,type=!doors:frostbite,type=!doors:frostbite_stun,type=!doors:frostbite_stun2,type=!doors:old_door,type=!doors:seek_car,type=!doors:door_lever,type=!doors:strike_stun2,type=!doors:nightmare_rush,type=!doors:nightmare_rush_stun,type=!doors:nightmare_rush_stun2,type=!doors:ambush,type=!doors:radio,type=!doors:radio2,type=!doors:radio3,type=!doors:radio4,type=!doors:radio5,type=!doors:radio6,type=!doors:radio7,type=!doors:radio8,type=!doors:radio9,type=!doors:radio10,type=!doors:radio11,type=!doors:radio12,type=!item,family=!inanimate,family=!roblox,r=3] -999999 99999 999999"
+               ],
+               "transitions": [
+                  {
+                     "trap2": "(1.0)"
+                  }
+               ]
+            },
+            "trap2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_trap3": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=!player,type=!doors:crucifix,type=!doors:crucifix_red,type=!doors:crucifix_blue,type=!doors:light_circle,type=!r:blue_chain,type=!doors:drawer,type=!doors:drawer2,type=!doors:drawer3,type=!doors:drawer4,type=!doors:drawer5,type=!doors:closet,type=!doors:closet3,type=!doors:gate,type=!doors:elevator,type=!doors:el_goblino,type=!doors:bob,type=!doors:jeff,type=!doors:closet4,type=!doors:closet5,type=!doors:modern_chair,type=!doors:modern_chair2,type=!doors:closet6,type=!doors:metal_wardrobe,type=!doors:metal_wardrobe2,type=!doors:metal_wardrobe3,type=!doors:metal_wardrobe4,type=!doors:metal_wardrobe5,type=!doors:metal_wardrobe6,type=!doors:grandfather_clock,type=!doors:hotel_plant,type=!doors:figure_plush,type=!doors:seek_plush,type=!doors:rush_plush,type=!doors:ambush_plush,type=!r:protection,type=!doors:rift,type=!doors:rift2,type=!doors:halt_plush,type=!doors:screech_plush,type=!doors:closet2,type=!doors:small_lock,type=!doors:radio,type=!doors:radio2,type=!doors:radio3,type=!doors:radio4,type=!doors:door50_complete,type=!doors:radio5,type=!doors:radio6,type=!doors:radio7,type=!doors:radio8,type=!doors:radio9,type=!doors:radio10,type=!doors:radio11,type=!doors:radio12,type=!doors:jeff_table,type=!doors:shop_sign,type=!doors:hotel_door2,type=!doors:hotel_door,type=!doors:bars_door,type=!doors:seek_car,type=!doors:closet_d,type=!doors:snare,type=!doors:wardrobe,type=!doors:hotel_door4,type=!doors:hotel_door5,type=!doors:hotel_door4_otherside,type=!doors:hotel_door5_otherside,type=!doors:metal_door,type=!doors:metal_door2,type=!doors:hotel_door3,type=!doors:door_lever,type=!doors:door100_gate,type=!doors:door100_gate2,type=!doors:bars_gate,type=!doors:door_lever,type=!doors:door100_lever,type=!doors:closet_bad,type=!doors:skeleton_door,type=!doors:hotel_door,type=!doors:door50,type=!doors:door50_1,type=!r:blue_light,type=!doors:figure_circle,family=!inanimate,family=!roblox,r=5] @e[type=doors:figure_circle]",
+                  "/particle r:figure_circle",
+                  "/function detector",
+                  "/event entity @e[type=r:ambush_particle,r=2] minecraft:removed",
+                  "/event entity @e[type=r:eyes_light,r=2] minecraft:remove",
+                  "/event entity @e[type=doors:shadow,r=2] minecraft:remove",
+                  "/event entity @e[type=r:rush_sound,r=2] minecraft:removed",
+                  "/execute @e[tag=caught,r=2] ~~~ gamemode survival @p",
+                  "/event entity @e[type=r:ambush_hitbox,r=2] minecraft:removed",
+                  "/event entity @e[type=r:halt_hitbox,r=2] minecraft:remove",
+                  "/event entity @e[type=r:greed_particle,r=2] minecraft:removed",
+                  "/event entity @e[type=r:rush_hitbox,r=2] minecraft:removed",
+                  "/event entity @e[type=r:figure_particle,r=2] minecraft:removed",
+                  "/event entity @e[type=r:halt_particle,r=2] minecraft:removed",
+                  "/event entity @e[type=r:eyes_light,r=2] minecraft:remove",
+                  "/event entity @e[type=r:figure_light,r=2] minecraft:removed",
+                  "/tp @e[type=doors:screech_big,r=8] @s",
+                  "/event entity @e[type=doors:depth,r=2] minecraft:event_spawn_panic",
+                  "/event entity @e[type=doors:decoy,r=2] minecraft:event_spawn_decoy_stun",
+                  "/event entity @e[type=doors:shocker,r=2] minecraft:event_spawn_shocker_stun",
+                  "/event entity @e[type=doors:decoy2,r=2] minecraft:event_spawn_decoy_stun",
+                  "/event entity @e[type=doors:stare,r=2] minecraft:event_spawn_stare_stun",
+                  "/event entity @e[type=doors:frostbite,r=2] minecraft:event_spawn_panic",
+                  "/execute @e[type=doors:screech,r=3] ~~~ function cancel_screech",
+                  "/event entity @e[type=doors:jeffthekiller,r=2] minecraft:event_spawn_killer_stun",
+                  "/event entity @e[type=doors:depth2,r=2] minecraft:event_spawn_panic",
+                  "/event entity @e[type=doors:strike,r=2] minecraft:event_spawn_strike_stun",
+                  "/event entity @e[type=doors:dupe,r=2] minecraft:event_spawn_duped",
+                  "/event entity @e[type=doors:dupe2,r=2] minecraft:event_spawn_dupe2_stun",
+                  "/event entity @e[type=r:dupe2,r=2] minecraft:event_spawn_dupe2_stun",
+                  "/event entity @e[type=r:dupe,r=2] minecraft:event_spawn_duped",
+                  "/event entity @e[type=r:dupe2,r=2] minecraft:event_spawn_duped",
+                  "/event entity @e[type=doors:dupe2,r=2] minecraft:event_spawn_duped",
+                  "/event entity @e[type=doors:eyes,r=2] minecraft:event_spawn_stare",
+                  "/event entity @e[type=doors:eyes2,r=2] minecraft:event_spawn_stare",
+                  "/event entity @e[type=doors:halt,r=2] minecraft:event_spawn_stayed",
+                  "/event entity @e[type=doors:screech_fight,r=2] minecraft:event_spawn_screaming",
+                  "/event entity @e[type=doors:screech,r=2] minecraft:event_spawn_screaming",
+                  "/event entity @e[type=doors:bald_screech,r=2] minecraft:event_spawn_screaming",
+                  "/event entity @e[type=doors:screech_big,r=2] minecraft:event_spawn_screaming",
+                  "/execute @e[type=doors:screech_big,r=2] ~~~ event entity @e[type=doors:light_circle,r=2] r:size_big",
+                  "/event entity @e[type=doors:greed,r=2] minecraft:event_spawn_greedy",
+                  "/event entity @e[type=doors:glitch,r=2] minecraft:event_spawn_glitched",
+                  "/event entity @e[type=doors:dread,r=2] minecraft:event_spawn_dread",
+                  "/event entity @e[type=doors:glitch_fight,r=2] minecraft:event_spawn_glitched",
+                  "/event entity @e[type=doors:barrage,r=2] minecraft:event_spawn_yellow",
+                  "/event entity @e[type=doors:barrage2,r=2] minecraft:event_spawn_yellow",
+                  "/event entity @e[type=doors:silence,r=2] minecraft:event_spawn_silence_stun",
+                  "/event entity @e[type=doors:silence_sleep,r=2] minecraft:event_spawn_silence_stun",
+                  "/event entity @e[type=doors:silence_awake,r=2] minecraft:event_spawn_silence_stun",
+                  "/event entity @e[type=doors:jack,r=2] minecraft:remove",
+                  "/event entity @e[type=doors:shadow,r=2] minecraft:remove",
+                  "/event entity @e[type=doors:ambush,r=2] minecraft:event_spawn_ambush_stun",
+                  "/event entity @e[type=doors:ambush2,r=2] minecraft:event_spawn_ambush_stun",
+                  "/event entity @e[type=doors:red_ambush,r=2] minecraft:event_spawn_ambush_stun",
+                  "/event entity @e[type=doors:red_ambush2,r=2] minecraft:event_spawn_ambush_stun",
+                  "/event entity @e[type=doors:rush,r=2] minecraft:event_spawn_rush_stun",
+                  "/function variants",
+                  "/event entity @e[type=doors:nightmare_rush,r=2] minecraft:event_spawn_rush_stun",
+                  "/event entity @e[type=doors:rush2,r=2] minecraft:event_spawn_rush_stun",
+                  "/event entity @e[type=doors:cursed_rush,r=2] minecraft:event_spawn_rush_stun",
+                  "/event entity @e[type=doors:seek,r=2] minecraft:event_spawn_death",
+                  "/event entity @e[type=doors:seek_light,r=2] minecraft:event_spawn_death",
+                  "/event entity @e[type=doors:seek_gentlemen,r=2] minecraft:event_spawn_death",
+                  "/event entity @e[type=doors:xmas_seek,r=2] minecraft:event_spawn_death",
+                  "/event entity @e[type=doors:nightmare_seek,r=2] minecraft:event_spawn_death",
+                  "/execute @e[type=doors:light_circle] ~~~ event entity @e[type=doors:crucifix,r=4] minecraft:event_spawn_dead4",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block",
+                  "/event entity @e[type=r:a60_light,r=3] minecraft:remove",
+                  "/event entity @e[type=r:a60_light2,r=3] minecraft:remove",
+                  "/event entity @e[type=doors:a_120,r=2] minecraft:event_spawn_done",
+                  "/event entity @e[type=doors:a_90,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=doors:a_90_stop,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=doors:a_90_angry,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=r:a_90,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=r:a_90_stop,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=r:a_90_angry,r=2] minecraft:event_spawn_done2",
+                  "/event entity @e[type=secret:a_60,r=2] minecraft:event_spawn_done3",
+                  "/event entity @e[type=secret:a_602,r=2] minecraft:event_spawn_done3",
+                  "/execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block"
+               ],
+               "transitions": [
+                  {
+                     "trap3": "(1.0)"
+                  }
+               ]
+            },
+            "trap3": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_trap4": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tp @e[type=doors:figure_rucifix,r=2] @p",
+                  "/playsound mob.closet.trap @a",
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "trap4": "query.has_target"
+                  }
+               ]
+            },
+            "trap4": {
+               "on_entry": [
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

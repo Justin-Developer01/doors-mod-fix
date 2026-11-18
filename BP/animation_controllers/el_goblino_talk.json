@@ -1,0 +1,49 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.goblino_talk": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @s minecraft:start_talk"
+               ],
+               "transitions": [
+                  {
+                     "talk": "query.has_target"
+                  }
+               ]
+            },
+            "talk": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.is_jeff": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.elevator.shop @a[r=6]"
+               ],
+               "transitions": [
+                  {
+                     "jeff": "query.has_target"
+                  }
+               ]
+            },
+            "jeff": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

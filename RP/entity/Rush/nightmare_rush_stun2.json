@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:nightmare_rush_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/nightmare_rush"
+         },
+         "geometry": {
+            "default": "geometry.rush"
+         },
+         "animations": {
+            "rush_rise": "animation.rush.rise",
+            "rise": "controller.animation.rush.rise"
+         },
+         "scripts": {
+            "animate": [
+               "rise"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "rush",
+            "texture_index": 0
+         }
+      }
+   }
+}

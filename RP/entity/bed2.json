@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:bed2",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/beds2"
+         },
+         "geometry": {
+            "default": "geometry.beds"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "beds2",
+            "texture_index": 0
+         }
+      }
+   }
+}

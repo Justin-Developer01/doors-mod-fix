@@ -1,0 +1,28 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:screech_psst",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "screech_psst",
+         "minecraft:display_name": {
+            "value": "§lScreech psst sound"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "screech_psst",
+            "duration": 5
+         },
+         "minecraft:fuel": {
+            "duration": 32
+         },
+         "r:on_use": {}
+      }
+   }
+}

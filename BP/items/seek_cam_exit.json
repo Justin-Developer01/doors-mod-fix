@@ -1,0 +1,25 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:seek_cam_exit",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "seek_cam_exit",
+         "minecraft:display_name": {
+            "value": "§l§cSeek Cam §aExit"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "seek_cam_exit",
+            "duration": 1
+         },
+         "r:on_use": {}
+      }
+   }
+}

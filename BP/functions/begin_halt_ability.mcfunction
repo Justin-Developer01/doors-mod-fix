@@ -1,0 +1,1 @@
+event entity @e[type=doors:halt] minecraft:begin_ability

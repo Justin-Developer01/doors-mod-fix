@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.grandfather_clock.general21": {
+         "states": {
+            "default": {
+               "animations": [
+                  "grandfather_clock_general21"
+               ]
+            }
+         }
+      }
+   }
+}

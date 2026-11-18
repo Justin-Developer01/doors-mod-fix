@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.crucifix.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "crucifix_general"
+               ]
+            }
+         }
+      }
+   }
+}

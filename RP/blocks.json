@@ -1,0 +1,359 @@
+{
+   "format_version": "1.21.40",
+   "r:carpet1": {
+      "textures": "r_carpet1",
+      "sound": "cloth"
+   },
+   "r:welcome_matt": {
+      "textures": "welcome_matt",
+      "sound": "cloth"
+   },
+   "r:webs2": {
+      "textures": "webs2",
+      "sound": "normal"
+   },
+   "r:modern_wood_floor": {
+      "textures": "modern_wood_floor",
+      "sound": "normal"
+   },
+   "r:jack_painting": {
+      "textures": "jack_painting",
+      "sound": "normal"
+   },
+   "r:carpet3": {
+      "textures": "r_carpet3",
+      "sound": "cloth"
+   },
+   "r:trophy": {
+      "textures": "trophy",
+      "sound": "normal"
+   },
+   "r:seek_painting": {
+      "textures": "seek_painting",
+      "sound": "normal"
+   },
+   "r:metal_block": {
+      "textures": "metal_block",
+      "sound": "metal"
+   },
+   "r:webs": {
+      "textures": "webs",
+      "sound": "normal"
+   },
+   "r:banana_peel": {
+      "textures": "banana_peel",
+      "sound": "normal"
+   },
+   "r:green_herb": {
+      "textures": "green_herb",
+      "sound": "normal"
+   },
+   "r:carpet2": {
+      "textures": "r_carpet2",
+      "sound": "cloth"
+   },
+   "r:carpet5": {
+      "textures": "r_carpet5",
+      "sound": "cloth"
+   },
+   "r:carpet6": {
+      "textures": "carpet6",
+      "sound": "normal_walk"
+   },
+   "among:wall_candle": {
+      "textures": "among_wall_candle",
+      "sound": "normal"
+   },
+   "among:drawer": {
+      "textures": "among_drawer",
+      "sound": "normal"
+   },
+   "among:elevator": {
+      "textures": "elevator",
+      "sound": "normal"
+   },
+   "among:chandelier": {
+      "textures": "among_chandalier",
+      "sound": "normal"
+   },
+   "r:hotel_plant": {
+      "textures": "r_hotel_plant",
+      "sound": "grass"
+   },
+   "r:clock": {
+      "textures": "r_clock",
+      "sound": "itemframe"
+   },
+   "r:globe": {
+      "textures": "r_globe",
+      "sound": "stone"
+   },
+   "r:lamp": {
+      "textures": "r_lamp",
+      "sound": "stone"
+   },
+   "r:grandfather_clock": {
+      "textures": "r_grandfather_clock",
+      "sound": "stone"
+   },
+   "r:hotel_cart": {
+      "textures": "r_hotel_cart",
+      "sound": "stone"
+   },
+   "r:hotel_cart2": {
+      "textures": "hotel_cart2",
+      "sound": "stone"
+   },
+   "r:suitcase": {
+      "textures": "r_suitcase",
+      "sound": "stone"
+   },
+   "r:page": {
+      "textures": "r_page",
+      "sound": "cloth"
+   },
+   "r:page2": {
+      "textures": "r_page2",
+      "sound": "cloth"
+   },
+   "r:carpet4": {
+      "textures": "r_carpet4",
+      "sound": "cloth"
+   },
+   "r:typewriter": {
+      "textures": "r_typewriter",
+      "sound": "normal"
+   },
+   "r:hanger2": {
+      "textures": "r_hanger2",
+      "sound": "normal"
+   },
+   "r:mine_light": {
+      "textures": "r_mine_light",
+      "sound": "normal"
+   },
+   "r:hanger": {
+      "textures": "r_hanger",
+      "sound": "normal"
+   },
+   "r:bacon_statue": {
+      "textures": "r_bacon_statue",
+      "sound": "normal"
+   },
+   "r:air_vent": {
+      "textures": "r_air_vent",
+      "sound": "normal"
+   },
+   "r:wooden_wall": {
+      "textures": "r_wooden_wall",
+      "sound": "normal"
+   },
+   "r:quil": {
+      "textures": "r_quil",
+      "sound": "normal"
+   },
+   "among:drawer2": {
+      "textures": "among_drawer2",
+      "sound": "normal"
+   },
+   "r:crate": {
+      "textures": "r_crate",
+      "sound": "normal"
+   },
+   "r:modern_wall": {
+      "textures": "r_modern_wall",
+      "sound": "normal"
+   },
+   "r:pipe4": {
+      "textures": "r_pipe4",
+      "sound": "normal"
+   },
+   "r:pipe5": {
+      "textures": "r_pipe5",
+      "sound": "normal"
+   },
+   "r:pipe6": {
+      "textures": "r_pipe6",
+      "sound": "normal"
+   },
+   "r:pipe3": {
+      "textures": "r_pipe3",
+      "sound": "normal"
+   },
+   "r:pipe2": {
+      "textures": "r_pipe2",
+      "sound": "normal"
+   },
+   "r:pipe1": {
+      "textures": "r_pipe1",
+      "sound": "normal"
+   },
+   "r:metal_barrel": {
+      "textures": "r_metal_barrel",
+      "sound": "normal"
+   },
+   "r:metal_barrel2": {
+      "textures": "r_metal_barrel",
+      "sound": "normal"
+   },
+   "r:modern_fence": {
+      "textures": "modern_fence",
+      "sound": "normal"
+   },
+   "r:metal_fence": {
+      "textures": "metal_fence",
+      "sound": "normal"
+   },
+   "r:metal_pillar": {
+      "textures": "metal_fence",
+      "sound": "normal"
+   },
+   "r:modern_fence_side": {
+      "textures": "modern_fence",
+      "sound": "normal"
+   },
+   "r:modern_fence_corner": {
+      "textures": "modern_fence",
+      "sound": "normal"
+   },
+   "r:seek_eye": {
+      "textures": "r_seek_eye",
+      "sound": "normal"
+   },
+   "r:depth_painting": {
+      "textures": "3d_painting",
+      "sound": "normal"
+   },
+   "r:silence_painting": {
+      "textures": "3d_painting",
+      "sound": "normal"
+   },
+   "r:greed_painting": {
+      "textures": "3d_painting",
+      "sound": "normal"
+   },
+   "r:seek_painting2": {
+      "textures": "3d_painting",
+      "sound": "normal"
+   },
+   "r:hat_painting": {
+      "textures": "3d_painting",
+      "sound": "normal"
+   },
+   "r:violin_painting": {
+      "textures": "3d_painting",
+      "sound": "normal"
+   },
+   "r:exit_sign": {
+      "textures": "exit_sign",
+      "sound": "normal"
+   },
+   "r:metal_rack": {
+      "textures": "metal_rack",
+      "sound": "normal"
+   },
+   "r:metal_rack2": {
+      "textures": "metal_rack",
+      "sound": "normal"
+   },
+   "r:lamp2": {
+      "textures": "r_lamp",
+      "sound": "normal"
+   },
+   "r:lamp3": {
+      "textures": "lamp3",
+      "sound": "normal"
+   },
+   "r:wooden_block": {
+      "textures": "wooden_block",
+      "sound": "normal"
+   },
+   "r:wooden_block2": {
+      "textures": "wooden_block",
+      "sound": "normal"
+   },
+   "r:wooden_block3": {
+      "textures": "wooden_block",
+      "sound": "normal"
+   },
+   "r:wooden_block4": {
+      "textures": "wooden_block",
+      "sound": "normal"
+   },
+   "r:wooden_block5": {
+      "textures": "wooden_block",
+      "sound": "normal"
+   },
+   "r:plank": {
+      "textures": "plank",
+      "sound": "normal"
+   },
+   "r:blueprints": {
+      "textures": "blueprints",
+      "sound": "normal"
+   },
+   "r:computer": {
+      "textures": "computer",
+      "sound": "normal"
+   },
+   "r:box": {
+      "textures": "box",
+      "sound": "normal"
+   },
+   "r:table": {
+      "textures": "table",
+      "sound": "normal"
+   },
+   "r:table2": {
+      "textures": "table2",
+      "sound": "normal"
+   },
+   "r:table3": {
+      "textures": "table3",
+      "sound": "normal"
+   },
+   "r:table4": {
+      "textures": "table4",
+      "sound": "normal"
+   },
+   "r:sink": {
+      "textures": "sink",
+      "sound": "normal"
+   },
+   "r:trash_bin": {
+      "textures": "metal_fence",
+      "sound": "normal"
+   },
+   "r:projecter": {
+      "textures": "projecter",
+      "sound": "normal"
+   },
+   "r:blender": {
+      "textures": "blender",
+      "sound": "normal"
+   },
+   "r:toaster": {
+      "textures": "toaster",
+      "sound": "normal"
+   },
+   "r:microwave": {
+      "textures": "microwave",
+      "sound": "normal"
+   },
+   "r:bars_slab": {
+      "textures": "bars_slab",
+      "sound": "normal"
+   },
+   "r:bars2": {
+      "textures": "bars2",
+      "sound": "normal"
+   },
+   "r:bars": {
+      "textures": "bars",
+      "sound": "normal"
+   },
+   "r:bell": {
+      "textures": "bell",
+      "sound": "normal"
+   }
+}

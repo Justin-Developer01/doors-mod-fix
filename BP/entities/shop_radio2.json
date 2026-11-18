@@ -1,0 +1,189 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:radio2",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "stop_music"
+            ]
+         },
+         "animations": {
+            "stop_music": "controller.animation.stop_music"
+         }
+      },
+      "component_groups": {
+         "play_music": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lStop music",
+                     "on_interact": {
+                        "filters": {
+                           "any_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:music_stop",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            },
+            "minecraft:variant": {
+               "value": 0
+            }
+         },
+         "stop_music": {
+            "minecraft:variant": {
+               "value": 0
+            },
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lPlay Music",
+                     "on_interact": {
+                        "filters": {
+                           "any_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:music_played",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "play": {
+            "minecraft:variant": {
+               "value": 1
+            }
+         },
+         "minecraft:transform_to_music": {
+            "minecraft:transformation": {
+               "into": "doors:radio3"
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 50
+         },
+         "minecraft:scale": {
+            "value": 0.5
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.8
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:physics": {
+            "has_gravity": true
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "stop_music"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "play_music"
+               ]
+            }
+         },
+         "minecraft:stop_music": {
+            "add": {
+               "component_groups": [
+                  "stop_music"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "play_music",
+                  "play"
+               ]
+            }
+         },
+         "minecraft:play_music": {
+            "add": {
+               "component_groups": [
+                  "play_music"
+               ]
+            }
+         },
+         "minecraft:music_played": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "playsound mob.elevator.dawn_of_the_door @a[r=5]",
+                        "event entity @s minecraft:play_music",
+                        "particle minecraft:note_particle ~ ~1 ~",
+                        "title @a actionbar §lNow Playing: Dawn Of the Doors"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         },
+         "minecraft:music_stop": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "stopsound @a mob.elevator.dawn_of_the_door",
+                        "event entity @s minecraft:stop_music",
+                        "title @a actionbar §lMusic OFF"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         },
+         "minecraft:event_spawn_music": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_music"
+               ]
+            }
+         }
+      }
+   }
+}

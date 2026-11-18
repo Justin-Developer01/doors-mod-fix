@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.greed_stunned.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "greed_stunned"
+               ]
+            }
+         }
+      }
+   }
+}

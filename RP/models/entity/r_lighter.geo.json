@@ -1,0 +1,82 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.r_lighter",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [0, 24, 0],
+					"mirror": true
+				},
+				{
+					"name": "body",
+					"pivot": [0, 24, 0],
+					"mirror": true
+				},
+				{
+					"name": "leftArm",
+					"pivot": [-5, 9, -12],
+					"mirror": true
+				},
+				{
+					"name": "rightitem",
+					"parent": "leftArm",
+					"pivot": [-5, 6, -12]
+				},
+				{
+					"name": "lighter",
+					"parent": "rightitem",
+					"pivot": [-6, 10, -12],
+					"cubes": [
+						{"origin": [-7, 8, -14], "size": [2, 3, 3], "uv": [24, 0]}
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "lighter",
+					"pivot": [0, -5, -11],
+					"cubes": [
+						{"origin": [-6.75, 9, -15], "size": [1.5, 1.5, 1], "uv": [0, 5]}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "bone",
+					"pivot": [0, -5, -11]
+				},
+				{
+					"name": "fire",
+					"parent": "bone",
+					"pivot": [-6, 9.5, -15],
+					"cubes": [
+						{"origin": [-5.75, 9, -16], "size": [0, 1.5, 1], "uv": [43, 21]}
+					]
+				},
+				{
+					"name": "cap",
+					"parent": "lighter",
+					"pivot": [-6, 11, -14],
+					"cubes": [
+						{"origin": [-7, 8, -16], "size": [2, 3, 2], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "circle",
+					"parent": "lighter",
+					"pivot": [-6, 8.5, -14.5],
+					"cubes": [
+						{"origin": [-6, 8, -15], "size": [0, 1, 1], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

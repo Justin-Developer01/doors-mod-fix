@@ -1,0 +1,47 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:jeff",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/jeff"
+         },
+         "animations": {
+            "jeff_general": "animation.jeff.general",
+            "moving": "animation.jeff.general",
+            "wave": "animation.jeff.wave",
+            "wave2": "animation.jeff.wave2",
+            "sad": "animation.jeff.sad",
+            "spawn": "animation.jeff.spawn",
+            "look_at_target": "animation.common.look_at_target",
+            "general": "controller.animation.jeff.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.jeff"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:black_form",
+            "spell2": "r:black_form",
+            "spell3": "r:black_form"
+         },
+         "spawn_egg": {
+            "texture": "jeff",
+            "texture_index": 0
+         }
+      }
+   }
+}

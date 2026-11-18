@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:windows",
+         "materials": {
+            "default": "enderman"
+         },
+         "textures": {
+            "default": "textures/entity/windows"
+         },
+         "geometry": {
+            "default": "geometry.windows"
+         },
+         "animations": {
+            "windows_general": "animation.windows.general",
+            "general": "controller.animation.windows.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "spawn_egg": {
+            "texture": "windows",
+            "texture_index": 0
+         }
+      }
+   }
+}

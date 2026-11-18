@@ -1,0 +1,72 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.tp_light": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~1 tp @e[type=r:figure_light,type=!item,type=!arrow,c=1,r=5] @e[tag=morph2]",
+                  "/execute @s ~ ~ ~1 tp @e[type=r:figure_light,type=!item,type=!arrow,c=1,r=5] @e[tag=morph11]"
+               ],
+               "transitions": [
+                  {
+                     "light": "(1.0)"
+                  }
+               ]
+            },
+            "light": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.tp_light2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @e[type=!r:figure_light,type=!r:figure_step,type=!r:figure_step2,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!handd,tag=!handd2,tag=!cam,tag=!caught,tag=!track,tag=!hand,tag=!hand2,r=7] nausea 10"
+               ],
+               "transitions": [
+                  {
+                     "light2": "(1.0)"
+                  }
+               ]
+            },
+            "light2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.give_item": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/function item_given"
+               ],
+               "transitions": [
+                  {
+                     "item": "query.has_target"
+                  }
+               ]
+            },
+            "item": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

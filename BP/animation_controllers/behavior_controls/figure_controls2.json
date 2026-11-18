@@ -1,0 +1,73 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.blast_tp": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "tp": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[type=doors:figure_hard,c=1]",
+                  "/gamerule commandblockoutput false",
+                  "/gamerule sendcommandfeedback false"
+               ]
+            },
+            "tp": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.figure_kill2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "kill2": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "kill2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/kill @e[type=!player,type=!doors:xmas_figure,type=!doors:xmas_screech,type=!doors:xmas_eyes,type=!doors:drawer,type=!doors:drawer2,type=!doors:skeleton_door,type=!r:lock,type=!doors:hotel_door,type=!doors:xmas_seek_s,type=!doors:figure,type=!doors:figure2,type=!doors:seek,type=!doors:seek_s,type=!doors:eyes,type=!doors:rush,type=!doors:ambush,type=!doors:screech,type=!doors:shadow,type=!doors:timothy,type=!doors:depth,type=!doors:greed,type=!doors:silence,type=!doors:seek_eye,type=!doors:closet2,type=!secret:a_60,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:seek_hand,type=!doors:guiding_light,type=!r:light,type=!doors:shadow,type=!doors:red_ambush,type=!doors:windows,type=!doors:timothy,type=!doors:glitch,type=!doors:figure_hard,type=!r:grab_new,type=!doors:figure3,type=!doors:closet,type=!doors:nightmare_seek,type=!doors:xmas_seek,type=!doors:title,type=!doors:figure4,type=!r:shake,type=!doors:jack,type=!doors:jack_bad,type=!r:resistance_alex,type=!r:resistance_steve,type=!doors:figure_plush,type=!doors:seek_plush,type=!doors:screech_plush,type=!doors:halt_plush,type=!doors:ambush_plush,type=!doors:rush_plush,r=3]"
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_roars": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "roars": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "roars": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:figure_roar,c=1] ~~~ spreadplayers ~ ~ 5 20 @e[type=!doors:figure_hard,r=3]"
+               ]
+            }
+         }
+      }
+   }
+}

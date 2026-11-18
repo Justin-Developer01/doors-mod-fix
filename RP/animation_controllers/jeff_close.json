@@ -1,0 +1,28 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.jeff.close": {
+         "states": {
+            "default": {
+               "animations": [
+                  "jeff_close"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "black_s"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "black_s2"
+                  },
+                  {
+                     "effect": "spell3",
+                     "locator": "black_s3"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,32 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:el_goblino_ugc",
+         "materials": {
+            "default": "spider",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/el_goblino",
+            "enchanted": "textures/misc/enchanted_item_glint"
+         },
+         "geometry": {
+            "default": "geometry.small_el_goblino"
+         },
+         "animations": {
+            "small_el_goblino_general": "animation.small_el_goblino.general",
+            "general": "controller.animation.small_el_goblino.general"
+         },
+         "scripts": {
+            "parent_setup": "variable.chest_layer_visible = 0.0;",
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.armor"
+         ]
+      }
+   }
+}

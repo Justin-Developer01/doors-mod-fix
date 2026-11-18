@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:red_chain",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/none"
+         },
+         "geometry": {
+            "default": "geometry.none"
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "animations": {
+            "blue_chain_pulling": "animation.blue_chain.general",
+            "pull": "controller.animation.blue_chain.pull"
+         },
+         "scripts": {
+            "animate": [
+               "pull"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "spawn_egg": {
+            "texture": "none",
+            "texture_index": 0
+         }
+      }
+   }
+}

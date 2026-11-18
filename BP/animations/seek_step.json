@@ -1,0 +1,14 @@
+{
+   "animations": {
+      "animation.seek_step": {
+         "timeline": {
+            "0.0": [
+               "/playsound mob.seek.walk @a[r=20]"
+            ]
+         },
+         "animation_length": 1,
+         "loop": true
+      }
+   },
+   "format_version": "1.10.0"
+}

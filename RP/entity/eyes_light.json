@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:eyes_light",
+         "materials": {
+            "default": "charged_creeper"
+         },
+         "textures": {
+            "default": "textures/entity/purple_fog"
+         },
+         "animations": {
+            "eyes_light_general": "animation.eyes_light.general",
+            "general": "controller.animation.eyes_light.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.eyes_light"
+         },
+         "render_controllers": [
+            "controller.render.red_fog"
+         ]
+      }
+   }
+}

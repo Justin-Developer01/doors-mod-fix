@@ -1,0 +1,146 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:figure_spot",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "spot",
+               "spot2"
+            ]
+         },
+         "animations": {
+            "spot": "controller.animation.figure_spot",
+            "spot2": "controller.animation.figure_spot2"
+         }
+      },
+      "component_groups": {
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:figure_spot"
+            }
+         },
+         "minecraft:default_target": {
+            "minecraft:type_family": {
+               "family": [
+                  "target"
+               ]
+            }
+         },
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:new_target": {
+            "minecraft:type_family": {
+               "family": [
+                  "doors_creature"
+               ]
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 19,
+               "time_down_event": {
+                  "event": "minecraft:normal_target"
+               }
+            },
+            "minecraft:collision_box": {
+               "width": 0,
+               "height": 0
+            }
+         },
+         "minecraft:normal_target": {
+            "minecraft:type_family": {
+               "family": [
+                  "target"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:push_through": {
+            "value": 1
+         },
+         "minecraft:is_sheared": {},
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collusion": false
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:scale": {
+            "value": 1
+         }
+      },
+      "events": {
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:default_target": {
+            "add": {
+               "component_groups": [
+                  "minecraft:default_target"
+               ]
+            }
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:new_target": {
+            "add": {
+               "component_groups": [
+                  "minecraft:new_target"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:default_target"
+               ]
+            }
+         },
+         "minecraft:normal_target": {
+            "add": {
+               "component_groups": [
+                  "minecraft:normal_target"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:new_target"
+               ]
+            }
+         }
+      }
+   }
+}

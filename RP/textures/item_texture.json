@@ -1,0 +1,906 @@
+{
+   "resource_pack_name": "vanilla",
+   "texture_name": "atlas.items",
+   "texture_data": {
+      "wall_light": {
+         "textures": "textures/items/wall_light"
+      },
+      "bacon_boy": {
+         "textures": "textures/items/bacon_boy"
+      },
+      "skeleton_door2": {
+         "textures": "textures/items/skeleton_door2"
+      },
+      "statue": {
+         "textures": "textures/items/statue"
+      },
+      "door_title2": {
+         "textures": "textures/items/door_title2"
+      },
+      "bacon_girl": {
+         "textures": "textures/items/bacon_girl"
+      },
+      "guest": {
+         "textures": "textures/items/guest"
+      },
+      "noob": {
+         "textures": "textures/items/noob"
+      },
+      "lsplash": {
+         "textures": "textures/items/lsplash"
+      },
+      "bookshelf": {
+         "textures": "textures/items/bookshelf"
+      },
+      "elevator2": {
+         "textures": "textures/items/elevator2"
+      },
+      "stare": {
+         "textures": "textures/items/stare"
+      },
+      "halt_morph": {
+         "textures": "textures/items/halt_morph"
+      },
+      "halt_tele": {
+         "textures": "textures/items/halt_tele"
+      },
+      "halt_remove": {
+         "textures": "textures/items/halt_remove"
+      },
+      "screech_remove": {
+         "textures": "textures/items/screech_remove"
+      },
+      "screech_bite": {
+         "textures": "textures/items/screech_bite"
+      },
+      "screech_psst": {
+         "textures": "textures/items/screech_psst"
+      },
+      "screech_morph": {
+         "textures": "textures/items/screech_morph"
+      },
+      "fire": {
+         "textures": "textures/items/fire"
+      },
+      "figure_morph3": {
+         "textures": "textures/items/figure_morph3"
+      },
+      "figure_morph4": {
+         "textures": "textures/items/figure_morph4"
+      },
+      "goo_stuff": {
+         "textures": "textures/items/goo_stuff"
+      },
+      "fire_area": {
+         "textures": "textures/items/fire_area"
+      },
+      "tip_jar_bag": {
+         "textures": "textures/items/tip_jar_bag"
+      },
+      "seek_car": {
+         "textures": "textures/items/seek_car"
+      },
+      "silence_scare": {
+         "textures": "textures/items/silence_scare"
+      },
+      "depth_morph": {
+         "textures": "textures/items/depth_morph"
+      },
+      "depth_scare": {
+         "textures": "textures/items/depth_scare"
+      },
+      "greed_scare": {
+         "textures": "textures/items/greed_scare"
+      },
+      "greed_remove": {
+         "textures": "textures/items/greed_remove"
+      },
+      "greed_invisible": {
+         "textures": "textures/items/greed_invisible"
+      },
+      "depth_warning": {
+         "textures": "textures/items/depth_warning"
+      },
+      "depth_remove": {
+         "textures": "textures/items/depth_remove"
+      },
+      "greed_remove": {
+         "textures": "textures/items/greed_remove"
+      },
+      "greed_morph": {
+         "textures": "textures/items/greed_morph"
+      },
+      "greed_ability": {
+         "textures": "textures/items/greed_ability"
+      },
+      "greed_scare": {
+         "textures": "textures/items/greed_scare"
+      },
+      "silence_gravity": {
+         "textures": "textures/items/silence_gravity"
+      },
+      "silence_warning": {
+         "textures": "textures/items/silence_warning"
+      },
+      "silence_remove": {
+         "textures": "textures/items/silence_remove"
+      },
+      "rush_warning": {
+         "textures": "textures/items/rush_warning"
+      },
+      "rush_warning2": {
+         "textures": "textures/items/rush_warning2"
+      },
+      "rush_remove": {
+         "textures": "textures/items/rush_remove"
+      },
+      "rush_scare": {
+         "textures": "textures/items/rush_scare"
+      },
+      "rush_dark": {
+         "textures": "textures/items/rush_dark"
+      },
+      "ambush_remove": {
+         "textures": "textures/items/ambush_remove"
+      },
+      "ambush_warning": {
+         "textures": "textures/items/ambush_warning"
+      },
+      "ambush_scare": {
+         "textures": "textures/items/ambush_scare"
+      },
+      "figure_morph2": {
+         "textures": "textures/items/figure_morph2"
+      },
+      "frostbite": {
+         "textures": "textures/items/frostbite"
+      },
+      "item_station": {
+         "textures": "textures/items/item_station"
+      },
+      "office_chair": {
+         "textures": "textures/items/office_chair"
+      },
+      "hammer": {
+         "textures": "textures/items/hammer"
+      },
+      "power_switch": {
+         "textures": "textures/items/power_switch"
+      },
+      "switch": {
+         "textures": "textures/items/switch"
+      },
+      "subspace_tripmine": {
+         "textures": "textures/items/subspace_tripmine"
+      },
+      "gate2": {
+         "textures": "textures/items/gate2"
+      },
+      "jack_plush": {
+         "textures": "textures/items/jack_plush"
+      },
+      "dread_plush": {
+         "textures": "textures/items/dread_plush"
+      },
+      "hide_plush": {
+         "textures": "textures/items/hide_plush"
+      },
+      "depth_plush": {
+         "textures": "textures/items/depth_plush"
+      },
+      "greed_plush": {
+         "textures": "textures/items/greed_plush"
+      },
+      "silence_plush": {
+         "textures": "textures/items/silence_plush"
+      },
+      "a60_plush": {
+         "textures": "textures/items/a60_plush"
+      },
+      "a120_plush": {
+         "textures": "textures/items/a120_plush"
+      },
+      "a90_plush": {
+         "textures": "textures/items/a90_plush"
+      },
+      "what": {
+         "textures": "textures/items/what"
+      },
+      "seek_headphone": {
+         "textures": "textures/items/seek_headphone"
+      },
+      "figure_headphone": {
+         "textures": "textures/items/figure_headphone"
+      },
+      "screech_headphone": {
+         "textures": "textures/items/screech_headphone"
+      },
+      "jeff_bags": {
+         "textures": "textures/items/jeff_bags"
+      },
+      "battery": {
+         "textures": "textures/items/battery"
+      },
+      "door100_gate": {
+         "textures": "textures/items/door100_gate"
+      },
+      "metal_door": {
+         "textures": "textures/items/metal_door"
+      },
+      "metal_door2": {
+         "textures": "textures/items/metal_door2"
+      },
+      "modern_door": {
+         "textures": "textures/items/modern_door"
+      },
+      "hotel_door3": {
+         "textures": "textures/items/hotel_door3"
+      },
+      "hotel_door4": {
+         "textures": "textures/items/hotel_door4"
+      },
+      "hotel_door5": {
+         "textures": "textures/items/hotel_door5"
+      },
+      "bars_gate": {
+         "textures": "textures/items/bars_gate"
+      },
+      "door100_lever": {
+         "textures": "textures/items/door100_lever"
+      },
+      "door_lever": {
+         "textures": "textures/items/door_lever"
+      },
+      "figure_enraged": {
+         "textures": "textures/items/figure_enraged"
+      },
+      "npc_item": {
+         "textures": "textures/items/npc_item"
+      },
+      "goblin_tail": {
+         "textures": "textures/items/goblin_tail"
+      },
+      "shield_potion_item": {
+         "textures": "textures/items/shield_potion_item"
+      },
+      "shield_potion_item2": {
+         "textures": "textures/items/shield_potion_item2"
+      },
+      "small_goblin": {
+         "textures": "textures/items/small_goblin"
+      },
+      "goblin_head": {
+         "textures": "textures/items/goblin_head"
+      },
+      "small_a90": {
+         "textures": "textures/items/small_a90"
+      },
+      "figure_rib": {
+         "textures": "textures/items/figure_rib"
+      },
+      "halt_cape": {
+         "textures": "textures/items/halt_cape"
+      },
+      "cross_ugc": {
+         "textures": "textures/items/cross_ugc"
+      },
+      "screech_bag": {
+         "textures": "textures/items/screech_bag"
+      },
+      "shocker": {
+         "textures": "textures/items/shocker"
+      },
+      "seeks_whip": {
+         "textures": "textures/items/seeks_whip"
+      },
+      "lighting_item": {
+         "textures": "textures/items/lighting_item"
+      },
+      "bars_door": {
+         "textures": "textures/items/bars_door"
+      },
+      "angel_statue": {
+         "textures": "textures/items/angel_statue"
+      },
+      "modern_chair2": {
+         "textures": "textures/items/modern_chair2"
+      },
+      "void": {
+         "textures": "textures/items/void"
+      },
+      "trophy": {
+         "textures": "textures/items/trophy"
+      },
+      "void_mark": {
+         "textures": "textures/items/void_mark"
+      },
+      "rotate_lock": {
+         "textures": "textures/items/rotate_lock"
+      },
+      "padlock": {
+         "textures": "textures/items/padlock"
+      },
+      "door50_complete": {
+         "textures": "textures/items/door50_complete"
+      },
+      "light_candles": {
+         "textures": "textures/items/light_candles"
+      },
+      "elevator_mark": {
+         "textures": "textures/items/elevator_mark"
+      },
+      "seek_cam_exit": {
+         "textures": "textures/items/seek_cam_exit"
+      },
+      "goo_dash": {
+         "textures": "textures/items/goo_dash"
+      },
+      "goo_area": {
+         "textures": "textures/items/goo_area"
+      },
+      "hotel_cart": {
+         "textures": "textures/items/hotel_cart"
+      },
+      "hotel_cart2": {
+         "textures": "textures/items/hotel_cart2"
+      },
+      "figure_angry_scene": {
+         "textures": "textures/items/figure_angry_scene"
+      },
+      "figure_fire": {
+         "textures": "textures/items/figure_fire"
+      },
+      "figure_stairs": {
+         "textures": "textures/items/figure_stairs"
+      },
+      "tablet": {
+         "textures": "textures/items/tablet"
+      },
+      "locater": {
+         "textures": "textures/items/locater"
+      },
+      "shop_sign": {
+         "textures": "textures/items/shop_sign"
+      },
+      "gate": {
+         "textures": "textures/items/gate"
+      },
+      "figure_crucifix2": {
+         "textures": "textures/items/figure_crucifix2"
+      },
+      "drawer3": {
+         "textures": "textures/items/drawer3"
+      },
+      "drawer5": {
+         "textures": "textures/items/drawer5"
+      },
+      "table": {
+         "textures": "textures/items/table"
+      },
+      "screech_ugc": {
+         "textures": "textures/items/screech_ugc"
+      },
+      "crucifix_turret": {
+         "textures": "textures/items/crucifix_turret"
+      },
+      "figure_boss": {
+         "textures": "textures/items/figure_boss"
+      },
+      "jeffthekiller": {
+         "textures": "textures/items/jeffthekiller"
+      },
+      "eyes": {
+         "textures": "textures/items/eyes"
+      },
+      "eyes2": {
+         "textures": "textures/items/eyes2"
+      },
+      "decoy": {
+         "textures": "textures/items/decoy"
+      },
+      "snare": {
+         "textures": "textures/items/snare"
+      },
+      "metal_wardrobe": {
+         "textures": "textures/items/metal_wardrobe"
+      },
+      "figure_mark": {
+         "textures": "textures/items/figure_mark"
+      },
+      "rift": {
+         "textures": "textures/items/rift"
+      },
+      "locker": {
+         "textures": "textures/items/locker"
+      },
+      "curious_light": {
+         "textures": "textures/items/curious_light"
+      },
+      "fridge": {
+         "textures": "textures/items/fridge"
+      },
+      "seek_car": {
+         "textures": "textures/items/seek_car"
+      },
+      "coin": {
+         "textures": "textures/items/coin"
+      },
+      "coinn": {
+         "textures": "textures/items/coinn"
+      },
+      "dread": {
+         "textures": "textures/items/dread"
+      },
+      "holy_hand_grenade": {
+         "textures": "textures/items/holy_hand_grenade"
+      },
+      "jeff_table": {
+         "textures": "textures/items/jeff_table"
+      },
+      "seek_hands": {
+         "textures": "textures/items/seek_hands"
+      },
+      "figure_closet": {
+         "textures": "textures/items/figure_closet"
+      },
+      "door50_1": {
+         "textures": "textures/items/door50_1"
+      },
+      "seek_cam": {
+         "textures": "textures/items/seek_cam"
+      },
+      "goo_hand": {
+         "textures": "textures/items/goo_hand"
+      },
+      "strike": {
+         "textures": "textures/items/strike"
+      },
+      "eyes_plush": {
+         "textures": "textures/items/eyes_plush"
+      },
+      "timothy_plush": {
+         "textures": "textures/items/timothy_plush"
+      },
+      "shadow_plush": {
+         "textures": "textures/items/shadow_plush"
+      },
+      "bob_plush": {
+         "textures": "textures/items/bob_plush"
+      },
+      "jeff_plush": {
+         "textures": "textures/items/jeff_plush"
+      },
+      "dupe_plush": {
+         "textures": "textures/items/dupe_plush"
+      },
+      "el_goblino_plush": {
+         "textures": "textures/items/el_goblino_plush"
+      },
+      "glitch_plush": {
+         "textures": "textures/items/glitch_plush"
+      },
+      "modern_chair": {
+         "textures": "textures/items/modern_chair"
+      },
+      "modern_chair4": {
+         "textures": "textures/items/modern_chair4"
+      },
+      "glitch_mark": {
+         "textures": "textures/items/glitch_mark"
+      },
+      "shop_radio": {
+         "textures": "textures/items/shop_radio"
+      },
+      "hotel_door2": {
+         "textures": "textures/items/hotel_door2"
+      },
+      "barrage": {
+         "textures": "textures/items/barrage"
+      },
+      "figure_ugc": {
+         "textures": "textures/items/figure_ugc"
+      },
+      "figure_noob": {
+         "textures": "textures/items/figure_noob"
+      },
+      "figure_cutscene1": {
+         "textures": "textures/items/figure_cutscene1"
+      },
+      "figure_cutscene2": {
+         "textures": "textures/items/figure_cutscene2"
+      },
+      "seek_ugc": {
+         "textures": "textures/items/seek_ugc"
+      },
+      "timothy_ugc": {
+         "textures": "textures/items/timothy_ugc"
+      },
+      "timothy_jr_ugc": {
+         "textures": "textures/items/timothy_jr_ugc"
+      },
+      "ambush_path": {
+         "textures": "textures/items/ambush_path"
+      },
+      "ambush_morph": {
+         "textures": "textures/items/ambush_morph"
+      },
+      "silence_morph": {
+         "textures": "textures/items/silence_morph"
+      },
+      "dupe": {
+         "textures": "textures/items/dupe"
+      },
+      "dupe2": {
+         "textures": "textures/items/dupe2"
+      },
+      "bob": {
+         "textures": "textures/items/bob"
+      },
+      "jeff": {
+         "textures": "textures/items/jeff"
+      },
+      "A90": {
+         "textures": "textures/items/A90"
+      },
+      "A120": {
+         "textures": "textures/items/A120"
+      },
+      "elevator": {
+         "textures": "textures/items/elevator"
+      },
+      "elevator_power": {
+         "textures": "textures/items/elevator_power"
+      },
+      "goblino": {
+         "textures": "textures/items/goblino"
+      },
+      "figure_morph": {
+         "textures": "textures/items/figure_morph"
+      },
+      "figure_morph2": {
+         "textures": "textures/items/figure_morph2"
+      },
+      "seek_morph": {
+         "textures": "textures/items/seek_morph"
+      },
+      "rush_morph": {
+         "textures": "textures/items/rush_morph"
+      },
+      "vitamin": {
+         "textures": "textures/items/vitamin"
+      },
+      "beds": {
+         "textures": "textures/items/beds"
+      },
+      "beds2": {
+         "textures": "textures/items/beds2"
+      },
+      "drawer": {
+         "textures": "textures/items/drawer"
+      },
+      "drawer2": {
+         "textures": "textures/items/drawer2"
+      },
+      "target": {
+         "textures": "textures/items/target"
+      },
+      "steve_resist": {
+         "textures": "textures/items/steve_resist"
+      },
+      "meta": {
+         "textures": "textures/items/meta"
+      },
+      "red_ambush": {
+         "textures": "textures/items/red_ambush"
+      },
+      "plant": {
+         "textures": "textures/items/plant"
+      },
+      "grandfather": {
+         "textures": "textures/items/grandfather"
+      },
+      "grandfather2": {
+         "textures": "textures/items/grandfather2"
+      },
+      "chair": {
+         "textures": "textures/items/chair"
+      },
+      "chair2": {
+         "textures": "textures/items/chair2"
+      },
+      "glitch": {
+         "textures": "textures/items/glitch"
+      },
+      "depth": {
+         "textures": "textures/items/depth"
+      },
+      "greed": {
+         "textures": "textures/items/greed"
+      },
+      "silence": {
+         "textures": "textures/items/silence"
+      },
+      "timothy": {
+         "textures": "textures/items/timothy"
+      },
+      "shadow": {
+         "textures": "textures/items/shadow"
+      },
+      "guiding_light": {
+         "textures": "textures/items/guiding_light"
+      },
+      "windows": {
+         "textures": "textures/items/windows"
+      },
+      "door_title": {
+         "textures": "textures/items/door_title"
+      },
+      "closet": {
+         "textures": "textures/items/closet"
+      },
+      "ambush": {
+         "textures": "textures/items/ambush"
+      },
+      "seek_eye": {
+         "textures": "textures/items/seek_eye"
+      },
+      "seek_hand": {
+         "textures": "textures/items/seek_hand"
+      },
+      "screech": {
+         "textures": "textures/items/screech"
+      },
+      "halt": {
+         "textures": "textures/items/halt"
+      },
+      "turn": {
+         "textures": "textures/items/turn"
+      },
+      "turn2": {
+         "textures": "textures/items/turn2"
+      },
+      "rush": {
+         "textures": "textures/items/rush"
+      },
+      "jack": {
+         "textures": "textures/items/jack"
+      },
+      "seek": {
+         "textures": "textures/items/seek"
+      },
+      "figure": {
+         "textures": "textures/items/figure"
+      },
+      "figure2": {
+         "textures": "textures/items/figure2"
+      },
+      "figure3": {
+         "textures": "textures/items/figure3"
+      },
+      "figure4": {
+         "textures": "textures/items/figure4"
+      },
+      "figure_hard": {
+         "textures": "textures/items/figure_hard"
+      },
+      "halt_bad": {
+         "textures": "textures/items/halt_bad"
+      },
+      "figure_bad": {
+         "textures": "textures/items/figure_bad"
+      },
+      "seek_bad": {
+         "textures": "textures/items/seek_bad"
+      },
+      "skeleton_door": {
+         "textures": "textures/items/skeleton_door"
+      },
+      "hotel_door": {
+         "textures": "textures/items/hotel_door"
+      },
+      "lock": {
+         "textures": "textures/items/lock"
+      },
+      "ambush_bad": {
+         "textures": "textures/items/ambush_bad"
+      },
+      "rush_bad": {
+         "textures": "textures/items/rush_bad"
+      },
+      "jimothy": {
+         "textures": "textures/items/jimothy"
+      },
+      "glitch2": {
+         "textures": "textures/items/glitch2"
+      },
+      "screech2": {
+         "textures": "textures/items/screech2"
+      },
+      "A60_path": {
+         "textures": "textures/items/A60_path"
+      },
+      "A60": {
+         "textures": "textures/items/A60"
+      },
+      "wardrobe": {
+         "textures": "textures/items/wardrobe"
+      },
+      "jack_bad": {
+         "textures": "textures/items/jack_bad"
+      },
+      "figure_plush": {
+         "textures": "textures/items/figure_plush"
+      },
+      "seek_plush": {
+         "textures": "textures/items/seek_plush"
+      },
+      "ambush_plush": {
+         "textures": "textures/items/ambush_plush"
+      },
+      "rush_plush": {
+         "textures": "textures/items/rush_plush"
+      },
+      "rush_path": {
+         "textures": "textures/items/rush_path"
+      },
+      "screech_plush": {
+         "textures": "textures/items/screech_plush"
+      },
+      "halt_plush": {
+         "textures": "textures/items/halt_plush"
+      },
+      "xmas_figure": {
+         "textures": "textures/items/xmas_figure"
+      },
+      "xmas_screech": {
+         "textures": "textures/items/xmas_screech"
+      },
+      "xmas_seek": {
+         "textures": "textures/items/xmas_seek"
+      },
+      "xmas_ambush": {
+         "textures": "textures/items/xmas_ambush"
+      },
+      "xmas_rush": {
+         "textures": "textures/items/xmas_rush"
+      },
+      "xmas_jack": {
+         "textures": "textures/items/xmas_jack"
+      },
+      "xmas_eyes": {
+         "textures": "textures/items/xmas_eyes"
+      },
+      "xmas_timothy": {
+         "textures": "textures/items/xmas_timothy"
+      },
+      "nightmare_seek": {
+         "textures": "textures/items/nightmare_seek"
+      },
+      "trollface": {
+         "textures": "textures/items/trollface"
+      },
+      "door50": {
+         "textures": "textures/items/door50"
+      },
+      "alex_resist": {
+         "textures": "textures/items/alex_resist"
+      },
+      "bald": {
+         "textures": "textures/items/bald"
+      },
+      "closet_bad": {
+         "textures": "textures/items/closet_bad"
+      },
+      "rlever": {
+         "textures": "textures/items/rlever"
+      },
+      "r:vitamin": {
+         "textures": "textures/items/pamobile/r_vitamin"
+      },
+      "r_vitamin": {
+         "textures": "textures/items/pamobile/r_vitamin"
+      },
+      "r:lighter": {
+         "textures": "textures/items/pamobile/r_lighter"
+      },
+      "r:lighter2": {
+         "textures": "textures/items/pamobile/r_lighter2"
+      },
+      "flashlight": {
+         "textures": "textures/items/flashlight"
+      },
+      "shakelight": {
+         "textures": "textures/items/shakelight"
+      },
+      "r:heartbeat_item": {
+         "textures": "textures/items/pamobile/r_heartbeat_item"
+      },
+      "r_key": {
+         "textures": "textures/items/pamobile/r_key"
+      },
+      "r_lockpick": {
+         "textures": "textures/items/pamobile/r_lockpick"
+      },
+      "r_skeleton": {
+         "textures": "textures/items/pamobile/r_skeleton"
+      },
+      "r:knob": {
+         "textures": "textures/items/pamobile/r_knob"
+      },
+      "r:figure_tracker": {
+         "textures": "textures/items/pamobile/r_figure_tracker"
+      },
+      "r:figure_rage": {
+         "textures": "textures/items/pamobile/r_figure_rage"
+      },
+      "r:figure_light": {
+         "textures": "textures/items/pamobile/r_figure_light"
+      },
+      "r:figure_light2": {
+         "textures": "textures/items/pamobile/r_figure_light2"
+      },
+      "figure_hands": {
+         "textures": "textures/items/figure_hands"
+      },
+      "r:figure_roar": {
+         "textures": "textures/items/pamobile/r_figure_roar"
+      },
+      "r:figure_bite": {
+         "textures": "textures/items/pamobile/r_figure_bite"
+      },
+      "r:light_energy_source": {
+         "textures": "textures/items/pamobile/r_light_energy_source"
+      },
+      "r:curious_light_energy_source": {
+         "textures": "textures/items/pamobile/r_curious_light_energy_source"
+      },
+      "r_crucifix": {
+         "textures": "textures/items/pamobile/r_crucifix"
+      },
+      "r_curious_crucifix": {
+         "textures": "textures/items/pamobile/r_curious_crucifix"
+      },
+      "r:curious_crucifix_piece1": {
+         "textures": "textures/items/pamobile/r_curious_crucifix_piece1"
+      },
+      "r:curious_crucifix_piece2": {
+         "textures": "textures/items/pamobile/r_curious_crucifix_piece2"
+      },
+      "r:curious_crucifix_piece3": {
+         "textures": "textures/items/pamobile/r_curious_crucifix_piece3"
+      },
+      "r:curious_crucifix_piece4": {
+         "textures": "textures/items/pamobile/r_curious_crucifix_piece4"
+      },
+      "r:crucifix_piece1": {
+         "textures": "textures/items/pamobile/r_crucifix_piece1"
+      },
+      "r:crucifix_piece2": {
+         "textures": "textures/items/pamobile/r_crucifix_piece2"
+      },
+      "r:crucifix_piece3": {
+         "textures": "textures/items/pamobile/r_crucifix_piece3"
+      },
+      "r:crucifix_piece4": {
+         "textures": "textures/items/pamobile/r_crucifix_piece4"
+      },
+      "r:figure_remove": {
+         "textures": "textures/items/pamobile/r_figure_remove"
+      },
+      "r:figure_remove2": {
+         "textures": "textures/items/pamobile/r_figure_remove2"
+      },
+      "r:music_changer": {
+         "textures": "textures/items/pamobile/r_music_changer"
+      },
+      "mob_talker": {
+         "textures": "textures/items/pamobile/mob_talker"
+      },
+      "r:seek_jumpscare": {
+         "textures": "textures/items/pamobile/r_seek_jumpscare"
+      },
+      "r:remove_seek_morph": {
+         "textures": "textures/items/pamobile/r_remove_seek_morph"
+      }
+   }
+}

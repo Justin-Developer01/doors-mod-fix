@@ -1,0 +1,37 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "bob",
+            "texture_index": 0
+         },
+         "identifier": "doors:bob",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/bob"
+         },
+         "geometry": {
+            "default": "geometry.bob"
+         },
+         "animations": {
+            "bob_general": "animation.bob.general",
+            "move": "animation.bob.move",
+            "general": "controller.animation.bob.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "particle_effects": {
+            "spell": "r:fly"
+         }
+      }
+   }
+}

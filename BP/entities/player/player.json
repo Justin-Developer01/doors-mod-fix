@@ -1,0 +1,1393 @@
+{
+   "format_version": "1.11",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "minecraft:player",
+         "is_spawnable": false,
+         "is_summonable": false,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "walk",
+               "sneak",
+               "r:figure_crucifix",
+               "r:goo_dash",
+               "r:crucifix",
+               "system2",
+               "system4",
+               "systemm",
+               "detector",
+               "active",
+               "immortal",
+               "r:crucifix2",
+               "r:holy_hand_grenade",
+               "r:curious_crucifix",
+               "r:vitamin",
+               "r:shield_potion",
+               "r:shield_potion2",
+               "r:lockpick",
+               "r:skeleton",
+               "r:key",
+               "figureitem",
+               "ambushitem",
+               "seekitem",
+               "silenceitem",
+               "rushitem",
+               "depthitem",
+               "greeditem",
+               "screechitem",
+               "haltitem"
+            ]
+         },
+         "animations": {
+            "walk": "controller.animation.walk",
+            "sneak": "controller.animation.seek_sneak",
+            "r:figure_crucifix": "controller.animation.figure_crucifix",
+            "r:goo_dash": "controller.animation.goo_dash",
+            "system2": "controller.animation.light_system2",
+            "detector": "controller.animation.light_detector",
+            "systemm": "controller.animation.fire_system2",
+            "immortal": "controller.animation.become_immortal",
+            "system4": "controller.animation.light_system4",
+            "active": "controller.animation.tablet_active",
+            "r:crucifix": "controller.animation.r_crucifix",
+            "r:crucifix2": "controller.animation.r_crucifix2",
+            "r:holy_hand_grenade": "controller.animation.r_holy_hand_grenade",
+            "r:curious_crucifix": "controller.animation.r_curious_crucifix",
+            "r:vitamin": "controller.animation.r_vitamin",
+            "r:shield_potion": "controller.animation.r_shield_potion",
+            "r:shield_potion2": "controller.animation.r_shield_potion2",
+            "r:skeleton": "controller.animation.r_skeleton",
+            "r:key": "controller.animation.r_key",
+            "r:lockpick": "controller.animation.r_lockpick",
+            "figureitem": "animation.figure.item",
+            "ambushitem": "animation.ambush.item",
+            "seekitem": "animation.seek.item",
+            "rushitem": "animation.rush.item",
+            "silenceitem": "animation.silence.item",
+            "depthitem": "animation.depth.item",
+            "greeditem": "animation.greed.item",
+            "screechitem": "animation.screech.item",
+            "haltitem": "animation.halt.item"
+         }
+      },
+      "component_groups": {
+         "pamobile:respawn": {
+            "minecraft:mark_variant": {
+               "value": 99999
+            },
+            "minecraft:health": {
+               "value": 20,
+               "max": 20
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:attack": {
+               "damage": 1
+            },
+            "minecraft:spell_effects": {
+               "remove_effects": []
+            }
+         },
+         "ammo:1": {
+            "minecraft:mark_variant": {
+               "value": 1
+            }
+         },
+         "r:player_roar2": {
+            "minecraft:is_stunned": {},
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 2,
+                  "max_wait_time": 2,
+                  "single_use": true,
+                  "spawn_entity": "r:animation_reset",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:player_hit": {
+            "minecraft:is_stunned": {},
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:hit_remove"
+               }
+            },
+            "minecraft:mark_variant": {
+               "value": 5
+            }
+         },
+         "r:glow_on": {
+            "minecraft:is_stunned": {},
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:glow_off"
+               }
+            }
+         },
+         "r:fire_on": {
+            "minecraft:is_sheared": {}
+         },
+         "r:tablet_on": {
+            "minecraft:is_stunned": {}
+         },
+         "r:tablet_off": {
+            "minecraft:is_sheared": {},
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:tablet_off2"
+               }
+            }
+         },
+         "r:player_hit2": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:hit_remove2"
+               }
+            },
+            "minecraft:behavior.knockback_roar": {
+               "attack_time": 0.1,
+               "cooldown_time": 0.1,
+               "damage_filters": {
+                  "operator": "!=",
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "doors_creature"
+               },
+               "duration": 0.5,
+               "knockback_damage": 0,
+               "knockback_filters": {
+                  "operator": "!=",
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "doors_creature"
+               },
+               "knockback_range": 0,
+               "knockback_strength": 0,
+               "on_roar_end": {
+                  "event": "r:hit_remove2"
+               },
+               "priority": 1
+            }
+         },
+         "r:player_rage": {
+            "minecraft:is_sheared": {},
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 2,
+                  "max_wait_time": 2,
+                  "single_use": true,
+                  "spawn_entity": "r:animation_reset2",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:goo_dash_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:dash",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:figure_crucifix_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:figure_crucifix",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:crucifix_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:crucifix",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:curious_crucifix_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:curious_crucifix",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:holy_hand_grenade": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:bomb",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:vitamin_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:vitamin",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:shield_potion_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:shield_potion_pro",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:shield_potion_fire2": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:shield_potion_pro2",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:skeleton_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:skeleton",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:key_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:key",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:lockpick_fire": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 0,
+                  "max_wait_time": 0,
+                  "single_use": true,
+                  "spawn_entity": "r:lockpick",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "minecraft:add_bad_omen": {
+            "minecraft:spell_effects": {
+               "add_effects": [
+                  {
+                     "effect": "bad_omen",
+                     "duration": 6000,
+                     "display_on_screen_animation": true
+                  }
+               ]
+            },
+            "minecraft:timer": {
+               "time": [
+                  0,
+                  0
+               ],
+               "looping": false,
+               "time_down_event": {
+                  "event": "minecraft:clear_add_bad_omen",
+                  "target": "self"
+               }
+            }
+         },
+         "minecraft:clear_bad_omen_spell_effect": {
+            "minecraft:spell_effects": {}
+         },
+         "minecraft:raid_trigger": {
+            "minecraft:raid_trigger": {
+               "triggered_event": {
+                  "event": "minecraft:remove_raid_trigger",
+                  "target": "self"
+               }
+            },
+            "minecraft:spell_effects": {
+               "remove_effects": "bad_omen"
+            }
+         },
+         "r:jumpscare_ready": {
+            "minecraft:variant": {
+               "value": 0
+            },
+            "minecraft:behavior.knockback_roar": {
+               "attack_time": 0.1,
+               "cooldown_time": 0.1,
+               "damage_filters": {
+                  "operator": "!=",
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "doors_creature"
+               },
+               "duration": 0.5,
+               "knockback_damage": 0,
+               "knockback_filters": {
+                  "operator": "!=",
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "doors_creature"
+               },
+               "knockback_range": 8,
+               "knockback_strength": 0,
+               "on_roar_end": {
+                  "event": "r:jumpscare_stop"
+               },
+               "priority": 1
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:jumpscare_stop"
+               }
+            }
+         },
+         "r:jumpscare_stop": {
+            "minecraft:behavior.melee_attack": {
+               "priority": 3,
+               "speed_multiplier": 9,
+               "track_target": false,
+               "cooldown_time": 2
+            }
+         },
+         "r:crucifix": {
+            "minecraft:health": {
+               "value": 30,
+               "max": 30
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            }
+         },
+         "r:change_size": {
+            "minecraft:health": {
+               "value": 30,
+               "max": 30
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            },
+            "minecraft:scale": {
+               "value": 1.6
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:change_size2"
+               }
+            }
+         },
+         "r:change_size4": {
+            "minecraft:health": {
+               "value": 30,
+               "max": 30
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            },
+            "minecraft:scale": {
+               "value": 1.8
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:change_size2"
+               }
+            }
+         },
+         "r:figure_size": {
+            "minecraft:health": {
+               "value": 20,
+               "max": 20
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            },
+            "minecraft:scale": {
+               "value": 1.3
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:figure_size2"
+               }
+            }
+         },
+         "r:figure_size2": {
+            "minecraft:health": {
+               "value": 20,
+               "max": 20
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            },
+            "minecraft:scale": {
+               "value": 1
+            }
+         },
+         "r:change_figure": {
+            "minecraft:health": {
+               "value": 30,
+               "max": 30
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            },
+            "minecraft:scale": {
+               "value": 1.3
+            },
+            "minecraft:variant": {
+               "value": 2
+            }
+         },
+         "r:change_size2": {
+            "minecraft:health": {
+               "value": 30,
+               "max": 30
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            },
+            "minecraft:scale": {
+               "value": 1
+            }
+         },
+         "r:change_size3": {
+            "minecraft:health": {
+               "value": 30,
+               "max": 30
+            },
+            "minecraft:movement": {
+               "value": 0.1
+            },
+            "minecraft:spell_effects": {
+               "add_effects": []
+            },
+            "minecraft:scale": {
+               "value": 2
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "r:change_size2"
+               }
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "player"
+            ]
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/empty.json"
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.8
+         },
+         "minecraft:can_climb": {},
+         "minecraft:movement": {
+            "value": 0.1
+         },
+         "minecraft:environment_sensor": [
+            {
+               "on_environment": {
+                  "filters": {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "player"
+                        }
+                     ]
+                  },
+                  "event": "pamobile:refresh_player"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:figure_crucifix"
+                        },
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:crucifix"
+                        },
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:curious_crucifix"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "player"
+                        },
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:vitamin"
+                        },
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:skeleton"
+                        },
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:goo_dash"
+                        }
+                     ]
+                  },
+                  "event": "ammo:1"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:key"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "player"
+                        }
+                     ]
+                  },
+                  "event": "ammo:1"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:lockpick"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "player"
+                        }
+                     ]
+                  },
+                  "event": "ammo:1"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "has_mob_effect",
+                           "subject": "self",
+                           "value": "bad_omen"
+                        },
+                        {
+                           "test": "is_in_village",
+                           "subject": "self",
+                           "value": true
+                        }
+                     ]
+                  },
+                  "event": "minecraft:trigger_raid"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:figure_morph"
+                  },
+                  "event": "figuremorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:screech_morph"
+                  },
+                  "event": "normalmorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:halt_morph"
+                  },
+                  "event": "normalmorph2"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:depth_morph"
+                  },
+                  "event": "depthmorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:figure_morph2"
+                  },
+                  "event": "figuremorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:figure_morph3"
+                  },
+                  "event": "figuremorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:figure_morph4"
+                  },
+                  "event": "figuremorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:rush_morph"
+                  },
+                  "event": "rushmorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:ambush_morph"
+                  },
+                  "event": "rushmorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:figure_hands"
+                  },
+                  "event": "figure_hands"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:seek_morph"
+                  },
+                  "event": "seekmorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:crucifix"
+                        }
+                     ]
+                  },
+                  "event": "r:crucifix_event"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "has_equipment",
+                           "subject": "self",
+                           "domain": "hand",
+                           "value": "r:crucifix2"
+                        }
+                     ]
+                  },
+                  "event": "r:crucifix_event"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:silence_morph"
+                  },
+                  "event": "silencemorph"
+               }
+            },
+            {
+               "on_environment": {
+                  "filters": {
+                     "test": "has_equipment",
+                     "domain": "head",
+                     "operator": "==",
+                     "value": "r:greed_morph"
+                  },
+                  "event": "greedmorph"
+               }
+            }
+         ],
+         "minecraft:player.saturation": {
+            "value": 20
+         },
+         "minecraft:player.exhaustion": {
+            "value": 0,
+            "max": 4
+         },
+         "minecraft:player.level": {
+            "value": 0,
+            "max": 24791
+         },
+         "minecraft:player.experience": {
+            "value": 0,
+            "max": 1
+         },
+         "minecraft:breathable": {
+            "totalSupply": 15,
+            "suffocateTime": -1,
+            "inhaleTime": 3.75,
+            "generatesBubbles": false
+         },
+         "minecraft:nameable": {
+            "alwaysShow": true,
+            "allowNameTagRenaming": false
+         },
+         "minecraft:physics": {},
+         "minecraft:insomnia": {
+            "days_until_insomnia": 3
+         },
+         "minecraft:rideable": {
+            "seat_count": 2,
+            "family_types": [
+               "parrot_tame",
+               "step",
+               "screech"
+            ],
+            "pull_in_entities": true,
+            "seats": [
+               {
+                  "position": [
+                     0.4,
+                     -0.15,
+                     0.04
+                  ],
+                  "min_rider_count": 0,
+                  "max_rider_count": 0,
+                  "lock_rider_rotation": 0
+               },
+               {
+                  "position": [
+                     -0.4,
+                     -0.15,
+                     0.04
+                  ],
+                  "min_rider_count": 1,
+                  "max_rider_count": 2,
+                  "lock_rider_rotation": 0
+               }
+            ]
+         },
+         "minecraft:on_hurt": {
+            "event": "on:hurt",
+            "target": "other"
+         },
+         "minecraft:scaffolding_climber": {}
+      },
+      "events": {
+         "pamobile:refresh_player": {
+            "add": {
+               "component_groups": [
+                  "pamobile:respawn"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:crucifix"
+               ]
+            }
+         },
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "pamobile:respawn"
+               ]
+            },
+            "remove": {}
+         },
+         "r:hit_remove3": {
+            "remove": {
+               "component_groups": [
+                  "r:player_roar2"
+               ]
+            }
+         },
+         "r:hit_remove4": {
+            "remove": {
+               "component_groups": [
+                  "r:player_rage"
+               ]
+            }
+         },
+         "r:glow_on": {
+            "add": {
+               "component_groups": [
+                  "r:glow_on"
+               ]
+            }
+         },
+         "r:fire_on": {
+            "add": {
+               "component_groups": [
+                  "r:fire_on"
+               ]
+            }
+         },
+         "r:fire_off": {
+            "remove": {
+               "component_groups": [
+                  "r:fire_on",
+                  "r:fire_off2"
+               ]
+            }
+         },
+         "r:fire_off2": {
+            "add": {
+               "component_groups": [
+                  "r:fire_on"
+               ]
+            }
+         },
+         "r:tablet_on": {
+            "add": {
+               "component_groups": [
+                  "r:tablet_on"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:tablet_off",
+                  "r:tablet_off2"
+               ]
+            }
+         },
+         "r:tablet_off": {
+            "add": {
+               "component_groups": [
+                  "r:tablet_off"
+               ]
+            }
+         },
+         "r:tablet_off2": {
+            "remove": {
+               "component_groups": [
+                  "r:tablet_off"
+               ]
+            }
+         },
+         "r:glow_off": {
+            "remove": {
+               "component_groups": [
+                  "r:glow_on"
+               ]
+            }
+         },
+         "r:hit_remove": {
+            "remove": {
+               "component_groups": [
+                  "r:player_hit"
+               ]
+            }
+         },
+         "r:hit_remove2": {
+            "remove": {
+               "component_groups": [
+                  "r:player_hit2"
+               ]
+            }
+         },
+         "r:player_roar": {
+            "add": {
+               "component_groups": [
+                  "r:player_roar2"
+               ]
+            }
+         },
+         "r:player_rage": {
+            "add": {
+               "component_groups": [
+                  "r:player_rage"
+               ]
+            }
+         },
+         "r:player_hit": {
+            "add": {
+               "component_groups": [
+                  "r:player_hit"
+               ]
+            }
+         },
+         "r:player_hit2": {
+            "add": {
+               "component_groups": [
+                  "r:player_hit2"
+               ]
+            }
+         },
+         "ammo:1": {
+            "remove": {
+               "component_groups": [
+                  "ammo:1"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "ammo:1"
+               ]
+            }
+         },
+         "ammo:2": {
+            "remove": {
+               "component_groups": [
+                  "ammo:2"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "ammo:2"
+               ]
+            }
+         },
+         "r:goo_dash_fire": {
+            "add": {
+               "component_groups": [
+                  "r:goo_dash_fire"
+               ]
+            }
+         },
+         "r:figure_crucifix_fire": {
+            "add": {
+               "component_groups": [
+                  "r:figure_crucifix_fire"
+               ]
+            }
+         },
+         "r:crucifix_fire": {
+            "add": {
+               "component_groups": [
+                  "r:crucifix_fire"
+               ]
+            }
+         },
+         "r:curious_crucifix_fire": {
+            "add": {
+               "component_groups": [
+                  "r:curious_crucifix_fire"
+               ]
+            }
+         },
+         "r:holy_hand_grenade": {
+            "add": {
+               "component_groups": [
+                  "r:holy_hand_grenade"
+               ]
+            }
+         },
+         "r:vitamin_fire": {
+            "add": {
+               "component_groups": [
+                  "r:vitamin_fire"
+               ]
+            }
+         },
+         "r:shield_potion_fire": {
+            "add": {
+               "component_groups": [
+                  "r:shield_potion_fire"
+               ]
+            }
+         },
+         "r:shield_potion_fire2": {
+            "add": {
+               "component_groups": [
+                  "r:shield_potion_fire2"
+               ]
+            }
+         },
+         "r:skeleton_fire": {
+            "add": {
+               "component_groups": [
+                  "r:skeleton_fire"
+               ]
+            }
+         },
+         "r:key_fire": {
+            "add": {
+               "component_groups": [
+                  "r:key_fire"
+               ]
+            }
+         },
+         "r:lockpick_fire": {
+            "add": {
+               "component_groups": [
+                  "r:lockpick_fire"
+               ]
+            }
+         },
+         "minecraft:gain_bad_omen": {
+            "add": {
+               "component_groups": [
+                  "minecraft:add_bad_omen"
+               ]
+            }
+         },
+         "minecraft:clear_add_bad_omen": {
+            "remove": {
+               "component_groups": [
+                  "minecraft:add_bad_omen"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "minecraft:clear_bad_omen_spell_effect"
+               ]
+            }
+         },
+         "minecraft:trigger_raid": {
+            "add": {
+               "component_groups": [
+                  "minecraft:raid_trigger"
+               ]
+            }
+         },
+         "minecraft:remove_raid_trigger": {
+            "remove": {
+               "component_groups": [
+                  "minecraft:raid_trigger"
+               ]
+            }
+         },
+         "figuremorph": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 1 1 true",
+                  "effect @s darkness 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "event entity @s r:figure_size"
+               ]
+            }
+         },
+         "figure_hands": {
+            "run_command": {
+               "command": [
+                  "effect @s strength 1 1 true"
+               ]
+            }
+         },
+         "rushmorph": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "effect @s speed 5 5 true",
+                  "effect @s jump_boost 5 1 true",
+                  "event entity @s r:change_size"
+               ]
+            }
+         },
+         "depthmorph": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "effect @s speed 5 5 true",
+                  "effect @s jump_boost 5 1 true",
+                  "event entity @s r:change_size4"
+               ]
+            }
+         },
+         "silencemorph": {
+            "run_command": {
+               "command": [
+                  "event entity @s r:change_size3",
+                  "effect @s invisibility 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "effect @s jump_boost 5 1 true",
+                  "effect @s speed 1 1 true"
+               ]
+            }
+         },
+         "seekmorph": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "effect @s speed 1 5 true"
+               ]
+            }
+         },
+         "normalmorph": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "effect @s speed 3"
+               ]
+            }
+         },
+         "normalmorph2": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "effect @s speed 1 2 true",
+                  "event entity @s r:change_size4"
+               ]
+            }
+         },
+         "greedmorph": {
+            "run_command": {
+               "command": [
+                  "effect @s invisibility 1 1 true",
+                  "effect @s saturation 5 5 true",
+                  "effect @s resistance 5 5 true",
+                  "effect @s speed 1 1 true"
+               ]
+            }
+         },
+         "r:jumpscare_ready": {
+            "add": {
+               "component_groups": [
+                  "r:jumpscare_ready"
+               ]
+            }
+         },
+         "r:jumpscare_stop": {
+            "add": {
+               "component_groups": [
+                  "r:jumpscare_stop"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:jumpscare_ready"
+               ]
+            }
+         },
+         "r:crucifix_event": {
+            "add": {
+               "component_groups": [
+                  "r:crucifix"
+               ]
+            }
+         },
+         "r:figure_size": {
+            "add": {
+               "component_groups": [
+                  "r:figure_size"
+               ]
+            }
+         },
+         "r:figure_size2": {
+            "add": {
+               "component_groups": [
+                  "r:figure_size2"
+               ]
+            }
+         },
+         "r:change_size": {
+            "add": {
+               "component_groups": [
+                  "r:change_size"
+               ]
+            }
+         },
+         "r:change_size2": {
+            "add": {
+               "component_groups": [
+                  "r:change_size2"
+               ]
+            }
+         },
+         "r:change_size3": {
+            "add": {
+               "component_groups": [
+                  "r:change_size3"
+               ]
+            }
+         },
+         "r:change_size4": {
+            "add": {
+               "component_groups": [
+                  "r:change_size4"
+               ]
+            }
+         },
+         "r:change_figure": {
+            "add": {
+               "component_groups": [
+                  "r:change_figure"
+               ]
+            }
+         },
+         "on:hurt": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "damage @e[type=r:protection,r=3] 4 entity_attack"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

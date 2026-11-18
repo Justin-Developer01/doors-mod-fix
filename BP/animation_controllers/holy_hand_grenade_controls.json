@@ -1,0 +1,93 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.bomb_kill": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "kill": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=doors:rush,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:nightmare_rush,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:red_ambush,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:red_ambush2,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:barrage,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:barrage,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:depth,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:greed,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:strike,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:trollface,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:trollface2,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:a_120,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:greed,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:rush2,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:ambush,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:ambush2,r=20] minecraft:remove",
+                  "/event entity @e[type=doors:eyes,r=20] minecraft:start_despawn",
+                  "/event entity @e[type=doors:eyes2,r=20] minecraft:start_despawn"
+               ]
+            },
+            "kill": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/kill @e[type=!player,type=!doors:xmas_figure,type=!doors:seek_gentlemen,type=!doors:seek_gentlemen_stun,type=!doors:seek_gentlemen_s,type=!doors:seek_gentlemen_d,type=!doors:xmas_figure_stun,type=!doors:xmas_figure_d,type=!doors:figure_hard_d,type=!doors:figure_hard_stun,type=!doors:figure_noob_stun,type=!doors:figure_noob_d,type=!r:figure_step,type=!r:figure_grab,type=!r:barrage_jumpscare,type=!doors:barrage,type=!r:figure_grab_wait,type=!doors:xmas_screech,type=!doors:figure_d,type=!doors:figure_d2,type=!doors:xmas_seek_stun,type=!doors:xmas_seek_d,type=!doors:nightmare_seek_stun,type=!doors:nightmare_seek_d,type=!doors:xmas_eyes,type=!doors:drawer,type=!doors:drawer2,type=!doors:skeleton_door,type=!r:lock,type=!doors:hotel_door,type=!doors:door50,type=!doors:door50_1,type=!doors:xmas_seek_s,type=!doors:figure,type=!doors:figure2,type=!doors:seek,type=!doors:seek_s,type=!doors:eyes,type=!doors:rush,type=!doors:ambush,type=!doors:screech_d,type=!doors:shadow,type=!doors:timothy,type=!doors:depth,type=!doors:greed,type=!doors:silence,type=!doors:seek_eye,type=!doors:closet2,type=!secret:a_60,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:seek_hand,type=!doors:guiding_light,type=!r:light,type=!doors:shadow,type=!doors:red_ambush,type=!doors:windows,type=!doors:timothy,type=!doors:glitch,type=!doors:figure_hard,type=!r:grab_new,type=!doors:figure3,type=!doors:closet,type=!doors:nightmare_seek,type=!doors:xmas_seek,type=!doors:title,type=!r:eyes_light,type=!doors:figure4,type=!r:shake,type=!doors:jack,type=!r:figure_light,type=!doors:eyes2,type=!r:figure_step2,type=!r:figure_step,type=!doors:jack_bad,type=!doors:wardrobe,type=!doors:closet_bad,type=!doors:figure_plush,type=!doors:seek_plush,type=!doors:screech_plush,type=!doors:halt_plush,type=!doors:ambush_plush,type=!doors:screech_d,type=!doors:rush_plush,type=!doors:trollface,type=!doors:trollface2,type=!doors:red_ambush,type=!doors:dupe,type=!doors:strike,type=!doors:strike_stun,type=!doors:strike_stun2,type=!doors:decoy,type=!doors:decoy2,type=!doors:dupe2,type=!doors:jeffthekiller_d,type=!doors:jeffthekiller_stun,type=!doors:red_ambush,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!?morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!cam,tag=!closet,tag=!closet2,family=!roblox,family=!inanimate,r=10]"
+               ]
+            }
+         }
+      },
+      "controller.animation.bomb_sound": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.closet.bomb @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "sound": "query.has_target"
+                  }
+               ]
+            },
+            "sound": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.bomb_sound2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/particle r:bomb",
+                  "/camerashake add @a 0.2 1 positional",
+                  "/camerashake add @a 0.2 2 rotational",
+                  "/damage @a[r=6] 10 entity_attack"
+               ],
+               "transitions": [
+                  {
+                     "sound2": "query.has_target"
+                  }
+               ]
+            },
+            "sound2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

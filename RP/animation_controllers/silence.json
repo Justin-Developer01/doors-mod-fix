@@ -1,0 +1,67 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.silence.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "silence_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "dark"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.silence.moving": {
+         "states": {
+            "moving": {
+               "variables": {
+                  "walk": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 0,
+                        "0.27": 1
+                     }
+                  },
+                  "idle": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.27": 0,
+                        "0.0": 1
+                     }
+                  }
+               },
+               "animations": [
+                  {
+                     "silence_general": "variable.idle"
+                  },
+                  {
+                     "walk": "variable.walk"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "attack": "query.is_casting && variable.random1 == 1"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_casting"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.coin.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "coin_general"
+               ]
+            }
+         }
+      }
+   }
+}

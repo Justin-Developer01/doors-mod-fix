@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:red_ambush_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/red_ambush"
+         },
+         "geometry": {
+            "default": "geometry.red_ambush"
+         },
+         "animations": {
+            "red_ambush_dead": "animation.red_ambush.dead",
+            "dead": "controller.animation.red_ambush.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "ambush",
+            "texture_index": 0
+         }
+      }
+   }
+}

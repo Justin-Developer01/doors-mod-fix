@@ -1,0 +1,178 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.teleport_self": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph6,r=2]"
+               ]
+            },
+            "self": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph6,r=2]"
+               ]
+            }
+         }
+      },
+      "controller.animation.teleport_self2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self2": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph4,r=2]"
+               ]
+            },
+            "self2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph4,r=2]"
+               ]
+            }
+         }
+      },
+      "controller.animation.teleport_self3": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self3": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph8,r=2]",
+                  "/tp @s ~~~ facing @e[tag=morph8,r=2]"
+               ]
+            },
+            "self3": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph8,r=2]",
+                  "/tp @s ~~~ facing @e[tag=morph8,r=2]"
+               ]
+            }
+         }
+      },
+      "controller.animation.teleport_self4": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self4": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph5,r=2]"
+               ]
+            },
+            "self4": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph5,r=2]"
+               ]
+            }
+         }
+      },
+      "controller.animation.teleport_self5": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self5": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph7,r=2]",
+                  "/tp @s @e[tag=greed,r=2]"
+               ]
+            },
+            "self5": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph7,r=2]",
+                  "/tp @s @e[tag=greed,r=2]"
+               ]
+            }
+         }
+      },
+      "controller.animation.teleport_self6": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "self6": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph9,r=3]"
+               ]
+            },
+            "self6": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph9,r=2]",
+                  "/tp @s @e[tag=morph9,r=3]"
+               ]
+            }
+         }
+      },
+      "controller.animation.light_removal": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "removal": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/function remove_light"
+               ]
+            },
+            "removal": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/function remove_light"
+               ]
+            }
+         }
+      }
+   }
+}

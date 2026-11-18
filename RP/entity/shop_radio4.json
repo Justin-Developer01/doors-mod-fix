@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:radio4",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/shop_radio"
+         },
+         "geometry": {
+            "default": "geometry.shop_radio"
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "shop_radio",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:screech_psst",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "screech_psst",
+         "minecraft:use_animation": "bow",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

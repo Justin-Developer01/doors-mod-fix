@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:void_clip3",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/none"
+         },
+         "geometry": {
+            "default": "geometry.none"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "void_mark",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,55 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.ambush_bad_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.ambush.fast @a"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.ambush.fast @a[r=30]",
+                  "/playsound mob.ambush.fast @a[r=25]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.rush_bad_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.rush.fuse @a"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.rush.fuse @a[r=30]",
+                  "/playsound mob.rush.fuse @a[r=25]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,72 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.item_ride": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tag @p[r=2] add dash",
+                  "/execute @e[tag=dash,r=2] ~~~ function dash"
+               ],
+               "transitions": [
+                  {
+                     "ride": "query.has_target"
+                  }
+               ]
+            },
+            "ride": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.anim_reset": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @p[r=2] r:hit_remove3"
+               ],
+               "transitions": [
+                  {
+                     "reset": "query.has_target"
+                  }
+               ]
+            },
+            "reset": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.anim_reset2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @p[r=2] r:hit_remove4"
+               ],
+               "transitions": [
+                  {
+                     "reset2": "query.has_target"
+                  }
+               ]
+            },
+            "reset2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

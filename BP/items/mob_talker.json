@@ -1,0 +1,24 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:mob_talker",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "mob_talker",
+         "minecraft:display_name": {
+            "value": "§lMob talker (Use item on entites to hear them talk)"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "mob_talker",
+            "duration": 1
+         }
+      }
+   }
+}

@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.halt_stunned.general2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "halt_gone"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "halt2"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "halt2"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

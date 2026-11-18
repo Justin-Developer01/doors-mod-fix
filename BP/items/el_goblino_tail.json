@@ -1,0 +1,46 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:el_goblino_tail",
+         "menu_category": {
+            "category": "equipment"
+         }
+      },
+      "components": {
+         "minecraft:icon": "goblin_tail",
+         "minecraft:display_name": {
+            "value": "§lEl Goblino Tail ugc"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:durability": {
+            "max_durability": 155
+         },
+         "minecraft:repairable": {
+            "repair_items": [
+               {
+                  "items": [
+                     "minecraft:echo_shard",
+                     "among:sculk_legings"
+                  ],
+                  "repair_amount": 7
+               }
+            ]
+         },
+         "minecraft:enchantable": {
+            "value": 100,
+            "slot": "armor_legs"
+         },
+         "minecraft:armor": {
+            "protection": 10
+         },
+         "minecraft:wearable": {
+            "slot": "slot.armor.legs"
+         },
+         "minecraft:knockback_resistance": {
+            "protection": 0.75
+         }
+      }
+   }
+}

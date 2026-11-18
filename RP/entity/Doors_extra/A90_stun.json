@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:a90_stun",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/A90"
+         },
+         "animations": {
+            "A_90_general": "animation.A_90.general",
+            "general": "controller.animation.A_90.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.A_90"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "A90",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:bookshelf",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/bookshelf"
+         },
+         "geometry": {
+            "default": "geometry.bookshelf"
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "bookshelf",
+            "texture_index": 0
+         }
+      }
+   }
+}

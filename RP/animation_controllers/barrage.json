@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.barrage.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "barrage_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "light"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

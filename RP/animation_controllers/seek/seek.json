@@ -1,0 +1,134 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "seek_general": "variable.is_idling"
+                  },
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "running": "query.ground_speed >= 4.5"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "red_aura"
+                  },
+                  {
+                     "effect": "spell2",
+                     "locator": "red_floor"
+                  }
+               ]
+            },
+            "running": {
+               "animations": [
+                  "running",
+                  "look_at_target"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.ground_speed <= 3.5"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      },
+      "controller.animation.seek.looking_at": {
+         "states": {
+            "default": {
+               "animations": [
+                  "look_at"
+               ]
+            }
+         }
+      },
+      "controller.animation.seek.attack": {
+         "states": {
+            "attack1": {
+               "animations": [
+                  "attack1"
+               ],
+               "blend_transition": 0.1,
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ]
+            },
+            "attack2": {
+               "animations": [
+                  "attack2"
+               ],
+               "blend_transition": 0.1,
+               "transitions": [
+                  {
+                     "default": "query.all_animations_finished"
+                  }
+               ]
+            },
+            "default": {
+               "blend_transition": 0.2,
+               "transitions": [
+                  {
+                     "attack1": "variable.attack_time > 0 && variable.random == 0"
+                  },
+                  {
+                     "attack2": "variable.attack_time > 0 && variable.random == 1"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.seek.sitting": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "sit": "query.is_riding ? (query.get_ride -> query.owner_identifier) == 'doors:seek_car'"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "sit": {
+               "animations": [
+                  "sit"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.is_riding"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      }
+   }
+}

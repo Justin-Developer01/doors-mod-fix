@@ -1,0 +1,27 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.shadow_appear": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "appear": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s instant_health 10000 255 true"
+               ]
+            },
+            "appear": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      }
+   }
+}

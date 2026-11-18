@@ -1,0 +1,77 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.drawer.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_general"
+               ]
+            }
+         }
+      },
+      "controller.animation.drawer.open": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_open"
+               ]
+            }
+         }
+      },
+      "controller.animation.drawer.open2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_open2"
+               ]
+            }
+         }
+      },
+      "controller.animation.drawer.open3": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_open3"
+               ]
+            }
+         }
+      },
+      "controller.animation.drawer.close": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_close"
+               ]
+            }
+         }
+      },
+      "controller.animation.drawer.close2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_close3"
+               ]
+            }
+         }
+      },
+      "controller.animation.drawer.close3": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_close2"
+               ]
+            }
+         }
+      },
+      "controller.animation.drawer.dead": {
+         "states": {
+            "default": {
+               "animations": [
+                  "drawer_dead"
+               ]
+            }
+         }
+      }
+   }
+}

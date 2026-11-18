@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.capybara.generalz": {
+         "states": {
+            "default": {
+               "animations": [
+                  "capybara_generalz"
+               ]
+            }
+         }
+      }
+   }
+}

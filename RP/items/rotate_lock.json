@@ -1,0 +1,13 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:rotate_lock",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "rotate_lock",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

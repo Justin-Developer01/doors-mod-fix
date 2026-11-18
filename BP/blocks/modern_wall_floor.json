@@ -1,0 +1,29 @@
+{
+   "format_version": "1.21.60",
+   "minecraft:block": {
+      "description": {
+         "identifier": "r:modern_wall_floor",
+         "menu_category": {
+            "category": "construction"
+         }
+      },
+      "components": {
+         "minecraft:geometry": "minecraft:geometry.full_block",
+         "minecraft:material_instances": {
+            "*": {
+               "texture": "modern_wood_floor",
+               "render_method": "opaque"
+            }
+         },
+         "minecraft:loot": "loot_tables/blocks/modern_wood_floor.json",
+         "minecraft:destructible_by_mining": {
+            "seconds_to_destroy": 1000.0
+         },
+         "minecraft:destructible_by_explosion": {
+            "explosion_resistance": 1.0
+         },
+         "minecraft:light_emission": 0,
+         "minecraft:light_dampening": 0
+      }
+   }
+}

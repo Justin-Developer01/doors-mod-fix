@@ -1,0 +1,52 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:red_ambush",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/red_ambush"
+         },
+         "animations": {
+            "moving": "animation.red_ambush.moving",
+            "red_ambush_general": "animation.red_ambush.general",
+            "attack": "animation.ambush.attack",
+            "running": "animation.red_ambush.running",
+            "jumpscare": "animation.ambush.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.red_ambush.move",
+            "general": "controller.animation.red_ambush.general",
+            "attack": "controller.animation.ambush.attack"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.red_ambush"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell5": "r:ambush_light5",
+            "spell": "r:ambush_light",
+            "spell2": "r:ambush_light2",
+            "spell3": "r:ambush_light3",
+            "spell4": "r:ambush_light4"
+         },
+         "spawn_egg": {
+            "texture": "red_ambush",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,96 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:bed",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "bed_hide",
+               "removed"
+            ]
+         },
+         "animations": {
+            "bed_hide": "controller.animation.hide_bed",
+            "removed": "controller.animation.bed_removed"
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/chair.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:physics": {},
+         "minecraft:rideable": {
+            "seat_count": 1,
+            "family_types": [
+               "player"
+            ],
+            "pull_in_entities": true,
+            "seats": {
+               "position": [
+                  0,
+                  0.6,
+                  0
+               ]
+            }
+         },
+         "minecraft:scale": {
+            "value": 2
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "has_equipment",
+                              "subject": "other",
+                              "domain": "hand",
+                              "value": "r:rotate_lock"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:rotate",
+                     "target": "self"
+                  },
+                  "interact_text": "§lRotate"
+               }
+            ]
+         }
+      },
+      "events": {
+         "minecraft:rotate": {
+            "run_command": {
+               "command": [
+                  "tp @s ~~~ facing @p"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

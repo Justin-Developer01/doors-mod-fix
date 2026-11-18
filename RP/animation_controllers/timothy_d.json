@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.timothy_d.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "timothy_d_general"
+               ]
+            }
+         }
+      }
+   }
+}

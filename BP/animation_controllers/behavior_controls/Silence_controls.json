@@ -1,0 +1,200 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.silence_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:quiet_jumpscare] ~~~ effect @e[type=!doors:silence,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:quiet_jumpscare]~~~ effect @e[type=!doors:silence,tag=!morph8,r=2] blindness 5",
+                  "/execute @s ~ ~ ~2 tp @e[type=!r:grabbed,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:quiet_jumpscare,type=!doors:silence,type=!r:depth_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!secret:a_60,type=!doors:title,type=!doors:seek_s,type=!doors:depth,type=!doors:greed,type=!r:greed_jumpscare,type=!doors:seek,type=!r:figurekill,type=!doors:wall_light,type=!r:silence_sound,type=!r:silence_hitbox,type=!doors:wall_light2,type=!doors:wall_light3,type=!doors:wall_light_alert,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!closet2,tag=!closet,tag=!cam,family=!inanimate,type=!item,type=!arrow,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:silence]",
+                  "/tp @e[type=doors:silence,r=2] ~~~ facing @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.silence_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:rush,type=!doors:seek_s,type=!doors:jack,type=!doors:screech,type=!doors:eyes,r=3] animation.ambush.attack",
+                  "/playsound mob.silence.kill @a",
+                  "/playanimation @e[type=doors:silence,r=2] attack"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.be_quiet": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.silence.idle @a[r=40]",
+                  "/playsound mob.silence.spawn2 @a[r=40]",
+                  "/summon r:purple_fog"
+               ],
+               "transitions": [
+                  {
+                     "quiet": "query.has_target"
+                  }
+               ]
+            },
+            "quiet": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.silence_sneak": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "sneaky": "query.has_target ? (query.target -> query.is_moving) : 0"
+                  }
+               ]
+            },
+            "sneaky": {
+               "on_entry": [
+                  "@s minecraft:fast_mode",
+                  "/effect @s resistance 10000 255 true"
+               ],
+               "on_exit": [
+                  "@s minecraft:sneak_mode"
+               ],
+               "transitions": [
+                  {
+                     "default": "return query.has_target ? !(query.target -> query.is_moving) : query.is_alive;"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.silence_noise": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "noise": "query.has_target ? (query.target -> query.is_moving) : 0"
+                  }
+               ]
+            },
+            "noise": {
+               "on_entry": [
+                  "/event entity @s minecraft:event_spawn_silence_awake",
+                  "/title @a actionbar §lYou've awaken Silence..."
+               ],
+               "on_exit": [],
+               "transitions": [
+                  {
+                     "default": "return query.has_target ? !(query.target -> query.is_moving) : query.is_alive;"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.slow_down": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @e[type=!doors:silence,r=20] slowness 1 6 true",
+                  "/camerashake add @p[r=3] 0.2 5 rotational",
+                  "/playsound mob.silence.gravity @a"
+               ],
+               "transitions": [
+                  {
+                     "down": "query.has_target"
+                  }
+               ]
+            },
+            "down": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.floating_area": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "area": "(1.0)"
+                  }
+               ]
+            },
+            "area": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @e[type=!doors:grandfather_clock,type=!doors:silence,family=!inanimate,r=20] levitation 7",
+                  "/execute @e[type=r:float_stop] ~~~ effect @e[type=!doors:silence] clear",
+                  "/execute @e[type=r:float_stop] ~~~ kill @e[type=r:float]",
+                  "/tp @s @e[type=doors:silence,r=3]",
+                  "/effect @e[type=doors:silence] resistance 10000 255 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.silence_power": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @e[type=doors:silence,c=1] minecraft:is_powered"
+               ],
+               "transitions": [
+                  {
+                     "power": "query.has_target"
+                  }
+               ]
+            },
+            "power": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

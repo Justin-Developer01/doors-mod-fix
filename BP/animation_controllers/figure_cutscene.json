@@ -1,0 +1,27 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_spawn": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.figure.cutscene @a[r=30]"
+               ],
+               "transitions": [
+                  {
+                     "spawn": "query.has_target"
+                  }
+               ]
+            },
+            "spawn": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

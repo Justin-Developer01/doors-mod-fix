@@ -1,0 +1,28 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:rush_jumpscare",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "rush_scare",
+         "minecraft:display_name": {
+            "value": "§lRush Jumpscare"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "rush_jumpscare",
+            "duration": 35
+         },
+         "minecraft:fuel": {
+            "duration": 32
+         },
+         "r:on_use": {}
+      }
+   }
+}

@@ -1,0 +1,167 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.ambush_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:ambush_jumpscare] ~~~ effect @e[type=!doors:ambush,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:ambush_jumpscare]~~~ effect @e[type=!doors:ambush,tag=!morph6,r=2] blindness 5",
+                  "/execute @s ~ ~ ~ tp @e[type=!r:grabbed,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:closet2,type=!secret:a_60,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!doors:chair,type=!doors:chair2,type=!doors:hotel_plant,type=!r:ambush_particle,type=!doors:grandfather_clock,type=!doors:title,type=!doors:seek_s,type=!doors:seek,type=!doors:red_ambush,type=!r:ambush_hitbox,type=!r:figurekill,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!greed,tag=!closet2,tag=!closet,tag=!cam,family=!inanimate,type=!item,type=!arrow,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=doors:ambush,r=3] ~~~ facing @p",
+                  "/tp @p[r=4] ~~~ facing @e[type=doors:ambush]"
+               ]
+            }
+         }
+      },
+      "controller.animation.ambush_jumpscare2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare2": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/playsound mob.ambush.speed @a[r=3]"
+               ]
+            }
+         }
+      },
+      "controller.animation.ambush_near": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "near": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "near": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/camerashake add @p[r=3] 0.2 1 positional",
+                  "/effect @s resistance 10000 255 true"
+               ]
+            }
+         }
+      },
+      "controller.animation.ambush_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:rush,type=!doors:seek_s,type=!doors:jack,type=!doors:screech,type=!doors:eyes,r=3] animation.ambush.scare",
+                  "/playsound mob.ambush.speed @a"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.ambush.speed @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.ambush_see3": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "see3": "query.has_target"
+                  }
+               ]
+            },
+            "see3": {
+               "on_entry": [
+                  "/playsound mob.ambush.incoming3 @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.ambush_see4": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.ambush.incoming3 @a[r=40]",
+                  "/event entity @s r:arrival"
+               ],
+               "transitions": [
+                  {
+                     "see4": "query.has_target"
+                  }
+               ]
+            },
+            "see4": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.ambush_panic": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.ambush.loud_scream2 @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "panic": "query.has_target"
+                  }
+               ]
+            },
+            "panic": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

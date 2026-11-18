@@ -1,0 +1,154 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.dread_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:dread_jumpscare] ~~~ effect @e[type=!doors:dread,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:dread_jumpscare]~~~ effect @e[type=!doors:dread,r=2] blindness 5",
+                  "/execute @s ~ ~ ~ tp @e[type=!r:grabbed,type=!secret:a_60,type=!r:a60_jumpscare,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:chair,type=!doors:chair2,type=!doors:title,type=!doors:seek_s,type=!doors:seek,type=!r:figurekill,type=!item,type=!doors:dread,type=!r:dread_jumpscare,type=!arrow,family=!inanimate,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!closet,tag=!closet2,tag=!cam,tag=!greed,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:dread]",
+                  "/tp @e[type=doors:dread,r=2] ~~~ facing @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.dread_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/stopsound @a mob.dread.saw",
+                  "/effect @s resistance 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.dread.saw @a[r=40]",
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.screaming": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.dread.stun @a[r=40]",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "screaming": "query.has_target"
+                  }
+               ]
+            },
+            "screaming": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.dread_angry": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:rush,type=!doors:seek_s,type=!doors:jack,type=!doors:screech,type=!doors:eyes,r=3] animation.A_60.attack",
+                  "/playsound mob.dread.attack @a[r=40]",
+                  "/playsound mob.dread.attack @a[r=40]",
+                  "/camerashake add @a 0.2 8 positional",
+                  "/camerashake add @a 0.2 8 positional"
+               ],
+               "transitions": [
+                  {
+                     "angry": "query.has_target"
+                  }
+               ]
+            },
+            "angry": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.dread_gone": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @e[type=doors:dread] minecraft:remove",
+                  "/playsound mob.dread.stun @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "gone": "query.has_target"
+                  }
+               ]
+            },
+            "gone": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.dread_spawn": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/summon doors:dread ~ ~ ~1",
+                  "/playsound mob.elevator.chime @a[r=40]",
+                  "/stopsound @a mob.elevator.clock"
+               ],
+               "transitions": [
+                  {
+                     "spawn": "query.has_target"
+                  }
+               ]
+            },
+            "spawn": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,135 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_p.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "seek_p_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "running": "query.ground_speed >= 4.5"
+                  },
+                  {
+                     "sneaking": "query.is_sneaking"
+                  },
+                  {
+                     "jumpscare": "query.is_stunned"
+                  },
+                  {
+                     "done": "query.is_roaring && query.variant == 0"
+                  },
+                  {
+                     "falling": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  },
+                  {
+                     "goo": "query.is_riding ? (query.get_ride -> query.owner_identifier) == 'r:dash'"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            },
+            "running": {
+               "animations": [
+                  "running"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.ground_speed <= 3.5"
+                  }
+               ],
+               "blend_transition": 0.5,
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            },
+            "sneaking": {
+               "animations": [
+                  "sneak"
+               ],
+               "transitions": [
+                  {
+                     "idle": "!query.is_sneaking"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "jumpscare": {
+               "animations": [
+                  "jumpscare"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_stunned"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "done": {
+               "animations": [
+                  "done"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_roaring"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "falling": {
+               "animations": [
+                  "falling"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            },
+            "goo": {
+               "animations": [
+                  "goo"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_riding"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      }
+   }
+}

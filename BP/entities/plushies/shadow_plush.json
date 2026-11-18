@@ -1,0 +1,81 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:shadow_plush",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "hurt_item": 0,
+                  "interact_text": "touchy",
+                  "on_interact": {
+                     "filters": {
+                        "any_of": [
+                           {
+                              "test": "is_family",
+                              "subject": "other",
+                              "value": "player"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:is_touch",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "play_sounds": "purr",
+                  "use_item": false
+               }
+            ]
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.8
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:physics": {
+            "has_gravity": true
+         }
+      },
+      "events": {
+         "minecraft:is_touch": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "playsound mob.closet.touch @a[r=5]",
+                        "playanimation @s animation.figure_plush.touch"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

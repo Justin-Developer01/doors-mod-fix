@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:greed_jumpscare",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "greed_scare",
+         "minecraft:use_animation": "bow",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

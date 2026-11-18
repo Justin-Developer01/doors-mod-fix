@@ -1,0 +1,86 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:figure_none2",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:figure_none2"
+            }
+         },
+         "minecraft:removed": {
+            "minecraft:despawn": {}
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:push_through": {
+            "value": 1
+         },
+         "minecraft:is_sheared": {},
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collusion": false
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:on_hurt_by_player": {
+            "event": "on:hurt_by_player",
+            "target": "self"
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         }
+      },
+      "events": {
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "on:hurt_by_player": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "function figure_reset"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         },
+         "minecraft:removed": {
+            "add": {
+               "component_groups": [
+                  "minecraft:removed"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:shop_sign",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/shop_sign"
+         },
+         "geometry": {
+            "default": "geometry.shop_sign"
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "shop_sign",
+            "texture_index": 0
+         }
+      }
+   }
+}

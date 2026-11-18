@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.closet.dead": {
+         "states": {
+            "default": {
+               "animations": [
+                  "closet_dead"
+               ]
+            }
+         }
+      }
+   }
+}

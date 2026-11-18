@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.ambush_follow": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "follow": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph6,r=2]"
+               ]
+            },
+            "follow": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph6,r=2]"
+               ]
+            }
+         }
+      }
+   }
+}

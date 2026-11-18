@@ -1,0 +1,63 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_tag": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/tag @s add eye",
+                  "/effect @s instant_health 10000 255 true",
+                  "/playsound mob.seek.spawn @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "tag": "query.has_target"
+                  }
+               ]
+            },
+            "tag": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.eye_hide": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "hide": "query.has_rider"
+                  },
+                  {
+                     "not_hide": "!query.has_rider"
+                  }
+               ]
+            },
+            "hide": {
+               "transitions": [
+                  {
+                     "default": "!query.has_rider"
+                  }
+               ],
+               "on_entry": [
+                  "/ride @e[tag=cam] start_riding @e[tag=eye,c=1] teleport_rider"
+               ]
+            },
+            "not_hide": {
+               "transitions": [
+                  {
+                     "default": "query.has_rider"
+                  }
+               ],
+               "on_entry": [
+                  "/ride @e[tag=cam] start_riding @e[tag=eye,c=1] teleport_rider"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:figure_particle",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/empty"
+         },
+         "animations": {
+            "cube_general2": "animation.cube.general2",
+            "general": "controller.animation.cube2.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.cube"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:light2"
+         },
+         "spawn_egg": {
+            "texture": "ambush",
+            "texture_index": 0
+         }
+      }
+   }
+}

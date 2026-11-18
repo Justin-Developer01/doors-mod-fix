@@ -1,0 +1,214 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:depth_hitbox",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "self4"
+            ]
+         },
+         "animations": {
+            "self4": "controller.animation.teleport_self4"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "r:depth_hitbox"
+            }
+         }
+      },
+      "components": {
+         "minecraft:nameable": {},
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fall_damage": {
+            "value": 0
+         },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:underwater_movement": {
+            "value": 0.3
+         },
+         "minecraft:collision_box": {
+            "width": 0,
+            "height": 0
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:navigation.climb": {
+            "can_path_over_water": true,
+            "can_pass_doors": true,
+            "can_open_doors": true,
+            "can_path_from_air": true
+         },
+         "minecraft:jump.static": {},
+         "minecraft:annotation.open_door": {},
+         "minecraft:knockback_resistance": {
+            "value": 10
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:can_climb": {},
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:health": {
+            "value": 100,
+            "max": 100
+         },
+         "minecraft:attack": {
+            "damage": 0
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:behavior.move_towards_restriction": {
+            "priority": 5,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.random_stroll": {
+            "priority": 6,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 7,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:floats_in_liquid": {},
+         "minecraft:behavior.random_look_around": {
+            "priority": 7
+         },
+         "minecraft:behavior.lay_down": {
+            "priority": 7,
+            "random_interval": 230,
+            "random_stop_interval": 2300
+         },
+         "minecraft:follow_range": {
+            "value": 200
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:physics": {},
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:area_attack": {
+            "cause": "contact",
+            "damage_per_tick": 925,
+            "damage_range": 4,
+            "entity_filter": {
+               "all_of": [
+                  {
+                     "operator": "!=",
+                     "subject": "other",
+                     "test": "is_family",
+                     "value": "inanimate"
+                  },
+                  {
+                     "operator": "!=",
+                     "subject": "other",
+                     "test": "is_family",
+                     "value": "doors_creature"
+                  },
+                  {
+                     "operator": "!=",
+                     "subject": "other",
+                     "test": "is_family",
+                     "value": "chain"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "cam"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph2"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph3"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph4"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph5"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph6"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph7"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph8"
+                  }
+               ]
+            }
+         }
+      },
+      "events": {
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "function remove_light"
+               ]
+            },
+            "weight": 1
+         }
+      }
+   }
+}

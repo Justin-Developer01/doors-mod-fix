@@ -1,0 +1,156 @@
+{
+   "format_version": "1.16.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:stare",
+         "runtime_identifier": "minecraft:arrow",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "despawning": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawer",
+                  "despawer_despawning"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "stare"
+            ]
+         },
+         "minecraft:collision_box": {
+            "width": 0.25,
+            "height": 0.35
+         },
+         "minecraft:projectile": {
+            "on_hit": {
+               "definition_event": {
+                  "affect_projectile": false,
+                  "event_trigger": {
+                     "event": "minecraft:explode",
+                     "target": "self"
+                  }
+               },
+               "impact_damage": {
+                  "damage": 0,
+                  "knockback": false,
+                  "destroy_on_hit": true
+               },
+               "stick_in_ground": {
+                  "shake_time": 0.35
+               }
+            },
+            "shoot_sound": "purr",
+            "power": 3,
+            "gravity": 0.01,
+            "inertia": 1,
+            "uncertainty_base": 1,
+            "uncertainty_multiplier": 1,
+            "anchor": 1,
+            "should_bounce": true,
+            "offset": [
+               -0.15,
+               -0.1,
+               -0.15
+            ],
+            "reflect_on_hurt": true,
+            "catch_fire": false
+         },
+         "minecraft:spawn_entity": [
+            {
+               "min_wait_time": 1,
+               "max_wait_time": 1,
+               "single_use": true,
+               "spawn_entity": "r:despawn",
+               "spawn_sound": "purr",
+               "num_to_spawn": 1
+            }
+         ],
+         "minecraft:physics": {},
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "despawer_despawning"
+                        }
+                     ]
+                  }
+               ]
+            }
+         },
+         "minecraft:timer": {
+            "looping": true,
+            "random_time_choices": [
+               {
+                  "weight": 50,
+                  "value": 4
+               }
+            ],
+            "time_down_event": {
+               "event": "minecraft:start_despawn",
+               "target": "self"
+            }
+         },
+         "minecraft:conditional_bandwidth_optimization": {
+            "default_values": {
+               "max_optimized_distance": 100,
+               "max_dropped_ticks": 10,
+               "use_motion_prediction_hints": true
+            }
+         },
+         "minecraft:area_attack": {
+            "cause": "contact",
+            "damage_per_tick": 5,
+            "damage_range": 5,
+            "entity_filter": {
+               "all_of": [
+                  {
+                     "operator": "!=",
+                     "subject": "other",
+                     "test": "is_family",
+                     "value": "inanimate"
+                  },
+                  {
+                     "operator": "!=",
+                     "subject": "other",
+                     "test": "is_family",
+                     "value": "warden"
+                  },
+                  {
+                     "operator": "!=",
+                     "subject": "other",
+                     "test": "is_family",
+                     "value": "doors_creature"
+                  }
+               ]
+            }
+         }
+      },
+      "events": {
+         "minecraft:explode": {
+            "add": {
+               "component_groups": [
+                  "minecraft:exploding"
+               ]
+            }
+         },
+         "minecraft:start_despawn": {
+            "add": {
+               "component_groups": [
+                  "despawning"
+               ]
+            }
+         }
+      }
+   }
+}

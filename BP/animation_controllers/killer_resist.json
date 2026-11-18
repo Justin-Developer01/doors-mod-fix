@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.killer_resist": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "resist": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true"
+               ]
+            },
+            "resist": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,155 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:seek_eye",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "tag",
+               "hide"
+            ]
+         },
+         "animations": {
+            "tag": "controller.animation.seek_tag",
+            "hide": "controller.animation.eye_hide"
+         }
+      },
+      "component_groups": {
+         "solid": {
+            "minecraft:variant": {
+               "value": 0
+            }
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:seek_eye_d"
+            }
+         },
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.4,
+            "height": 0.3
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate",
+               "object"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:block_sensor": {
+            "sensor_radius": 0.5,
+            "on_break": [
+               {
+                  "block_list": [
+                     "minecraft:barrier"
+                  ],
+                  "on_block_broken": "minecraft:breaked"
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:rideable": {
+            "seats": [
+               {
+                  "max_rider_count": 0,
+                  "min_rider_count": 0,
+                  "position": [
+                     0,
+                     0.6,
+                     -0.2
+                  ],
+                  "rotate_rider_by": 0
+               }
+            ],
+            "rider_can_interact": false,
+            "seat_count": 1
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "solid"
+               ]
+            }
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "effect @p[tag=cam,r=1] clear",
+                  "tag @p[r=1] remove cam",
+                  "clear @p[r=1] r:seek_cam_exit",
+                  "playsound mob.seek.small @a[r=9]",
+                  "tag @p[r=1] add morph3"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

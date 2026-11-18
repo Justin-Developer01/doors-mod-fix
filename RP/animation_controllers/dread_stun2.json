@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.dread.general2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "dread_general2"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "dreaded"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

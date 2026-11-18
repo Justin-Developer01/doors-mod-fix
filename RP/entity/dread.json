@@ -1,0 +1,44 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:dread",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/dread"
+         },
+         "animations": {
+            "dread_general": "animation.dread.general",
+            "attack": "animation.dread.attack",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.dread.move",
+            "general": "controller.animation.dread.general"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.dread"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "dread",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:curse"
+         }
+      }
+   }
+}

@@ -1,0 +1,28 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:fridge",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/fridge"
+         },
+         "geometry": {
+            "default": "geometry.fridge"
+         },
+         "sound_effects": {
+            "close": "mob.closet.hidden",
+            "open": "mob.closet.locked"
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "spawn_egg": {
+            "texture": "fridge",
+            "texture_index": 0
+         }
+      }
+   }
+}

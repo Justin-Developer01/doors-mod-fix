@@ -1,0 +1,23 @@
+{
+   "animations": {
+      "animation.dark_light": {
+         "animation_length": 0.1,
+         "loop": true,
+         "timeline": {
+            "0.0": [
+               "/playsound mob.slience.idle"
+            ]
+         }
+      },
+      "animation.dark_off": {
+         "animation_length": 0.6,
+         "loop": true,
+         "timeline": {
+            "0.5": [
+               "/playsound mob.slience.idle"
+            ]
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.incoming": {
+         "states": {
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "incoming": "query.has_target"
+                  }
+               ]
+            },
+            "incoming ": {
+               "on_entry": [
+                  "/camerashake add @a 0.2 1 positional",
+                  "/camerashake add @a 0.2 1 positional",
+                  "/camerashake add @a 0.2 1 positional",
+                  "/camerashake add @a 0.2 1 positional",
+                  "/camerashake add @a 0.2 1 positional",
+                  "/camerashake add @a 0.2 1 positional",
+                  "/camerashake add @a 0.2 1 positional"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.metavoxel_studios.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "metavoxel_studios_general"
+               ]
+            }
+         }
+      }
+   }
+}

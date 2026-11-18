@@ -1,0 +1,209 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.hide_attack": {
+         "states": {
+            "attack": {
+               "on_entry": [
+                  "/event entity @e[type=doors:depth,r=2] minecraft:remove",
+                  "/event entity @e[type=doors:depth2,r=2] minecraft:remove",
+                  "/event entity @e[type=secret:a_60,r=2] minecraft:remove"
+               ],
+               "transitions": [
+                  {
+                     "default": "variable.attack_time > 0"
+                  }
+               ]
+            },
+            "default": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "attack": "variable.attack_time > 0"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.hide_vanish": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "vanish": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "vanish": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/function remove_light"
+               ]
+            }
+         }
+      },
+      "controller.animation.hide_vanish2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "vanish2": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "vanish2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/function remove_light"
+               ]
+            }
+         }
+      },
+      "controller.animation.is_resistance": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "resistance": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s resistance 10000 255 true",
+                  "/effect @s instant_health 10000 255 true"
+               ]
+            },
+            "resistance": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.change_path": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "path": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=doors:ambush2,r=4] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:ambush_bad2,r=4] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:ambush2,r=2] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:a_120,r=6,c=1] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:ambush2,r=1] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:red_ambush2,r=3] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:depth2,r=1] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:depth2,r=2] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:depth2,r=4] ~~~ event entity @e[type=r:mark,r=2] r:change_direction",
+                  "/execute @e[type=doors:rush2,r=2] ~~~ event entity @e[type=r:mark,r=1] minecraft:remove",
+                  "/execute @e[type=doors:rush_bad2,r=3] ~~~ event entity @e[type=r:mark,r=1] minecraft:remove",
+                  "/execute @e[type=doors:trollface2,r=3] ~~~ event entity @e[type=r:mark,r=1] minecraft:remove",
+                  "/execute @e[type=doors:barrage2,r=2] ~~~ event entity @e[type=r:mark,r=1] minecraft:remove",
+                  "/execute @e[type=secret:a_602,r=2] ~~~ event entity @e[type=r:mark,r=1] minecraft:remove",
+                  "/execute @e[type=doors:trollface2,r=2] ~~~ event entity @e[type=r:mark,r=1] minecraft:remove",
+                  "/execute @e[type=doors:strike,r=6] ~~~ event entity @e[type=r:mark,r=1] minecraft:remove"
+               ]
+            },
+            "path": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.path_ready": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @s r:ready"
+               ],
+               "transitions": [
+                  {
+                     "ready": "query.has_target"
+                  }
+               ]
+            },
+            "ready": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.figure_spot2": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @s minecraft:default_target"
+               ],
+               "transitions": [
+                  {
+                     "spot2": "query.has_target"
+                  }
+               ]
+            },
+            "spot2": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.path_done": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/event entity @e[type=doors:ambush2] minecraft:remove",
+                  "/event entity @e[type=doors:red_ambush2] minecraft:remove",
+                  "/event entity @e[type=doors:rush2] minecraft:remove",
+                  "/event entity @e[type=doors:rush_bad2] minecraft:remove",
+                  "/event entity @e[type=doors:ambush_bad2] minecraft:remove",
+                  "/event entity @e[type=doors:barrage2] minecraft:remove",
+                  "/event entity @e[type=doors:depth2] minecraft:remove",
+                  "/event entity @e[type=secret:a_602] minecraft:remove",
+                  "/event entity @e[type=doors:a_120] minecraft:remove",
+                  "/event entity @e[type=doors:trollface2] minecraft:remove",
+                  "/event entity @e[type=doors:strike] minecraft:remove"
+               ],
+               "transitions": [
+                  {
+                     "done": "query.has_target"
+                  }
+               ]
+            },
+            "done": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

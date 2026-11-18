@@ -1,0 +1,45 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "among:capybara",
+         "materials": {
+            "default": "spider"
+         },
+         "geometry": {
+            "default": "geometry.capybara"
+         },
+         "textures": {
+            "default": "textures/entity/capybara"
+         },
+         "animations": {
+            "capybara_general": "animation.capybara.general",
+            "capybara_general2": "animation.capybara.general2",
+            "moving": "animation.capybara.moving",
+            "eating": "animation.capybara.eating",
+            "general": "controller.animation.capybara.general",
+            "general2": "controller.animation.capybara.general2",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "general",
+               "general2",
+               "look_at_target"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "capybara",
+            "texture_index": 0
+         }
+      }
+   }
+}

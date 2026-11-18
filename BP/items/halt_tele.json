@@ -1,0 +1,24 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:halt_tele",
+         "menu_category": {
+            "category": "nature"
+         }
+      },
+      "components": {
+         "minecraft:icon": "halt_tele",
+         "minecraft:display_name": {
+            "value": "§lHalt Teleportation"
+         },
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "ender_pearl",
+            "duration": 2
+         },
+         "r:on_use": {}
+      }
+   }
+}

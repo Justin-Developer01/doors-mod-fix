@@ -1,0 +1,37 @@
+{
+   "format_version": "1.16.100",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:ambush_morph",
+         "materials": {
+            "default": "spider",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/ambush"
+         },
+         "geometry": {
+            "default": "geometry.ambush"
+         },
+         "animations": {
+            "ambush_general": "animation.ambush.general",
+            "moving": "animation.ambush.moving",
+            "scare": "animation.ambush.scare2",
+            "look_at_target": "animation.common.look_at_target",
+            "general": "controller.animation.ambush_p.general"
+         },
+         "scripts": {
+            "parent_setup": "variable.helmet_layer_visible = 0.0;",
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ]
+      }
+   }
+}

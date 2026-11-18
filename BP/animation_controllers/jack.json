@@ -1,0 +1,57 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.jack_blind": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "blind": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @e[type=!doors:jack,type=!doors:seek,type=!doors:seek_s,type=!doors:rush,type=!doors:figure,r=2] blindness 1 2 true",
+                  "/playsound mob.jack.loud @a[r=2]",
+                  "/playanimation @e[type=r:red_fog,r=2] general",
+                  "/execute @s ~~~ camerashake add @a[r=2] 2.5 0.4",
+                  "/execute @s ~ ~ ~ execute @a[r=3] ~ ~ ~ particle r:jack_jumpscare ^ ^0.5 ^1"
+               ]
+            },
+            "blind": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.jack_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.jack.loud @a",
+                  "/summon r:red_fog",
+                  "/playanimation @e[type=doors:closet] open"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [
+                  "/playsound mob.jack.loud @a"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

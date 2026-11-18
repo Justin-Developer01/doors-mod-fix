@@ -1,0 +1,45 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:rush_variant12",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/what/rsuh"
+         },
+         "animations": {
+            "moving": "animation.rush.moving",
+            "rush_bad_general": "animation.rush_bad.general",
+            "attack": "animation.rush.attack",
+            "running": "animation.rush.running",
+            "jumpscare": "animation.rush.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.rush.move",
+            "general": "controller.animation.rush_bad.general",
+            "attack": "controller.animation.rush.attack"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.rush_bad"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "rush_bad",
+            "texture_index": 0
+         }
+      }
+   }
+}

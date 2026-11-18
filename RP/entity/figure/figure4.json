@@ -1,0 +1,71 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "spawn_egg": {
+            "texture": "figure4",
+            "texture_index": 0
+         },
+         "identifier": "doors:figure4",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_new2"
+         },
+         "geometry": {
+            "default": "geometry.figure3"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack",
+               "look_at_target",
+               "sniff_controller",
+               "roar_controller",
+               "melee_attack_controller"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "animations": {
+            "moving": "animation.figure.moving",
+            "figure_general": "animation.figure.general",
+            "dead": "animation.figure.dead",
+            "sniff": "animation.figure.sniff",
+            "roar": "animation.figure.roar",
+            "falling": "animation.figure.falling",
+            "jumpscare": "animation.figure.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.figure.move",
+            "general": "controller.animation.figure.general",
+            "sniff_controller": "controller.animation.warden.sniff",
+            "roar_controller": "controller.animation.warden.roar",
+            "running": "animation.figure.running",
+            "duck": "animation.figure.duck",
+            "duck2": "animation.figure.duck2",
+            "side1": "animation.figure.side1",
+            "side2": "animation.figure.side2",
+            "looking": "animation.figure.looking",
+            "jumping": "animation.figure.jumping",
+            "melee_attack": "animation.figure.attack",
+            "melee_attack_controller": "controller.animation.warden.melee_attacking"
+         },
+         "sound_effects": {
+            "sniff": "mob.figure.ambient",
+            "roar": "mob.figure.roar",
+            "clicking": "mob.figure.ambient"
+         },
+         "particle_effects": {
+            "spell": "r:light"
+         }
+      }
+   }
+}

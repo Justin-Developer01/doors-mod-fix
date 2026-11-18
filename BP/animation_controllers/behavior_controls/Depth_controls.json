@@ -1,0 +1,123 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.depth_jumpscare": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "jumpscare": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "jumpscare": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=r:depth_jumpscare] ~~~ effect @e[type=!doors:ambush,r=2] slowness 1 6 true",
+                  "/execute @e[type=r:depth_jumpscare]~~~ effect @e[type=!doors:ambush,tag=!morph5,r=2] blindness 5",
+                  "/execute @s ~ ~1 ~ tp @e[type=!r:grabbed,type=!doors:ambush,type=!r:ambush_jumpscare,type=!r:quiet_jumpscare,type=!doors:silence,type=!r:depth_jumpscare,type=!r:rush_jumpscare,type=!r:grabbed2,type=!r:grab_new,type=!doors:figure3,type=!doors:figure4,type=!doors:figure2,type=!doors:figure,type=!doors:rush,type=!doors:eyes,type=!doors:jack,type=!doors:closet,type=!doors:closet2,type=!secret:a_60,type=!doors:title,type=!doors:seek_s,type=!doors:depth,type=!doors:greed,type=!doors:hotel_plant,type=!doors:grandfather_clock,type=!doors:chair,type=!doors:chair2,type=!r:greed_jumpscare,type=!doors:seek,type=!doors:wall_light,type=!doors:wall_light2,type=!doors:wall_light3,type=!doors:wall_light_alert,type=!r:depth_hitbox,type=!r:depth_sound,tag=!closet,tag=!cam,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,tag=!morph5,tag=!morph6,tag=!morph7,tag=!morph8,tag=!morph9,tag=!morph10,tag=!morph11,tag=!morph12,tag=!greed,tag=!closet2,family=!inanimate,type=!r:figurekill,type=!item,type=!arrow,c=1,r=5] ^ ^0.5 ^1 facing @s",
+                  "/tp @e[type=!doors:shadow,r=2] ~~~ facing @e[type=doors:depth]",
+                  "/tp @e[type=doors:depth,r=2] ~~~ facing @p"
+               ]
+            }
+         }
+      },
+      "controller.animation.depth_see": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~~~ playanimation @e[type=!doors:seek,type=!doors:rush,type=!doors:seek_s,type=!doors:jack,type=!doors:screech,type=!doors:eyes,r=3] animation.ambush.attack",
+                  "/playsound mob.depth.scare @a"
+               ],
+               "transitions": [
+                  {
+                     "see": "query.has_target"
+                  }
+               ]
+            },
+            "see": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.depth_panic": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.depth.panic @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "panic": "query.has_target"
+                  }
+               ]
+            },
+            "panic": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.depth_sound": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "sound": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/playsound mob.depth.idle @a"
+               ]
+            },
+            "sound": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.depth_see4": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.depth.spawn @a",
+                  "/effect @s resistance 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "see4": "query.has_target"
+                  }
+               ]
+            },
+            "see4": {
+               "on_entry": [
+                  "/playsound mob.depth.idle @a"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

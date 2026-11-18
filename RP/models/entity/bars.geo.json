@@ -1,0 +1,40 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.bars",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "bone5",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "door",
+					"parent": "bone5",
+					"pivot": [-8, 16, -1],
+					"cubes": [
+						{
+							"origin": [-22, 1, -1],
+							"size": [47, 53, 1],
+							"uv": {
+								"north": {"uv": [1, 52], "uv_size": [16, 31]},
+								"east": {"uv": [0, 52], "uv_size": [1, 31]},
+								"south": {"uv": [18, 52], "uv_size": [16, 31]},
+								"west": {"uv": [17, 52], "uv_size": [1, 31]},
+								"up": {"uv": [1, 51], "uv_size": [16, 1]},
+								"down": {"uv": [17, 52], "uv_size": [16, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

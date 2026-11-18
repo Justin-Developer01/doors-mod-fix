@@ -1,0 +1,154 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.hotel_door.spin": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "east": "query.variant == 1"
+                  },
+                  {
+                     "north": "query.variant == 2"
+                  },
+                  {
+                     "south": "query.variant == 3"
+                  },
+                  {
+                     "west": "query.variant == 4"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "east": {
+               "animations": [
+                  "east"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.variant != 1"
+                  }
+               ],
+               "blend_transition": 0.1
+            },
+            "north": {
+               "animations": [
+                  "north"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.variant != 2"
+                  }
+               ],
+               "blend_transition": 0.1
+            },
+            "south": {
+               "animations": [
+                  "south"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.variant != 3"
+                  }
+               ],
+               "blend_transition": 0.1
+            },
+            "west": {
+               "animations": [
+                  "west"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.variant != 4"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      },
+      "controller.animation.hotel_door.use": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "close": "query.mark_variant == 1"
+                  },
+                  {
+                     "open": "query.mark_variant == 2"
+                  }
+               ]
+            },
+            "close": {
+               "animations": [
+                  "close"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.mark_variant != 1"
+                  }
+               ],
+               "blend_transition": 0.4
+            },
+            "open": {
+               "animations": [
+                  "open"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.mark_variant != 2"
+                  }
+               ],
+               "blend_transition": 0.4
+            }
+         }
+      },
+      "controller.animation.hotel_door.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "hotel_door_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "gone": "query.is_stunned"
+                  }
+               ]
+            },
+            "gone": {
+               "animations": [
+                  "gone"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_stunned"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      }
+   }
+}

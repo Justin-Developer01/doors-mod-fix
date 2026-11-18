@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:a120_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/extra/A120"
+         },
+         "geometry": {
+            "default": "geometry.A_120"
+         },
+         "animations": {
+            "A_120_riseup": "animation.A_120.riseup",
+            "rise": "controller.animation.A_120.rise"
+         },
+         "scripts": {
+            "animate": [
+               "rise"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "a120",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:a120_face"
+         }
+      }
+   }
+}

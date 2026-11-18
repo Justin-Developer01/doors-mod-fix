@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:seek_hand",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/seek"
+         },
+         "geometry": {
+            "default": "geometry.seek_hand"
+         },
+         "animations": {
+            "seek_hand_general": "animation.seek_hand.general",
+            "moving": "animation.seek_hand.general",
+            "grab": "animation.seek_hand.grab",
+            "pop": "animation.seek_hand.pop",
+            "general": "controller.animation.seek_hand.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "seek_hand",
+            "texture_index": 0
+         }
+      }
+   }
+}

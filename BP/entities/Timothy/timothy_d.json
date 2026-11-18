@@ -1,0 +1,105 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:timothy_d",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:timothy_d"
+            }
+         },
+         "despawning": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawer",
+                  "despawer_despawning"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:push_through": {
+            "value": 1
+         },
+         "minecraft:is_sheared": {},
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collusion": false
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 7,
+            "time_down_event": {
+               "event": "minecraft:start_despawn",
+               "target": "self"
+            }
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "self",
+                           "value": "despawer_despawning"
+                        }
+                     ]
+                  }
+               ]
+            }
+         },
+         "minecraft:collision_box": {
+            "height": 0.4,
+            "width": 0.3
+         }
+      },
+      "events": {
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:start_despawn": {
+            "add": {
+               "component_groups": [
+                  "despawning"
+               ]
+            }
+         }
+      }
+   }
+}

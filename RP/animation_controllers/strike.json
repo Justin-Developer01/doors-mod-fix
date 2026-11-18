@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.strike.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "strike_general"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "striked"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

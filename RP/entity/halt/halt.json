@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:halt",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/halt",
+            "charged": "textures/entity/halt/halt_armor"
+         },
+         "geometry": {
+            "default": "geometry.halt",
+            "charged": "geometry.halt_armor"
+         },
+         "animations": {
+            "halt_general": "animation.halt.general",
+            "general": "controller.animation.halt.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "halt",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:halt_floor",
+            "spell2": "r:halt_fog"
+         }
+      }
+   }
+}

@@ -1,0 +1,46 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:shakelight",
+         "menu_category": {
+            "category": "equipment"
+         }
+      },
+      "components": {
+         "minecraft:icon": "shakelight",
+         "minecraft:display_name": {
+            "value": "§l§aGummy Flashlight (Lasts forever when shaking more often)"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:allow_off_hand": false,
+         "minecraft:glint": true,
+         "minecraft:cooldown": {
+            "category": "shakelight",
+            "duration": 1
+         },
+         "minecraft:durability": {
+            "max_durability": 100
+         },
+         "minecraft:repairable": {
+            "repair_items": [
+               {
+                  "items": [
+                     "minecraft:glowstone_dust"
+                  ],
+                  "repair_amount": 10
+               },
+               {
+                  "items": [
+                     "ho:flashlight"
+                  ],
+                  "repair_amount": "context.other->query.remaining_durability + 0.2 * context.other->query.max_durability"
+               }
+            ]
+         },
+         "minecraft:can_destroy_in_creative": true,
+         "r:on_use": {}
+      }
+   }
+}

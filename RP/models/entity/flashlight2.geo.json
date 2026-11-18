@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.flashlight2",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [3, -3, 1],
+					"rotation": [-3.53329, 44.94549, -2.49762],
+					"cubes": [
+						{"origin": [-0.8, 1.6, -15.8], "size": [4.8, 4.8, 25.2], "uv": [0, 0]},
+						{"origin": [-2.6, -0.2, -15.8], "size": [8.4, 8.4, 2.8], "uv": [0, 12]},
+						{"origin": [-1.2, 1.2, -13], "size": [5.6, 5.6, 2.8], "uv": [0, 27]},
+						{"origin": [1.32, 6.4, -7.4], "size": [0.84, 1.4, 1.4], "uv": [15, 2]},
+						{"origin": [-3.4, -1, -18.6], "size": [10, 10, 2.8], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

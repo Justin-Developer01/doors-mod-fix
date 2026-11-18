@@ -1,0 +1,88 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.seek_headphones",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Head",
+					"pivot": [0, 1, 0],
+					"cubes": [
+						{
+							"origin": [3, 3, -2],
+							"size": [2, 4, 4],
+							"inflate": -0.5,
+							"uv": {
+								"north": {"uv": [8, 11], "uv_size": [7, 1]},
+								"east": {"uv": [8, 11], "uv_size": [9, 2]},
+								"south": {"uv": [10, 10], "uv_size": [4, 4]},
+								"west": {"uv": [24, 16], "uv_size": [9, 5]},
+								"up": {"uv": [10, 9], "uv_size": [5, 3]},
+								"down": {"uv": [16, 14], "uv_size": [-2, -5]}
+							}
+						},
+						{
+							"origin": [-5, 3, -2],
+							"size": [2, 4, 4],
+							"inflate": -0.5,
+							"uv": {
+								"north": {"uv": [14, 10], "uv_size": [0, 3]},
+								"east": {"uv": [24, 21], "uv_size": [9, -5]},
+								"south": {"uv": [10, 10], "uv_size": [4, 4]},
+								"west": {"uv": [8, 9], "uv_size": [8, 3]},
+								"up": {"uv": [10, 9], "uv_size": [5, 3]},
+								"down": {"uv": [16, 14], "uv_size": [-2, -5]}
+							}
+						},
+						{
+							"origin": [3, 6, -1],
+							"size": [2, 5, 2],
+							"inflate": -0.5,
+							"uv": {
+								"north": {"uv": [9, 11], "uv_size": [3, 3]},
+								"east": {"uv": [9, 10], "uv_size": [7, 4]},
+								"south": {"uv": [8, 10], "uv_size": [6, 2]},
+								"west": {"uv": [9, 11], "uv_size": [6, 0]},
+								"up": {"uv": [9, 8], "uv_size": [3, 5]},
+								"down": {"uv": [17, 12], "uv_size": [-4, -3]}
+							}
+						},
+						{
+							"origin": [-5, 6, -1],
+							"size": [2, 5, 2],
+							"inflate": -0.5,
+							"uv": {
+								"north": {"uv": [9, 11], "uv_size": [3, 3]},
+								"east": {"uv": [9, 10], "uv_size": [7, 4]},
+								"south": {"uv": [8, 10], "uv_size": [6, 2]},
+								"west": {"uv": [9, 11], "uv_size": [6, 0]},
+								"up": {"uv": [9, 8], "uv_size": [3, 5]},
+								"down": {"uv": [17, 12], "uv_size": [-4, -3]}
+							}
+						},
+						{
+							"origin": [-4, 9, -1],
+							"size": [8, 2, 2],
+							"inflate": -0.5,
+							"uv": {
+								"north": {"uv": [9, 11], "uv_size": [3, 3]},
+								"east": {"uv": [9, 10], "uv_size": [7, 4]},
+								"south": {"uv": [8, 10], "uv_size": [6, 2]},
+								"west": {"uv": [9, 11], "uv_size": [6, 0]},
+								"up": {"uv": [9, 8], "uv_size": [3, 5]},
+								"down": {"uv": [17, 12], "uv_size": [-4, -3]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

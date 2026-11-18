@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.dupe.stun": {
+         "states": {
+            "default": {
+               "animations": [
+                  "dupe_stun"
+               ]
+            }
+         }
+      }
+   }
+}

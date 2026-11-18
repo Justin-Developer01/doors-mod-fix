@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:barrage_stun2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/extra/barrage"
+         },
+         "geometry": {
+            "default": "geometry.barrage"
+         },
+         "animations": {
+            "barrage_stunned_general2": "animation.barrage.stunned2",
+            "general2": "controller.animation.barrage_stunned.general2"
+         },
+         "scripts": {
+            "animate": [
+               "general2"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "barrage",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:barrage_light"
+         }
+      }
+   }
+}

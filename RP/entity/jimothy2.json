@@ -1,0 +1,43 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:jimothy2",
+         "materials": {
+            "default": "spider"
+         },
+         "geometry": {
+            "default": "geometry.jimothy"
+         },
+         "textures": {
+            "default": "textures/entity/jimothy"
+         },
+         "animations": {
+            "jimothy_general": "animation.jimothy.general",
+            "jimothy_general2": "animation.jimothy.general2",
+            "moving": "animation.jimothy.moving",
+            "attack": "animation.timothy.attack",
+            "general": "controller.animation.jimothy.general",
+            "general2": "controller.animation.jimothy.general2"
+         },
+         "scripts": {
+            "animate": [
+               "general",
+               "general2"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "jimothy",
+            "texture_index": 0
+         }
+      }
+   }
+}

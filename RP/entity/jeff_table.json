@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:jeff_table",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/jeff_table"
+         },
+         "geometry": {
+            "default": "geometry.jeff_table"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "jeff_table",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure_bad.generall2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "figure_bad_generall2"
+               ]
+            }
+         }
+      }
+   }
+}

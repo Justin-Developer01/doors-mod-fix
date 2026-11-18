@@ -1,0 +1,30 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.hide_getout": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "getout": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "getout": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/title @p title §cGET OUT!",
+                  "/title @p actionbar §l§cGET OUT!",
+                  "/effect @p blindness 10",
+                  "/playsound mob.hide.getout @p"
+               ]
+            }
+         }
+      }
+   }
+}

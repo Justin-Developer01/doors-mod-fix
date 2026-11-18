@@ -1,0 +1,17 @@
+{
+   "format_version": "1.10",
+   "render_controllers": {
+      "controller.render.rift": {
+         "geometry": "geometry.default",
+         "materials": [
+            {
+               "root": "material.glow",
+               "rightItem": "material.default"
+            }
+         ],
+         "textures": [
+            "texture.default"
+         ]
+      }
+   }
+}

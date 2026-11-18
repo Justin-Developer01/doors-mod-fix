@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:wall_light",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/wall_light"
+         },
+         "geometry": {
+            "default": "geometry.wall_light"
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "wall_light",
+            "texture_index": 0
+         }
+      }
+   }
+}

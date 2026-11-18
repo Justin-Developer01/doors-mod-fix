@@ -1,0 +1,217 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:light_detect",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:light_angry": {
+            "minecraft:angry": {
+               "duration": 2,
+               "broadcast_anger": true,
+               "broadcast_range": 10,
+               "broadcast_targets": [
+                  "projectionist"
+               ],
+               "calm_event": {
+                  "event": "minecraft:on_calm",
+                  "target": "self"
+               }
+            }
+         },
+         "minecraft:light_calm": {
+            "minecraft:on_target_acquired": {
+               "event": "minecraft:become_angry",
+               "target": "self"
+            }
+         }
+      },
+      "components": {
+         "minecraft:nameable": {},
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": true,
+            "is_pushable_by_piston": true
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.8
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:navigation.walk": {
+            "is_amphibious": true,
+            "can_pass_doors": true,
+            "can_break_doors": true,
+            "can_walk": true
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 2,
+            "within_radius": 8,
+            "reselect_targets": true,
+            "entity_types": [
+               {
+                  "filters": {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "player"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "wither"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "dragon"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "monster"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "irongolem"
+                        }
+                     ]
+                  },
+                  "max_dist": 8
+               },
+               {
+                  "filters": {
+                     "any_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "villager"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "wandering_trader"
+                        }
+                     ]
+                  },
+                  "max_dist": 16,
+                  "must_see": false
+               }
+            ],
+            "must_see": true
+         },
+         "minecraft:annotation.break_door": {},
+         "minecraft:follow_range": {
+            "value": 2000
+         },
+         "minecraft:jump.static": {},
+         "minecraft:can_climb": {},
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:health": {
+            "value": 20,
+            "max": 20
+         },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/light.json"
+         },
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 1
+         },
+         "minecraft:physics": {
+            "has_collision": false
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "randomize": [
+               {
+                  "weight": 380,
+                  "remove": {},
+                  "add": {
+                     "component_groups": [
+                        "minecraft:can_have_equipment",
+                        "minecraft:light_calm"
+                     ]
+                  }
+               }
+            ]
+         },
+         "minecraft:entity_born": {
+            "randomize": [
+               {
+                  "weight": 380,
+                  "remove": {},
+                  "add": {
+                     "component_groups": [
+                        "minecraft:can_have_equipment",
+                        "minecraft:light_calm"
+                     ]
+                  }
+               }
+            ]
+         },
+         "minecraft:become_angry": {
+            "remove": {
+               "component_groups": [
+                  "minecraft:light_calm"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "minecraft:light_angry"
+               ]
+            }
+         },
+         "minecraft:on_calm": {
+            "remove": {
+               "component_groups": [
+                  "minecraft:light_angry"
+               ]
+            },
+            "add": {
+               "component_groups": [
+                  "minecraft:light_calm"
+               ]
+            }
+         }
+      }
+   }
+}

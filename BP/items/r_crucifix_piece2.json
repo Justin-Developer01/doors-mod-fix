@@ -1,0 +1,19 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:crucifix_piece2",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "r:crucifix_piece2",
+         "minecraft:display_name": {
+            "value": "§bCrucifix Piece 2"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true
+      }
+   }
+}

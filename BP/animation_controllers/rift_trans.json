@@ -1,0 +1,442 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.rift_trans": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "trans": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            },
+            "trans": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[type=doors:rift,r=2]"
+               ]
+            }
+         }
+      },
+      "controller.animation.rift_trans2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "trans2": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:entity_spawned"
+               ]
+            },
+            "trans2": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.is_door": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "door": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s r:interact_open"
+               ]
+            },
+            "door": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.is_gate": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "gate": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:entity_spawned",
+                  "/function gate_close",
+                  "/execute @e[type=doors:jeff,r=3] ~~~ event entity @s r:open",
+                  "/event entity @e[type=doors:jeff,r=3] on:death"
+               ]
+            },
+            "gate": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.is_gate2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "gate2": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:entity_spawned",
+                  "/function gate2_close"
+               ]
+            },
+            "gate2": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.is_gated": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "gated": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:entity_spawned",
+                  "/function grand_close"
+               ]
+            },
+            "gated": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.achievements_system": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "system": "query.has_target"
+                  }
+               ],
+               "on_entry": []
+            },
+            "system": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @e[type=doors:figure_stun] ~~~ function figure_badge",
+                  "/execute @e[type=doors:seek_stun] ~~~ function seek_badge",
+                  "/execute @e[type=doors:rush_stun2] ~~~ function rush_badge",
+                  "/execute @e[type=doors:ambush_stun2] ~~~ function ambush_badge",
+                  "/execute @e[type=doors:screech_stun] ~~~ function screech_badge",
+                  "/execute @e[type=doors:eyes_stun2] ~~~ function eyes_badge",
+                  "/execute @e[type=doors:halt_stun2] ~~~ function halt_badge",
+                  "/execute @e[type=doors:dupe_stun] ~~~ function dupe_badge",
+                  "/execute @e[type=doors:dupe2_stun2] ~~~ function dupe_badge",
+                  "/execute @e[type=r:void_clip2] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§eAchievement Unlocked: It Stares Back, Guys wait up!\"}]}",
+                  "/execute @e[type=r:void_clip2] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§eEncounter the Void\"}]}",
+                  "/execute @e[type=r:glitch_clip] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§eAchievement Unlocked: Error, well that just happened.\"}]}",
+                  "/execute @e[type=r:glitch_clip] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§eEncounter the Glitch\"}]}",
+                  "/execute @e[type=r:dupe_wait] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§eAchievement Unlocked: Wrong Room, well this awkward.\"}]}",
+                  "/execute @e[type=r:dupe_wait] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§eEncounter Dupe\"}]}",
+                  "/execute @e[type=r:void_clip2] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=r:glitch_clip] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:ambush_stun2] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=r:dupe_wait] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:rush_stun2] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:figure_stun] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:seek_stun] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:screech_stun] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:eyes_stun2] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:halt_stun2] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:dupe2_stun2] ~~~ playsound mob.closet.achieve @a",
+                  "/execute @e[type=doors:dupe_stun] ~~~ playsound mob.closet.achieve @a"
+               ]
+            }
+         }
+      },
+      "controller.animation.is_door": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "door": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:entity_spawned",
+                  "/function grand_close"
+               ]
+            },
+            "door": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.start_ride": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "ride": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[type=secret:a_60,r=2]"
+               ]
+            },
+            "ride": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.is_access": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "access": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[tag=padlock,r=2] minecraft:passcode_done",
+                  "/kill @e[tag=padlock2,r=2]"
+               ]
+            },
+            "access": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.lighting_spawn": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "spawn": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s invisibility 10000 255 true"
+               ]
+            },
+            "spawn": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.sign_warning": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "warning": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/tellraw @a {\"rawtext\":[{\"text\":\"§cSyntax error unexpected entity death\"}]}"
+               ]
+            },
+            "warning": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.is_lock": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "lock": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s minecraft:entity_spawned"
+               ]
+            },
+            "lock": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.void_clip": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "clip": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/playsound mob.closet.warp @a",
+                  "/effect @a blindness 2",
+                  "/effect @a darkness 1 5 true",
+                  "/camerashake add @a[r=30] 0.3 0.05 rotational"
+               ]
+            },
+            "clip": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.void_clip2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "clip2": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @a @e[type=r:void_clip3,c=1]",
+                  "/damage @a 7 entity_attack",
+                  "/camerashake add @a[r=30] 0.3 0.05 rotational",
+                  "/event entity @e[type=r:void_clip3] minecraft:remove",
+                  "/kill @e[type=doors:void]"
+               ]
+            },
+            "clip2": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.void_clip3": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "clip3": "query.has_target"
+                  }
+               ],
+               "on_entry": []
+            },
+            "clip3": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/summon r:void_clip"
+               ]
+            }
+         }
+      },
+      "controller.animation.shop_start": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "start": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @s shop_opened",
+                  "/event entity @e[type=doors:gate,r=2] r:open"
+               ]
+            },
+            "start": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.padlock_active": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "active": "query.has_target"
+                  }
+               ],
+               "on_entry": [
+                  "/structure load mystructure:padlock ~~~"
+               ]
+            },
+            "active": {
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      }
+   }
+}

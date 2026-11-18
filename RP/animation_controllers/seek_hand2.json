@@ -1,0 +1,62 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_hand2.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 0,
+                        "0.25": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0.0": 1,
+                        "0.1": 0
+                     }
+                  }
+               },
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "seek_hand2_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "attack": "query.is_delayed_attacking"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "attack": {
+               "animations": [
+                  "attack"
+               ],
+               "transitions": [
+                  {
+                     "moving": "!query.is_delayed_attacking"
+                  }
+               ],
+               "blend_transition": 0.1
+            }
+         }
+      },
+      "controller.animation.seek_hand2.general2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "seek_hand2_general2"
+               ]
+            }
+         }
+      }
+   }
+}

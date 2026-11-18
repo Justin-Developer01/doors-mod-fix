@@ -1,0 +1,14 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_s2.general": {
+         "states": {
+            "default": {
+               "animations": [
+                  "seek_bad_s_general"
+               ]
+            }
+         }
+      }
+   }
+}

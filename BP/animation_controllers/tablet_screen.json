@@ -1,0 +1,75 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.tablet_screen": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "screen": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=tablet]",
+                  "/execute @s ~ ~ ~ execute @p[r=2] ~ ~ ~ particle r:screen ^ ^0.5 ^1"
+               ]
+            },
+            "screen": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.icon_gone": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/effect @s invisibility 10000 255 true"
+               ],
+               "transitions": [
+                  {
+                     "gone": "query.has_target"
+                  }
+               ]
+            },
+            "gone": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.tablet_active": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "active": "query.is_item_name_any('slot.weapon.mainhand','r:tablet')"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=r:floating_icon] minecraft:reveal_hidden",
+                  "/event entity @e[type=r:screen,r=2] minecraft:remove",
+                  "/tag @s remove tablet",
+                  "/playsound mob.closet.tablet_switch @s"
+               ]
+            },
+            "active": {
+               "transitions": [
+                  {
+                     "default": "!query.is_item_name_any('slot.weapon.mainhand','r:tablet')"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      }
+   }
+}

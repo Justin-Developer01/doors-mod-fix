@@ -1,0 +1,44 @@
+{
+   "animation_controllers": {
+      "controller.animation.r_crucifix2": {
+         "initial_state": "preshoot",
+         "states": {
+            "preshoot": {
+               "transitions": [
+                  {
+                     "shoot": "(q.get_equipped_item_name(0) == 'crucifix2' || q.get_equipped_item_name == 'crucifix2' || q.is_item_name_any('slot.weapon.mainhand', 'r:crucifix2', 'crucifix2')) && q.is_using_item"
+                  }
+               ]
+            },
+            "shoot": {
+               "on_entry": [
+                  "@s r:crucifix_fire",
+                  "/playsound r_crucifix_shot"
+               ],
+               "on_exit": [
+                  "v.bullet_fire = q.life_time;"
+               ],
+               "transitions": [
+                  {
+                     "shooting": "1.0"
+                  }
+               ]
+            },
+            "shooting": {
+               "on_entry": [
+                  "v.delaytime = q.life_time;"
+               ],
+               "transitions": [
+                  {
+                     "preshoot": "!((q.get_equipped_item_name(0) == 'crucifix2' || q.get_equipped_item_name == 'crucifix2' || q.is_item_name_any('slot.weapon.mainhand', 'r:crucifix2', 'crucifix2'))) || !q.is_using_item"
+                  },
+                  {
+                     "shoot": "!((q.get_equipped_item_name(0) == 'crucifix2' || q.get_equipped_item_name == 'crucifix2' || q.is_item_name_any('slot.weapon.mainhand', 'r:crucifix2', 'crucifix2'))) || !q.is_using_item"
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

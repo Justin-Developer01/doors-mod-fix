@@ -1,0 +1,44 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:lsplash",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/lsplash"
+         },
+         "geometry": {
+            "default": "geometry.lsplash"
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "scripts": {
+            "animate": [
+               "general",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "spawn_egg": {
+            "texture": "lsplash",
+            "texture_index": 0
+         },
+         "animations": {
+            "lsplash_general": "animation.lsplash.general",
+            "moving": "animation.lsplash.moving",
+            "attack1": "animation.lsplash.attack1",
+            "attack2": "animation.lsplash.attack2",
+            "attack": "controller.animation.lsplash.attack",
+            "jumping": "controller.animation.lsplash.jumping",
+            "general": "controller.animation.lsplash.general"
+         }
+      }
+   }
+}

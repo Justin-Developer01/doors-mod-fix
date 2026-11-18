@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:shadow",
+         "materials": {
+            "default": "enderman"
+         },
+         "textures": {
+            "default": "textures/entity/shadow"
+         },
+         "geometry": {
+            "default": "geometry.shadow"
+         },
+         "animations": {
+            "shadow_general": "animation.shadow.general",
+            "general": "controller.animation.shadow.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "spawn_egg": {
+            "texture": "shadow",
+            "texture_index": 0
+         }
+      }
+   }
+}

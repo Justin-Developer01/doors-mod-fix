@@ -1,0 +1,392 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:metal_door",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "doors_close",
+               "doors_open"
+            ]
+         },
+         "animations": {
+            "doors_close": "controller.animation.doors_close",
+            "doors_open": "controller.animation.doors_open"
+         }
+      },
+      "component_groups": {
+         "close": {
+            "minecraft:damage_sensor": {
+               "triggers": [
+                  {
+                     "cause": "entity_attack",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "projectile",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "explosion",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fire",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fatal",
+                     "deals_damage": false
+                  }
+               ]
+            },
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§l-Unlock Door-",
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "has_equipment",
+                                 "subject": "other",
+                                 "domain": "hand",
+                                 "value": "r:key"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:open",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            },
+            "minecraft:mark_variant": {
+               "value": 1
+            },
+            "minecraft:variant": {
+               "value": 1
+            }
+         },
+         "close2": {
+            "minecraft:mark_variant": {
+               "value": 1
+            },
+            "minecraft:damage_sensor": {
+               "triggers": [
+                  {
+                     "cause": "entity_attack",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "projectile",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "explosion",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fire",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fatal",
+                     "deals_damage": false
+                  }
+               ]
+            },
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "Open Door",
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:open2",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            },
+            "minecraft:variant": {
+               "value": 1
+            }
+         },
+         "open": {
+            "minecraft:mark_variant": {
+               "value": 2
+            },
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "close door",
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:close2",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            },
+            "minecraft:damage_sensor": {
+               "triggers": [
+                  {
+                     "cause": "projectile",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "explosion",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fire",
+                     "deals_damage": false
+                  }
+               ]
+            },
+            "minecraft:variant": {
+               "value": 1
+            }
+         },
+         "open2": {
+            "minecraft:mark_variant": {
+               "value": 2
+            },
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "close door",
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:close2",
+                        "target": "self"
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            },
+            "minecraft:damage_sensor": {
+               "triggers": [
+                  {
+                     "cause": "projectile",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "explosion",
+                     "deals_damage": false
+                  },
+                  {
+                     "cause": "fire",
+                     "deals_damage": false
+                  }
+               ]
+            },
+            "minecraft:variant": {
+               "value": 1
+            }
+         },
+         "gone": {
+            "minecraft:timer": {
+               "time": [
+                  1,
+                  1
+               ],
+               "looping": true,
+               "time_down_north_event": {
+                  "event": "minecraft:event_dead",
+                  "target": "self"
+               }
+            }
+         },
+         "minecraft:despawndead": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawn_"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 1,
+            "height": 1.8
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "self",
+                     "value": "despawn_"
+                  }
+               ]
+            }
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/door.json"
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": true
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "close"
+               ]
+            }
+         },
+         "minecraft:event_dead": {
+            "add": {
+               "component_groups": [
+                  "minecraft:despawndead"
+               ]
+            }
+         },
+         "minecraft:open": {
+            "add": {
+               "component_groups": [
+                  "open"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "close"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "clear @a[c=1] r:key",
+                  "clear @a[c=1] r:lockpick"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:open2": {
+            "add": {
+               "component_groups": [
+                  "open2"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "close",
+                  "close2",
+                  "open"
+               ]
+            }
+         },
+         "minecraft:close": {
+            "add": {
+               "component_groups": [
+                  "close"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "open"
+               ]
+            }
+         },
+         "minecraft:close2": {
+            "add": {
+               "component_groups": [
+                  "close2"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "open",
+                  "close"
+               ]
+            }
+         },
+         "on:death": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "execute @s ~~~ fill ~~~ ~~1~ air"
+                     ],
+                     "target": "self"
+                  }
+               },
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "execute @s ~~~ fill ~~~ ~~1~ air"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

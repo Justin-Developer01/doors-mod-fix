@@ -1,0 +1,13 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:goo_area",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "goo_area",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

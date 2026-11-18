@@ -1,0 +1,23 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:knob",
+         "menu_category": {
+            "category": "items"
+         }
+      },
+      "components": {
+         "minecraft:icon": "r:knob",
+         "minecraft:display_name": {
+            "value": "knob"
+         },
+         "minecraft:max_stack_size": 64,
+         "minecraft:hand_equipped": true,
+         "minecraft:glint": true,
+         "minecraft:fuel": {
+            "duration": 32
+         }
+      }
+   }
+}

@@ -1,0 +1,45 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:screech_fight",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/screech"
+         },
+         "animations": {
+            "moving": "animation.screech.moving",
+            "screech_general": "animation.screech.general",
+            "attack": "animation.screech.attack",
+            "look": "animation.screech.look",
+            "spawn": "animation.screech.spawn",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.screech.move",
+            "general": "controller.animation.screech.general",
+            "attack": "controller.animation.screech.attack"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.screech"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "screech2",
+            "texture_index": 0
+         }
+      }
+   }
+}

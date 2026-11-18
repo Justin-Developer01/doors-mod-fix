@@ -1,0 +1,76 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.drawer5",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "small_table",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-17, 2, -7], "size": [2, 12, 14], "uv": [32, 53]},
+						{"origin": [15, 0, -7], "size": [2, 2, 2], "uv": [6, 6]},
+						{"origin": [-17, 0, -7], "size": [2, 2, 2], "uv": [6, 2]},
+						{"origin": [15, 0, 5], "size": [2, 2, 2], "uv": [0, 0]},
+						{"origin": [-17, 0, 5], "size": [2, 2, 2], "uv": [0, 4]},
+						{"origin": [-8, 14, -7], "size": [16, 2, 14], "uv": [0, 0]},
+						{"origin": [-17, 14, -7], "size": [9, 2, 14], "uv": [0, 0]},
+						{"origin": [8, 14, -7], "size": [9, 2, 14], "uv": [8, 0]},
+						{"origin": [15, 2, -7], "size": [2, 12, 14], "uv": [0, 49]},
+						{"origin": [-5, 2, 4], "size": [10, 12, 3], "uv": [60, 0]},
+						{"origin": [5, 2, 4], "size": [10, 12, 3], "uv": [60, 0]},
+						{"origin": [-15, 2, 4], "size": [10, 12, 3], "uv": [60, 0]}
+					]
+				},
+				{
+					"name": "small_table2",
+					"parent": "small_table",
+					"pivot": [0, 1, 0],
+					"cubes": [
+						{"origin": [1, 2, -7], "size": [2, 12, 14], "uv": [32, 53]},
+						{"origin": [13, 2, -7], "size": [2, 12, 14], "uv": [0, 49]},
+						{"origin": [1, 0, -7], "size": [14, 2, 14], "uv": [0, 16]},
+						{"origin": [3, 2, 4], "size": [10, 12, 3], "uv": [60, 0]}
+					]
+				},
+				{
+					"name": "drawer",
+					"parent": "small_table2",
+					"pivot": [0, 1, 16],
+					"cubes": [
+						{"origin": [4, 3.5, -8], "size": [1, 1, 1], "uv": [6, 10]},
+						{"origin": [11, 3.5, -8], "size": [1, 1, 1], "uv": [10, 0]},
+						{"origin": [3, 2.01, -7], "size": [10, 4, 13], "uv": [43, 19]}
+					]
+				},
+				{
+					"name": "drawer2",
+					"parent": "small_table2",
+					"pivot": [0, 9, 7],
+					"cubes": [
+						{"origin": [4, 7.5, -8], "size": [1, 1, 1], "uv": [0, 10]},
+						{"origin": [11, 7.5, -8], "size": [1, 1, 1], "uv": [3, 9]},
+						{"origin": [3, 6.01, -7], "size": [10, 4, 13], "uv": [33, 36]}
+					]
+				},
+				{
+					"name": "drawer3",
+					"parent": "small_table2",
+					"pivot": [0, 13, 6],
+					"cubes": [
+						{"origin": [4, 11.5, -8], "size": [1, 1, 1], "uv": [0, 8]},
+						{"origin": [11, 11.5, -8], "size": [1, 1, 1], "uv": [6, 0]},
+						{"origin": [3, 10.01, -7], "size": [10, 4, 13], "uv": [0, 32]}
+					]
+				}
+			]
+		}
+	]
+}

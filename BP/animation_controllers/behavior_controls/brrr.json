@@ -1,0 +1,27 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.start_ride": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "ride": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/ride @e[type=doors:el_goblino,r=1] start_riding @s"
+               ]
+            },
+            "ride": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      }
+   }
+}

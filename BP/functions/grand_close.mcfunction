@@ -1,0 +1,1 @@
+execute @s ~ ~ ~ fill ^1 ^2 ^ ^-1 ^ ^ barrier

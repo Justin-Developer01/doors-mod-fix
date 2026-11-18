@@ -1,0 +1,36 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:curious_light_circle",
+         "materials": {
+            "default": "enderman"
+         },
+         "textures": {
+            "default": "textures/entity/banish3"
+         },
+         "geometry": {
+            "default": "geometry.light_circle"
+         },
+         "animations": {
+            "light_circle_general": "animation.light_circle.general",
+            "general": "controller.animation.light_circle.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "light_circle",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_circle",
+         "materials": {
+            "default": "enderman"
+         },
+         "textures": {
+            "default": "textures/entity/figure"
+         },
+         "geometry": {
+            "default": "geometry.figure_circle"
+         },
+         "animations": {
+            "figure_circle_general": "animation.figure_circle.general",
+            "general": "controller.animation.figure_circle.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "light_circle",
+            "texture_index": 0
+         },
+         "particle_effects": {
+            "spell": "r:light"
+         }
+      }
+   }
+}

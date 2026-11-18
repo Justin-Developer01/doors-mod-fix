@@ -1,0 +1,42 @@
+{
+   "format_version": "1.12",
+   "minecraft:recipe_shaped": {
+      "description": {
+         "identifier": "r_curious_crucifix_16a3bdb3"
+      },
+      "tags": [
+         "crafting_table"
+      ],
+      "pattern": [
+         "A",
+         "BCD",
+         "E"
+      ],
+      "key": {
+         "A": {
+            "item": "r:curious_crucifix_piece3",
+            "data": 0
+         },
+         "B": {
+            "item": "r:curious_crucifix_piece1",
+            "data": 0
+         },
+         "C": {
+            "item": "r:curious_light_energy_source",
+            "data": 0
+         },
+         "D": {
+            "item": "r:curious_crucifix_piece2",
+            "data": 0
+         },
+         "E": {
+            "item": "r:curious_crucifix_piece4",
+            "data": 0
+         }
+      },
+      "result": {
+         "item": "r:curious_crucifix",
+         "count": 1
+      }
+   }
+}

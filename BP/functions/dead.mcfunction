@@ -1,0 +1,1 @@
+execute @s ~~~ fill ~~~ ~~50~ air 0 replace barrier 0

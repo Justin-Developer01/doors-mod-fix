@@ -1,0 +1,51 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.selected": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "selected": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=doors:radio,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio2,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio3,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio4,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio5,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio6,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio7,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio8,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio9,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio10,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio11,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio12,r=2] minecraft:entity_spawned"
+               ]
+            },
+            "selected": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/event entity @e[type=doors:radio,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio2,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio3,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio4,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio5,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio6,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio7,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio8,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio9,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio10,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio11,r=2] minecraft:entity_spawned",
+                  "/event entity @e[type=doors:radio12,r=2] minecraft:entity_spawned"
+               ]
+            }
+         }
+      }
+   }
+}

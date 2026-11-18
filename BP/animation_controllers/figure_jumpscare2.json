@@ -1,0 +1,38 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.jumpscare_figure2": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attack2": "variable.attack_time > 0 && !query.is_stunned"
+                  },
+                  {
+                     "add2": "query.has_rider && !query.is_stunned"
+                  }
+               ]
+            },
+            "attack2": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/function jumpscare1"
+               ]
+            },
+            "add2": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      }
+   }
+}

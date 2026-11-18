@@ -1,0 +1,45 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.closet.closed": {
+         "states": {
+            "default": {
+               "animations": [
+                  "close"
+               ],
+               "transitions": [
+                  {
+                     "open": "query.has_rider"
+                  },
+                  {
+                     "out": "!query.has_rider"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "open": {
+               "animations": [
+                  "open"
+               ],
+               "transitions": [
+                  {
+                     "default": "!query.has_rider"
+                  }
+               ],
+               "blend_transition": 0.2
+            },
+            "out": {
+               "animations": [
+                  "closet_general"
+               ],
+               "transitions": [
+                  {
+                     "default": "query.has_rider"
+                  }
+               ],
+               "blend_transition": 0.2
+            }
+         }
+      }
+   }
+}

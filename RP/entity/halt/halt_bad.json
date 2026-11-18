@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:halt_bad",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/halt",
+            "charged": "textures/entity/halt/halt_bad_armor"
+         },
+         "geometry": {
+            "default": "geometry.halt_bad",
+            "charged": "geometry.halt_bad_armor"
+         },
+         "animations": {
+            "halt_general": "animation.halt.general",
+            "general": "controller.animation.halt.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "halt_bad",
+            "texture_index": 0
+         }
+      }
+   }
+}

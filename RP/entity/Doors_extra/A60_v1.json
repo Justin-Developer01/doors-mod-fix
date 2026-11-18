@@ -1,0 +1,42 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:a_60v1",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/extra/A_60v1"
+         },
+         "animations": {
+            "A_60_general3": "animation.A_60.general3",
+            "attack": "animation.A_60.attack",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.A_60.move",
+            "general3": "controller.animation.A_60.general3"
+         },
+         "scripts": {
+            "animate": [
+               "general3"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.A_60v1"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:red_incoming"
+         },
+         "spawn_egg": {
+            "texture": "A60_v1",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,39 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:ambush_particle",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/empty"
+         },
+         "animations": {
+            "cube_general": "animation.cube.general",
+            "general": "controller.animation.cube.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.cube"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "particle_effects": {
+            "spell": "r:ambush_light",
+            "spell2": "r:ambush_light2",
+            "spell3": "r:ambush_light3",
+            "spell5": "r:ambush_floor"
+         },
+         "spawn_egg": {
+            "texture": "ambush",
+            "texture_index": 0
+         }
+      }
+   }
+}

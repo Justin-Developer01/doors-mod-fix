@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.snare.general": {
+			"loop": true,
+			"bones": {
+				"bone2": {
+					"position": [0, -4, 0]
+				}
+			}
+		},
+		"animation.snare.attack": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.20833,
+			"bones": {
+				"bone2": {
+					"position": {
+						"0.0": [0, -4, 0],
+						"0.2083": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

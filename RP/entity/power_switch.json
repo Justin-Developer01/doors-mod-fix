@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:power_switch",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/power_switch"
+         },
+         "geometry": {
+            "default": "geometry.power_switch"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "power_switch",
+            "texture_index": 0
+         }
+      }
+   }
+}

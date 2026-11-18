@@ -1,0 +1,395 @@
+{
+   "namespace": "hud",
+   "intro1_anim": {
+      "anim_type": "alpha",
+      "destroy_at_end": "start",
+      "duration": 1,
+      "from": 1.5,
+      "to": 0
+   },
+   "intro1": {
+      "type": "image",
+      "texture": "ui/intro/doors1",
+      "layer": 40,
+      "$fit_to_width": true,
+      "size": [
+         "100%",
+         "100%"
+      ],
+      "fill": true,
+      "alpha": "@intro1_anim"
+   },
+   "intro2_anim": {
+      "anim_type": "alpha",
+      "destroy_at_end": "start",
+      "easing": "in_expo",
+      "duration": 1,
+      "from": 1.5,
+      "to": 0
+   },
+   "intro2": {
+      "type": "image",
+      "texture": "ui/intro/doors2",
+      "layer": 30,
+      "bilinear": true,
+      "$fit_to_width": true,
+      "size": [
+         "100%",
+         "100%"
+      ],
+      "fill": true,
+      "alpha": "@intro2_anim"
+   },
+   "intro3_anim": {
+      "anim_type": "alpha",
+      "destroy_at_end": "start",
+      "easing": "in_expo",
+      "duration": 2,
+      "from": 1.5,
+      "to": 0
+   },
+   "intro3": {
+      "type": "image",
+      "texture": "ui/intro/doors2",
+      "layer": 20,
+      "$fit_to_width": true,
+      "size": [
+         "100%",
+         "100%"
+      ],
+      "fill": true,
+      "alpha": "@intro3_anim"
+   },
+   "enable_ex_mode_anim": {
+      "anim_type": "alpha",
+      "destroy_at_end": "start",
+      "easing": "in_expo",
+      "duration": 5,
+      "from": 1.5,
+      "to": 0
+   },
+   "enable_ex_mode": {
+      "type": "image",
+      "texture": "ui/intro/doors3",
+      "layer": 10,
+      "$fit_to_width": true,
+      "size": [
+         "100%",
+         "100%"
+      ],
+      "fill": true,
+      "alpha": "@enable_ex_mode_anim"
+   },
+   "intro1a_anim": {
+      "anim_type": "alpha",
+      "destroy_at_end": "start",
+      "easing": "in_expo",
+      "duration": 1,
+      "from": 1.5,
+      "to": 0
+   },
+   "intro1a": {
+      "type": "image",
+      "texture": "ui/intro/doors1",
+      "layer": 8,
+      "$fit_to_width": true,
+      "size": [
+         "100%",
+         "100%"
+      ],
+      "fill": true,
+      "alpha": "@intro1a_anim"
+   },
+   "hud_content": {
+      "type": "panel",
+      "$hud_player_rend_desktop_offset|default": [
+         15,
+         15
+      ],
+      "variables": [
+         {
+            "requires": "($is_holographic and not $is_living_room_mode)",
+            "$hud_player_rend_desktop_offset": [
+               100,
+               50
+            ]
+         }
+      ],
+      "controls": [
+         {
+            "intro1@intro1": {}
+         },
+         {
+            "intro2@intro2": {}
+         },
+         {
+            "intro3@intro3": {}
+         },
+         {
+            "enable_ex_mode@enable_ex_mode": {}
+         },
+         {
+            "intro1a@intro1a": {}
+         },
+         {
+            "root_panel@hud.root_panel": {}
+         },
+         {
+            "camera_renderer@camera_renderer": {}
+         }
+      ]
+   },
+   "horse_heart_renderer": {
+      "type": "custom",
+      "size": [
+         0,
+         0
+      ],
+      "renderer": "horse_heart_renderer",
+      "layer": 1
+   },
+   "centered_gui_elements_at_bottom_middle": {
+      "type": "panel",
+      "anchor_from": "bottom_middle",
+      "anchor_to": "bottom_middle",
+      "size": [
+         180,
+         50
+      ],
+      "controls": [
+         {
+            "heart_rend@heart_renderer": {
+               "offset": [
+                  -1,
+                  -40
+               ],
+               "anchor_from": "bottom_left",
+               "anchor_to": "bottom_left"
+            }
+         },
+         {
+            "horse_heart_rend_0@horse_heart_renderer": {
+               "offset": [
+                  -1000,
+                  0
+               ],
+               "anchor_from": "bottom_left",
+               "anchor_to": "bottom_left",
+               "bindings": [
+                  {
+                     "binding_name": "#is_creative_mode",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "horse_heart_rend_1@horse_heart_renderer": {
+               "offset": [
+                  -1000,
+                  0
+               ],
+               "anchor_from": "bottom_left",
+               "anchor_to": "bottom_left",
+               "bindings": [
+                  {
+                     "binding_name": "#show_survival_ui",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "armor_rend@armor_renderer": {
+               "offset": [
+                  -1,
+                  -40
+               ],
+               "anchor_from": "bottom_left",
+               "anchor_to": "bottom_left"
+            }
+         },
+         {
+            "hunger_rend@hunger_renderer": {
+               "offset": [
+                  180,
+                  -40
+               ],
+               "anchor_from": "bottom_left",
+               "anchor_to": "bottom_left"
+            }
+         },
+         {
+            "bubbles_rend_0@bubbles_renderer": {
+               "offset": [
+                  180,
+                  -50
+               ],
+               "anchor_from": "bottom_left",
+               "anchor_to": "bottom_left",
+               "bindings": [
+                  {
+                     "binding_name": "#is_not_riding",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "bubbles_rend_1@bubbles_renderer": {
+               "offset": [
+                  180,
+                  -70
+               ],
+               "anchor_from": "bottom_left",
+               "anchor_to": "bottom_left",
+               "bindings": [
+                  {
+                     "binding_name": "#is_riding",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "horse_jump_rend@horse_jump_renderer": {
+               "anchor_from": "bottom_middle",
+               "anchor_to": "bottom_middle",
+               "offset": [
+                  0,
+                  -30
+               ],
+               "layer": 7,
+               "bindings": [
+                  {
+                     "binding_name": "#is_riding",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "exp_rend@exp_progress_bar_and_hotbar": {}
+         }
+      ],
+      "bindings": [
+         {
+            "binding_name": "#hud_visible_centered",
+            "binding_name_override": "#visible",
+            "binding_type": "global"
+         }
+      ]
+   },
+   "not_centered_gui_elements": {
+      "type": "panel",
+      "controls": [
+         {
+            "heart_rend@heart_renderer": {
+               "offset": [
+                  2,
+                  2
+               ],
+               "anchor_from": "top_left",
+               "anchor_to": "top_left"
+            }
+         },
+         {
+            "horse_heart_rend@horse_heart_renderer": {
+               "offset": [
+                  -2,
+                  2
+               ],
+               "anchor_from": "top_right",
+               "anchor_to": "top_right",
+               "layer": 1
+            }
+         },
+         {
+            "hunger_rend@hunger_renderer": {
+               "offset": [
+                  -2,
+                  2
+               ],
+               "anchor_from": "top_right",
+               "anchor_to": "top_right"
+            }
+         },
+         {
+            "armor_rend@armor_renderer": {
+               "offset": [
+                  2,
+                  2
+               ],
+               "anchor_from": "top_left",
+               "anchor_to": "top_left"
+            }
+         },
+         {
+            "hud_player_rend_pocket@hud_player_renderer": {
+               "offset": [
+                  40,
+                  40
+               ],
+               "anchor_from": "top_left",
+               "anchor_to": "top_left"
+            }
+         },
+         {
+            "bubbles_rend_0@bubbles_renderer": {
+               "offset": [
+                  -1,
+                  12
+               ],
+               "anchor_from": "top_right",
+               "anchor_to": "top_right",
+               "bindings": [
+                  {
+                     "binding_name": "#is_not_riding",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "bubbles_rend_1@bubbles_renderer": {
+               "offset": [
+                  -1,
+                  32
+               ],
+               "anchor_from": "top_right",
+               "anchor_to": "top_right",
+               "bindings": [
+                  {
+                     "binding_name": "#is_riding",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "horse_jump_rend@horse_jump_renderer": {
+               "anchor_from": "bottom_middle",
+               "anchor_to": "bottom_middle",
+               "offset": [
+                  0,
+                  -28
+               ],
+               "layer": 7,
+               "bindings": [
+                  {
+                     "binding_name": "#is_riding",
+                     "binding_name_override": "#visible"
+                  }
+               ]
+            }
+         }
+      ],
+      "bindings": [
+         {
+            "binding_name": "#hud_visible_not_centered",
+            "binding_name_override": "#visible",
+            "binding_type": "global"
+         }
+      ]
+   }
+}

@@ -1,0 +1,37 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:dupe2_stun",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/dupe2"
+         },
+         "animations": {
+            "dupe2_general": "animation.dupe2.general",
+            "attack": "animation.dupe2.attack",
+            "general": "controller.animation.dupe2.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.dupe2"
+         },
+         "render_controllers": [
+            "controller.render.zombie"
+         ],
+         "spawn_egg": {
+            "texture": "dupe2",
+            "texture_index": 0
+         }
+      }
+   }
+}

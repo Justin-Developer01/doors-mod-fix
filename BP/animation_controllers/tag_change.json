@@ -1,0 +1,28 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.tag_change": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @e[tag=morph] ~~~ tag @p[r=2] remove hand",
+                  "/execute @e[tag=morph2] ~~~ tag @p[r=2] remove hand"
+               ],
+               "transitions": [
+                  {
+                     "change": "query.has_target"
+                  }
+               ]
+            },
+            "change": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

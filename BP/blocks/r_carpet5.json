@@ -1,0 +1,29 @@
+{
+   "format_version": "1.21.60",
+   "minecraft:block": {
+      "description": {
+         "identifier": "r:carpet5",
+         "menu_category": {
+            "category": "construction"
+         }
+      },
+      "components": {
+         "minecraft:geometry": "minecraft:geometry.full_block",
+         "minecraft:material_instances": {
+            "*": {
+               "texture": "r_carpet5",
+               "render_method": "opaque"
+            }
+         },
+         "minecraft:loot": "loot_tables/blocks/r_carpet5.json",
+         "minecraft:destructible_by_mining": {
+            "seconds_to_destroy": 1000.0
+         },
+         "minecraft:destructible_by_explosion": {
+            "explosion_resistance": 1.0
+         },
+         "minecraft:light_emission": 0,
+         "minecraft:light_dampening": 0
+      }
+   }
+}

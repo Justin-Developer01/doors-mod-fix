@@ -1,0 +1,67 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.silence",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "All",
+					"pivot": [0, 25, 0]
+				},
+				{
+					"name": "silence",
+					"parent": "All",
+					"pivot": [0, 25, 0],
+					"rotation": [20, 0, 0],
+					"cubes": [
+						{"origin": [-8, 18, -8], "size": [16, 16, 16], "pivot": [0, 0, 0], "rotation": [0, 42.5, 0], "uv": [0, 0]},
+						{"origin": [-8, 18, -8], "size": [16, 16, 16], "inflate": -0.01, "pivot": [0, 0, 0], "rotation": [0, 42.5, 0], "uv": [0, 32]},
+						{"origin": [0.5, 20, -11], "size": [0, 14, 16], "uv": [0, 60]}
+					],
+					"locators": {
+						"dark": [0, 25, 10],
+						"dark2": [0, 36, -3]
+					}
+				},
+				{
+					"name": "Eyes",
+					"parent": "silence",
+					"pivot": [0, 29, -1],
+					"rotation": [-15, 0, 0],
+					"cubes": [
+						{"origin": [-8, 25, -4], "size": [8, 7, 0], "inflate": -1, "uv": [0, 0]},
+						{"origin": [0, 25, -4], "size": [8, 7, 0], "inflate": -1, "uv": [0, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "silenceinvisible",
+					"parent": "All",
+					"pivot": [0, 25, 0],
+					"rotation": [20, 0, 0],
+					"cubes": [
+						{"origin": [-8, 18, -8], "size": [16, 16, 16], "pivot": [0, 0, 0], "rotation": [0, 42.5, 0], "uv": [0, 0]},
+						{"origin": [-8, 18, -8], "size": [16, 16, 16], "inflate": -0.01, "pivot": [0, 0, 0], "rotation": [0, 42.5, 0], "uv": [0, 32]},
+						{"origin": [0.5, 20, -11], "size": [0, 14, 16], "uv": [0, 60]}
+					]
+				},
+				{
+					"name": "Eyes2",
+					"parent": "silenceinvisible",
+					"pivot": [0, 29, -1],
+					"rotation": [-15, 0, 0],
+					"cubes": [
+						{"origin": [-8, 25, -4], "size": [8, 7, 0], "inflate": -1, "uv": [0, 0]},
+						{"origin": [0, 25, -4], "size": [8, 7, 0], "inflate": -1, "uv": [0, 0], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

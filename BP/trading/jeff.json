@@ -1,0 +1,216 @@
+{
+   "tiers": [
+      {
+         "trades": [
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 10,
+                        "max": 10
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:lockpick"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 15,
+                        "max": 15
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:vitamin"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 20,
+                        "max": 20
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:lighter"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 25,
+                        "max": 25
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:flashlight"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 27,
+                        "max": 27
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:shakelight"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "minecraft:gold_ingot",
+                     "quantity": {
+                        "min": 13,
+                        "max": 13
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:candle"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "minecraft:gold_ingot",
+                     "quantity": {
+                        "min": 35,
+                        "max": 35
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:crucifix"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "minecraft:gold_ingot",
+                     "quantity": {
+                        "min": 32,
+                        "max": 32
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:curious_crucifix"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "minecraft:gold_ingot",
+                     "quantity": {
+                        "min": 30,
+                        "max": 30
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:holy_hand_grenade"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 40,
+                        "max": 40
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:skeleton"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 25,
+                        "max": 25
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:shield_potion"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "r:coin",
+                     "quantity": {
+                        "min": 37,
+                        "max": 37
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:shield_potion2"
+                  }
+               ]
+            },
+            {
+               "wants": [
+                  {
+                     "item": "minecraft:gold_ingot",
+                     "quantity": {
+                        "min": 50,
+                        "max": 50
+                     }
+                  }
+               ],
+               "gives": [
+                  {
+                     "item": "r:tablet"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

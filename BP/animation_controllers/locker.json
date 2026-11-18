@@ -1,0 +1,75 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.locker_closet": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "hide": "query.has_rider"
+                  },
+                  {
+                     "not_hide": "!query.has_rider"
+                  }
+               ]
+            },
+            "hide": {
+               "transitions": [
+                  {
+                     "default": "!query.has_rider"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @e[type=!player,r=5] slowness 10000 255 true",
+                  "/execute @s ~~~ effect @e[type=!doors:closet,type=!doors:jack,type=!doors:screech,type=!doors:halt,type=!doors:seek,type=!doors:seek_s,type=!doors:figure,type=!doors:figure2,type=!doors:figure3,type=!doors:figure4,type=!doors:closet_bad,type=!doors:wardrobe,type=!doors:bed,type=!doors:bed2,type=!doors:closet_bad,type=!doors:rush,type=!doors:locker,type=!doors:fridge,type=!doors:fridge,type=!doors:ambush,r=3,c=1] invisibility 100000 1 true",
+                  "/effect @p invisibility 10000 255 true",
+                  "/effect @p resistance 10000 255 true",
+                  "/effect @e[type=doors:silence] slowness 10000 255 true",
+                  "/playsound mob.closet.metal @a",
+                  "/tag @p[r=2] add closet",
+                  "/tag @e[type=!player,r=2] add closet2",
+                  "/effect @p resistance 10000 255 true"
+               ]
+            },
+            "not_hide": {
+               "transitions": [
+                  {
+                     "default": "query.has_rider"
+                  }
+               ],
+               "on_entry": [
+                  "/execute @s ~~~ effect @e[type=!doors:closet,type=!doors:jack,type=!doors:seek,type=!doors:seek_s,r=3] invisibility 0 0 true",
+                  "/tag @p[r=2] remove closet",
+                  "/effect @e clear",
+                  "/effect @p clear",
+                  "/playsound mob.closet.metal @a",
+                  "/tag @e[type=!player,r=2] remove closet2"
+               ]
+            }
+         }
+      },
+      "controller.animation.locker_remove": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/gamerule commandblockoutput false",
+                  "/gamerule sendcommandfeedback false"
+               ],
+               "transitions": [
+                  {
+                     "remove": "query.has_target"
+                  }
+               ]
+            },
+            "remove": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

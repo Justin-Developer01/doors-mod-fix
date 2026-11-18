@@ -1,0 +1,172 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:skeleton_door3",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "gone": {
+            "minecraft:timer": {
+               "time": [
+                  1,
+                  1
+               ],
+               "looping": true,
+               "time_down_north_event": {
+                  "event": "minecraft:event_dead",
+                  "target": "self"
+               }
+            }
+         },
+         "minecraft:despawndead": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawn_"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 1,
+            "height": 1.8
+         },
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "self",
+                     "value": "despawn_"
+                  }
+               ]
+            }
+         },
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/door.json"
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "hurt_item": 0,
+                  "interact_text": "§l-Unlock Skeleton Door-",
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "has_equipment",
+                              "subject": "other",
+                              "domain": "hand",
+                              "value": "r:skeleton"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:open",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "close"
+               ]
+            }
+         },
+         "minecraft:event_dead": {
+            "add": {
+               "component_groups": [
+                  "minecraft:despawndead"
+               ]
+            }
+         },
+         "on:death": {
+            "randomize": [
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "execute @s ~~~ fill ~~~ ~~1~ air"
+                     ],
+                     "target": "self"
+                  }
+               },
+               {
+                  "weight": 1,
+                  "run_command": {
+                     "command": [
+                        "execute @s ~~~ fill ~~~ ~~1~ air"
+                     ],
+                     "target": "self"
+                  }
+               }
+            ]
+         },
+         "minecraft:open": {
+            "run_command": {
+               "command": [
+                  "clear @p r:lockpick 0 1",
+                  "clear @p r:skeleton",
+                  "event entity @s minecraft:event_dead",
+                  "execute @s ~~~ fill ~~~ ~~1~ air",
+                  "particle r:dust",
+                  "playsound hotel_door.open2 @a[r=6]"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

@@ -1,0 +1,67 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.cameraman.general": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "cameraman_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "running": "query.ground_speed >= 4.5"
+                  },
+                  {
+                     "jumping": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ]
+            },
+            "running": {
+               "animations": [
+                  "running"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.ground_speed <= 3.5"
+                  }
+               ],
+               "blend_transition": 0.5
+            },
+            "jumping": {
+               "animations": [
+                  "jumping"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5
+            }
+         }
+      }
+   }
+}

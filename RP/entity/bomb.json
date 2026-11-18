@@ -1,0 +1,37 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "spawn_egg": {
+            "texture": "spawn_egg",
+            "texture_index": 0
+         },
+         "render_controllers": [
+            "controller.render.slime"
+         ],
+         "identifier": "r:bomb",
+         "materials": {
+            "default": "slime"
+         },
+         "textures": {
+            "default": "textures/entity/holy_hand_grenade"
+         },
+         "geometry": {
+            "default": "geometry.holy_hand_grenade"
+         },
+         "animations": {
+            "holy_hand_grenade_general": "animation.holy_hand_grenade.general",
+            "toss": "animation.holy_hand_grenade.toss",
+            "throw": "controller.animation.holy_hand_grenade.throw"
+         },
+         "scripts": {
+            "animate": [
+               "throw"
+            ]
+         },
+         "particle_effects": {
+            "spell": "r:trail"
+         }
+      }
+   }
+}

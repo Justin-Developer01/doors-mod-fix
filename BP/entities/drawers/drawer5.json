@@ -1,0 +1,269 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:drawer5",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_drawer": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lOpen",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_looting",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_drawer2": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 1,
+               "time_down_event": {
+                  "event": "minecraft:entity_spawned"
+               }
+            }
+         },
+         "minecraft:is_open": {
+            "minecraft:type_family": {
+               "family": [
+                  "inanimate"
+               ]
+            },
+            "minecraft:health": {
+               "value": 20
+            },
+            "minecraft:is_stackable": {},
+            "minecraft:inventory": {
+               "inventory_size": 20,
+               "container_type": "container"
+            }
+         },
+         "minecraft:is_open2": {
+            "minecraft:type_family": {
+               "family": [
+                  "inanimate"
+               ]
+            },
+            "minecraft:health": {
+               "value": 20
+            },
+            "minecraft:is_stackable": {},
+            "minecraft:inventory": {
+               "inventory_size": 20,
+               "container_type": "container"
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 6,
+               "time_down_event": {
+                  "event": "minecraft:is_looting2"
+               }
+            }
+         },
+         "minecraft:is_close": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lClose",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:is_looting3",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:physics": {},
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:inventory": {
+            "inventory_size": 20,
+            "container_type": "container"
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "hurt_item": 0,
+                  "interact_text": "§lRemove Furniture",
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "has_equipment",
+                              "subject": "other",
+                              "domain": "hand",
+                              "value": "r:furniture_remover"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:removed",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_drawer"
+               ]
+            }
+         },
+         "minecraft:entity_spawned2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_drawer2"
+               ]
+            }
+         },
+         "minecraft:is_looting": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_open2"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:is_drawer"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.drawer @a[r=5]",
+                  "playanimation @s animation.drawer.open2 jsjsjs 900"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:is_looting2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_close"
+               ]
+            }
+         },
+         "minecraft:is_looting3": {
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.drawer @a[r=5]",
+                  "playanimation @s animation.drawer.close2 jsjsjs 900",
+                  "event entity @s minecraft:entity_spawned2"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:rotate": {
+            "run_command": {
+               "command": [
+                  "tp @s ~~~ facing @p"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         }
+      }
+   }
+}

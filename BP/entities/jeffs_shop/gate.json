@@ -1,0 +1,240 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:gate",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "gate"
+            ]
+         },
+         "animations": {
+            "gate": "controller.animation.is_gate"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_opening": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lOpen Gate",
+                     "on_interact": {
+                        "event": "minecraft:opening",
+                        "target": "self",
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        }
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:is_block": {
+            "minecraft:spawn_entity": [
+               {
+                  "min_wait_time": 1,
+                  "max_wait_time": 1,
+                  "single_use": true,
+                  "spawn_entity": "r:gate_spawn",
+                  "num_to_spawn": 1
+               }
+            ]
+         },
+         "r:open": {
+            "minecraft:is_stunned": {}
+         },
+         "r:close": {
+            "minecraft:is_sheared": {}
+         },
+         "minecraft:is_closing": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§lClose Gate",
+                     "on_interact": {
+                        "event": "minecraft:closing",
+                        "target": "self",
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        }
+                     },
+                     "swing": true,
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:gate_reset": {
+            "minecraft:transformation": {
+               "into": "doors:gate"
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:scale": {
+            "value": 2
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         }
+      },
+      "events": {
+         "minecraft:closed": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_closing"
+               ]
+            }
+         },
+         "minecraft:closing2": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_closing2"
+               ]
+            }
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "r:open": {
+            "add": {
+               "component_groups": [
+                  "r:open"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:close"
+               ]
+            }
+         },
+         "r:close": {
+            "add": {
+               "component_groups": [
+                  "r:close"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "r:open"
+               ]
+            }
+         },
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_block",
+                  "minecraft:is_opening"
+               ]
+            }
+         },
+         "on:death": {
+            "run_command": {
+               "command": [
+                  "function gate_open"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:opening": {
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.opened @a[r=5]",
+                  "event entity @s minecraft:closed",
+                  "event entity @s r:open",
+                  "function gate_open"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:closing": {
+            "weight": 1,
+            "run_command": {
+               "command": [
+                  "playsound mob.closet.opened @a[r=5]",
+                  "event entity @s minecraft:entity_spawned",
+                  "event entity @s r:close",
+                  "function gate_close"
+               ],
+               "target": "self"
+            }
+         }
+      }
+   }
+}

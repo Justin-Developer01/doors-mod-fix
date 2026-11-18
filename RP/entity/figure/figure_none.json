@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_none",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure"
+         },
+         "geometry": {
+            "default": "geometry.figure"
+         },
+         "animations": {
+            "figure_general": "animation.figure.general",
+            "general": "controller.animation.figure.general",
+            "look_at_target": "animation.common.look_at_target"
+         },
+         "scripts": {
+            "animate": [
+               "general",
+               "look_at_target"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "figure",
+            "texture_index": 0
+         }
+      }
+   }
+}

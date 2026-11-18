@@ -1,0 +1,35 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:dead_steve",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/steve_resistance"
+         },
+         "geometry": {
+            "default": "geometry.steve_resistance"
+         },
+         "animations": {
+            "steve_resistance_general2": "animation.steve_resistance.dead",
+            "general2": "controller.animation.steve_resistance.general2"
+         },
+         "scripts": {
+            "animate": [
+               "steve_resistance_general2",
+               "general2"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "enable_attachables": true,
+         "spawn_egg": {
+            "texture": "steve_resist",
+            "texture_index": 0
+         }
+      }
+   }
+}

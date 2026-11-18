@@ -1,0 +1,51 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.gate_closed": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~ fill ^2 ^2 ^ ^-2 ^2 ^ barrier",
+                  "/execute @s ~ ~ ~ fill ^2 ^ ^ ^-2 ^ ^ barrier"
+               ],
+               "transitions": [
+                  {
+                     "closed": "query.has_target"
+                  }
+               ]
+            },
+            "closed": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.gate_opened": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~ fill ^2 ^2 ^ ^-2 ^2 ^ air",
+                  "/execute @s ~ ~ ~ fill ^2 ^ ^ ^-2 ^ ^ air"
+               ],
+               "transitions": [
+                  {
+                     "opened": "query.has_target"
+                  }
+               ]
+            },
+            "opened": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

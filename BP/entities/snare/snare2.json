@@ -1,0 +1,75 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:snare2",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_hostile": {
+            "minecraft:transformation": {
+               "into": "doors:snare"
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:health": {
+            "value": 20
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.5,
+            "height": 0.75
+         },
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:is_stackable": {},
+         "minecraft:physics": {},
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 30,
+            "time_down_event": {
+               "event": "minecraft:is_hostile"
+            }
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:is_hostile": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_hostile"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,54 @@
+{
+   "format_version": "1.16.100",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:figure_morph",
+         "materials": {
+            "default": "armor",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/figure"
+         },
+         "geometry": {
+            "default": "geometry.figure_p"
+         },
+         "animations": {
+            "moving": "animation.figure_p.moving",
+            "running": "animation.figure_p.running",
+            "jumping": "animation.figure_p.jumping",
+            "figure_p_general": "animation.figure_p.general",
+            "attack": "animation.figure.attack",
+            "duck": "animation.figure_p.duck",
+            "looking": "animation.figure.looking",
+            "side1": "animation.figure.side1",
+            "side2": "animation.figure.side2",
+            "dead": "animation.figure_p.dead",
+            "sniff": "animation.figure_p.sniff",
+            "roar": "animation.figure_p.roar",
+            "jumping": "animation.figure_p.jumping",
+            "sneak": "animation.figure_p.sneak",
+            "jumpscare": "animation.figure_p.jumpscare",
+            "roar": "animation.figure_p.roar",
+            "sniff": "animation.figure_p.sniff",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.figure.move",
+            "general": "controller.animation.figure_p.general",
+            "attack": "controller.animation.figure.attack"
+         },
+         "scripts": {
+            "parent_setup": "variable.helmet_layer_visible = 0.0;",
+            "animate": [
+               "move",
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ]
+      }
+   }
+}

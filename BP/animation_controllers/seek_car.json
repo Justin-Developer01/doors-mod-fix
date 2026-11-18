@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.seek_car": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "car": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/ride @e[type=doors:seek,r=2] start_riding @e[type=doors:seek_car]",
+                  "/ride @e[type=doors:seek_light,r=2] start_riding @e[type=doors:seek_car]",
+                  "/execute @e[type=doors:seek,r=2] ~~~ stopsound @a mob.seek.walk",
+                  "/execute @e[type=doors:seek_light,r=2] ~~~ stopsound @a mob.seek.walk",
+                  "/execute @e[type=doors:seek,r=2] ~~ effect @e[type=doors:seek_car] speed 1 6 true",
+                  "/execute @e[type=doors:seek_light,r=2] ~~ effect @e[type=doors:seek_car] speed 1 6 true",
+                  "/effect @s speed 1 4 true"
+               ]
+            },
+            "car": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      }
+   }
+}

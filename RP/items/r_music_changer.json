@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "r:music_changer",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "r:music_changer",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

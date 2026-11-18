@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:xmas_figure_stun",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/xmas_figure"
+         },
+         "geometry": {
+            "default": "geometry.figure"
+         },
+         "animations": {
+            "figure_stuck": "animation.figure.stuck",
+            "stunned": "controller.animation.figure.stunned"
+         },
+         "scripts": {
+            "animate": [
+               "stunned"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "figure",
+            "texture_index": 0
+         }
+      }
+   }
+}

@@ -1,0 +1,91 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.decoy_jumpscare": {
+         "initial_state": "default",
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "attacking": "variable.attack_time > 0 && !query.is_stunned"
+                  },
+                  {
+                     "adding": "query.has_rider && !query.is_stunned"
+                  }
+               ]
+            },
+            "attacking": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/function decoy",
+                  "/tag @s add decoy"
+               ]
+            },
+            "adding": {
+               "transitions": [
+                  {
+                     "default": "1.0"
+                  }
+               ],
+               "on_entry": [
+                  "/scoreboard objectives add decoy dummy",
+                  "/scoreboard players add @e[r=3,type=!doors:decoy] decoy 1",
+                  "/execute @e[scores={decoy=45..1000}] ~ ~ ~ function decoy_stop",
+                  "/execute @e[scores={decoy=45..1000}] ~ ~ ~ tag @e[type=doors:decoy,r=2] remove decoy",
+                  "/scoreboard players set @a[scores={decoy=45..1000}] decoy 0"
+               ]
+            }
+         }
+      },
+      "controller.animation.decoy_destroy": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.closet.fake @a[r=40]"
+               ],
+               "transitions": [
+                  {
+                     "destroy": "query.has_target"
+                  }
+               ]
+            },
+            "destroy": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      },
+      "controller.animation.decoy_exposed": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/playsound mob.closet.fake @a[r=40]",
+                  "/damage @e[type=!doors:decoy,r=5] 15 entity_attack",
+                  "/summon r:stand_back2"
+               ],
+               "transitions": [
+                  {
+                     "exposed": "query.has_target"
+                  }
+               ]
+            },
+            "exposed": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

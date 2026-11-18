@@ -1,0 +1,46 @@
+{
+   "format_version": "1.16.100",
+   "minecraft:attachable": {
+      "description": {
+         "identifier": "r:seek_morph",
+         "materials": {
+            "default": "spider",
+            "enchanted": "armor_enchanted"
+         },
+         "textures": {
+            "default": "textures/entity/seek"
+         },
+         "geometry": {
+            "default": "geometry.seek_p"
+         },
+         "animations": {
+            "moving": "animation.seek_p.moving",
+            "running": "animation.seek_p.running",
+            "attack1": "animation.seek_p.attack1",
+            "seek_p_general": "animation.seek_p.general",
+            "falling": "animation.seek_p.falling",
+            "goo": "animation.seek_p.goo",
+            "attack": "animation.seek_p.attack",
+            "done": "animation.seek.done",
+            "sneak": "animation.seek_p.emerge",
+            "jumpscare": "animation.seek_p.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.seek_p.move",
+            "general": "controller.animation.seek_p.general"
+         },
+         "scripts": {
+            "parent_setup": "variable.helmet_layer_visible = 0.0;",
+            "animate": [
+               "move",
+               "general"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ]
+      }
+   }
+}

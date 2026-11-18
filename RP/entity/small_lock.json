@@ -1,0 +1,41 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:small_lock",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/small_lock"
+         },
+         "geometry": {
+            "default": "geometry.hotel_door2"
+         },
+         "animations": {
+            "gone": "animation.small_lock.gone",
+            "hotel_door_general": "animation.small_lock.general",
+            "general": "controller.animation.hotel_door.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ],
+            "pre_animation": [
+               "variable.random = math.round(math.random(0,2));"
+            ]
+         },
+         "sound_effects": {
+            "close": "hotel_door.close",
+            "open": "hotel_door.open"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "hotel_door2",
+            "texture_index": 0
+         }
+      }
+   }
+}

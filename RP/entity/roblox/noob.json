@@ -1,0 +1,49 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:noob",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/noob"
+         },
+         "geometry": {
+            "default": "geometry.russelgametime"
+         },
+         "render_controllers": [
+            "controller.render.skeleton"
+         ],
+         "scripts": {
+            "animate": [
+               "general",
+               "general2",
+               "attack",
+               "look_at_target"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "spawn_egg": {
+            "texture": "noob",
+            "texture_index": 0
+         },
+         "animations": {
+            "valerabro_general": "animation.valerabro.general",
+            "valerabro_general2": "animation.valerabro.general2",
+            "moving": "animation.valerabro.moving",
+            "attack1": "animation.valerabro.attack1",
+            "attack2": "animation.valerabro.attack2",
+            "sit": "animation.valerabro.sit",
+            "general": "controller.animation.valerabro.general",
+            "attack": "controller.animation.valerabro.attack",
+            "general2": "controller.animation.valerabro.general2",
+            "look_at_target": "animation.common.look_at_target"
+         }
+      }
+   }
+}

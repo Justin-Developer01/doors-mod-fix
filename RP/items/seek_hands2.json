@@ -1,0 +1,13 @@
+{
+   "format_version": "1.10",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:seek_hands2",
+         "category": "Equipment"
+      },
+      "components": {
+         "minecraft:icon": "seek_hands",
+         "minecraft:render_offsets": "miscellaneous"
+      }
+   }
+}

@@ -1,0 +1,115 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:seek_eye",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "spot"
+            ]
+         },
+         "animations": {
+            "spot": "controller.animation.seek_eye_spot"
+         }
+      },
+      "component_groups": {
+         "solid": {
+            "minecraft:variant": {
+               "value": 0
+            }
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:seek_eye_d"
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": true
+               },
+               {
+                  "cause": "suffocation",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+         },
+         "minecraft:collision_box": {
+            "width": 0.4,
+            "height": 0.3
+         },
+         "minecraft:type_family": {
+            "family": [
+               "doors_creature"
+            ]
+         },
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 100,
+               "range_max": 100
+            }
+         },
+         "minecraft:block_sensor": {
+            "sensor_radius": 0.5,
+            "on_break": [
+               {
+                  "block_list": [
+                     "minecraft:barrier"
+                  ],
+                  "on_block_broken": "minecraft:breaked"
+               }
+            ]
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": true
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         }
+      },
+      "events": {
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "solid"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         }
+      }
+   }
+}

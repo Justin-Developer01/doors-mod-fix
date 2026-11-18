@@ -1,0 +1,41 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:figure_headphones",
+         "menu_category": {
+            "category": "equipment"
+         }
+      },
+      "components": {
+         "minecraft:icon": "figure_headphone",
+         "minecraft:display_name": {
+            "value": "§lFigure Headphones"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:durability": {
+            "max_durability": 1480
+         },
+         "minecraft:repairable": {
+            "repair_items": [
+               {
+                  "items": [
+                     "ftl:audrey_morph"
+                  ],
+                  "repair_amount": 23
+               }
+            ]
+         },
+         "minecraft:enchantable": {
+            "value": 10,
+            "slot": "armor_head"
+         },
+         "minecraft:armor": {
+            "protection": 2
+         },
+         "minecraft:wearable": {
+            "slot": "slot.armor.head"
+         }
+      }
+   }
+}

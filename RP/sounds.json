@@ -1,0 +1,2007 @@
+{
+   "entity_sounds": {
+      "entities": {
+         "doors:figure": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 1,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure_boss": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 1,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure_not_blind": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 1,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure_none": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure_none2": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure_search": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure2": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure3": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure4": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure_hard": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:figure_noob": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:xmas_figure": {
+            "events": {
+               "agitated": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.agitated",
+                  "volume": 13
+               },
+               "ambient": "mob.figure.ambient",
+               "angry": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "attack": {
+                  "pitch": 1,
+                  "sound": "mob.figure.attack",
+                  "volume": 13
+               },
+               "death": {
+                  "1": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.death",
+                  "volume": 13
+               },
+               "heartbeat": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 13
+               },
+               "hurt": {
+                  "pitch": [
+                     1,
+                     1
+                  ],
+                  "sound": "mob.figure.growl",
+                  "volume": 10
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.ambient",
+                  "volume": 23
+               },
+               "listening_angry": {
+                  "pitch": [
+                     0.2,
+                     1
+                  ],
+                  "sound": "mob.figure.growling",
+                  "volume": 0.75
+               },
+               "roar": {
+                  "pitch": 0.2,
+                  "sound": "mob.figure.roar",
+                  "volume": 23
+               },
+               "step": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.step",
+                  "volume": 23
+               },
+               "cutscene": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene",
+                  "volume": 40
+               },
+               "cutscene2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene2",
+                  "volume": 40
+               },
+               "cutscene3": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.cutscene3",
+                  "volume": 40
+               },
+               "library": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.library",
+                  "volume": 40
+               },
+               "heartbeat2": {
+                  "pitch": 0.4,
+                  "sound": "mob.figure.heartbeat2",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.2,
+               1
+            ],
+            "volume": 1
+         },
+         "doors:rush": {
+            "events": {
+               "incoming": {
+                  "pitch": 0.2,
+                  "sound": "mob.rush.incoming",
+                  "volume": 23
+               },
+               "incoming2": {
+                  "pitch": 0.2,
+                  "sound": "mob.rush.incoming2",
+                  "volume": 23
+               },
+               "fuse": {
+                  "pitch": 0.2,
+                  "sound": "mob.rush.fuse",
+                  "volume": 23
+               },
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.rush.ambient",
+                  "volume": 88
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "secret:a_60": {
+            "events": {
+               "secret": {
+                  "pitch": 0.2,
+                  "sound": "mob.a_60.secret",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "r:hide1": {
+            "events": {
+               "getout": {
+                  "pitch": 0.2,
+                  "sound": "mob.hide.getout",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:elevator": {
+            "events": {
+               "jam": {
+                  "pitch": 0.2,
+                  "sound": "mob.elevator.jam",
+                  "volume": 23
+               },
+               "jam_bad": {
+                  "pitch": 0.2,
+                  "sound": "mob.elevator.jam_bad",
+                  "volume": 23
+               },
+               "shut": {
+                  "pitch": 0.2,
+                  "sound": "mob.elevator.shut",
+                  "volume": 23
+               },
+               "dawn_of_the_door": {
+                  "pitch": 0.2,
+                  "sound": "mob.elevator.dawn_of_the_door",
+                  "volume": 40
+               },
+               "unhinged": {
+                  "pitch": 0.2,
+                  "sound": "mob.elevator.unhinged",
+                  "volume": 40
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:bed": {
+            "events": {
+               "hidden": {
+                  "pitch": 0.2,
+                  "sound": "mob.bed.hidden",
+                  "volume": 23
+               },
+               "out": {
+                  "pitch": 0.2,
+                  "sound": "mob.bed.out",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:glitch": {
+            "events": {
+               "error": {
+                  "pitch": 0.2,
+                  "sound": "mob.glitch.error",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:closet": {
+            "events": {
+               "hide ": {
+                  "pitch": 0.2,
+                  "sound": "mob.closet.hide",
+                  "volume": 23
+               },
+               "expose": {
+                  "pitch": 0.2,
+                  "sound": "mob.closet.expose",
+                  "volume": 23
+               },
+               "trap": {
+                  "pitch": 0.2,
+                  "sound": "mob.closet.trap",
+                  "volume": 23
+               },
+               "drawer": {
+                  "pitch": 0.2,
+                  "sound": "mob.closet.drawer",
+                  "volume": 23
+               },
+               "light": {
+                  "pitch": 0.2,
+                  "sound": "mob.closet.light",
+                  "volume": 23
+               },
+               "nolight": {
+                  "pitch": 0.2,
+                  "sound": "mob.closet.nolight",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:seek": {
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1,
+            "events": {
+               "hurt": "mob.seek.arise",
+               "death": "mob.seek.arise",
+               "attack": "mob.seek.attack",
+               "roar": "mob.seek.scream_far",
+               "plop": "mob.seek.plop",
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.seek.idle",
+                  "volume": 23
+               }
+            }
+         },
+         "doors:greed": {
+            "events": {
+               "damage": {
+                  "pitch": 0.2,
+                  "sound": "mob.greed.damage",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:silence": {
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1,
+            "events": {
+               "ambient": "mob.silence.idle",
+               "hurt": "mob.silence.idle",
+               "plop": "mob.silence.spawn2",
+               "death": "mob.silence.kill",
+               "attack": "mob.silence.attack"
+            }
+         },
+         "doors:timothy ": {
+            "events": {
+               "jump": {
+                  "pitch": 0.2,
+                  "sound": "mob.timothy.jump",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:jack": {
+            "events": {
+               "loud": {
+                  "pitch": 0.2,
+                  "sound": "mob.jack.loud",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:halt": {
+            "events": {
+               "coming ": {
+                  "pitch": 0.2,
+                  "sound": "mob.halt.coming",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:screech": {
+            "events": {
+               "scream": {
+                  "pitch": 0.2,
+                  "sound": "mob.screech.scream",
+                  "volume": 23
+               },
+               "psst": {
+                  "pitch": 0.2,
+                  "sound": "mob.screech.psst",
+                  "volume": 23
+               },
+               "attack": {
+                  "pitch": 0.2,
+                  "sound": "mob.screech.attack",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:trollface": {
+            "events": {
+               "troll": {
+                  "pitch": 0.2,
+                  "sound": "mob.trollface.troll",
+                  "volume": 23
+               }
+            },
+            "pitch": [
+               0.8,
+               1.2
+            ],
+            "volume": 1
+         },
+         "doors:hotel_door": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "hotel_door.open",
+               "purr": "hotel_door.close",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:hotel_door3": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "hotel_door.open",
+               "purr": "hotel_door.close",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:hotel_door4": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "mob.closet.big_door",
+               "purr": "mob.closet.big_door",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:hotel_door5": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "mob.closet.big_door",
+               "purr": "mob.closet.big_door",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:bars_door": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "mob.closet.bars",
+               "purr": "mob.closet.bars",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:bars_gate": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "mob.closet.bars",
+               "purr": "mob.closet.bars",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:old_door": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "mob.closet.old_open",
+               "purr": "mob.closet.old_open",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:metal_door": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "mob.closet.bars",
+               "purr": "mob.closet.bars",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:metal_door2": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "mob.closet.bars",
+               "purr": "mob.closet.bars",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:skeleton_door": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "hotel_door.open2",
+               "purr": "hotel_door.close",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:door50": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "plop": "hotel_door.open",
+               "purr": "hotel_door.close",
+               "hurt": "mob.hotel_door.hurt",
+               "death": "mob.hotel_door.death"
+            }
+         },
+         "doors:eyes": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "hurt": "mob.eyes.scared",
+               "death": "mob.eyes.voices",
+               "attack": "mob.eyes.eyeball",
+               "roar": "mob.eyes.voices",
+               "plop": "mob.eyes.voices",
+               "ambient": "mob.eyes.voices",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:jeffthekiller": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "hurt": "",
+               "death": "",
+               "attack": "mob.closet.stab",
+               "roar": "",
+               "plop": "mob.eyes.plop",
+               "idle": {
+                  "pitch": 1,
+                  "sound": "",
+                  "volume": 23
+               }
+            }
+         },
+         "r:cameraman": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "hurt": "mob.closet.hurt",
+               "death": "mob.closet.boom",
+               "attack": "mob.closet.punch",
+               "roar": "",
+               "plop": "",
+               "idle": {
+                  "pitch": 1,
+                  "sound": "",
+                  "volume": 23
+               }
+            }
+         },
+         "doors:dread": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "hurt": "mob.dread.hurt",
+               "death": "mob.dread.death",
+               "attack": "mob.dread.attack",
+               "roar": "mob.dread.roar",
+               "plop": "mob.dread.plop",
+               "idle": {
+                  "pitch": 1,
+                  "sound": "mob.dread.ambient",
+                  "volume": 23
+               }
+            }
+         },
+         "doors:rift": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.closet.rift_sound",
+               "hurt": "mob.closet.rift_sound",
+               "death": "mob.closet.use",
+               "plop": "mob.closet.rift_sound",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:rush": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.rush.ambient",
+               "hurt": "mob.rush.ambient",
+               "death": "mob.rush.death",
+               "plop": "mob.rush.ambient",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:rush2": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.rush.ambient",
+               "hurt": "mob.rush.ambient",
+               "death": "mob.rush.death",
+               "plop": "mob.rush.ambient",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:seek_car": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.seek.drive",
+               "hurt": "mob.seek.drive",
+               "death": "mob.seek.beep",
+               "plop": "mob.seek.drive",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:ambush": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.ambush.incoming3",
+               "hurt": "mob.ambush.ambush_sound",
+               "death": "mob.ambush.death",
+               "plop": "mob.ambush.incoming3",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:ambush2": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.ambush.incoming3",
+               "hurt": "mob.ambush.ambush_sound",
+               "death": "mob.ambush.death",
+               "plop": "mob.ambush.incoming3",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:shocker": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.closet.electric",
+               "hurt": "mob.closet.electric",
+               "death": "mob.closet.boo",
+               "plop": "mob.closet.electric",
+               "attack": "mob.closet.boo",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:frostbite": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.frostbite.frosted",
+               "hurt": "mob.frostbite.frost_strikes",
+               "death": "mob.frostbite.death",
+               "plop": "mob.frostbite.frost_strikes",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:depth": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.depth.spawn",
+               "hurt": "mob.depth.spawn",
+               "death": "mob.depth.depths",
+               "plop": "mob.depth.spawn",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:guiding_light": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.closet.spark",
+               "plop": "mob.closet.spark",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         },
+         "doors:curious_light": {
+            "volume": 1,
+            "pitch": [
+               0.95,
+               1.05
+            ],
+            "events": {
+               "ambient": "mob.closet.spark",
+               "plop": "mob.closet.spark",
+               "step": {
+                  "sound": "",
+                  "volume": 0.4,
+                  "pitch": 1
+               }
+            }
+         }
+      }
+   }
+}

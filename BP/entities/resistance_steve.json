@@ -1,0 +1,146 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:resistance_steve",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "resist"
+            ]
+         },
+         "animations": {
+            "resist": "controller.animation.steve_resist"
+         }
+      },
+      "components": {
+         "minecraft:breathable": {
+            "totalSupply": 15,
+            "suffocateTime": 0,
+            "breathesWater": true
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.8
+         },
+         "minecraft:nameable": {},
+         "minecraft:navigation.walk": {
+            "can_pass_doors": true,
+            "can_open_doors": true,
+            "avoid_water": false,
+            "avoid_portals": false
+         },
+         "minecraft:navigation.swim": {
+            "avoid_portals": false,
+            "avoid_sun": false,
+            "avoid_water": false,
+            "can_open_doors": true,
+            "can_pass_doors": true,
+            "can_path_over_water": true,
+            "can_sink": false
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:jump.static": {},
+         "minecraft:can_climb": {},
+         "minecraft:type_family": {
+            "family": [
+               "alex",
+               "player"
+            ]
+         },
+         "minecraft:health": {
+            "value": 300,
+            "max": 300
+         },
+         "minecraft:movement": {
+            "value": 0.25
+         },
+         "minecraft:tameable": {
+            "probability": 0.33,
+            "tameItems": [
+               "red_flower",
+               "yellow_flower"
+            ],
+            "tame_event": {
+               "event": "minecraft:on_tame",
+               "target": "self"
+            }
+         },
+         "minecraft:behavior.float": {
+            "priority": 1
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 3,
+            "entity_types": [
+               {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "value": "monster"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "creeper"
+                        }
+                     ]
+                  },
+                  "within_default": 20
+               }
+            ],
+            "must_see": true,
+            "must_reach": true
+         },
+         "minecraft:behavior.mount_pathing": {
+            "priority": 2,
+            "speed_multiplier": 1.25,
+            "target_dist": 0,
+            "track_target": true
+         },
+         "minecraft:behavior.move_towards_restriction": {
+            "priority": 5
+         },
+         "minecraft:behavior.random_stroll": {
+            "priority": 7,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 8,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:behavior.random_look_around": {
+            "priority": 9
+         },
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 1,
+            "entity_types": [
+               {
+                  "filters": {
+                     "other_without_families": [
+                        "player"
+                     ]
+                  }
+               }
+            ]
+         },
+         "minecraft:physics": {},
+         "minecraft:knockback_resistance": {
+            "value": 10
+         },
+         "minecraft:attack": {
+            "damage": 15
+         },
+         "minecraft:behavior.melee_attack": {
+            "priority": 3,
+            "speed_multiplier": 1,
+            "track_target": true
+         }
+      }
+   }
+}

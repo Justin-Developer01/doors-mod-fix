@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.A_120.rise": {
+         "states": {
+            "default": {
+               "animations": [
+                  "A_120_riseup"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "smile"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

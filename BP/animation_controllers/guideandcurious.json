@@ -1,0 +1,72 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.guiding_light": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "light": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/effect @s instant_health 10000 255 true"
+               ]
+            },
+            "light": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.curious_light2": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "light2": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/particle r:curious_glow ~ ~ ~"
+               ]
+            },
+            "light2": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": []
+            }
+         }
+      },
+      "controller.animation.light_appear": {
+         "states": {
+            "default": {
+               "on_entry": [
+                  "/execute @s ~ ~ ~ fill ~ ~ ~ ~ ~ ~ light_block 15",
+                  "/title @a actionbar §l§bGuiding Light has appear"
+               ],
+               "transitions": [
+                  {
+                     "appear": "query.has_target"
+                  }
+               ]
+            },
+            "appear": {
+               "on_entry": [],
+               "transitions": [
+                  {
+                     "default": "!query.has_target"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

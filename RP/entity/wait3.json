@@ -1,0 +1,24 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:wait3",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/none"
+         },
+         "geometry": {
+            "default": "geometry.none"
+         },
+         "render_controllers": [
+            "controller.render.zombie"
+         ],
+         "spawn_egg": {
+            "texture": "elevator_mark",
+            "texture_index": 0
+         }
+      }
+   }
+}

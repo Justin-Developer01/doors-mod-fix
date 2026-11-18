@@ -1,0 +1,631 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "secret:a_602",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "see",
+               "on",
+               "off"
+            ]
+         },
+         "animations": {
+            "see": "controller.animation.a60_see",
+            "on": "animation.lighting_on",
+            "off": "animation.lighting_off"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "secret:a_602"
+            }
+         },
+         "minecraft:transform_to_a60": {
+            "minecraft:transformation": {
+               "into": "doors:a60_stun"
+            }
+         },
+         "r:arrival": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 2,
+               "time_down_event": {
+                  "event": "r:coming"
+               }
+            }
+         }
+      },
+      "components": {
+         "minecraft:attack": {
+            "damage": 0
+         },
+         "minecraft:type_family": {
+            "family": [
+               "doors_creature"
+            ]
+         },
+         "minecraft:collision_box": {
+            "height": 0,
+            "width": 0
+         },
+         "minecraft:underwater_movement": {
+            "value": 0.06
+         },
+         "minecraft:movement.generic": {},
+         "minecraft:jump.static": {},
+         "minecraft:can_climb": {},
+         "minecraft:health": {
+            "value": 10000,
+            "max": 10000
+         },
+         "minecraft:movement": {
+            "value": 0.05
+         },
+         "minecraft:navigation.generic": {
+            "is_amphibious": true,
+            "can_path_over_water": false,
+            "can_break_doors": true,
+            "can_swim": false,
+            "can_walk": true,
+            "avoid_sun": false
+         },
+         "minecraft:behavior.move_towards_restriction": {
+            "priority": 5,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.random_stroll": {
+            "priority": 6,
+            "speed_multiplier": 1
+         },
+         "minecraft:behavior.look_at_player": {
+            "priority": 7,
+            "look_distance": 6,
+            "probability": 0.02
+         },
+         "minecraft:behavior.random_look_around": {
+            "priority": 7
+         },
+         "minecraft:physics": {},
+         "minecraft:experience_reward": {
+            "on_death": "query.last_hit_by_player ? 10 : 0"
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:behavior.melee_attack": {
+            "priority": 2,
+            "speed_multiplier": 13,
+            "target_dist": 0,
+            "max_dist": 3,
+            "random_stop_interval": 100,
+            "track_target": true,
+            "reach_multiplier": 1
+         },
+         "minecraft:behavior.owner_hurt_by_target": {
+            "priority": 1
+         },
+         "minecraft:behavior.owner_hurt_target": {
+            "priority": 2
+         },
+         "minecraft:behavior.float": {
+            "priority": 2,
+            "speed_multiplier": 1
+         },
+         "minecraft:knockback_resistance": {
+            "value": 200
+         },
+         "minecraft:follow_range": {
+            "value": 200
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:tick_world": {
+            "distance_to_players": true,
+            "never_despawn": true,
+            "radius": 5,
+            "ticking_area": 4
+         },
+         "minecraft:spawn_entity": [
+            {
+               "min_wait_time": 0,
+               "max_wait_time": 0,
+               "single_use": true,
+               "spawn_entity": "r:a60_light2",
+               "num_to_spawn": 1
+            },
+            {
+               "min_wait_time": 18,
+               "max_wait_time": 18,
+               "single_use": true,
+               "spawn_entity": "r:removal",
+               "num_to_spawn": 1
+            }
+         ],
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 1,
+            "entity_types": {
+               "filters": {
+                  "all_of": [
+                     {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "doors_creature"
+                     },
+                     {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "mark"
+                     },
+                     {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "inanimate"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph2"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph3"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph4"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph5"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph6"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph7"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph8"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph9"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph10"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph11"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "morph12"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "greed"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "closet"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "closet2"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "cam"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "hand"
+                     },
+                     {
+                        "test": "has_tag",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "caught"
+                     }
+                  ]
+               },
+               "max_dist": 200
+            }
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 1,
+            "within_radius": 300,
+            "reselect_targets": true,
+            "target_invisible_multiplier": 0.4,
+            "entity_types": [
+               {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "doors_creature"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "inanimate"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph2"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph3"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph4"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph5"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph6"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph7"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph8"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph9"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph10"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph11"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "morph12"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "greed"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "closet"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "closet2"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "cam"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "hand"
+                        },
+                        {
+                           "test": "has_tag",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "caught"
+                        }
+                     ]
+                  },
+                  "max_dist": 100,
+                  "sprint_speed_multiplier": 1.1,
+                  "must_see": false
+               }
+            ],
+            "must_see": true,
+            "must_see_forget_duration": 30
+         },
+         "minecraft:area_attack": {
+            "cause": "contact",
+            "damage_per_tick": 200000000,
+            "damage_range": 5,
+            "entity_filter": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "doors_creature"
+                  },
+                  {
+                     "test": "is_family",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "inanimate"
+                  },
+                  {
+                     "test": "is_family",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "mark"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph2"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph3"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph4"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph5"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph6"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph7"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph8"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph9"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph10"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph11"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "morph12"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "greed"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "closet"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "closet2"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "cam"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "hand"
+                  },
+                  {
+                     "test": "has_tag",
+                     "subject": "other",
+                     "operator": "!=",
+                     "value": "caught"
+                  }
+               ]
+            }
+         },
+         "minecraft:annotation.break_door": {
+            "break_time": 0,
+            "min_difficulty": "normal"
+         }
+      },
+      "events": {
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "event entity @e[type=r:mark] minecraft:remove",
+                  "execute @s ~-13 ~-4 ~-20 fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block",
+                  "fill ~30 ~ ~30 ~ ~30 ~ air 0 replace light_block",
+                  "event entity @e[type=r:a60_light2,r=2] minecraft:remove"
+               ]
+            },
+            "weight": 1
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         },
+         "minecraft:event_spawn_done3": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_a60"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "event entity @e[type=r:mark] minecraft:remove",
+                  "event entity @e[type=r:a60_light2,r=2] minecraft:remove"
+               ]
+            },
+            "weight": 1
+         },
+         "r:arrival": {
+            "add": {
+               "component_groups": [
+                  "r:arrival"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "effect @s slowness 1 10 true"
+               ]
+            },
+            "weight": 1
+         },
+         "r:coming": {
+            "run_command": {
+               "command": [
+                  "effect @s clear"
+               ]
+            },
+            "weight": 1
+         }
+      }
+   }
+}

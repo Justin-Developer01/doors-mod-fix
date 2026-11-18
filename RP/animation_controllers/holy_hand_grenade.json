@@ -1,0 +1,65 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.holy_hand_grenade.throw": {
+         "initial_state": "moving",
+         "states": {
+            "moving": {
+               "variables": {
+                  "move_speed": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 0,
+                        "1": 1
+                     }
+                  },
+                  "is_idling": {
+                     "input": "query.modified_move_speed",
+                     "remap_curve": {
+                        "0": 1,
+                        "1": 0
+                     }
+                  }
+               },
+               "blend_transition": 0.1,
+               "animations": [
+                  {
+                     "moving": "variable.move_speed"
+                  },
+                  {
+                     "holy_hand_grenade_general": "variable.is_idling"
+                  }
+               ],
+               "transitions": [
+                  {
+                     "toss": "!query.is_on_ground && !query.is_in_water && !query.is_wall_climbing"
+                  }
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "trail"
+                  }
+               ]
+            },
+            "toss": {
+               "animations": [
+                  "toss"
+               ],
+               "transitions": [
+                  {
+                     "moving": "query.is_on_ground"
+                  }
+               ],
+               "blend_transition": 0.5,
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "trail"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

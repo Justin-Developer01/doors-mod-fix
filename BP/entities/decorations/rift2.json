@@ -1,0 +1,191 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:rift2",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "trans",
+               "trans2"
+            ]
+         },
+         "animations": {
+            "trans": "controller.animation.rift_trans",
+            "trans2": "controller.animation.rift_trans2"
+         }
+      },
+      "component_groups": {
+         "minecraft:remove": {
+            "minecraft:despawn": {}
+         },
+         "minecraft:hold": {
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 2,
+               "time_down_event": {
+                  "event": "minecraft:hold_done"
+               }
+            }
+         },
+         "minecraft:ready": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "hurt_item": 0,
+                     "interact_text": "§l§bPreserve an Item",
+                     "swing": true,
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:hold",
+                        "target": "self"
+                     },
+                     "use_item": false
+                  }
+               ]
+            }
+         },
+         "minecraft:hold_done": {
+            "minecraft:interact": {
+               "interactions": [
+                  {
+                     "give_item": true,
+                     "take_item": true,
+                     "interact_text": "§l§bPlace/take Item?",
+                     "on_interact": {
+                        "filters": {
+                           "all_of": [
+                              {
+                                 "test": "is_family",
+                                 "subject": "other",
+                                 "value": "player"
+                              }
+                           ]
+                        },
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                     },
+                     "swing": true
+                  }
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:collision_box": {
+            "width": 1,
+            "height": 4.9
+         },
+         "minecraft:health": {
+            "value": 6,
+            "max": 6
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:nameable": {},
+         "minecraft:persistent": {},
+         "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": true
+         },
+         "minecraft:inventory": {
+            "inventory_size": 1
+         },
+         "minecraft:physics": {
+            "has_gravity": false,
+            "has_collision": false
+         },
+         "minecraft:damage_sensor": {
+            "triggers": {
+               "cause": "all",
+               "deals_damage": false
+            }
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         }
+      },
+      "events": {
+         "minecraft:hold": {
+            "add": {
+               "component_groups": [
+                  "minecraft:hold"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "particle r:guide_light",
+                  "particle r:guide_light",
+                  "particle r:guide_light",
+                  "playsound mob.closet.use @a[r=4]"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:hold_done": {
+            "add": {
+               "component_groups": [
+                  "minecraft:hold_done"
+               ]
+            },
+            "remove": {
+               "component_groups": [
+                  "minecraft:hold",
+                  "minecraft:ready"
+               ]
+            },
+            "run_command": {
+               "command": [
+                  "particle r:light_explode",
+                  "title @a actionbar §l§bRift is ready to be used"
+               ],
+               "target": "self"
+            },
+            "weight": 1
+         },
+         "minecraft:remove": {
+            "add": {
+               "component_groups": [
+                  "minecraft:remove"
+               ]
+            }
+         },
+         "minecraft:entity_spawned": {
+            "add": {
+               "component_groups": [
+                  "minecraft:ready"
+               ]
+            }
+         },
+         "minecraft:ready": {
+            "add": {
+               "component_groups": [
+                  "minecraft:ready"
+               ]
+            }
+         }
+      }
+   }
+}

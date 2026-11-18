@@ -1,0 +1,67 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:xmas_figure",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/xmas_figure"
+         },
+         "animations": {
+            "moving": "animation.figure.moving",
+            "running": "animation.figure.running",
+            "figure_general": "animation.figure.general",
+            "attack": "animation.figure.attack",
+            "duck": "animation.figure.duck",
+            "duck2": "animation.figure.duck2",
+            "looking": "animation.figure.looking",
+            "side1": "animation.figure.side1",
+            "side2": "animation.figure.side2",
+            "dead": "animation.figure.dead",
+            "sniff": "animation.figure.sniff",
+            "roar": "animation.figure.roar",
+            "falling": "animation.figure.falling",
+            "jumpscare": "animation.figure.jumpscare",
+            "look_at_target": "animation.common.look_at_target",
+            "move": "controller.animation.figure.move",
+            "general": "controller.animation.figure.general",
+            "attack": "controller.animation.figure.attack",
+            "sniff_controller": "controller.animation.warden.sniff",
+            "roar_controller": "controller.animation.warden.roar",
+            "attack": "controller.animation.figure.attack"
+         },
+         "scripts": {
+            "animate": [
+               "move",
+               "general",
+               "attack",
+               "look_at_target",
+               "sniff_controller",
+               "roar_controller"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.figure"
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "sound_effects": {
+            "sniff": "mob.figure.ambient",
+            "roar": "mob.figure.roar",
+            "clicking": "mob.figure.ambient"
+         },
+         "spawn_egg": {
+            "texture": "figure",
+            "texture_index": 0
+         }
+      }
+   }
+}

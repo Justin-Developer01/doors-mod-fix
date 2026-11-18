@@ -1,0 +1,30 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.light_follow": {
+         "states": {
+            "default": {
+               "transitions": [
+                  {
+                     "follow": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph3,r=2]",
+                  "/effect @e[type=!doors:seek,type=!r:seek_eye,type=!doors:seek_eye,type=!r:seek_light,type=!r:seek_step,tag=!cam,tag=!morph,tag=!morph2,tag=!morph3,tag=!morph4,r=15] wither 1 3 true"
+               ]
+            },
+            "follow": {
+               "transitions": [
+                  {
+                     "default": "(1.0)"
+                  }
+               ],
+               "on_entry": [
+                  "/tp @s @e[tag=morph3,r=2]"
+               ]
+            }
+         }
+      }
+   }
+}

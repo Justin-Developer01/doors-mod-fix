@@ -1,0 +1,127 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "doors:seek_s",
+         "is_spawnable": true,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "chase",
+               "splash"
+            ]
+         },
+         "animations": {
+            "chase": "controller.animation.seek_chase",
+            "splash": "controller.animation.seek_splash"
+         }
+      },
+      "component_groups": {
+         "minecraft:dead_": {
+            "minecraft:collision_box": {
+               "width": 0.6,
+               "height": 0.5
+            },
+            "minecraft:timer": {
+               "looping": false,
+               "randomInterval": false,
+               "time": 7,
+               "time_down_event": {
+                  "event": "minecraft:event_dead"
+               }
+            }
+         },
+         "minecraft:transform_to_seek": {
+            "minecraft:transformation": {
+               "into": "doors:seek"
+            }
+         },
+         "minecraft:is_dead": {
+            "minecraft:transformation": {
+               "into": "doors:seek_s"
+            }
+         }
+      },
+      "components": {
+         "minecraft:knockback_resistance": {
+            "value": 50
+         },
+         "minecraft:push_through": {
+            "value": 1
+         },
+         "minecraft:is_sheared": {},
+         "minecraft:fire_immune": true,
+         "minecraft:health": {
+            "value": {
+               "range_min": 10,
+               "range_max": 10
+            }
+         },
+         "minecraft:physics": {
+            "has_gravity": true,
+            "has_collusion": false
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:on_death": {
+            "event": "on:death",
+            "target": "self"
+         },
+         "minecraft:scale": {
+            "value": 1
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 7,
+            "time_down_event": {
+               "event": "minecraft:event_dead"
+            }
+         },
+         "minecraft:spawn_entity": [
+            {
+               "min_wait_time": 6,
+               "max_wait_time": 6,
+               "spawn_entity": "r:seek_emerge",
+               "spawn_sound": "as",
+               "num_to_spawn": 1
+            }
+         ],
+         "minecraft:type_family": {
+            "family": [
+               "doors_creature"
+            ]
+         }
+      },
+      "events": {
+         "minecraft:entity_transformed": {
+            "add": {
+               "component_groups": [
+                  "minecraft:dead_"
+               ]
+            }
+         },
+         "minecraft:event_dead": {
+            "add": {
+               "component_groups": [
+                  "minecraft:transform_to_seek"
+               ]
+            }
+         },
+         "on:death": {
+            "add": {
+               "component_groups": [
+                  "minecraft:is_dead"
+               ]
+            }
+         }
+      }
+   }
+}

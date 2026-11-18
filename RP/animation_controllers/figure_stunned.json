@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.figure.stunned": {
+         "states": {
+            "default": {
+               "animations": [
+                  "figure_stuck"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "bright"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,15 @@
+{
+   "animations": {
+      "animation.figure.item": {
+         "animation_length": 0.1,
+         "loop": true,
+         "timeline": {
+            "0.0": [
+               "/function figure_skills",
+               "/function figure_skills2"
+            ]
+         }
+      }
+   },
+   "format_version": "1.10.0"
+}

@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:padlock",
+         "materials": {
+            "default": "npc"
+         },
+         "textures": {
+            "default": "textures/entity/padlock"
+         },
+         "geometry": {
+            "default": "geometry.padlock"
+         },
+         "animations": {
+            "padlock_general": "animation.padlock.general",
+            "general": "controller.animation.padlock.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "padlock",
+            "texture_index": 0
+         }
+      }
+   }
+}

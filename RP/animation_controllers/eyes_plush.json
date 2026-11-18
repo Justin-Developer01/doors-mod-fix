@@ -1,0 +1,20 @@
+{
+   "format_version": "1.10.0",
+   "animation_controllers": {
+      "controller.animation.eyes.general2": {
+         "states": {
+            "default": {
+               "animations": [
+                  "eyes_small"
+               ],
+               "particle_effects": [
+                  {
+                     "effect": "spell",
+                     "locator": "eye"
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,29 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "r:blue_fog",
+         "materials": {
+            "default": "charged_creeper"
+         },
+         "textures": {
+            "default": "textures/entity/blue_fog"
+         },
+         "animations": {
+            "blue_fog_general": "animation.blue_fog.general",
+            "general": "controller.animation.blue_fog.general"
+         },
+         "scripts": {
+            "animate": [
+               "general"
+            ]
+         },
+         "geometry": {
+            "default": "geometry.blue_fog"
+         },
+         "render_controllers": [
+            "controller.render.red_fog"
+         ]
+      }
+   }
+}

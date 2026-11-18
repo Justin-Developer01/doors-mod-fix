@@ -1,0 +1,204 @@
+{
+   "format_version": "1.13.0",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "r:figure_roar",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               "tp",
+               "roar",
+               "jumpscare_figure",
+               "figure_near",
+               "duck"
+            ]
+         },
+         "animations": {
+            "tp": "controller.animation.blast_tp"
+         }
+      },
+      "component_groups": {
+         "minecraft:despawndead": {
+            "minecraft:type_family": {
+               "family": [
+                  "despawn_"
+               ]
+            }
+         }
+      },
+      "components": {
+         "minecraft:nameable": {},
+         "minecraft:type_family": {
+            "family": [
+               "inanimate"
+            ]
+         },
+         "minecraft:pushable": {
+            "is_pushable": true,
+            "is_pushable_by_piston": true
+         },
+         "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 1.8
+         },
+         "minecraft:movement.basic": {},
+         "minecraft:navigation.walk": {
+            "is_amphibious": true,
+            "can_pass_doors": true,
+            "can_break_doors": true,
+            "can_walk": true
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "cause": "entity_attack",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "projectile",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "explosion",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fire",
+                  "deals_damage": false
+               },
+               {
+                  "cause": "fatal",
+                  "deals_damage": false
+               }
+            ]
+         },
+         "minecraft:annotation.break_door": {},
+         "minecraft:follow_range": {
+            "value": 64
+         },
+         "minecraft:jump.static": {},
+         "minecraft:can_climb": {},
+         "minecraft:behavior.float": {
+            "priority": 0
+         },
+         "minecraft:health": {
+            "value": 30,
+            "max": 30,
+            "min": 1
+         },
+         "minecraft:behavior.summon_entity": {
+            "priority": 0,
+            "probability": 100,
+            "summon_choices": [
+               {
+                  "weight": 12,
+                  "cooldown_time": 5,
+                  "cast_duration": 1.46,
+                  "start_sound_event": "plop",
+                  "sequence": [
+                     {
+                        "shape": "circle",
+                        "target": "target",
+                        "base_delay": 0,
+                        "delay_per_summon": 0.1,
+                        "num_entities_spawned": 5,
+                        "entity_type": "r:figure_smash",
+                        "entity_lifespan": 1000,
+                        "size": 1,
+                        "sound_event": ""
+                     }
+                  ]
+               }
+            ]
+         },
+         "minecraft:breathable": {
+            "totalSupply": 15,
+            "suffocateTime": 0,
+            "breathesAir": true,
+            "breathesWater": true
+         },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/entities/noloot.json"
+         },
+         "minecraft:behavior.hurt_by_target": {
+            "priority": 1
+         },
+         "minecraft:behavior.nearest_attackable_target": {
+            "priority": 0,
+            "within_radius": 64,
+            "reselect_targets": true,
+            "entity_types": [
+               {
+                  "filters": {
+                     "all_of": [
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "doors_creature"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "inanimate"
+                        },
+                        {
+                           "test": "is_family",
+                           "subject": "other",
+                           "operator": "!=",
+                           "value": "figure"
+                        }
+                     ]
+                  },
+                  "max_dist": 64,
+                  "must_see": false,
+                  "must_see_forget_duration": 10
+               }
+            ],
+            "must_see": false
+         },
+         "minecraft:physics": {},
+         "minecraft:despawn": {
+            "filters": {
+               "all_of": [
+                  {
+                     "test": "is_family",
+                     "subject": "self",
+                     "value": "despawn_"
+                  }
+               ]
+            }
+         },
+         "minecraft:timer": {
+            "looping": false,
+            "randomInterval": false,
+            "time": 4,
+            "time_down_event": {
+               "event": "minecraft:event_dead"
+            }
+         }
+      },
+      "events": {
+         "minecraft:spot_target": {
+            "add": {
+               "component_groups": [
+                  "spot"
+               ]
+            }
+         },
+         "minecraft:event_dead": {
+            "add": {
+               "component_groups": [
+                  "minecraft:despawndead"
+               ]
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "format_version": "1.21.40",
+   "minecraft:item": {
+      "description": {
+         "identifier": "r:skeleton",
+         "menu_category": {
+            "category": "equipment"
+         }
+      },
+      "components": {
+         "minecraft:icon": "r_skeleton",
+         "minecraft:display_name": {
+            "value": "Skeleton Key"
+         },
+         "minecraft:max_stack_size": 1,
+         "minecraft:hand_equipped": true,
+         "minecraft:allow_off_hand": false,
+         "minecraft:use_modifiers": {
+            "use_duration": 999999
+         }
+      }
+   }
+}

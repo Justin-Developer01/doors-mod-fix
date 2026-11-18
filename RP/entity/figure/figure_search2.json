@@ -1,0 +1,33 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:figure_search2",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/figure_new"
+         },
+         "geometry": {
+            "default": "geometry.figure3"
+         },
+         "animations": {
+            "figure_search": "animation.figure.search",
+            "search": "controller.animation.figure.search"
+         },
+         "scripts": {
+            "animate": [
+               "search"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.spider"
+         ],
+         "spawn_egg": {
+            "texture": "figure",
+            "texture_index": 0
+         }
+      }
+   }
+}

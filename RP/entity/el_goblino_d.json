@@ -1,0 +1,38 @@
+{
+   "format_version": "1.10.0",
+   "minecraft:client_entity": {
+      "description": {
+         "identifier": "doors:el_goblino_d",
+         "materials": {
+            "default": "spider"
+         },
+         "textures": {
+            "default": "textures/entity/el_goblino"
+         },
+         "geometry": {
+            "default": "geometry.el_goblino"
+         },
+         "animations": {
+            "el_goblino_dead": "animation.el_goblino.dead",
+            "dead": "controller.animation.el_goblino.dead"
+         },
+         "scripts": {
+            "animate": [
+               "dead"
+            ],
+            "pre_animation": [
+               "variable.attack = Math.sin(variable.attack_time * 30.0);",
+               "variable.random = math.round(math.random(0,2));",
+               "variable.random1 = math.round(math.random(0,1));"
+            ]
+         },
+         "render_controllers": [
+            "controller.render.default"
+         ],
+         "spawn_egg": {
+            "texture": "goblino",
+            "texture_index": 0
+         }
+      }
+   }
+}
