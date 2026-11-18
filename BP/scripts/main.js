@@ -1151,6 +1151,7 @@ function handleUse(event) {
     if (entry.spawn) spawnInLook(player, entry.spawn);
     if (String(id).includes("crucifix")) {
       try { forceRemoveRooms(player.dimension, player.location, 24); } catch (e) {}
+      try { forceBanishRushAmbush(player.dimension, player.location, 32); } catch (e) {}
     }
 
     let remaining = null;
@@ -1270,6 +1271,7 @@ function runBanish(proj, funcName, player) {
   processedHits.add(id);
   const loc = proj.location;
   try { forceRemoveRooms(proj.dimension, loc, 20); } catch (e) {}
+  try { forceBanishRushAmbush(proj.dimension, loc, 28); } catch (e) {}
   try { scheduleCrucifixCleanup(proj.dimension, loc); } catch (e) {}
   const runner = player || proj;
 
@@ -1415,6 +1417,17 @@ function isTrapId(id) {
   );
 }
 
+function isCrucifixThreat(typeId) {
+  const id = String(typeId || "");
+  if (!id || id === "minecraft:player" || id === "minecraft:item" || id === "minecraft:xp_orb") return false;
+  if (CRUCIFIX_FUNCS[id] || isTrapId(id)) return false;
+  if (id.includes("stun")) return false;
+  return id.includes("rush") || id.includes("ambush") ||
+    id.includes("a_60") || id.includes("a60") ||
+    id.includes("a_90") || id.includes("a90") ||
+    id.includes("a_120") || id.includes("a120");
+}
+
 system.runInterval(() => {
   try {
     for (const player of world.getPlayers()) {
@@ -1423,15 +1436,8 @@ system.runInterval(() => {
       for (const proj of all) {
         const fn = CRUCIFIX_FUNCS[proj.typeId];
         if (!fn) continue;
-        const range = fn === "cross" ? 12.0 : 14.0;
-        const nearby = dim.getEntities({ location: proj.location, maxDistance: range });
-        const hit = nearby.some((n) => {
-          const id = n.typeId;
-          if (CRUCIFIX_FUNCS[id]) return false;
-          if (id === "minecraft:player" || id === "minecraft:item" || id === "minecraft:xp_orb") return false;
-          if (isTrapId(id)) return false;
-          return true;
-        });
+        const nearby = dim.getEntities({ location: proj.location, maxDistance: 28 });
+        const hit = nearby.some((n) => isCrucifixThreat(n.typeId));
         if (hit) runBanish(proj, fn, player);
       }
     }
@@ -1899,6 +1905,48 @@ function forceRemoveRooms(dim, loc, radius) {
   for (const typeId of ROOMS_REMOVE_IDS) {
     let found = [];
     try { found = dim.getEntities({ type: typeId, location: loc, maxDistance: radius }); } catch (e) { continue; }
+    for (const entity of found) {
+      try { entity.remove(); } catch (e2) {}
+    }
+  }
+}
+
+const RUSH_STUN_IDS = [
+  "doors:rush", "doors:rush2", "doors:cursed_rush", "doors:nightmare_rush"
+];
+for (let n = 1; n <= 19; n++) if (n !== 10) RUSH_STUN_IDS.push("doors:rush_variant" + n);
+
+const AMBUSH_STUN_IDS = [
+  "doors:ambush", "doors:ambush2", "doors:red_ambush", "doors:red_ambush2"
+];
+
+const RUSH_AMBUSH_REMOVE_IDS = [
+  "doors:rush_bad", "doors:rush_bad2", "doors:rush_bad_d",
+  "doors:ambush_bad", "doors:ambush_bad2", "doors:ambush_bad_d",
+  "r:rush", "r:rush_hitbox", "r:rush_jumpscare", "r:rush_light", "r:rush_sound",
+  "r:ambush_hitbox", "r:ambush_jumpscare", "r:ambush_particle"
+];
+
+function forceBanishRushAmbush(dim, loc, radius) {
+  if (!dim || !loc) return;
+  const stun = (typeId, eventName) => {
+    let found = [];
+    try { found = dim.getEntities({ type: typeId, location: loc, maxDistance: radius }); } catch (e) { return; }
+    for (const entity of found) {
+      try { entity.triggerEvent(eventName); } catch (e) {}
+      const captured = entity;
+      system.runTimeout(() => {
+        try {
+          if (captured.typeId === typeId) captured.remove();
+        } catch (e2) {}
+      }, 5);
+    }
+  };
+  for (const id of RUSH_STUN_IDS) stun(id, "minecraft:event_spawn_rush_stun");
+  for (const id of AMBUSH_STUN_IDS) stun(id, "minecraft:event_spawn_ambush_stun");
+  for (const id of RUSH_AMBUSH_REMOVE_IDS) {
+    let found = [];
+    try { found = dim.getEntities({ type: id, location: loc, maxDistance: radius }); } catch (e) { continue; }
     for (const entity of found) {
       try { entity.remove(); } catch (e2) {}
     }
