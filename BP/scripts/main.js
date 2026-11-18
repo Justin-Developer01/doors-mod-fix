@@ -1151,7 +1151,7 @@ function handleUse(event) {
     if (entry.spawn) spawnInLook(player, entry.spawn);
     if (String(id).includes("crucifix")) {
       try { forceRemoveRooms(player.dimension, player.location, 24); } catch (e) {}
-      try { forceBanishRushAmbush(player.dimension, player.location, 32); } catch (e) {}
+      try { forceBanishMobs(player.dimension, player.location, 32); } catch (e) {}
     }
 
     let remaining = null;
@@ -1271,7 +1271,7 @@ function runBanish(proj, funcName, player) {
   processedHits.add(id);
   const loc = proj.location;
   try { forceRemoveRooms(proj.dimension, loc, 20); } catch (e) {}
-  try { forceBanishRushAmbush(proj.dimension, loc, 28); } catch (e) {}
+  try { forceBanishMobs(proj.dimension, loc, 28); } catch (e) {}
   try { scheduleCrucifixCleanup(proj.dimension, loc); } catch (e) {}
   const runner = player || proj;
 
@@ -1417,15 +1417,76 @@ function isTrapId(id) {
   );
 }
 
+const BANISH_MOB_WORDS = [
+  "rush", "ambush", "screech", "seek", "figure", "halt", "eyes", "depth", "greed",
+  "silence", "quiet", "barrage", "frostbite", "dread", "strike", "dupe", "jack",
+  "shadow", "glitch", "timothy", "jimothy", "snare", "shocker", "troll", "decoy",
+  "a_60", "a60", "a_90", "a90", "a_120", "a120", "spider", "void"
+];
+const NOT_A_MOB = [
+  "plush", "stun", "stunned", "door", "closet", "drawer", "chair", "bookshelf", "clock",
+  "crucifix", "elevator", "lever", "coin", "scene", "cutscene", "circle", "turret",
+  "light", "fog", "npc", "spot", "shop", "guiding", "curious",
+  "chain", "clip", "blast", "detect", "duck", "roar", "item_cooldown"
+];
+
+function isBanishMob(typeId) {
+  const id = String(typeId || "").toLowerCase();
+  if (!id.startsWith("doors:") && !id.startsWith("r:") && !id.startsWith("secret:")) return false;
+  if (CRUCIFIX_FUNCS[typeId] || isTrapId(id)) return false;
+  const name = id.slice(id.indexOf(":") + 1);
+  if (name.endsWith("_d") || name.endsWith("_d2")) return false;
+  if (NOT_A_MOB.some((part) => name.includes(part))) return false;
+  return BANISH_MOB_WORDS.some((word) => name.includes(word));
+}
+
 function isCrucifixThreat(typeId) {
-  const id = String(typeId || "");
-  if (!id || id === "minecraft:player" || id === "minecraft:item" || id === "minecraft:xp_orb") return false;
-  if (CRUCIFIX_FUNCS[id] || isTrapId(id)) return false;
-  if (id.includes("stun")) return false;
-  return id.includes("rush") || id.includes("ambush") ||
-    id.includes("a_60") || id.includes("a60") ||
-    id.includes("a_90") || id.includes("a90") ||
-    id.includes("a_120") || id.includes("a120");
+  return isBanishMob(typeId);
+}
+
+function banishEventsFor(typeId) {
+  const id = String(typeId || "").toLowerCase();
+  const events = [
+    "minecraft:event_spawn_done",
+    "minecraft:event_spawn_done2",
+    "minecraft:event_spawn_done3",
+    "minecraft:event_spawn_stun",
+    "minecraft:event_spawn_panic",
+    "minecraft:remove",
+    "minecraft:removed"
+  ];
+  if (id.includes("rush")) events.unshift("minecraft:event_spawn_rush_stun");
+  else if (id.includes("ambush")) events.unshift("minecraft:event_spawn_ambush_stun");
+  else if (id.includes("seek")) events.unshift("minecraft:event_spawn_death");
+  else if (id.includes("figure4")) events.unshift("minecraft:event_spawn_stun4");
+  else if (id.includes("figure3")) events.unshift("minecraft:event_spawn_stun3");
+  else if (id.includes("figure2")) events.unshift("minecraft:event_spawn_stun2");
+  else if (id.includes("dupe")) events.unshift("minecraft:event_spawn_dupe2_stun", "minecraft:event_spawn_dupe_stun");
+  else if (id.includes("silence") || id.includes("quiet")) events.unshift("minecraft:event_spawn_silence_stun");
+  else if (id.includes("shocker")) events.unshift("minecraft:event_spawn_shocker_stun");
+  else if (id.includes("strike")) events.unshift("minecraft:event_spawn_strike_stun");
+  else if (id.includes("decoy")) events.unshift("minecraft:event_spawn_decoy_stun");
+  else if (id.includes("frostbite")) events.unshift("r:is_stun");
+  return events;
+}
+
+function forceBanishMobs(dim, loc, radius) {
+  if (!dim || !loc) return;
+  let found = [];
+  try { found = dim.getEntities({ location: loc, maxDistance: radius }); } catch (e) { return; }
+  for (const entity of found) {
+    let typeId = "";
+    try { typeId = entity.typeId; } catch (e) { continue; }
+    if (!isBanishMob(typeId)) continue;
+    for (const eventName of banishEventsFor(typeId)) {
+      try { entity.triggerEvent(eventName); } catch (e) {}
+    }
+    const captured = entity;
+    const original = typeId;
+    system.runTimeout(() => {
+      try { if (captured.typeId === original) captured.remove(); } catch (e2) {}
+    }, 5);
+  }
 }
 
 system.runInterval(() => {
@@ -1601,8 +1662,9 @@ const A_SERIES_IDS = new Set([
 
 function isBanishableEntity(e, curious) {
   try {
+    if (isBanishMob(e.typeId)) return true;
     if (DOORS_BANISH_IDS.has(e.typeId)) return true;
-    if (A_SERIES_IDS.has(e.typeId)) return true;  // any crucifix
+    if (A_SERIES_IDS.has(e.typeId)) return true;
   } catch (err) {}
   return false;
 }

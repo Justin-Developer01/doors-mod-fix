@@ -1,6 +1,6 @@
 # Doors v3 — Bedrock 26.60 working fix
 
-Download the addon: [Doors-26.60-working-fix.mcaddon](https://github.com/Justin-Developer01/doors-mod-fix/releases/download/v1.3.3/Doors-26.60-working-fix.mcaddon)
+Download the addon: [Doors-26.60-working-fix.mcaddon](https://github.com/Justin-Developer01/doors-mod-fix/releases/download/v1.3.4/Doors-26.60-working-fix.mcaddon)
 
 ## Install
 
@@ -12,4 +12,4 @@ Download the addon: [Doors-26.60-working-fix.mcaddon](https://github.com/Justin-
 
 ## What works
 
-A crucifix removes A-60, A-90, and A-120, and now banishes Rush and Ambush. Keys, levers, the hammer breaker, elevators, and Jeff's shop work. The holy hand grenade and the shield potion work. The behavior pack loads the script API on Bedrock 26.60.
+A crucifix banishes every hostile mob: Rush, Ambush, Seek, Figure, Screech, Eyes, Halt, Dupe, and the rest. Doors, closets, elevators, Jeff, and plushies are not banished. Keys, levers, the hammer breaker, elevators, and Jeff's shop work. The holy hand grenade and the shield potion work. The behavior pack loads the script API on Bedrock 26.60.
