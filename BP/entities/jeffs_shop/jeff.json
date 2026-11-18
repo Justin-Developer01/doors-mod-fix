@@ -76,7 +76,23 @@
          "minecraft:scale": {
             "value": 0.8
          },
-         "minecraft:physics": {},
+         "minecraft:physics": {
+            "has_collision": true,
+            "has_gravity": false
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "interact_text": "§lOpen Jeff's Shop",
+                  "on_interact": {
+                     "event": "doors:open_shop",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         },
          "minecraft:timer": {
             "looping": true,
             "randomInterval": true,
@@ -87,6 +103,16 @@
          }
       },
       "events": {
+         "doors:open_shop": {
+            "run_command": {
+               "command": [
+                  "execute as @s at @s unless entity @e[type=r:shop,r=6] run summon r:shop ~ ~ ~",
+                  "dialogue open @e[type=r:shop,r=6,c=1] @p prerun_shop",
+                  "playsound mob.elevator.shop @a[r=6]"
+               ],
+               "target": "self"
+            }
+         },
          "minecraft:remove": {
             "add": {
                "component_groups": [

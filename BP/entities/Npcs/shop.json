@@ -156,6 +156,7 @@
          },
          "minecraft:persistent": {},
          "minecraft:npc": {
+            "default_scene": "prerun_shop",
             "npc_data": {
                "portrait_offsets": {
                   "translate": [

@@ -151,18 +151,6 @@
          "minecraft:physics": {
             "has_gravity": false,
             "has_collision": true
-         },
-         "minecraft:behavior.trade_with_player": {
-            "priority": 1
-         },
-         "minecraft:behavior.look_at_trading_player": {
-            "priority": 4
-         },
-         "minecraft:trade_resupply": {},
-         "minecraft:economy_trade_table": {
-            "display_name": "§lBreaker Power Switch",
-            "table": "trading/power_switches.json",
-            "new_screen": true
          }
       },
       "events": {

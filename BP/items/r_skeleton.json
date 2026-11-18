@@ -17,7 +17,8 @@
          "minecraft:allow_off_hand": false,
          "minecraft:use_modifiers": {
             "use_duration": 999999
-         }
+         },
+         "r:on_use": {}
       }
    }
 }

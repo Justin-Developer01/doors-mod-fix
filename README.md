@@ -1,6 +1,6 @@
 # Doors v3 — Bedrock 26.60 working fix
 
-Download the addon: [Doors-26.60-working-fix.mcaddon](https://github.com/Justin-Developer01/doors-mod-fix/releases/download/v1.3.0/Doors-26.60-working-fix.mcaddon)
+Download the addon: [Doors-26.60-working-fix.mcaddon](https://github.com/Justin-Developer01/doors-mod-fix/releases/download/v1.3.1/Doors-26.60-working-fix.mcaddon)
 
 ## Install
 

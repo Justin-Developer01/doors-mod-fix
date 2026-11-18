@@ -844,8 +844,14 @@ const ITEM_ACTIONS = {
     "actions": [
       {
         "commands": [
-          "event entity @e[type=doors:hotel_door2,r=2] minecraft:open",
-          "event entity @e[type=doors:metal_door,r=2] minecraft:open",
+          "function unlocked",
+          "event entity @e[type=doors:hotel_door2,r=5] minecraft:open",
+          "event entity @e[type=doors:hotel_door3,r=5] minecraft:open",
+          "event entity @e[type=doors:metal_door,r=5] minecraft:open",
+          "event entity @e[type=doors:metal_door2,r=5] minecraft:open",
+          "event entity @e[type=doors:old_door,r=5] minecraft:open",
+          "event entity @e[type=doors:skeleton_door,r=5] minecraft:open",
+          "playsound mob.elevator.door_open @a[r=6]",
           "clear @s r:lockpick 0 1"
         ],
         "condition": null
@@ -1143,6 +1149,9 @@ function handleUse(event) {
     if (lastUse.has(key) && now - lastUse.get(key) < 800) return;
     lastUse.set(key, now);
     if (entry.spawn) spawnInLook(player, entry.spawn);
+    if (String(id).includes("crucifix")) {
+      try { forceRemoveRooms(player.dimension, player.location, 24); } catch (e) {}
+    }
 
     let remaining = null;
     try {
@@ -1260,6 +1269,7 @@ function runBanish(proj, funcName, player) {
   if (processedHits.has(id)) return;
   processedHits.add(id);
   const loc = proj.location;
+  try { forceRemoveRooms(proj.dimension, loc, 20); } catch (e) {}
   try { scheduleCrucifixCleanup(proj.dimension, loc); } catch (e) {}
   const runner = player || proj;
 
@@ -1371,16 +1381,6 @@ try {
 
 const BREAKER_IDS = new Set(["doors:elevator_power", "doors:elevator_power2"]);
 
-function holding(player, typeId) {
-  try {
-    const eq = player.getComponent("minecraft:equippable");
-    const stack = eq && eq.getEquipment("Mainhand");
-    return !!(stack && stack.typeId === typeId);
-  } catch (e) {
-    return false;
-  }
-}
-
 function onEntityInteract(ev) {
   try {
     const player = ev.player;
@@ -1423,7 +1423,7 @@ system.runInterval(() => {
       for (const proj of all) {
         const fn = CRUCIFIX_FUNCS[proj.typeId];
         if (!fn) continue;
-        const range = fn === "cross" ? 2.6 : 6.0;
+        const range = fn === "cross" ? 12.0 : 14.0;
         const nearby = dim.getEntities({ location: proj.location, maxDistance: range });
         const hit = nearby.some((n) => {
           const id = n.typeId;
@@ -1884,3 +1884,143 @@ system.runInterval(() => {
     }
   } catch (e) {}
 }, 1);
+
+const ROOMS_REMOVE_IDS = [
+  "doors:a_120", "doors:a_90", "doors:a_90_stop", "doors:a_90_angry",
+  "r:a_90", "r:a_90_stop", "r:a_90_angry",
+  "secret:a_60", "secret:a_602", "doors:a_60v1", "doors:a_60v2",
+  "doors:a60_stun", "doors:a60_stun2",
+  "r:a60_jumpscare", "r:a90_jumpscare", "r:a120_jumpscare",
+  "r:a60_light", "r:a60_light2", "r:a90kill", "r:a120kill"
+];
+
+function forceRemoveRooms(dim, loc, radius) {
+  if (!dim || !loc) return;
+  for (const typeId of ROOMS_REMOVE_IDS) {
+    let found = [];
+    try { found = dim.getEntities({ type: typeId, location: loc, maxDistance: radius }); } catch (e) { continue; }
+    for (const entity of found) {
+      try { entity.remove(); } catch (e2) {}
+    }
+  }
+}
+
+function holding(player, typeId) {
+  try {
+    const eq = player.getComponent("minecraft:equippable");
+    if (!eq) return false;
+    for (const slot of ["Mainhand", "Offhand"]) {
+      const stack = eq.getEquipment(slot);
+      if (stack && stack.typeId === typeId) return true;
+    }
+  } catch (e) {}
+  return false;
+}
+
+function openJeffShop(player) {
+  try {
+    const dim = player.dimension;
+    const near = dim.getEntities({ type: "r:shop", location: player.location, maxDistance: 8 });
+    if (!near.length) dim.spawnEntity("r:shop", player.location);
+    player.runCommand("dialogue open @e[type=r:shop,r=8,c=1] @s prerun_shop");
+    player.runCommand("playsound mob.elevator.shop @a[r=6]");
+  } catch (e) {}
+}
+
+ITEM_ACTIONS["r:key"] = {
+  actions: [{ commands: [
+    "function unlocked",
+    "event entity @e[type=doors:hotel_door2,r=5] minecraft:open",
+    "event entity @e[type=doors:hotel_door3,r=5] minecraft:open",
+    "event entity @e[type=doors:metal_door,r=5] minecraft:open",
+    "event entity @e[type=doors:metal_door2,r=5] minecraft:open",
+    "event entity @e[type=doors:old_door,r=5] minecraft:open",
+    "playsound mob.elevator.door_open @a[r=6]",
+    "clear @s r:key 0 1"
+  ], condition: null }],
+  damage_on_use: false
+};
+
+ITEM_ACTIONS["r:skeleton"] = {
+  actions: [{ commands: [
+    "function unlocked",
+    "event entity @e[type=doors:skeleton_door,r=5] minecraft:open",
+    "event entity @e[type=doors:skeleton_door2,r=5] minecraft:open",
+    "event entity @e[type=doors:skeleton_door3,r=5] minecraft:open",
+    "event entity @e[type=doors:hotel_door2,r=5] minecraft:open",
+    "playsound mob.elevator.door_open @a[r=6]",
+    "clear @s r:skeleton 0 1"
+  ], condition: null }],
+  damage_on_use: false
+};
+
+ITEM_ACTIONS["r:hammer"] = {
+  actions: [{ commands: [
+    "event entity @e[type=doors:elevator_power,r=5] minecraft:is_started",
+    "event entity @e[type=doors:elevator_power2,r=5] minecraft:is_started",
+    "playsound mob.closet.breaker @a[r=6]",
+    "title @s actionbar §l§eBreaker switched"
+  ], condition: null }],
+  damage_on_use: false
+};
+
+ITEM_ACTIONS["r:holy_hand_grenade"] = {
+  spawn: "r:bomb",
+  actions: [{ commands: [
+    "playsound random.fuse @a[r=8]",
+    "clear @s r:holy_hand_grenade 0 1"
+  ], condition: null }],
+  damage_on_use: false
+};
+
+function bindWorldFixes() {
+  if (!world.afterEvents.playerInteractWithEntity) return;
+  world.afterEvents.playerInteractWithEntity.subscribe((ev) => {
+    const player = ev.player;
+    const target = ev.target;
+    if (!player || !target) return;
+    const id = target.typeId || "";
+    const hand = ev.itemStack && ev.itemStack.typeId;
+    try {
+      if (id === "doors:elevator" || id === "doors:elevator2") {
+        target.runCommand("event entity @s minecraft:is_spawn");
+        system.run(() => {
+          try {
+            const ride = target.getComponent("minecraft:rideable");
+            if (ride) ride.addRider(player);
+            else player.runCommand("ride @s start_riding @e[type=" + id + ",r=4,c=1]");
+            player.runCommand("title @s actionbar §lEntering the elevator...");
+          } catch (e2) {}
+        });
+      } else if (id === "doors:elevator_power" || id === "doors:elevator_power2") {
+        if (hand === "r:hammer" || holding(player, "r:hammer")) {
+          target.runCommand("event entity @s minecraft:is_started");
+          player.runCommand("playsound mob.closet.breaker @a[r=6]");
+          player.runCommand("title @s actionbar §l§eBreaker switched");
+        } else {
+          player.runCommand("title @s actionbar §lHold the Hammer, then use the breaker");
+        }
+      } else if (id === "doors:hotel_door2" || id === "doors:hotel_door3" || id === "doors:metal_door" || id === "doors:metal_door2" || id === "doors:old_door") {
+        if (holding(player, "r:key") || holding(player, "r:lockpick") || holding(player, "r:skeleton")) {
+          target.runCommand("event entity @s minecraft:open");
+          player.runCommand("function unlocked");
+          player.runCommand("playsound mob.elevator.door_open @a[r=6]");
+        } else {
+          player.runCommand("title @s actionbar §lThis door needs a Key or Lockpick");
+        }
+      } else if (id.startsWith("doors:skeleton_door")) {
+        if (holding(player, "r:skeleton") || holding(player, "r:key")) {
+          target.runCommand("event entity @s minecraft:open");
+          player.runCommand("function unlocked");
+          player.runCommand("playsound mob.elevator.door_open @a[r=6]");
+        } else {
+          player.runCommand("title @s actionbar §lThis door needs a Skeleton Key");
+        }
+      } else if (id === "doors:jeff" || id === "r:shop" || id === "doors:jeff_table") {
+        openJeffShop(player);
+      }
+    } catch (e) {}
+  });
+}
+
+try { bindWorldFixes(); } catch (e) {}

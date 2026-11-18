@@ -93,8 +93,56 @@
             "value": 1
          },
          "minecraft:collision_box": {
-            "width": 0.6,
-            "height": 1.7
+            "width": 1.6,
+            "height": 2.2
+         },
+         "minecraft:interact": {
+            "interactions": [
+               {
+                  "interact_text": "Enter Lift",
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "is_family",
+                              "subject": "other",
+                              "value": "player"
+                           }
+                        ]
+                     },
+                     "event": "minecraft:is_ride",
+                     "target": "self"
+                  },
+                  "swing": true,
+                  "use_item": false
+               }
+            ]
+         },
+         "minecraft:rideable": {
+            "seat_count": 3,
+            "seats": [
+               {
+                  "position": [
+                     0,
+                     0,
+                     0
+                  ]
+               },
+               {
+                  "position": [
+                     1,
+                     0,
+                     0
+                  ]
+               },
+               {
+                  "position": [
+                     -1,
+                     0,
+                     0
+                  ]
+               }
+            ]
          },
          "minecraft:loot": {
             "table": "loot_tables/entities/noloot.json"
